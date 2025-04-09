@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const texts = [
   "ADDA SIGNS",
   "DOOR SIGNS",
@@ -8,29 +7,29 @@ const texts = [
   "BUSINESS SIGNS",
   "ACRYLIC SIGNS",
   "STORE FRONT SIGNS",
-  "Building Signs",
-  "Pylon Signs",
-  "Metal Signs"
+  "BUILDING SIGNS",
+  "PYLON SIGNS",
+  "METAL SIGNS"
 ];
 
 const MarqueeText = () => {
   return (
-    <div className="marquee-container bg-orange-500 py-8 overflow-hidden">
-      <div className="marquee-track">
-        <div className="marquee-content">
-          {texts.map((text, index) => (
-            <span key={index} className="marquee-item text-white text-4xl font-bold mx-8">
-              {text} 
-            </span>
-          ))}
-        </div>
-        <div className="marquee-content">
-          {texts.map((text, index) => (
-            <span key={`dup-${index}`} className="marquee-item text-white text-4xl font-bold mx-8">
-              {text} 
-            </span>
-          ))}
-        </div>
+    <div className="marquee-container bg-orange-500 h-24 flex items-center overflow-hidden">
+      <div className="marquee-track flex whitespace-nowrap animate-marquee items-center">
+        {[...texts, ...texts].map((text, index, array) => (
+          <>
+          <span
+            key={index}
+            className="flex items-center text-white text-4xl font-bold px-6 "
+          >
+            {text}
+            
+          </span>
+          {index !== array.length - 1 && (
+              <span className="px-6 pt-[19px] text-white text-6xl font-bold ">*</span>
+            )}
+          </>
+        ))}
       </div>
     </div>
   );

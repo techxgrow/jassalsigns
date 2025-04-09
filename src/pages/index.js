@@ -5,7 +5,7 @@ import RightNavbar from "@/components/RightNavbar";
 import Services from "@/components/Services";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
-import CityFooter from "@/components/CityFooter";
+import HomepageFooter from "@/components/HomepageFooter";
 import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -76,7 +76,7 @@ export default function Home() {
         )}
       </div>
 
-      <CityFooter />
+      <HomepageFooter/>
     </div>
   );
 }

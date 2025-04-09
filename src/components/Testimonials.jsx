@@ -17,7 +17,7 @@ const testimonials = [
     clientImg: "/testimonials/user-2.jpg",
     clientName: "Meenu Dahal",
     category: "Marketing Head, Creative Agency",
-    title: "I am super happy with the products and the customer services (especially Gagan, Vik and the receptionist were very professional and they know what they are doing. ",
+    title: "I am super happy with the products and the customer services (especially Gagan, Vik and the receptionist were very professional and they know what they are doing.",
     link: "https://outmedia.freekytheme.com/get-no-fuss-file-level-crypto-with-fscrypt/",
   },
   {
@@ -25,7 +25,7 @@ const testimonials = [
     clientImg: "/testimonials/user-3.jpg",
     clientName: "David Johnson",
     category: "Founder, Startup Hub",
-    title: "Throughout the whole buying experience from walking in with no vision to walking out with the most eye catching sign, Jassal Signs was like no other when it comes to customer service.  ",
+    title: "Throughout the whole buying experience from walking in with no vision to walking out with the most eye catching sign, Jassal Signs was like no other when it comes to customer service.",
     link: "https://outmedia.freekytheme.com/be-well-a-few-tips-to-brighten-your-day/",
   },
   {
@@ -40,9 +40,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="md:py-16   pt-20  bg-black mb-[60px] md:mb-0 md:px-30 px-2">
-      <div className=" mx-auto text-center ">
-      <div className=" mb-[30px] text-center" data-aos="fade-up">
+    <section className="pt-20 pb-16 bg-black mb-[60px] md:mb-0 px-4 sm:px-6 lg:px-8" id="testimonials">
+      <div className="max-w-7xl mx-auto text-center">
+        <div className="mb-[30px]" data-aos="fade-up">
           <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">What Our Clients Say</p>
           <h1 className="md:text-6xl text-4xl text-white font-extrabold">
             TESTIMONIALS<span className="text-orange-600"></span>
@@ -64,16 +64,13 @@ export default function Testimonials() {
             <SwiperSlide key={idx}>
               <a
                 href={testimonial.link}
-                className="block h-80 overflow-hidden shadow-md group"
+                className="block h-80 sm:h-96 overflow-hidden shadow-md group"
               >
-                {/* Background Image */}
                 <div
                   className="h-full bg-cover bg-center bg-gray-700 transition-transform duration-300 parent-testimonial"
-                //   style={{ backgroundImage: `url(${testimonial.image})` }}
+                  // style={{ backgroundImage: `url(${testimonial.image})` }}
                 >
-                  {/* Overlay */}
-                  <div className="h-full w-full  flex flex-col justify-start p-10 text-white background-animation">
-                    {/* Client Info */}
+                  <div className="h-full w-full flex flex-col justify-start p-6 text-white background-animation">
                     <div className="flex items-center mb-2 relative z-30">
                       <img
                         src={testimonial.clientImg}
@@ -82,9 +79,8 @@ export default function Testimonials() {
                       />
                       <h1 className="text-2xl font-medium">{testimonial.clientName}</h1>
                     </div>
-                    
-                    <p className="text-medium text-left mb-2 z-30">{testimonial.title}</p>
-                  
+
+                    <p className="text-sm sm:text-base text-left mb-2 z-30">{testimonial.title}</p>
                   </div>
                 </div>
               </a>

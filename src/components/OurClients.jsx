@@ -29,11 +29,12 @@ const clientLogos = [
 export default function OurClients() {
   return (
     <section className="bg-black py-12" id="clients">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Heading */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl text-white font-bold mb-2">Our Renowned Clients</h2>
-          <div className="w-20 mx-auto h-[2px] bg-gray-300" />
+      <div className="max-w-7xl mx-auto ">
+      <div className=" mb-[30px] text-center" data-aos="fade-up">
+          <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">Trusted By Leading Brands</p>
+          <h1 className="md:text-6xl text-4xl text-white font-extrabold">
+            OUR  CLIENTS<span className="text-orange-600"></span>
+          </h1>
         </div>
 
         {/* Swiper Slider for Client Logos */}
@@ -54,7 +55,7 @@ export default function OurClients() {
               <img
                 src={client.src}
                 alt={client.alt}
-                className="h-20 w-auto mx-auto object-contain border"
+                className="h-20 w-[200px] rounded mx-auto object-contain border bg-white"
               />
             </SwiperSlide>
           ))}

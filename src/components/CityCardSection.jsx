@@ -41,7 +41,7 @@ const placesData = [
 const CityPlacesSection = () => {
   return (
     <section
-      className="w-full py-16 px-4 sm:px-8 md:px-12 bg-cover bg-center"
+      className="w-full py-16 px-4 sm:px-8 md:px-30 bg-cover bg-center"
       style={{ backgroundImage: "url('/background.jpg')" }}
       id="cities"
     >
