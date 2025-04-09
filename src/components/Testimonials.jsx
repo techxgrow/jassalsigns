@@ -10,7 +10,7 @@ const testimonials = [
     clientName: "Vita Denture Cinic",
     category: "CEO, Tech Innovations",
     title: "I am so thankful to Jassal Signs and Harry. We had an event for which Jassal Signs made our banner. ... Thank you",
-    link: "https://outmedia.freekytheme.com/tech-gift-ideas-to-help-tackle-your-holiday-shopping-list/",
+    link: "#",
   },
   {
     image: "https://outmedia.freekytheme.com/wp-content/uploads/2020/12/blog-details-d.jpg",
@@ -18,7 +18,7 @@ const testimonials = [
     clientName: "Meenu Dahal",
     category: "Marketing Head, Creative Agency",
     title: "I am super happy with the products and the customer services (especially Gagan, Vik and the receptionist were very professional and they know what they are doing.",
-    link: "https://outmedia.freekytheme.com/get-no-fuss-file-level-crypto-with-fscrypt/",
+    link: "#",
   },
   {
     image: "https://outmedia.freekytheme.com/wp-content/uploads/2020/09/blog-details-a.jpg",
@@ -26,7 +26,7 @@ const testimonials = [
     clientName: "David Johnson",
     category: "Founder, Startup Hub",
     title: "Throughout the whole buying experience from walking in with no vision to walking out with the most eye catching sign, Jassal Signs was like no other when it comes to customer service.",
-    link: "https://outmedia.freekytheme.com/be-well-a-few-tips-to-brighten-your-day/",
+    link: "#",
   },
   {
     image: "https://outmedia.freekytheme.com/wp-content/uploads/2020/12/blog-details-f.jpg",
@@ -34,7 +34,7 @@ const testimonials = [
     clientName: "Emma Brown",
     category: "Founder",
     title: "Their signage service was absolutely fantastic. The quality, communication, and efficiency made this experience far better than I ever imagined possible.",
-    link: "https://outmedia.freekytheme.com/arm-pivot-a-step-into-the-reality-distortion-field/",
+    link: "#",
   },
 ];
 
