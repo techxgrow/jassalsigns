@@ -21,16 +21,16 @@ const AboutSection = () => {
   return (
     <div className="bg-white shadow-2xl border-2" >
       <div
-        className="max-w-[1280px] mx-auto p-5 lg:p-20 bg-white -translate-y-[100px] z-10 relative grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 shadow-xl"
+        className="max-w-[1280px] px-6 md:px-0 mx-auto p-5 lg:p-20 bg-white -translate-y-[100px] z-10 relative grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 shadow-xl"
         data-aos="fade-up" id="about"
       >
         {/* Left Side */}
-        <div className="flex md:text-left text-center flex-col gap-10" data-aos="fade-right"  data-aos-duration="2000">
-          <h1 className="text-gray-900 text-3xl font-extrabold uppercase w-[280px]">
+        <div className="flex  flex-col items-center gap-10" data-aos="fade-bottom"  data-aos-duration="2000">
+          <h1 className="text-gray-900 md:text-left text-center text-3xl font-extrabold uppercase w-[280px]">
             We create mass public's eye{" "}
             <span className="text-orange-600">attention</span>
           </h1>
-          <h4 className="text-gray-900 uppercase underline underline-offset-4 decoration-orange-600">
+          <h4 className="text-gray-900 uppercase underline md:text-left text-center underline-offset-4 decoration-orange-600">
             Who We Are
           </h4>
         </div>

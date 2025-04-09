@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div className="max-w-[1280px] mx-auto text-gray-800 md:py-12 py-8  " id="contact">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-0 text-gray-800 md:py-12 py-8  " id="contact">
       <div className="  grid md:grid-cols-3 gap-8">
         {/* Contact Details */}
         <div className=" py-6 ">

@@ -20,7 +20,7 @@ const CitySlider = ({cityName}) => {
 
   return (
     <section className="w-full  h-[80vh] md:h-[120vh] overflow-hidden" id="home">
-      <div className="relative w-full h-full group">
+      <div className="relative w-full h-full group px-6 md:px-0">
         {/* Zooming Background */}
         <div
           className="absolute inset-0 bg-cover bg-center transform scale-100 group-hover:scale-105 transition-transform duration-[6000ms] ease-out will-change-transform"
@@ -32,10 +32,10 @@ const CitySlider = ({cityName}) => {
 
         <div className="relative z-10 max-w-[1280px] mx-auto  flex items-center h-full">
           <div className=" text-white" data-aos="fade-up" data-aos-delay="300">
-            <p className="text-lg uppercase tracking-widest font-medium text-orange-400 mb-2 text-center  lg:text-left">
+            <p className="text-lg uppercase tracking-widest font-medium text-orange-400 mb-2 text-center  md:text-left">
               We Bring Brands To Life
             </p>
-            <h1 className="text-4xl leading-[3rem] max-w-[800px]  uppercase md:text-left font-extrabold  lg:text-7xl lg:leading-[6.5rem]">
+            <h1 className="text-4xl leading-[3rem] text-center max-w-[800px]  uppercase md:text-left font-extrabold  lg:text-7xl lg:leading-[6.5rem]">
               {slide.title} IN <span className="text-orange-500">{cityName}</span>
             </h1>
 

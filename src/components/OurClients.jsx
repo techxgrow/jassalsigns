@@ -29,7 +29,7 @@ const clientLogos = [
 export default function OurClients() {
   return (
     <section className="bg-black py-12" id="clients">
-      <div className="max-w-7xl mx-auto ">
+      <div className="max-w-7xl mx-auto  px-6 md:px-0">
       <div className=" mb-[30px] text-center" data-aos="fade-up">
           <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">Trusted By Leading Brands</p>
           <h1 className="md:text-6xl text-4xl text-white font-extrabold">

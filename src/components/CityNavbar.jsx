@@ -26,7 +26,7 @@ const CityNavbar = () => {
         isScrolling ? "bg-black/70 backdrop-blur-sm shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between py-4 ">
+      <div className="max-w-[1280px] mx-auto flex items-center justify-between py-4 px-6 md:px-0 ">
         {/* Logo */}
         <Link href="/">
           <img src="/logo.webp" className="w-[140px]" alt="Logo" />
