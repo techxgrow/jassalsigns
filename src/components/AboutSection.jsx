@@ -21,7 +21,7 @@ const AboutSection = () => {
   return (
     <div className="bg-white shadow-2xl border-2" >
       <div
-        className="md:w-[82%] w-[90%] mx-auto p-5 lg:p-20 bg-white -translate-y-[100px] z-10 relative grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 shadow-xl"
+        className="md:w-[84%] w-[90%] mx-auto p-5 lg:p-20 bg-white -translate-y-[100px] z-10 relative grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 shadow-xl"
         data-aos="fade-up" id="about"
       >
         {/* Left Side */}
