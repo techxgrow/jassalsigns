@@ -62,9 +62,8 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, idx) => (
             <SwiperSlide key={idx}>
-              <a
-                href={testimonial.link}
-                className="block h-80 sm:h-96 overflow-hidden shadow-md group"
+              <div
+                className="block md:h-70 h-50  overflow-hidden shadow-md group"
               >
                 <div
                   className="h-full bg-cover bg-center bg-gray-700 transition-transform duration-300 parent-testimonial"
@@ -83,7 +82,7 @@ export default function Testimonials() {
                     <p className="text-sm sm:text-base text-left mb-2 z-30">{testimonial.title}</p>
                   </div>
                 </div>
-              </a>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -49,8 +49,8 @@ const OurServices = () => {
            <div className='overflow-hidden group' id={item.link}>
            <div className='md:h-[300px] h-[180px] relative w-full  group-hover:scale-[1.1] transition-all duration-1000 bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `url(${item.imgSrc})` }}>
                <div className='border-green-600 absolute w-full top-0 left-0 h-full flex justify-center items-center flex-col bg-black/50 backdrop-blur-none'>
-                   <h1 className='md:text-4xl text-2xl text-center md:text-left font-bold'>{item.category}</h1>
-                   <p className=" md:text-xl text-lg text-center md:text-left duration-1000 ">{item.title}</p>
+                   <h1 className='md:text-4x text-white text-2xl text-center md:text-left font-bold'>{item.category}</h1>
+                   <p className=" md:text-xl text-lg text-white text-center md:text-left duration-1000 ">{item.title}</p>
                </div>
            </div>
            </div>
