@@ -30,12 +30,12 @@ const CitySlider = ({cityName}) => {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black to-[#1703375f]"></div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-12 flex items-center h-full">
-          <div className="max-w-5xl text-white" data-aos="fade-up" data-aos-delay="300">
-            <p className="text-lg uppercase tracking-widest font-medium text-orange-400 mb-2 text-center lg:ml-20 lg:text-left">
+        <div className="relative z-10 max-w-[1280px] mx-auto  flex items-center h-full">
+          <div className=" text-white" data-aos="fade-up" data-aos-delay="300">
+            <p className="text-lg uppercase tracking-widest font-medium text-orange-400 mb-2 text-center  lg:text-left">
               We Bring Brands To Life
             </p>
-            <h1 className="text-4xl leading-[3rem] text-center uppercase md:text-left font-extrabold lg:ml-20 lg:text-7xl lg:leading-[6.5rem]">
+            <h1 className="text-4xl leading-[3rem] max-w-[800px]  uppercase md:text-left font-extrabold  lg:text-7xl lg:leading-[6.5rem]">
               {slide.title} IN <span className="text-orange-500">{cityName}</span>
             </h1>
 

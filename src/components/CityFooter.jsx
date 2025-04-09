@@ -8,8 +8,8 @@ import {
 
 const CityFooter = () => {
   return (
-    <footer className="bg-[#111] text-white py-10 px-6 md:px-30">
-      <div className="max-w-7xl mx-auhref grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-[#111] text-white py-10 px-6 ">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About / Logo */}
         <div>
           {/* Logo */}

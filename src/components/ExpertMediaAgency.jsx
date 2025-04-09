@@ -9,7 +9,7 @@ const ExpertMediaAgency = () => {
 
   return (
     <section className="w-full md:h-[90vh] h-[120vh]   bg-gray-100" id="about">
-      <div className="containern h-full mx-auto flex flex-col md:flex-row">
+      <div className="border-2 h-full mx-auto flex flex-col md:flex-row">
         {/* Left Column */}
         <div
           className="w-full md:w-1/2 h-full md:h-full flex items-center justify-center bg-[url(/second/bg-1.png)] bg-cover md:bg-center p-6 shadow-lg relative"

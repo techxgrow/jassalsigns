@@ -41,11 +41,11 @@ const placesData = [
 const CityPlacesSection = () => {
   return (
     <section
-      className="w-full py-16 px-4 sm:px-8 md:px-30 bg-cover bg-center"
+      className="w-full py-16 px-4   bg-cover bg-center"
       style={{ backgroundImage: "url('/background.jpg')" }}
       id="cities"
     >
-      <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-start">
+      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-10 items-start">
         {/* Left Side */}
         <div className="w-full lg:w-1/3 space-y-6 text-center lg:text-left">
           <h2 className="text-lg font-semibold text-orange-500">Jassal Signs Services</h2>

@@ -22,11 +22,11 @@ const CityNavbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-1300 w-screen top-0 z-50  transition-all duration-300 ${
+      className={`fixed w-full left-0 top-0 z-50 transition-all duration-300 ${
         isScrolling ? "bg-black/70 backdrop-blur-sm shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-30 ">
+      <div className="max-w-[1280px] mx-auto flex items-center justify-between py-4 ">
         {/* Logo */}
         <Link href="/">
           <img src="/logo.webp" className="w-[140px]" alt="Logo" />

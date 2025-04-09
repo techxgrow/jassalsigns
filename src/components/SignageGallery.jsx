@@ -48,8 +48,8 @@ export default function SignageGallery() {
       : images.filter((img) => img.category === selectedFilter);
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8" id="gallery">
-      <div className="max-w-7xl mx-auto">
+    <section className=" max-w-[1280px] mx-auto py-16 " id="gallery">
+      <div >
         <div className="mb-10 text-center" data-aos="fade-up">
           <p className="text-orange-600 uppercase mb-2 text-xl">
             EXPLORE OUR WORK
