@@ -25,7 +25,7 @@ const AboutSection = () => {
         data-aos="fade-up" id="about"
       >
         {/* Left Side */}
-        <div className="flex  flex-col items-center gap-10" data-aos="fade-bottom"  data-aos-duration="2000">
+        <div className="flex   flex-col items-center md:items-start gap-10" data-aos="fade-bottom"  data-aos-duration="2000">
           <h1 className="text-gray-900 md:text-left text-center text-3xl font-extrabold uppercase w-[280px]">
             We create mass public's eye{" "}
             <span className="text-orange-600">attention</span>
