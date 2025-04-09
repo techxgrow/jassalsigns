@@ -26,7 +26,7 @@ const CityNavbar = () => {
         isScrolling ? "bg-black/70 backdrop-blur-sm shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6 md:px-8">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-30">
         {/* Logo */}
         <Link href="/">
           <img src="/logo.webp" className="w-[140px]" alt="Logo" />
@@ -61,8 +61,8 @@ const CityNavbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="#product" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
-                Products
+              <Link href="#gallery" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
+                Gallery
               </Link>
             </li>
             <li>

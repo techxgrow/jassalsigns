@@ -16,37 +16,37 @@ const OurServices = () => {
         imgSrc: "/citypage/services/service1.jpg",
         category: "INDOOR SIGNS",
         title: "We make sure your message meets the masses.",
-        link: "project-details.html"
+        link: "indoor-sign"
       },
       {
         imgSrc: "/citypage/services/vehiclewraps.jpg",
         category: "VEHICLE WRAPS",
         title: "Transform your vehicle with Jassal Signs!",
-        link: "project-details.html"
+        link: "vehicle-wrap"
       },
       {
         imgSrc: "/citypage/services/printmedia.jpg",
         category: "PRINT MEDIA",
         title: "Print your vision with Jassal Signs",
-        link: "project-details.html"
+        link: "print-media"
       },
       {
         imgSrc: "/citypage/services/outdoorsigns.jpg",
         category: "OUTDOOR SIGNS",
         title: "We make sure your message meets the masses.",
-        link: "project-details.html"
+        link: "outdoor-sign"
       }
   ];
 
   return (
-    <section  >
+    <section   >
     
 
    
       <div >
         
           {portfolioItems.map((item, index) => (
-           <div className='overflow-hidden group'>
+           <div className='overflow-hidden group' id={item.link}>
            <div className='md:h-[300px] h-[180px] relative w-full  group-hover:scale-[1.1] transition-all duration-1000 bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `url(${item.imgSrc})` }}>
                <div className='border-green-600 absolute w-full top-0 left-0 h-full flex justify-center items-center flex-col bg-black/50 backdrop-blur-none'>
                    <h1 className='md:text-4xl text-2xl text-center md:text-left font-bold'>{item.category}</h1>

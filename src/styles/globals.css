@@ -1,3 +1,9 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 @import "tailwindcss";
 
 @import "tw-animate-css";
@@ -89,6 +95,7 @@
     --foreground: #ededed;
   }
 }
+
 
 body {
   color: var(--foreground);

@@ -5,42 +5,56 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+
 const CityFooter = () => {
   return (
-    <footer className="bg-[#111] text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        
+    <footer className="bg-[#111] text-white py-10 px-6 md:px-30">
+      <div className="max-w-7xl mx-auhref grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About / Logo */}
         <div>
           {/* Logo */}
-          <img
-            src="/logo.webp"
-            alt="Mega Signs Logo"
-            className="h-12 mb-4"
-          />
+          <img src="/logo.webp" alt="Mega Signs Logo" className="h-12 mb-4" />
           {/* About Text */}
-          <p className="text-sm text-gray-300 leading-relaxed">
-            Mega Signs is a full-service signage company. We specialize in high-quality custom signs for businesses
-            across various industries.
+          <p className="text-[16px] text-gray-300 leading-relaxed">
+            Mega Signs is a full-service signage company. We specialize in
+            high-quality cushrefm signs for businesses across various industries.
           </p>
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 text-lg">
-            <a href="#" aria-label="Facebook"><FaFacebook /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="#" aria-label="Facebook" className="hover:text-orange-700 text-2xl">
+              <FaFacebook />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-orange-700 text-2xl">
+              <FaInstagram />
+            </a>
+            <a href="#" aria-label="aedIn" className="hover:text-orange-700 text-2xl">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
 
-          {/* Quick Links */}
-          <div>
+        {/* Quick as */}
+        <div>
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
-          <ul className="space-y-2 text-gray-300 text-sm">
-            <li><a href="#">Home</a></li>
-            <li><a href="/citypage">About Us</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact Us</a></li>
+          <ul className="space-y-2 text-gray-300 ">
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">Home</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">About Us</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">Products</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">Blogs</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">Gallery</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-orange-700 text-[16px]">Contact Us</a>
+            </li>
           </ul>
         </div>
 
@@ -48,19 +62,19 @@ const CityFooter = () => {
         <div>
           <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li>Channel Letters</li>
-            <li>Indoor Signs</li>
-            <li>Outdoor Signs</li>
-            <li>Pylon Signs</li>
-            <li>Channel Letters</li>
+            <li><a href="#indoor-sign" className="hover:text-orange-700 text-[16px]" >Indoor Signs</a></li>
+
+            <li><a href="#vehicle-wrap" className="hover:text-orange-700 text-[16px]">Vehicle Wraps</a></li>
+            <li><a href="#print-media" className="hover:text-orange-700 text-[16px]">Print Media</a></li>
+            <li><a href="#outdoor-sign" className="hover:text-orange-700 text-[16px]">Outdoor Signs</a></li>
           </ul>
         </div>
 
-      
-
         {/* Subscribe */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">SUBSCRIBE TO OUR SIGNAGE INSIGHTS</h2>
+          <h2 className="text-lg font-semibold mb-4">
+          SUBSCRIBE TO OUR SIGNAGE INSIGHTS
+          </h2>
           <form className="space-y-3">
             <input
               type="text"
@@ -74,7 +88,7 @@ const CityFooter = () => {
             />
             <button
               type="submit"
-              className="w-full cursor-pointer bg-orange-600 hover:bg-orange-700 transition-all text-white py-2 font-semibold text-sm "
+              className="w-full cursor-pointer bg-orange-600 hover:bg-orange-700 transition-all text-white py-2 px-3 font-semibold text-sm "
             >
               SUBSCRIBE NOW
             </button>
@@ -82,8 +96,8 @@ const CityFooter = () => {
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+      {/* Bothrefm Section */}
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-[14px]">
         <p>2025 © Copyright, All Rights Reserved.</p>
       </div>
     </footer>

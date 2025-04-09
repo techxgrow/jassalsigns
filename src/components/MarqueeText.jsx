@@ -14,7 +14,7 @@ const texts = [
 
 const MarqueeText = () => {
   return (
-    <div className="marquee-container bg-orange-500 h-24 flex items-center overflow-hidden">
+    <div className="marquee-container bg-orange-500 h-24 flex items-center overflow-hidden" >
       <div className="marquee-track flex whitespace-nowrap animate-marquee items-center">
         {[...texts, ...texts].map((text, index, array) => (
           <>

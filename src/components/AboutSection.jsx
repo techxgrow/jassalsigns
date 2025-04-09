@@ -19,10 +19,10 @@ const AboutSection = () => {
   });
 
   return (
-    <div className="bg-white shadow-2xl border-2" id="about">
+    <div className="bg-white shadow-2xl border-2" >
       <div
         className="md:w-[82%] w-[90%] mx-auto p-5 lg:p-20 bg-white -translate-y-[100px] z-10 relative grid grid-cols-1 gap-10 md:gap-0 lg:grid-cols-2 shadow-xl"
-        data-aos="fade-up"
+        data-aos="fade-up" id="about"
       >
         {/* Left Side */}
         <div className="flex md:text-left text-center flex-col gap-10" data-aos="fade-right"  data-aos-duration="2000">
@@ -68,7 +68,7 @@ const AboutSection = () => {
       </div>
 
       {/* Section Header */}
-      <div className=" mb-[30px] text-center" data-aos="fade-up">
+      <div className=" mb-[30px] text-center" data-aos="fade-up" id="service">
         <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">what we Do</p>
         <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold">
           OUR SERVICES <span className="text-orange-600"></span>

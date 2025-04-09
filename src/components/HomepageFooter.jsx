@@ -19,15 +19,15 @@ const HomepageFooter = () => {
             className="h-12 mb-4"
           />
           {/* About Text */}
-          <p className="text-sm text-gray-300 leading-relaxed">
+          <p className="text-[16px] text-gray-300 leading-relaxed">
             Mega Signs is a full-service signage company. We specialize in high-quality custom signs for businesses
             across various industries.
           </p>
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 text-lg">
-            <a href="#" aria-label="Facebook"><FaFacebook /></a>
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="#" aria-label="Facebook" className="hover:text-orange-700 text-2xl"><FaFacebook /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-orange-700 text-2xl"><FaInstagram /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-orange-700 text-2xl"><FaLinkedin /></a>
           </div>
         </div>
 
@@ -35,24 +35,25 @@ const HomepageFooter = () => {
           <div>
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li><a href="#">Home</a></li>
-            <li><a href="/citypage">About Us</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">Home</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">About Us</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">Products</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">Blogs</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">Gallery</a></li>
+            <li><a href="#" className="text-[16px] hover:text-orange-700">Contact Us</a></li>
           </ul>
         </div>
 
         {/* Products */}
+
         <div>
-          <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
-          <ul className="space-y-2 text-gray-300 text-sm">
-            <li>Channel Letters</li>
-            <li>Indoor Signs</li>
-            <li>Outdoor Signs</li>
-            <li>Pylon Signs</li>
-            <li>Channel Letters</li>
+          <h2 className="text-lg font-semibold mb-4">OUR LOCATIONS</h2>
+          <ul className="space-y-2 text-gray-300 ">
+            <li className="text-[16px] hover:text-orange-700"><a href="/citypage/SURREY">SURREY</a></li>
+            <li className="text-[16px] hover:text-orange-700"><a href="/citypage/CLOVERDALE">CLOVERDALE</a></li>
+            <li className="text-[16px] hover:text-orange-700"><a href="/citypage/ABBOTSFORD">ABBOTSFORD</a></li>
+            <li className="text-[16px] hover:text-orange-700"><a href="/citypage/EDMONTON">EDMONTON</a></li>
+            <li className="text-[16px] hover:text-orange-700"><a href="/citypage/CALGARY">CALGARY</a></li>
           </ul>
         </div>
 
