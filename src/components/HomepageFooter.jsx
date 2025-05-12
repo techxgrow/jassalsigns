@@ -25,10 +25,16 @@ const HomepageFooter = () => {
           </p>
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 text-lg">
-            <a href="#" aria-label="Facebook" className="hover:text-[#ED1D26] text-2xl"><FaFacebook /></a>
-            <a href="#" aria-label="Instagram" className="hover:text-[#ED1D26] text-2xl"><FaInstagram /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-[#ED1D26] text-2xl"><FaLinkedin /></a>
-          </div>
+                     <a href="https://www.facebook.com/jassalsignsltd/" aria-label="Facebook" className="hover:text-[#ED1D26] text-2xl">
+                       <FaFacebook />
+                     </a>
+                     <a href="https://www.instagram.com/jassal_signs/?hl=en" aria-label="Instagram" className="hover:text-[#ED1D26] text-2xl">
+                       <FaInstagram />
+                     </a>
+                     <a href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca" aria-label="aedIn" className="hover:text-[#ED1D26] text-2xl">
+                       <FaLinkedin />
+                     </a>
+                   </div>
         </div>
 
           {/* Quick Links */}

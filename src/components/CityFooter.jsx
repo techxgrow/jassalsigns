@@ -15,19 +15,19 @@ const CityFooter = () => {
           {/* Logo */}
           <img src="/logo.png" alt="Mega Signs Logo" className="h-12 mb-4" />
           {/* About Text */}
-          <p className="text-[16px] text-gray-300 leading-relaxed">
+          <p className="text-[16px] text-white leading-relaxed">
             Jassal Signs is a full-service signage company. We specialize in
             high-quality cushrefm signs for businesses across various industries.
           </p>
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 text-lg">
-            <a href="#" aria-label="Facebook" className="hover:text-[#ED1D26] text-2xl">
+            <a href="https://www.facebook.com/jassalsignsltd/" aria-label="Facebook" className="hover:text-[#ED1D26] text-2xl">
               <FaFacebook />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-[#ED1D26] text-2xl">
+            <a href="https://www.instagram.com/jassal_signs/?hl=en" aria-label="Instagram" className="hover:text-[#ED1D26] text-2xl">
               <FaInstagram />
             </a>
-            <a href="#" aria-label="aedIn" className="hover:text-[#ED1D26] text-2xl">
+            <a href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca" aria-label="aedIn" className="hover:text-[#ED1D26] text-2xl">
               <FaLinkedin />
             </a>
           </div>
@@ -36,7 +36,7 @@ const CityFooter = () => {
         {/* Quick as */}
         <div>
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
-          <ul className="space-y-2 text-gray-300 ">
+          <ul className="space-y-2 text-white ">
             <li>
               <a href="#" className="hover:text-[#ED1D26] text-[16px]">Home</a>
             </li>
@@ -61,7 +61,7 @@ const CityFooter = () => {
         {/* Products */}
         <div>
           <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
-          <ul className="space-y-2 text-gray-300 text-sm">
+          <ul className="space-y-2 text-white text-sm">
             <li><a href="#indoor-sign" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
 
             <li><a href="#vehicle-wrap" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
