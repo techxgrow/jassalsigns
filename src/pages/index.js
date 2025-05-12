@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-import LeftNavbar from "@/components/LeftNavbar";
-import RightNavbar from "@/components/RightNavbar";
+import Locations from "@/components/Locations";
 import Services from "@/components/Services";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Navbar from "@/components/Navbar";
+import CityFooter from "@/components/CityFooter";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+ 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black text-white">
+        {/* Splash screen content */}
+        <img src="/logo.png" alt="Loading" className="w-80   animate-bounce" />
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen w-full text-white overflow-hidden">
@@ -28,7 +47,7 @@ export default function Home() {
       {/* Top Bar */}
       <div className="w-full flex justify-between items-center pl-4 sm:pl-20 pt-4">
         <Link href="/">
-          <img src="/logo.webp" className="w-[140px]" alt="Logo" />
+          <img src="/logo.png" className="w-[140px]" alt="Logo" />
         </Link>
 
         <button
@@ -48,35 +67,31 @@ export default function Home() {
       </div>
 
       {/* Main Layout */}
-      <div className="min-h-screen w-full px-4 sm:px-0">
-        {/* Desktop layout */}
-        <div className="hidden md:grid w-full h-full lg:px-20 gap-4 md:grid-cols-[240px_auto_240px] items-center min-h-screen">
-          <div>
-            <LeftNavbar />
-          </div>
+      <div className="w-full px-4 sm:px-0">
+        <div className="lg:px-20 gap-4">
           <div>
             <Services />
           </div>
-          <div>
-            <RightNavbar />
-          </div>
+        </div>
+
+        <div>
+          <Locations />
         </div>
 
         {/* Mobile menu */}
-        {menuOpen && (
+        {menuOpen ? (
           <div className="md:hidden w-full px-4 mt-6">
             <Navbar />
           </div>
-        )}
-
-        {!menuOpen && (
+        ) : (
           <div className="md:hidden mt-10">
             <Services />
           </div>
         )}
       </div>
 
-      <HomepageFooter/>
+      <HomepageFooter />
+    
     </div>
   );
 }

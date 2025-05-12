@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SmallTextAnimation from "./ui/SmallTextAnimation";
 import Link from "next/link";
 
 
@@ -32,11 +33,11 @@ const CitySlider = ({cityName}) => {
 
         <div className="relative z-10 max-w-[1280px] mx-auto  flex items-center h-full">
           <div className=" text-white" data-aos="fade-up" data-aos-delay="300">
-            <p className="text-lg uppercase tracking-widest font-medium text-orange-400 mb-2 text-center  md:text-left">
+            <p className="text-lg uppercase tracking-widest font-medium text-[#ED1D26] mb-2 text-center  md:text-left">
               We Bring Brands To Life
             </p>
             <h1 className="text-4xl leading-[3rem] text-center max-w-[800px]  uppercase md:text-left font-extrabold  lg:text-7xl lg:leading-[6.5rem]">
-              {slide.title} IN <span className="text-orange-500">{cityName}</span>
+              {slide.title} IN <SmallTextAnimation text={`${cityName}`} textColor="#ED1D26" fontSize="70px"  className="text-[#ED1D26]"></SmallTextAnimation>
             </h1>
 
        

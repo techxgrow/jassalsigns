@@ -8,75 +8,66 @@ import "swiper/css/navigation";
 const blogs = [
   {
     image: "/citypage/blogs/blog1.jpg",
-    category: "Branding",
-    title: "Usability Secrets to Create Interfaces",
+    category: "Boost Branding with Indoor Signs",
+    title: "Discover how indoor signage can enhance customer experience and reflect your brand’s personality inside your workspace.",
     link: "#",
   },
   {
     image: "/citypage/blogs/blog2.jpg",
-    category: "Design",
-    title: "The Main Thing For The Web Designer",
+    category: "Turn Vehicles Into Billboards",
+    title: "Custom vehicle wraps help you advertise on the move—perfect for gaining local attention and showcasing your business.",
     link: "#",
   },
   {
     image: "/citypage/blogs/blog3.jpg",
-    category: "Design",
-    title: "3 Ways To Level Up Your Photography",
+    category: "Print Still Makes Impact",
+    title: "Modern print media like flyers and brochures are powerful tools for tangible, lasting brand communication.",
     link: "#",
   },
   {
     image: "/citypage/blogs/blog4.jpg",
-    category: "Technology",
-    title: "From Vision to Reality: The Art of Custom Signage",
+    category: "Stand Out with Outdoor Signs",
+    title: "From storefronts to billboards, outdoor signs are essential for grabbing attention and driving foot traffic.",
     link: "#",
   },
 ];
 
 export default function BlogsSection() {
   return (
-    <section className=" max-w-[1280px] mx-auto md:py-16 pt-20 bg-white mb-[60px] md:mb-0  px-6 md:px-0">
-      <div className="  text-center ">
-        <div className="mb-[30px] text-center" data-aos="fade-up">
-          <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">OUR INSIGHTS</p>
-          <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold">LATEST BLOGS</h1>
-        </div>
-
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop
-          autoplay={{ delay: 4000 }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {blogs.map((blog, idx) => (
-            <SwiperSlide key={idx}>
-              <a
-                href={blog.link}
-                className="block h-80 overflow-hidden shadow-md group "
-              >
-                {/* Hover effect container */}
-                <div
-                  className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110  relative"
-                  style={{ backgroundImage: `url(${blog.image})` }}
-                >
-                  {/* Dark overlay */}
-                  <div className="h-full w-full flex flex-col justify-end p-6 text-white  bg-black/40">
-                    <span className="text-sm uppercase text-orange-400 font-semibold mb-1 z-10">
-                      {blog.category}
-                    </span>
-                    <h3 className="text-xl font-bold mb-2 z-10">{blog.title}</h3>
-                    <span className="text-sm underline text-blue-300 z-10">Read More</span>
-                  </div>
-                </div>
-              </a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className="max-w-[1280px] mx-auto md:py-16 py-12 px-6 md:px-0 bg-white">
+      <div className="text-center mb-10" data-aos="fade-up">
+        <p className="text-[#ED1D26] text-xl md:text-2xl uppercase mb-2">Our Insights</p>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">Latest Blogs</h1>
       </div>
+
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop
+        autoplay={{ delay: 4000 }}
+        breakpoints={{
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+      >
+        {blogs.map((blog, idx) => (
+          <SwiperSlide key={idx}>
+            {/* <a href={blog.link} className="block shadow-md rounded-lg overflow-hidden group transition-all duration-300"> */}
+              <div className="relative w-full h-52  block shadow-md rounded-lg overflow-hidden group transition-all duration-30">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${blog.image})` }}
+                />
+              </div>
+              <div className="p-4 bg-white">
+                <h2 className="uppercase text-[#ED1D26] font-semibold text-lg mb-2">{blog.category}</h2>
+                <p className="text-gray-800 text-md leading-relaxed">{blog.title}</p>
+              </div>
+            {/* </a> */}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

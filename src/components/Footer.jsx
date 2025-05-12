@@ -23,7 +23,7 @@ const Footer = () => {
                 className="bg-gray-800 text-white px-4 py-2 w-full "
               />
             </div>
-            <button className="bg-orange-500 text-black py-2 px-4  w-full">
+            <button className=" text-black py-2 px-4  w-full">
               Subscribe Us!
             </button>
             <div className="flex items-center justify-center md:justify-start space-x-2">

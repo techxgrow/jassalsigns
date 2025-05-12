@@ -67,7 +67,7 @@ const CityPage = () => {
        <BlogsSection/>
        <OurClients/>
        <ContactUs />
-        <CityPlacesSection /> 
+        {/* <CityPlacesSection />  */}
       <CityFooter/>
      </>
   )

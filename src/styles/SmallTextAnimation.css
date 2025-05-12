@@ -1,0 +1,33 @@
+.page {
+    display: inline-block; 
+ 
+  }
+
+.text {
+    position: relative;
+    font-size: var(--font-size,70px)!important; /* Use fontSize prop or fallback to clamp */
+    /* color: var(--text-color); */
+    color:white;
+    font-weight: bold;
+  }
+  
+  .text::before {
+    animation-name: anim;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 0;
+    overflow: hidden;
+    content: attr(data-text);
+    color: var(--text-color);
+  }
+  
+  @keyframes anim {
+    50%, 80% {
+      width: 100%;
+    }
+  }
+  

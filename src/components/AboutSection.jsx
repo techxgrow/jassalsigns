@@ -28,9 +28,9 @@ const AboutSection = () => {
         <div className="flex   flex-col items-center md:items-start gap-10" data-aos="fade-bottom"  data-aos-duration="2000">
           <h1 className="text-gray-900 md:text-left text-center text-3xl font-extrabold uppercase w-[280px]">
             We create mass public's eye{" "}
-            <span className="text-orange-600">attention</span>
+            <span className="text-red-600">attention</span>
           </h1>
-          <h4 className="text-gray-900 uppercase underline md:text-left text-center underline-offset-4 decoration-orange-600">
+          <h4 className="text-gray-900 uppercase underline md:text-left text-center underline-offset-4 decoration-red-700">
             Who We Are
           </h4>
         </div>
@@ -44,21 +44,21 @@ const AboutSection = () => {
           {/* Counter Section */}
           <div className="grid grid-cols-3 " ref={ref}>
             <div className="text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl text-orange-600 font-extrabold">
+              <h1 className="text-2xl md:text-3xl text-red-600  font-extrabold">
                 {inView ? <CountUp start={0} end={250} duration={2} /> : "0"}+
               </h1>
               <p className="text-gray-900">Screen Place</p>
             </div>
 
             <div className="text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl text-orange-600 font-extrabold">
+              <h1 className="text-2xl md:text-3xl text-red-600  font-extrabold">
                 {inView ? <CountUp start={0} end={78} duration={2} /> : "0"}K
               </h1>
               <p className="text-gray-900">People Reached</p>
             </div>
 
             <div className="text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl text-orange-600 font-extrabold">
+              <h1 className="text-2xl md:text-3xl text-red-600  font-extrabold">
                 {inView ? <CountUp start={0} end={49} duration={2} /> : "0"}+
               </h1>
               <p className="text-gray-900">Country Cover</p>
@@ -69,9 +69,9 @@ const AboutSection = () => {
 
       {/* Section Header */}
       <div className=" mb-[30px] text-center" data-aos="fade-up" id="service">
-        <p className="md:text-2xl text-xl text-orange-600 uppercase mb-3">what we Do</p>
+        <p className="md:text-2xl text-xl text-red-600 uppercase mb-3">what we Do</p>
         <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold">
-          OUR SERVICES <span className="text-orange-600"></span>
+          OUR SERVICES 
         </h1>
       </div>
     </div>

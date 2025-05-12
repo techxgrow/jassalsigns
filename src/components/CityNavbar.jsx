@@ -29,7 +29,7 @@ const CityNavbar = () => {
       <div className="max-w-[1280px] mx-auto flex items-center justify-between py-4 px-6 md:px-0 ">
         {/* Logo */}
         <Link href="/">
-          <img src="/logo.webp" className="w-[140px]" alt="Logo" />
+          <img src="/logo.png" className="w-[140px]" alt="Logo" />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -51,30 +51,26 @@ const CityNavbar = () => {
         >
           <ul className="flex flex-col items-center gap-6 md:flex-row md:gap-6 text-xl font-medium">
             <li>
-              <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
+              <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-[#ED1D26] transition-colors">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#service" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
+              <Link href="#service" onClick={() => setMenuOpen(false)} className="hover:text-[#ED1D26] transition-colors">
                 Service
               </Link>
             </li>
             <li>
-              <Link href="#gallery" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
+              <Link href="#gallery" onClick={() => setMenuOpen(false)} className="hover:text-[#ED1D26] transition-colors">
                 Gallery
               </Link>
             </li>
             <li>
-              <Link href="#about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
-                About Us
+              <Link href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#ED1D26] transition-colors">
+                Blogs
               </Link>
             </li>
-            <li>
-              <Link href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors">
-                Contact
-              </Link>
-            </li>
+         
           </ul>
         </div>
 

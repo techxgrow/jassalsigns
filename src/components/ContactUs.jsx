@@ -60,7 +60,7 @@ const ContactUs = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-orange-500 text-white py-2  hover:bg-orange-700 transition cursor-pointer"
+              className="w-full bg-[#ED1D26] text-white py-2  hover:bg-orange-700 transition cursor-pointer"
             >
               Submit
             </button>

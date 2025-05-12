@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css"; 
+import SmallTextAnimation from "./ui/SmallTextAnimation";
+
+
 
 const servicesData = [
  
@@ -22,44 +25,51 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto md:border-x-1 md:border-x-white mb-10 text-center px-6 py-12">
+    <div className=" mx-auto  text-center py-4">
      
       {/* Section Heading */}
       <h2 data-aos="fade-up" className="text-xl font-medium text-gray-300 tracking-wide uppercase">
         Discover the Difference a Well-Crafted Sign Can Make
       </h2>
 
-      <h2 
-        data-aos="fade-up" 
-        data-aos-delay="100" 
-        className="text-xl font-medium text-gray-300 uppercase mt-2"
-      >
-        Choose Your Nearest Jassal Signs Location
-      </h2>
+
+     
 
       <h1 
         data-aos="fade-up" 
         data-aos-delay="200"
-        className="text-5xl md:text-6xl font-bold text-white mt-6"
+        className="text-5xl md:text-6xl font-bold  text-white mt-2"
       >
-        Let’s <span className="text-orange-500">ILLUMINATE</span> Your Sign
+        {/* <span className="text-[#ED1D26] "></span> */}
+        Let’s <SmallTextAnimation text="ILLUMINATE" textColor="#ED1D26" fontSize="60px" /> Your Sign
       </h1>
 
       {/* Dynamic Grid for Services */}
-      <div className="mt-12 flex flex-wrap justify-center gap-x-3 gap-y-5  ">
+      <div className="mt-4 grid grid-cols-5 justify-center gap-x-2 gap-y-5   ">
         {servicesData.map((service, index) => (
-          <div
-            key={index}
-            data-aos="zoom-in"
-            data-aos-delay={index * 100} // Stagger animation
-            className=" p-6 rounded-lg shadow-lg md:w-[32%]  w-[100%]
-                       hover:scale-105 hover:shadow-lg shadow-gray-500/30 transition-transform duration-600 ease-in-out"
-          >
-            <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
-            <p className="text-gray-400 mt-2">{service.desc}</p>
-          </div>
+         <div 
+         key={index}
+         data-aos="zoom-in"
+         data-aos-delay={index * 100}
+         className="p-6 rounded-lg md:w-[250px] w-full 
+                    shadow-[0_4px_10px_rgba(200,200,200,0.4)] 
+                    hover:shadow-[#ED1D26] 
+                    hover:scale-110 transition-all duration-300 ease-in-out 
+                    service_animation"
+       >
+         <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+         <p className="text-white mt-2">{service.desc}</p>
+       </div>
         ))}
       </div>
+      <h2 
+        data-aos="fade-up" 
+        data-aos-delay="100" 
+        className="text-xl font-medium text-gray-300 uppercase mt-6"
+      >
+        Choose Your Nearest Jassal Signs Location
+      </h2>
+     
       
     </div>
   );
