@@ -55,6 +55,7 @@ export default function Home() {
           autoPlay
           loop
           muted
+          poster="/fallback.png" // fallback image path
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           src="/background.mov"
         />
@@ -92,16 +93,41 @@ export default function Home() {
         <div className="w-full md:h-[800px] px-4 sm:px-0">
           <div className="max-w-[1360px] justify-items-center mx-auto grid gap-[4%] grid-cols-[1fr_60%_1fr]">
             <div className="hidden md:flex w-full flex-col gap-6 justify-center items-center md:items-start">
-              <Link href="/citypage/SURREY" className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">SURREY</Link>
-              <Link href="/citypage/CLOVERDALE" className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">CLOVERDALE</Link>
-              <Link href="/citypage/ABBOTSFORD" className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">ABBOTSFORD</Link>
+              <Link
+                href="/citypage/SURREY"
+                className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
+              >
+                SURREY
+              </Link>
+              <Link
+                href="/citypage/CLOVERDALE"
+                className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
+              >
+                CLOVERDALE
+              </Link>
+              <Link
+                href="/citypage/ABBOTSFORD"
+                className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
+              >
+                ABBOTSFORD
+              </Link>
             </div>
             <div>
               <Services />
             </div>
             <div className="w-full flex flex-col gap-10 justify-center pl-6">
-              <Link href="/citypage/EDMONTON" className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">EDMONTON</Link>
-              <Link href="/citypage/CALGARY" className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">CALGARY</Link>
+              <Link
+                href="/citypage/EDMONTON"
+                className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
+              >
+                EDMONTON
+              </Link>
+              <Link
+                href="/citypage/CALGARY"
+                className="font-bold cursor-pointer hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
+              >
+                CALGARY
+              </Link>
             </div>
           </div>
         </div>
