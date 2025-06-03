@@ -7,7 +7,7 @@
 .marquee-track {
   display: flex;
   width: fit-content;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 50s linear infinite;
   will-change: transform;
 }
 

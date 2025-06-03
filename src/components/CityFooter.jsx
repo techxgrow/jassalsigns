@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
-
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const CityFooter = () => {
   return (
@@ -17,63 +12,206 @@ const CityFooter = () => {
           {/* About Text */}
           <p className="text-[16px] text-white leading-relaxed">
             Jassal Signs is a full-service signage company. We specialize in
-            high-quality cushrefm signs for businesses across various industries.
+            high-quality cushrefm signs for businesses across various
+            industries.
           </p>
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 text-lg">
-            <a href="https://www.facebook.com/jassalsignsltd/" aria-label="Facebook" className="hover:text-[#ED1D26] text-2xl">
+            <a
+              href="https://www.facebook.com/jassalsignsltd/"
+              aria-label="Facebook"
+              className="hover:text-[#ED1D26] text-2xl"
+            >
               <FaFacebook />
             </a>
-            <a href="https://www.instagram.com/jassal_signs/?hl=en" aria-label="Instagram" className="hover:text-[#ED1D26] text-2xl">
+            <a
+              href="https://www.instagram.com/jassal_signs/?hl=en"
+              aria-label="Instagram"
+              className="hover:text-[#ED1D26] text-2xl"
+            >
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca" aria-label="aedIn" className="hover:text-[#ED1D26] text-2xl">
+            <a
+              href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca"
+              aria-label="aedIn"
+              className="hover:text-[#ED1D26] text-2xl"
+            >
               <FaLinkedin />
             </a>
           </div>
         </div>
 
+        {/* for mobile devices */}
+        <div className="grid grid-cols-2 justify-center md:hidden">
+          {/* Quick as */}
+          <div>
+            <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
+            <ul className="space-y-2 text-white ">
+              <li>
+                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                  Blogs
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
+            <ul className="space-y-2 text-white text-sm">
+              <li>
+                <a
+                  href="#indoor-sign"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Indoor Signs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#vehicle-wrap"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Vehicle Wraps
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#outdoor-sign"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Outdoor Signs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#outdoor-sign"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Channel Letters
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#outdoor-sign"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Pylon Signs
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Quick as */}
-        <div>
+        <div className="hidden md:block">
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
           <ul className="space-y-2 text-white ">
             <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">Home</a>
+              <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                Home
+              </a>
+            </li>
+           
+            <li>
+              <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                Products
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">About Us</a>
+              <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                Blogs
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">Products</a>
+              <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                Gallery
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">Blogs</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">Gallery</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#ED1D26] text-[16px]">Contact Us</a>
+              <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>
 
         {/* Products */}
-        <div>
+        <div className="hidden md:block">
           <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
           <ul className="space-y-2 text-white text-sm">
-            <li><a href="#indoor-sign" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
+            <li>
+              <a
+                href="#indoor-sign"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Indoor Signs
+              </a>
+            </li>
 
-            <li><a href="#vehicle-wrap" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
-            <li><a href="#print-media" className="hover:text-[#ED1D26] text-[16px]">Print Media</a></li>
-            <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
+            <li>
+              <a
+                href="#vehicle-wrap"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Vehicle Wraps
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#outdoor-sign"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Outdoor Signs
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#outdoor-sign"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Channel Letters
+              </a>
+            </li>
+            <li>
+              <a
+                href="#outdoor-sign"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Pylon Signs
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Subscribe */}
         <div>
           <h2 className="text-lg font-semibold mb-4">
-          SUBSCRIBE TO OUR SIGNAGE INSIGHTS
+            SUBSCRIBE TO OUR SIGNAGE INSIGHTS
           </h2>
           <form className="space-y-3">
             <input

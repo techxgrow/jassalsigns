@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 const OurServices = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -16,25 +16,31 @@ const OurServices = () => {
         imgSrc: "https://img.freepik.com/premium-photo/exit-sign-that-says-exit-it_916191-394664.jpg?w=1380",
         category: "INDOOR SIGNS",
         title: "We make sure your message meets the masses.",
-        link: "indoor-sign"
+        link: "/products/indoorsigns"
       },
       {
         imgSrc: "/citypage/services/vehiclewraps.jpg",
         category: "VEHICLE WRAPS",
         title: "Transform your vehicle with Jassal Signs!",
-        link: "vehicle-wrap"
+        link: "/products/vehiclewraps"
       },
       {
         imgSrc: "/citypage/services/printmedia.jpg",
-        category: "PRINT MEDIA",
-        title: "Print your vision with Jassal Signs",
-        link: "print-media"
+        category: "CHANNEL LETTERS",
+        title: "Shine bright with custom Channel Letters by Jassal Signs",
+        link: "/products/channelletters"
       },
       {
-        imgSrc: "https://img.freepik.com/free-photo/empty-billboard-metropolis-city_23-2151913695.jpg?t=st=1746968178~exp=1746971778~hmac=92e325dd6cbf97d02661a6d785b2282c355a97ef5fea741dc13092b2afb91add&w=1800",
+        imgSrc: "/citypage/services/pylonsigns.jpg",
+        category: "PYLON SIGNS",
+        title: "Stand tall with impactful Pylon Signs by Jassal Signs",
+        link: "/products/pylonsigns"
+      },
+      {
+        imgSrc: "/citypage/services/outdoorsigns.jpg",
         category: "OUTDOOR SIGNS",
         title: "We make sure your message meets the masses.",
-        link: "outdoor-sign"
+        link: "/products/outdoorsigns"
       }
   ];
 
@@ -46,9 +52,9 @@ const OurServices = () => {
       <div >
         
           {portfolioItems.map((item, index) => (
-  <div className="overflow-hidden group" id={item.link} key={index}>
+  <Link href={item.link}  className="overflow-hidden group" id={item.link} key={index}>
     <div
-      className="md:h-[300px] h-[180px] relative w-full bg-no-repeat bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-[1.1] transition-all duration-1000"
+      className="md:h-[280px] h-[180px] relative w-full bg-no-repeat bg-cover bg-center md:grayscale group-hover:grayscale-0 group-hover:scale-[1.1] transition-all duration-1000"
       style={{ backgroundImage: `url(${item.imgSrc})` }}
     >
       {/* Black overlay */}
@@ -64,7 +70,7 @@ const OurServices = () => {
         </p>
       </div>
     </div>
-  </div>
+  </Link>
 ))}
        
       </div>

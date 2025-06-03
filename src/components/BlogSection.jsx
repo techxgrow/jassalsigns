@@ -4,31 +4,32 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const blogs = [
   {
     image: "/citypage/blogs/blog1.jpg",
     category: "Boost Branding with Indoor Signs",
     title: "Discover how indoor signage can enhance customer experience and reflect your brand’s personality inside your workspace.",
-    link: "#",
+    link: "/boost-branding-with-indoor-signs/",
   },
   {
     image: "/citypage/blogs/blog2.jpg",
     category: "Turn Vehicles Into Billboards",
     title: "Custom vehicle wraps help you advertise on the move—perfect for gaining local attention and showcasing your business.",
-    link: "#",
+    link: "/turn-vehicles-into-billboards/",
   },
   {
     image: "/citypage/blogs/blog3.jpg",
     category: "Print Still Makes Impact",
     title: "Modern print media like flyers and brochures are powerful tools for tangible, lasting brand communication.",
-    link: "#",
+    link: "/print-still-makes-impact/",
   },
   {
     image: "/citypage/blogs/blog4.jpg",
     category: "Stand Out with Outdoor Signs",
     title: "From storefronts to billboards, outdoor signs are essential for grabbing attention and driving foot traffic.",
-    link: "#",
+    link: "/stand-out-with-outdoor-signs/",
   },
 ];
 
@@ -63,6 +64,7 @@ export default function BlogsSection() {
               <div className="p-4 bg-white">
                 <h2 className="uppercase text-[#ED1D26] font-semibold text-lg mb-2">{blog.category}</h2>
                 <p className="text-gray-800 text-md leading-relaxed">{blog.title}</p>
+                <Link href={`/blogs/${blog.link}`} className="text-[#ED1D26] font-bold decoration-0">Read More</Link>
               </div>
             {/* </a> */}
           </SwiperSlide>

@@ -7,8 +7,8 @@ import {
 
 const HomepageFooter = () => {
   return (
-    <footer className="bg-[#111] text-white py-10 px-20 bg-[url('/footer-bg.png')] bg-cover bg-center">
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 ">
+    <footer className="bg-[#111]  text-white py-10 px-5 bg-[url('/footer-bg.png')] bg-cover bg-center">
+      <div className="mx-auto max-w-[1360px] grid grid-cols-1 md:grid-cols-4 gap-10 ">
         
         {/* About / Logo */}
         <div>
@@ -42,7 +42,6 @@ const HomepageFooter = () => {
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
           <ul className="space-y-2 text-white text-sm">
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Home</a></li>
-            <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">About Us</a></li>
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Products</a></li>
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Blogs</a></li>
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Gallery</a></li>
@@ -55,12 +54,13 @@ const HomepageFooter = () => {
         {/* Products */}
         <div>
           <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
-          <ul className="space-y-2 text-gray-300 text-sm">
+          <ul className="space-y-2 text-white text-sm">
             <li><a href="#indoor-sign" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
 
             <li><a href="#vehicle-wrap" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
-            <li><a href="#print-media" className="hover:text-[#ED1D26] text-[16px]">Print Media</a></li>
             <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
+              <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</a></li>
+               <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</a></li>
           </ul>
         </div>
       
@@ -90,7 +90,7 @@ const HomepageFooter = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-white mt-10 pt-6 text-center text-white text-sm">
+      <div className="border-t mx-auto max-w-[1360px] border-white mt-10 pt-6 text-center text-white text-sm">
         <p>2025 © Copyright, All Rights Reserved.</p>
       </div>
     </footer>

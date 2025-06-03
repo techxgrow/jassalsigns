@@ -5,17 +5,17 @@ const SmallTextAnimation = (props) => {
   const { text, textColor, fontSize } = props;
 
   return (
-    <div
-      className="page"
-      style={{
-        "--text-color": textColor,
-        "--font-size": fontSize, // Setting font size as a CSS variable
-      }}
-    >
-      <h1 className="text page__text" data-text={text}>
-        {text}
-      </h1>
-    </div>
+   <div
+  className="page"
+  style={{
+    "--font-size": fontSize,
+    "--text-gradient": textColor, // for gradient input
+  }}
+>
+  <h1 className="text page__text " data-text={text}>
+    {text}
+  </h1>
+</div>
   );
 };
 

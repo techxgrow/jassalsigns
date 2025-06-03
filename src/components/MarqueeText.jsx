@@ -14,7 +14,7 @@ const texts = [
 
 const MarqueeText = () => {
   return (
-    <div className="marquee-container bg-[#ED1D26] text-[#0083CB]  h-28 flex items-center overflow-hidden" >
+    <div className="marquee-container bg-[#ED1D26] text-white  h-28 flex bg-cover bg-center bg-no-repeat  items-center overflow-hidden" style={{backgroundImage:"url('/citypage/clientsbg.jpg')"}} >
       <div className="marquee-track flex whitespace-nowrap animate-marquee items-center">
         {[...texts, ...texts].map((text, index, array) => (
           <>

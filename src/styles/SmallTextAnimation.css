@@ -1,33 +1,34 @@
 .page {
-    display: inline-block; 
- 
-  }
+  display: inline-block;
+}
 
 .text {
-    position: relative;
-    font-size: var(--font-size,70px)!important; /* Use fontSize prop or fallback to clamp */
-    /* color: var(--text-color); */
-    color:white;
-    font-weight: bold;
+  position: relative;
+  font-size: var(--font-size, 70px) !important;
+  font-weight: bold;
+  color: white; /* fallback color */
+}
+
+/* Animated gradient text layer */
+.text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 0;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: var(--font-size, 70px);
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: anim 4s linear infinite;
+}
+
+@keyframes anim {
+  50%, 80% {
+    width: 100%;
   }
-  
-  .text::before {
-    animation-name: anim;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    position: absolute;
-    top: 0;
-    left: -2px;
-    width: 0;
-    overflow: hidden;
-    content: attr(data-text);
-    color: var(--text-color);
-  }
-  
-  @keyframes anim {
-    50%, 80% {
-      width: 100%;
-    }
-  }
-  
+}

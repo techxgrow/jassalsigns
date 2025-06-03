@@ -15,6 +15,7 @@ import CityPlacesSection from '@/components/CityCardSection';
 import Testimonials  from '@/components/Testimonials';
 import OurClients from '@/components/OurClients';
 import SignageGallery from '@/components/SignageGallery';
+import { Element } from 'react-scroll';
 
 
 
@@ -22,6 +23,7 @@ import SignageGallery from '@/components/SignageGallery';
 const CityPage = () => {
 
   const router=useRouter();
+  console.log("cityname:",router.query.slug)
 
   
 
@@ -54,19 +56,29 @@ const CityPage = () => {
     <>
        <CityNavbar/>
        <CitySlider cityName={router.query.slug}/>
+         <Element name='productSection'>
        <AboutSection/>
+        </Element>
       
-       
         <OurServices />
+      
         <MarqueeText />
         <Testimonials testimonials={testimonialsData} autoplay="true" />
+        <Element name='gallerySection'>
         <SignageGallery/>
+        </Element>
     
        <ExpertMediaAgency />
       
-       <BlogsSection/>
+      <Element name='blogsSection' className='border border-black '>
+              <BlogsSection/>
+      </Element>
+    
        <OurClients/>
-       <ContactUs />
+
+       <Element name='contactSection'>
+       <ContactUs city={router.query.slug} />
+       </Element>
         {/* <CityPlacesSection />  */}
       <CityFooter/>
      </>
