@@ -48,7 +48,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-full text-white overflow-hidden">
+    <div className="relative w-full bg-black text-white overflow-hidden">
       <div className="md:h-screen relative">
         {/* Background Video */}
         <video
