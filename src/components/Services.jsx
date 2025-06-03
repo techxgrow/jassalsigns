@@ -28,7 +28,7 @@ const Services = () => {
        <h2 data-aos="fade-up" className="text-xl font-medium text-gray-300 tracking-wide  uppercase">
         Discover the Difference a Well-Crafted Sign Can Make
       </h2>
-         <h2 data-aos="fade-up" className="text-xl font-medium text-gray-300 tracking-wide  uppercase">
+         <h2 data-aos="fade-up" className="text-xl mt-3 font-medium text-gray-300 tracking-wide  uppercase">
         Choose Your Nearest Jassal Signs Location
       </h2>
      </div>
@@ -38,7 +38,7 @@ const Services = () => {
       <h1
         data-aos="fade-up"
         data-aos-delay="200"
-        className="text-5xl md:text-6xl font-bold text-white my-10"
+        className="text-5xl md:text-6xl font-bold text-white my-6"
       >
         Let’s <SmallTextAnimation
           text="ILLUMINATE"
