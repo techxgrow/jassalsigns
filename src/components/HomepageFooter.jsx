@@ -7,7 +7,7 @@ import {
 
 const HomepageFooter = () => {
   return (
-    <footer className="bg-[#111]  text-white py-10 px-5 bg-[url('/footer-bg.png')] bg-cover bg-center">
+    <footer className="bg-transparent text-white py-10 px-5 ">
       <div className="mx-auto max-w-[1360px] grid grid-cols-1 md:grid-cols-4 gap-10 ">
         
         {/* About / Logo */}

@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="relative w-full  text-white overflow-hidden">
-      <div className="md:h-screen relative">
+      <div className=" relative">
         {/* Background Video */}
         <video
           autoPlay
@@ -90,7 +90,7 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-        <div className="max-w-[1360px] mx-auto md:h-[800px] px-4 sm:px-0">
+        <div className="max-w-[1360px] mx-auto  px-4 sm:px-0">
           <div className=" justify-items-center  grid gap-[4%] grid-cols-[1fr_60%_1fr]">
             <div className="hidden md:flex w-full flex-col gap-6 justify-center items-center md:items-start">
               <Link
@@ -131,9 +131,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+         <HomepageFooter />
       </div>
 
-      <HomepageFooter />
+     
     </div>
   );
 }
