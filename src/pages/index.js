@@ -61,8 +61,8 @@ export default function Home() {
         />
 
         {/* Top Bar */}
-        <div className="max-w-[1360px] flex justify-between items-center pl-4 sm:pl-20 pt-4">
-          <Link href="/">
+        <div className="max-w-[1360px]  mx-auto    pt-4">
+          <Link href="/" >
             <img src="/logo.png" className="w-[140px]" alt="Logo" />
           </Link>
 
@@ -90,8 +90,8 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-        <div className="w-full md:h-[800px] px-4 sm:px-0">
-          <div className="max-w-[1360px] justify-items-center mx-auto grid gap-[4%] grid-cols-[1fr_60%_1fr]">
+        <div className="max-w-[1360px] mx-auto md:h-[800px] px-4 sm:px-0">
+          <div className=" justify-items-center  grid gap-[4%] grid-cols-[1fr_60%_1fr]">
             <div className="hidden md:flex w-full flex-col gap-6 justify-center items-center md:items-start">
               <Link
                 href="/citypage/SURREY"
