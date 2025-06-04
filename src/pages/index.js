@@ -15,31 +15,29 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Step 1: Show the text after a small delay (e.g., 300ms)
+    const textTimer = setTimeout(() => {
+      setShowText(true);
+    }, 300);
+
+    // Step 2: Finish loading after 2 seconds
+    const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Disable scroll when menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    }, 2300);
 
     return () => {
-      document.body.style.overflow = "auto";
+      clearTimeout(textTimer);
+      clearTimeout(loadingTimer);
     };
-  }, [menuOpen]);
+  }, []);
 
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black text-white">
-        <h4 className="text-5xl mask-radial-from-stone-500 font-bold typing-container italic ">
+        <h4 className="text-6xl mask-radial-from-stone-500 font-bold typing-container italic ">
           <span className="text-[#0182CA]">JASSAL</span>{" "}
           <span className="text-[#EC1D26]">SIGNS</span>
         </h4>
@@ -48,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-full  text-white overflow-hidden">
+    <div className="relative w-full min-h-screen text-white overflow-hidden">
       <div className=" relative">
         {/* Background Video */}
         <video
@@ -60,14 +58,13 @@ export default function Home() {
           src="/background.mov"
         />
 
-        {/* Top Bar */}
-        <div className="max-w-[1360px]  mx-auto    pt-4">
-          <Link href="/" >
+        <div className="max-w-[1360px] mx-auto px-4 pt-4 flex justify-between items-center relative z-30">
+          <Link href="/">
             <img src="/logo.png" className="w-[140px]" alt="Logo" />
           </Link>
 
           <button
-            className="md:hidden z-30 focus:outline-none pr-4"
+            className="md:hidden focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? (
@@ -131,10 +128,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-         <HomepageFooter />
+        <HomepageFooter />
       </div>
-
-     
     </div>
   );
 }
