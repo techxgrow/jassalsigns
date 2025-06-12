@@ -22,7 +22,7 @@ const Services = () => {
   }, []);
 
   return (
-  <div className="mx-auto text-center py-4 w-full md:w-[900px] border-x-0 md:border-x-2 mt-10 px-4">
+  <div className="mx-auto text-center py-4 w-full md:w-[850px] border-x-0 md:border-x-2 mt-10 px-4">
 
      <div className="my-4">
        <h2 data-aos="fade-up" className="text-xl font-medium text-gray-300 tracking-wide  uppercase">
@@ -38,12 +38,13 @@ const Services = () => {
       <h1
         data-aos="fade-up"
         data-aos-delay="200"
-        className="text-5xl md:text-6xl font-bold text-white my-6"
+        className="text-5xl  md:text-6xl font-bold text-white my-6"
       >
-        Let’s <SmallTextAnimation
+       Let’s <SmallTextAnimation
           text="ILLUMINATE"
           textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
           fontSize="60px"
+          
         /> Your Sign
       </h1>
 
@@ -58,7 +59,7 @@ const Services = () => {
                        hover:shadow-[#ED1D26] hover:scale-110 transition-all 
                        duration-300 ease-in-out service_animation"
           >
-            <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+            <h3 className="text-2xl font-semibold font-grotesk text-white">{service.title}</h3>
             <p className="text-white mt-2">{service.desc}</p>
           </Link>
         ))}

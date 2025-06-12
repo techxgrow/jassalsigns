@@ -40,17 +40,17 @@ export default function CitySlider({ cityName }) {
           <p className="text-md md:text-xl uppercase tracking-widest font-bold text-white text-center mb-2  md:text-left">
             We Bring Brands To Life
           </p>
-          <h1 className="text-3xl leading-[3rem] text-center max-w-[800px] uppercase md:text-left font-extrabold lg:text-7xl lg:leading-[6.5rem]">
-            JASSAL SIGNS SIGNAGE SERVICES IN{" "}
+          <h1 className="text-3xl  leading-[3rem] text-center max-w-[800px] uppercase md:text-left font-extrabold lg:text-7xl lg:leading-[5.5rem]">
+            JASSAL SIGNS SIGNAGE AND PRINTING SERVICES IN{" "}
             {/* for desktop device*/}
-            <div className="hidden md:block">
+            <span className="hidden md:inline">
                <SmallTextAnimation
               text={`${cityName}`}
               textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
               fontSize="70px"
             />
 
-            </div>
+            </span>
             {/* for mobile device */}
             <div className="block md:hidden">
                <SmallTextAnimation

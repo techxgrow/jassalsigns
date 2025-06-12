@@ -23,6 +23,7 @@ const images = [
 
 const ProductPage = () => {
   const router = useRouter();
+  const slug = router.query.slug;
 
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 100 });
@@ -35,18 +36,25 @@ const ProductPage = () => {
       <CityNavbar />
 
       {/* Header Start */}
-      <div
-        className="relative h-[400px] bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/productsbg.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/30 flex flex-col gap-4 justify-center items-center text-center px-4">
-          <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl text-white">
-            {data.productPage[router.query.slug]?.heading}
+      <div className="relative h-[400px] overflow-hidden">
+        {/* Animated Background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center animate-zoom-slow"
+          style={{
+            backgroundImage: slug ? `url(/productsimages/${slug}.jpg)` : "none",
+          }}
+        ></div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+
+        {/* Text Content */}
+        <div className="relative z-20 flex flex-col gap-4 justify-center items-center text-center h-full px-4">
+          <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl font-grotesk text-white">
+            {data.productPage[slug]?.heading}
           </h2>
-          <h4 className="text-gray-200 text-sm sm:text-base font-semibold">
-            {`Products > ${data.productPage[router.query.slug]?.heading}`}
+          <h4 className="text-gray-200 text-sm sm:text-base font-semibold font-grotesk">
+            {`Products > ${data.productPage[slug]?.heading}`}
           </h4>
         </div>
       </div>
@@ -55,21 +63,21 @@ const ProductPage = () => {
       <div className="max-w-[1280px] mx-auto py-10 px-4 sm:px-6">
         {/* Top Paragraph */}
         <p className="my-4 text-base sm:text-lg text-gray-700">
-          {data.productPage[router.query.slug]?.para1}
+          {data.productPage[slug]?.para1}
         </p>
 
         {/* Consultation Section */}
         <div className="grid grid-cols-1 md:grid-cols-[58%_40%] gap-8">
           {/* Left Section */}
           <div className="p-0 sm:p-4">
-            <h3 className="text-base sm:text-lg font-bold mt-4 mb-2">
-              {data.productPage[router.query.slug]?.consultationObj?.heading}
+            <h3 className="text-base sm:text-lg font-bold mt-4 mb-2 ">
+              {data.productPage[slug]?.consultationObj?.heading}
             </h3>
             <h4 className="text-sm sm:text-base mb-4">
-              {data.productPage[router.query.slug]?.consultationObj?.subHeading}
+              {data.productPage[slug]?.consultationObj?.subHeading}
             </h4>
             <ul className="list-disc list-inside space-y-2 ml-4 sm:ml-2 mb-4 text-sm sm:text-base text-gray-800">
-              {data.productPage[router.query.slug]?.consultationObj?.bulletList.map((item, index) => (
+              {data.productPage[slug]?.consultationObj?.bulletList.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -86,7 +94,7 @@ const ProductPage = () => {
 
         {/* Paragraph 2 */}
         <p className="my-4 text-base sm:text-lg text-gray-700">
-          {data.productPage[router.query.slug]?.para2}
+          {data.productPage[slug]?.para2}
         </p>
 
         {/* Gallery */}
@@ -116,7 +124,7 @@ const ProductPage = () => {
         {/* Remaining Paragraphs */}
         {[3, 4, 5].map((num) => (
           <p key={num} className="my-4 text-base sm:text-lg text-gray-700">
-            {data.productPage[router.query.slug]?.[`para${num}`]}
+            {data.productPage[slug]?.[`para${num}`]}
           </p>
         ))}
       </div>
