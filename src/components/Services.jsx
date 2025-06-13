@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 import SmallTextAnimation from "./ui/SmallTextAnimation";
@@ -21,6 +21,24 @@ const Services = () => {
     });
   }, []);
 
+
+    const [fontSize, setFontSize] = useState("60px");
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      const width = window.innerWidth;
+      if (width < 400) setFontSize("50px");
+      else if (width < 640) setFontSize("60px");
+      else if (width < 768) setFontSize("50px");
+      else setFontSize("60px");
+    };
+
+    updateFontSize(); // Initial run
+    window.addEventListener("resize", updateFontSize); // Update on resize
+
+    return () => window.removeEventListener("resize", updateFontSize);
+  }, []);
+
   return (
   <div className="mx-auto text-center py-4 w-full md:w-[850px] border-x-0 md:border-x-2 mt-10 px-4">
 
@@ -38,14 +56,15 @@ const Services = () => {
       <h1
         data-aos="fade-up"
         data-aos-delay="200"
-        className="text-5xl  md:text-6xl font-bold text-white my-6"
+        className=" text-4xl sm:text-6xl  md:text-6xl font-bold text-white my-6 flex md:gap-4 flex-col md:flex-row justify-center "
       >
-       Let’s <SmallTextAnimation
-          text="ILLUMINATE"
-          textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-          fontSize="60px"
-          
-        /> Your Sign
+       <span>Let’s</span> 
+       <span><SmallTextAnimation
+        text="ILLUMINATE"
+        textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+        fontSize={fontSize}
+      /></span>
+       <span>Your Sign</span>
       </h1>
 
       <div className="mt-8 flex justify-center items-center flex-wrap gap-6 ">

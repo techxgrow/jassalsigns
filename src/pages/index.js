@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from 'typewriter-effect';
+
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -15,26 +16,28 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [textColor, setTextColor] = useState('red');
 
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 3400); // ~5.3 seconds
-
-    return () => {
-      clearTimeout(loadingTimer);
-    };
+    }, 3400);
+    return () => clearTimeout(loadingTimer);
   }, []);
 
   if (isLoading) {
-    return <div className="w-full h-screen flex justify-center text-3xl font-bold items-center text-white bg-black" >
-<Typewriter
-  onInit={(typewriter) => {
-     typewriter.typeString('<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>').start();
-  }}
-/>
-      </div>;
+    return (
+      <div className="w-full h-screen flex justify-center text-3xl font-bold items-center text-white bg-black">
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(
+                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>'
+              )
+              .start();
+          }}
+        />
+      </div>
+    );
   }
 
   return (
@@ -50,6 +53,7 @@ export default function Home() {
           src="/background.mov"
         />
 
+        {/* Navbar */}
         <div className="max-w-[1360px] mx-auto px-4 pt-4 flex justify-between items-center relative z-30">
           <Link href="/">
             <img src="/logo.png" className="w-[140px]" alt="Logo" />
@@ -79,59 +83,41 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-0">
-          <div className="grid gap-[4%] grid-cols-[1fr_60%_1fr] justify-items-center">
-            {/* Left Column */}
-            <div className="w-full flex flex-col justify-center">
-              <div className="w-full flex flex-col items-center gap-10">
-                <h4 className="font-extrabold underline text-center text-4xl service_animation">
-                  British Columbia
-                </h4>
-                <Link
-                  href="/citypage/SURREY"
-                  className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
-                >
-                  SURREY
-                </Link>
-                <Link
-                  href="/citypage/CLOVERDALE"
-                  className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
-                >
-                  CLOVERDALE
-                </Link>
-                <Link
-                  href="/citypage/ABBOTSFORD"
-                  className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
-                >
-                  ABBOTSFORD
-                </Link>
-              </div>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-0 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_60%_1fr] gap-10 md:gap-[4%] justify-items-center">
+            
+            {/* Left Column - Hidden on Mobile */}
+            <div className="hidden md:flex w-full flex-col justify-center items-center gap-10">
+              <h4 className="font-extrabold underline text-center text-4xl service_animation">
+                British Columbia
+              </h4>
+              <Link href="/citypage/SURREY" className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">
+                SURREY
+              </Link>
+              <Link href="/citypage/CLOVERDALE" className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">
+                CLOVERDALE
+              </Link>
+              <Link href="/citypage/ABBOTSFORD" className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">
+                ABBOTSFORD
+              </Link>
             </div>
 
             {/* Middle Column */}
-            <div>
+            <div className="w-full">
               <Services />
             </div>
 
-            {/* Right Column */}
-            <div className="w-full flex flex-col justify-center">
-              <div className="w-full flex flex-col items-center gap-10 h-[240px]">
-                <h4 className="font-extrabold underline text-4xl service_animation">
-                  ALBERTA
-                </h4>
-                <Link
-                  href="/citypage/CALGARY"
-                  className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
-                >
-                  CALGARY
-                </Link>
-                <Link
-                  href="/citypage/EDMONTON"
-                  className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation"
-                >
-                  EDMONTON
-                </Link>
-              </div>
+            {/* Right Column - Hidden on Mobile */}
+            <div className="hidden md:flex w-full flex-col justify-center items-center gap-10">
+              <h4 className="font-extrabold underline text-4xl service_animation">
+                ALBERTA
+              </h4>
+              <Link href="/citypage/CALGARY" className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">
+                CALGARY
+              </Link>
+              <Link href="/citypage/EDMONTON" className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-3xl service_animation">
+                EDMONTON
+              </Link>
             </div>
           </div>
         </div>
