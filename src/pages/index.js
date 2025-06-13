@@ -54,7 +54,7 @@ export default function Home() {
         />
 
         {/* Navbar */}
-        <div className="max-w-[1360px] mx-auto px-4 pt-4 flex justify-between items-center relative z-30">
+        <div className="max-w-[90vw] mx-auto px-4 pt-4 flex justify-between items-center relative z-30">
           <Link href="/">
             <img src="/logo.png" className="w-[140px]" alt="Logo" />
           </Link>
@@ -83,7 +83,7 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-0 mt-10">
+        <div className="max-w-[90vw] mx-auto px-4 sm:px-0 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_60%_1fr] gap-10 md:gap-[4%] justify-items-center">
             
             {/* Left Column - Hidden on Mobile */}

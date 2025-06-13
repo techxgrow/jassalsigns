@@ -11,7 +11,7 @@ const ContactUs = ({city}) => {
 //  }
 
   return (
-    <div className="max-w-[1280px]  mx-auto px-6 md:px-0 text-gray-800 md:py-12 py-10  " id="contact">
+    <div className="max-w-[85vw]  mx-auto px-6 md:px-0 text-gray-800 md:py-12 py-10  " id="contact">
       <div className="  grid md:grid-cols-3 gap-8">
         {/* Contact Details */}
        <div

@@ -60,7 +60,7 @@ const ProductPage = () => {
       </div>
       {/* Header End */}
 
-      <div className="max-w-[1280px] mx-auto py-10 px-4 sm:px-6">
+      <div className="max-w-[85vw] mx-auto py-10 px-4 sm:px-6">
         {/* Top Paragraph */}
         <p className="my-4 text-base sm:text-lg text-gray-700">
           {data.productPage[slug]?.para1}

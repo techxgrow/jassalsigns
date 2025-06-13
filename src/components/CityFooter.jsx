@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 const CityFooter = () => {
   return (
     <footer className="bg-[#111] text-white py-10 px-6 bg-[url('/footer-bg.png')] bg-cover bg-center">
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-[85vw] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About / Logo */}
         <div>
           {/* Logo */}

@@ -41,7 +41,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="pt-20 pb-16 bg-black mb-[60px] md:mb-0 px-4 " id="testimonials">
-      <div className="max-w-[1280px] mx-auto text-center">
+      <div className="max-w-[85vw] mx-auto text-center">
         <div className="mb-[30px]" data-aos="fade-up">
           <p className="md:text-2xl text-xl text-white uppercase mb-3">What Our Clients Say</p>
           <h1 className="md:text-6xl text-4xl text-white font-extrabold">

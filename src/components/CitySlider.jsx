@@ -35,7 +35,7 @@ export default function CitySlider({ cityName }) {
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-[#1703375f]/60 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto flex items-center h-full">
+      <div className="relative z-10 max-w-[85vw] mx-auto flex items-center h-full">
         <div className="text-white  md:justify-start " data-aos="fade-up" data-aos-delay="300">
           <p className="text-md md:text-xl uppercase tracking-widest font-bold text-white text-center mb-2  md:text-left">
             We Bring Brands To Life

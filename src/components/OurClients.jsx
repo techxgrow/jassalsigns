@@ -53,7 +53,7 @@ export default function OurClients() {
 
   return (
     <section className="bg-black py-12 overflow-hidden bg-center bg-cover" id="clients" style={{backgroundImage:'url("/citypage/clientsbg.jpg")'}}>
-      <div className="max-w-7xl mx-auto px-6 md:px-0">
+      <div className="max-w-[85vw] mx-auto px-6 md:px-0">
         <div className="mb-[30px] text-center" data-aos="fade-up">
           <p className="md:text-2xl text-xl text-white uppercase mb-3">
             Trusted By Leading Brands
