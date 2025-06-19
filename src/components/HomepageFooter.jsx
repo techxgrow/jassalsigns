@@ -44,9 +44,6 @@ const HomepageFooter = () => {
           <ul className="space-y-2 text-white text-sm">
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Home</a></li>
             <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Products</a></li>
-            <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Blogs</a></li>
-            <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Gallery</a></li>
-            <li><a href="#" className="text-[16px] hover:text-[#ED1D26]">Contact Us</a></li>
             <li><Link href="/franchise" className="text-[16px] hover:text-[#ED1D26]">Franchise With Us</Link></li>
           </ul>
         </div>
@@ -57,12 +54,12 @@ const HomepageFooter = () => {
         <div>
           <h2 className="text-lg font-semibold mb-4 font-grotesk underline">PRODUCTS</h2>
           <ul className="space-y-2 text-white text-sm">
-            <li><a href="#indoor-sign" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
+            <li><a href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
 
-            <li><a href="#vehicle-wrap" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
-            <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
-              <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</a></li>
-               <li><a href="#outdoor-sign" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</a></li>
+            <li><a href="/products/vehiclewraps" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
+            <li><a href="/products/outdoorsigns" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
+              <li><a href="/products/channelletters" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</a></li>
+               <li><a href="/products/pylonsigns" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</a></li>
           </ul>
         </div>
 

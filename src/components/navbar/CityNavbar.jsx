@@ -44,7 +44,7 @@ const CityNavbar = () => {
           isScrolling ? "max-h-0 opacity-0" : "max-h-20 opacity-100"
         }`}
       >
-        <div className="max-w-[85vw] mx-auto flex items-center justify-between py-2 px-6 md:px-0">
+        <div className="md:max-w-[85vw] max-w-[95vw] mx-auto flex items-center justify-between py-2 px-6 md:px-0">
           <div className="flex gap-6 items-center text-white">
        <a href="tel:91 7706087842"  className="flex gap-2 items-center hover:underline">
               <FaPhoneAlt />
@@ -83,7 +83,7 @@ const CityNavbar = () => {
       </div>
 
       {/* Main navbar */}
-      <div className="max-w-[85vw] mx-auto flex items-center justify-between py-4 px-6 md:px-0">
+      <div className="md:max-w-[85vw] max-w-[90vw] mx-auto flex items-center justify-between py-4 px-6 md:px-0">
         {/* Logo */}
         <Link href="/">
           <img src="/logo.png" className="w-[140px]" alt="Logo" />

@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import CityFooter from "@/components/CityFooter";
-import CityNavbar from "@/components/CityNavbar";
+import CityNavbar from "@/components/navbar/CityNavbar";
 
 const FranchisePage = () => {
   const slug = "franchise"; 

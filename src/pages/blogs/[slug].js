@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { data } from "../../../assets/data.js";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import CityFooter from '@/components/CityFooter.jsx';
-import CityNavbar from '@/components/CityNavbar.jsx';
+import CityNavbar from '@/components/navbar/CityNavbar.jsx';
 import { ClipLoader } from "react-spinners";
 
 const BlogPage = () => {
@@ -103,7 +103,7 @@ const BlogPage = () => {
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-[1280px] mx-auto grid grid-cols-[68%_30%] gap-[2%] my-10">
+      <div className="md:max-w-[90vw] max-w-[95vw]  mx-auto grid grid-cols-[68%_30%] gap-[2%] my-10">
         {/* Left Content */}
         <div className='border-0 border-r-1 border-gray-400 pr-2'>
           <div className='flex gap-6'>

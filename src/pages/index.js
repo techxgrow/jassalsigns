@@ -83,7 +83,7 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-        <div className="max-w-[90vw] mx-auto px-4 sm:px-0 mt-10">
+        <div className="md:max-w-[90vw] max-w-[95vw] mx-auto px-4 sm:px-0 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_60%_1fr] gap-10 md:gap-[4%] justify-items-center">
             
             {/* Left Column - Hidden on Mobile */}

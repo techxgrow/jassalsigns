@@ -24,7 +24,7 @@ export default function SignageGallery() {
   const aosAnimations = ["fade-up", "zoom-in", "fade-down", "fade-right", "fade-left"];
 
   return (
-    <section className="max-w-[85vw] mx-auto py-16 overflow-hidden" id="gallery">
+    <section className="md:max-w-[85vw] max-w-[95vw] mx-auto py-16 overflow-hidden" id="gallery">
       <div>
         {/* Section heading */}
         <div className="mb-10 text-center" data-aos="zoom-in">

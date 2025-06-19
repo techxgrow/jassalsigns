@@ -10,6 +10,7 @@ const servicesData = [
   { title: "Indoor Signs", desc: "Eye-catching interior signage for lobbies, hallways, offices.", link: "/products/indoorsigns" },
   { title: "Outdoor Signs", desc: "Durable signs to withstand the elements and attract attention.", link: "/products/outdoorsigns" },
   { title: "Vehicle Wraps", desc: "Turn your vehicle into a powerful mobile advertising machine.", link: "/products/vehiclewraps" },
+  { title:"Print Media", desc:"Print Media Now at Jassal Signs – Bold, Bright, Persuasive!",link:"/products/printmedia"}
 ];
 
 const Services = () => {

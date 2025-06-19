@@ -129,6 +129,35 @@ export const data = {
         ]
       }
     },
+    printmedia: {
+  heading: "Print Media",
+  para1: `Print Media is your key to powerful, tangible marketing. At Jassal Signs, we transform your vision into printed perfection — from business cards that leave lasting impressions to menus and flyers that command attention.`,
+
+  para2: `Our print offerings include a wide variety of materials and formats — vibrant flyers, classy acrylic prints, durable coroplast signs, eye-catching real estate signs, and elegant canvas wraps — all customizable to suit your brand’s voice.`,
+
+  para3: `Every piece is produced using high-quality inks, substrates, and printing techniques to ensure vivid color, sharp detail, and lasting impact. Whether you’re promoting a product, advertising an event, or decorating a space, we have the right solution.`,
+
+  para4: `We provide end-to-end support, from design layout to final production, ensuring consistency, professionalism, and brand alignment across every print item. No matter the size or scope, your message will be clear and compelling.`,
+
+  para5: `Trust Jassal Signs to deliver print media that captivates and converts — helping you communicate effectively in the real world with visually striking and strategically crafted materials.`,
+
+  consultationObj: {
+    heading: "Promote Your Brand with High-Impact Print Media Solutions",
+    subHeading: "Custom printed materials that bring your message to life — fast, vibrant, and professional.",
+    bulletList: [
+      "Design and print business cards, flyers, brochures, and menus that reflect your brand’s style and professionalism.",
+  "Add visual appeal to your space with canvas and acrylic prints that elevate interiors or commercial environments.",
+  "Use Coroplast and Real Estate signs for durable, outdoor-ready advertising with bold visibility and messaging.",
+  "Enhance your event marketing and local promotions with posters, banners, and handouts made to grab attention.",
+  "From consultation to delivery, we provide consistent quality, fast turnaround, and personalized design assistance for every print job.",
+  "Showcase promotions or product info with high-quality table tents, shelf cards, and point-of-sale materials designed to influence purchase decisions.",
+  "Make a big impact with vehicle magnets and decals — perfect for mobile branding and fleet visibility.",
+  "Create eye-catching wall wraps and vinyl graphics that turn blank surfaces into branded experiences or visual statements.",
+  "Print durable window graphics and decals to promote services, display hours, or attract foot traffic without compromising natural light.",
+  "Give your presentations and corporate packages a professional edge with printed folders, notepads, and branded stationery.",
+    ]
+  }
+},
     pylonsigns: {
       heading:"Pylon Signs",
       para1: `Pylon signs are tall, freestanding structures that offer unmatched visibility from a distance — making them ideal for highways, shopping centers, and large commercial properties. With their elevated height and customizable panels, pylon signs guide customers right to your door.`,

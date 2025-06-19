@@ -35,7 +35,7 @@ const blogs = [
 
 export default function BlogsSection() {
   return (
-    <section className="max-w-[85vw] mx-auto md:py-16 py-12 px-6 md:px-0 bg-white">
+    <section className="md:max-w-[85vw] max-w-[95vw] mx-auto md:py-16 py-12 px-6 md:px-0 bg-white">
       <div className="text-center mb-10" data-aos="fade-up">
         <p className="text-[#ED1D26] text-xl md:text-2xl uppercase mb-2">Our Insights</p>
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">Latest Blogs</h1>

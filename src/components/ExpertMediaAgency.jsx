@@ -12,7 +12,7 @@ const ExpertMediaAgency = () => {
      <div className="bg-black/50 w-full h-full">
 
      
-      <div className=" max-w-[85vw] h-full mx-auto flex flex-col md:flex-row">
+      <div className=" md:max-w-[85vw] max-w-[95vw] h-full mx-auto flex flex-col md:flex-row">
         {/* Left Column - Enhanced with Jassal Signs Content */}
         <div className="w-full md:w-1/2 h-full md:h-full flex items-center justify-center  md:bg-center p-6 shadow-lg relative">
           <div className="absolute top-0 left-0 flex flex-col justify-center items-start   w-full h-full px-5 md:px-0  text-white text-left space-y-4">

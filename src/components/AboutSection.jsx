@@ -23,7 +23,7 @@ const AboutSection = () => {
       <div
         id="about"
         data-aos="fade-up"
-        className="max-w-[85vw] mx-auto py-6 -translate-y-[40px] p-6 z-10 relative grid grid-cols-1 md:grid-cols-[70%_20%] md:px-20 md:gap-[10%] gap-0"
+        className="md:max-w-[85vw] max-w-[95vw] mx-auto py-6 -translate-y-[40px] p-6 z-10 relative grid grid-cols-1 md:grid-cols-[70%_20%] md:px-20 md:gap-[10%] gap-0"
         style={{
           backgroundImage: "url('/aboutsectionbg.png')",
           backgroundRepeat: "no-repeat",

@@ -1,13 +1,15 @@
-import CityNavbar from "@/components/CityNavbar";
-import CityFooter from "@/components/CityFooter";
+
+
 import { useRouter } from "next/router";
 import { data } from "../../../assets/data";
 import React, { useEffect } from "react";
+import ProductNavbar from "@/components/navbar/ProductNavbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import ConsultationForm from "@/components/ui/ConsultationForm";
+import ProductsFooter from "@/components/ProductsFooter";
 
 const images = [
   { src: "/gallery/gl1.jpg" },
@@ -33,34 +35,34 @@ const ProductPage = () => {
 
   return (
     <div>
-      <CityNavbar />
-
+     
+       <ProductNavbar />
       {/* Header Start */}
-      <div className="relative h-[400px] overflow-hidden">
+      <div className="relative h-[320px] overflow-hidden">
         {/* Animated Background */}
         <div
-          className="absolute inset-0 bg-cover bg-center animate-zoom-slow"
+          className="absolute inset-0  bg-no-repeat bg-center  bg-cover animate-zoom-slow"
           style={{
             backgroundImage: slug ? `url(/productsimages/${slug}.jpg)` : "none",
           }}
         ></div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/60 z-10 "></div>
 
         {/* Text Content */}
         <div className="relative z-20 flex flex-col gap-4 justify-center items-center text-center h-full px-4">
           <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl font-grotesk text-white">
             {data.productPage[slug]?.heading}
           </h2>
-          <h4 className="text-gray-200 text-sm sm:text-base font-semibold font-grotesk">
+          <h4 className="text-white text-sm sm:text-base font-semibold font-grotesk">
             {`Products > ${data.productPage[slug]?.heading}`}
           </h4>
         </div>
       </div>
       {/* Header End */}
 
-      <div className="max-w-[85vw] mx-auto py-10 px-4 sm:px-6">
+      <div className="md:max-w-[85vw] max-w-[95vw] mx-auto py-10 px-4 sm:px-6">
         {/* Top Paragraph */}
         <p className="my-4 text-base sm:text-lg text-gray-700">
           {data.productPage[slug]?.para1}
@@ -129,7 +131,7 @@ const ProductPage = () => {
         ))}
       </div>
 
-      <CityFooter />
+     <ProductsFooter/>
     </div>
   );
 };

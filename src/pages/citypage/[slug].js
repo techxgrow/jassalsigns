@@ -2,7 +2,7 @@
 import React from 'react';
 import ExpertMediaAgency from '@/components/ExpertMediaAgency';
 import { useRouter } from 'next/router';
-import CityNavbar from '@/components/CityNavbar';
+import CityNavbar from '@/components/navbar/CityNavbar';
 import OurServices from '@/components/our-services';
 import MarqueeText from '@/components/MarqueeText';
 import AboutSection from '@/components/AboutSection';

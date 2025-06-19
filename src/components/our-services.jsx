@@ -13,7 +13,7 @@ const OurServices = () => {
 
   const portfolioItems = [
     {
-        imgSrc: "https://img.freepik.com/premium-photo/exit-sign-that-says-exit-it_916191-394664.jpg?w=1380",
+        imgSrc: "/citypage/services/indoorsigns.jpg",
         category: "INDOOR SIGNS",
         title: "We make sure your message meets the masses.",
         link: "/products/indoorsigns"
@@ -58,7 +58,7 @@ const OurServices = () => {
       style={{ backgroundImage: `url(${item.imgSrc})` }}
     >
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black/45  group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+      <div className="absolute inset-0 bg-black/60  group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
 
       {/* Text content */}
       <div className="absolute w-full top-0 left-0 h-full flex justify-center items-center flex-col z-20">
