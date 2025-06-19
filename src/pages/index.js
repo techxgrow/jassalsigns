@@ -87,7 +87,7 @@ export default function Home() {
   <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-y-12 gap-x-8 xl:gap-x-16 items-start">
     
     {/* Left Column - Hidden on Mobile */}
-    <div className="hidden lg:flex w-full flex-col justify-center items-center gap-10 pt-[80%]">
+    <div className="hidden lg:flex w-full flex-col justify-center items-center gap-10 pt-[180px]">
       <h4 className="font-extrabold underline text-center text-4xl service_animation">
         British Columbia
       </h4>
@@ -108,7 +108,7 @@ export default function Home() {
     </div>
 
     {/* Right Column - Hidden on Mobile */}
-    <div className="hidden lg:flex w-full flex-col justify-center items-center gap-10 pt-[86%]">
+    <div className="hidden lg:flex w-full flex-col justify-center items-center gap-10 pt-[200px]">
       <h4 className="font-extrabold underline text-4xl service_animation">
         ALBERTA
       </h4>
