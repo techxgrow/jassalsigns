@@ -60,6 +60,7 @@ const HomepageFooter = () => {
             <li><a href="/products/outdoorsigns" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
               <li><a href="/products/channelletters" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</a></li>
                <li><a href="/products/pylonsigns" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</a></li>
+                <li><a href="/products/printmedia" className="hover:text-[#ED1D26] text-[16px]">Print Media</a></li>
           </ul>
         </div>
 

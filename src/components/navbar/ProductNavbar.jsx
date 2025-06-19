@@ -119,17 +119,13 @@ const ProductNavbar = () => {
               </Link>
             </li>
             <li>
-              <ScrollLink
-                href="#service"
-                to="productSection"
-                smooth={true}
-                duration={500}
-                offset={-50}
+               <Link
+                href="/"
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-[#ED1D26] transition-colors"
               >
                 Products
-              </ScrollLink>
+              </Link>
             </li>
             <li>
               <ScrollLink
@@ -143,20 +139,7 @@ const ProductNavbar = () => {
                 Gallery
               </ScrollLink>
             </li>
-            <li>
-              <ScrollLink
-               to="blogsSection"
-                smooth={true}
-                duration={500}
-                offset={-50}
-
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-[#ED1D26] transition-colors hover:cursor-pointer"
-              >
-                Blogs
-              </ScrollLink>
-            </li>
-           
+            
           </ul>
         </div>
       </div>

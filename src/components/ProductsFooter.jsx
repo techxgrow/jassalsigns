@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const ProductsFooter = () => {
   return (
@@ -112,9 +113,7 @@ const ProductsFooter = () => {
             </li>
             
             <li>
-              <a href="/gallerySection" className="hover:text-[#ED1D26] text-[16px]">
-                Gallery
-              </a>
+              <ScrollLink to="gallerySection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Gallery</ScrollLink>
             </li>
              <li><Link href="/franchise" className="text-[16px] hover:text-[#ED1D26]">Franchise With Us</Link></li>
            

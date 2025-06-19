@@ -10,6 +10,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import ConsultationForm from "@/components/ui/ConsultationForm";
 import ProductsFooter from "@/components/ProductsFooter";
+import { Element } from "react-scroll";
 
 const images = [
   { src: "/gallery/gl1.jpg" },
@@ -99,7 +100,10 @@ const ProductPage = () => {
           {data.productPage[slug]?.para2}
         </p>
 
+ 
+       
         {/* Gallery */}
+        <Element name='gallerySection'>
         <PhotoProvider>
           <div className="columns-1 sm:columns-2 md:columns-3 gap-4 px-0 sm:px-6 md:px-0 space-y-4">
             {images.map((img, index) => (
@@ -122,6 +126,7 @@ const ProductPage = () => {
             ))}
           </div>
         </PhotoProvider>
+        </Element>
 
         {/* Remaining Paragraphs */}
         {[3, 4, 5].map((num) => (
