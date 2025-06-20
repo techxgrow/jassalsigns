@@ -57,7 +57,7 @@ const ProductPage = () => {
             {data.productPage[slug]?.heading}
           </h2>
           <h4 className="text-white text-sm sm:text-base font-semibold font-grotesk">
-            {`Products > ${data.productPage[slug]?.heading}`}
+            {`Services > ${data.productPage[slug]?.heading}`}
           </h4>
         </div>
       </div>

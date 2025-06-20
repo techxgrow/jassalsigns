@@ -50,13 +50,13 @@ const ProductsFooter = () => {
             <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
             <ul className="space-y-2 text-white ">
               <li>
-                <a href="#" className="hover:text-[#ED1D26] text-[16px]">
+                <a href="/" className="hover:text-[#ED1D26] text-[16px]">
                   Home
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-[#ED1D26] text-[16px]">
-                  Products
+                  Services
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ const ProductsFooter = () => {
            
             <li>
               <a href="#" className="hover:text-[#ED1D26] text-[16px]">
-                Products
+                Services
               </a>
             </li>
             
