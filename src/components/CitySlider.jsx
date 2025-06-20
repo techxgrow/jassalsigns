@@ -6,9 +6,10 @@ import Link from "next/link";
 
 export default function CitySlider({ cityName }) {
   const slideImages = [
-    `/citypage/header/${cityName}/${cityName}1.jpg`,
-    `/citypage/header/${cityName}/${cityName}2.jpg`,
-    `/citypage/header/${cityName}/${cityName}3.jpg`,
+     `/citypage/header/${cityName}/conservatory.jpg`,
+    `/citypage/header/${cityName}/albertabuilding.jpg`,
+    `/citypage/header/${cityName}/walterdale.jpg`,
+   
   ];
 
   useEffect(() => {
