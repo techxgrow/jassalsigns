@@ -1,16 +1,40 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 import SmallTextAnimation from "./ui/SmallTextAnimation";
 import Link from "next/link";
 
 const servicesData = [
-  { title: "Channel Letters", desc: "Custom 3D letters designed to enhance your storefront appearance.", link: "/products/channelletters" },
-  { title: "Pylon Signs", desc: "High-visibility signs designed to maximize your brand exposure.", link: "/products/pylonsigns" },
-  { title: "Indoor Signs", desc: "Eye-catching interior signage for lobbies, hallways, offices.", link: "/products/indoorsigns" },
-  { title: "Outdoor Signs", desc: "Durable signs to withstand the elements and attract attention.", link: "/products/outdoorsigns" },
-  { title: "Vehicle Wraps", desc: "Turn your vehicle into a powerful mobile advertising machine.", link: "/products/vehiclewraps" },
-  { title:"Print Media", desc:"Print Media Now at Jassal Signs – Bold, Bright, Persuasive!",link:"/products/printmedia"}
+  {
+    title: "Channel Letters",
+    desc: "Custom 3D letters designed to enhance your storefront appearance.",
+    link: "/products/channelletters",
+  },
+  {
+    title: "Pylon Signs",
+    desc: "High-visibility signs designed to maximize your brand exposure.",
+    link: "/products/pylonsigns",
+  },
+  {
+    title: "Indoor Signs",
+    desc: "Eye-catching interior signage for lobbies, hallways, offices.",
+    link: "/products/indoorsigns",
+  },
+  {
+    title: "Outdoor Signs",
+    desc: "Durable signs to withstand the elements and attract attention.",
+    link: "/products/outdoorsigns",
+  },
+  {
+    title: "Vehicle Wraps",
+    desc: "Turn your vehicle into a powerful mobile advertising machine.",
+    link: "/products/vehiclewraps",
+  },
+  {
+    title: "Print Media",
+    desc: "Print Media Now at Jassal Signs – Bold, Bright, Persuasive!",
+    link: "/products/printmedia",
+  },
 ];
 
 const Services = () => {
@@ -22,16 +46,15 @@ const Services = () => {
     });
   }, []);
 
-
-    const [fontSize, setFontSize] = useState("60px");
+  const [fontSize, setFontSize] = useState("48px");
 
   useEffect(() => {
     const updateFontSize = () => {
       const width = window.innerWidth;
-      if (width < 400) setFontSize("50px");
-      else if (width < 640) setFontSize("60px");
-      else if (width < 768) setFontSize("50px");
-      else setFontSize("60px");
+      if (width < 640) setFontSize("24px");
+      else if (width < 768) setFontSize("30px");
+      else if (width < 1024) setFontSize("36px");
+      else setFontSize("48px");
     };
 
     updateFontSize(); // Initial run
@@ -41,34 +64,61 @@ const Services = () => {
   }, []);
 
   return (
-  <div className="mx-auto text-center py-4 w-full md:w-[850px] border-x-0 md:border-x-2 mt-10 px-4">
-
-     <div className="my-4">
-       <h2 data-aos="fade-up" className="text-xl font-medium text-gray-300 tracking-wide  uppercase">
-        Discover the Difference a Well-Crafted Sign Can Make
-      </h2>
-         <h2 data-aos="fade-up" className="text-xl mt-3 font-medium text-gray-300 tracking-wide  uppercase">
-        Choose Your Nearest Jassal Signs Location
-      </h2>
-     </div>
-
-      
+    <div className="mx-auto text-center py-4 w-full border-x-0 md:border-x-2 mt-10 px-4">
+      <div className="my-4">
+        <h2
+          data-aos="fade-up"
+          className="text-sm sm:text-md md:text-lg lg:text:xl font-medium text-gray-300 tracking-wide uppercase"
+        >
+          Discover the Difference a Well-Crafted Sign Can Make
+        </h2>
+        <h2
+          data-aos="fade-up"
+          className="text-sm sm:text-md md:text-lg lg:text:xl mt-3 font-medium text-gray-300 tracking-wide uppercase"
+        >
+          Choose Your Nearest Jassal Signs Location
+        </h2>
+      </div>
 
       <h1
         data-aos="fade-up"
         data-aos-delay="200"
-        className=" text-4xl sm:text-6xl  md:text-6xl font-bold text-white my-6 flex md:gap-4 flex-col md:flex-row justify-center "
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white my-6"
       >
-       <span>Let’s</span> 
-       <span><SmallTextAnimation
-        text="ILLUMINATE"
-        textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-        fontSize={fontSize}
-      /></span>
-       <span>Your Sign</span>
+        <span>Let’s</span>&nbsp;
+        <span>
+          <SmallTextAnimation
+            text="ILLUMINATE"
+            textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+            fontSize={fontSize}
+          />
+        </span>&nbsp;
+        <span>Your Sign</span>
       </h1>
 
-      <div className="mt-8 flex justify-center items-center flex-wrap gap-6 ">
+      <div className="flex flex-row flex-wrap">
+         {servicesData.map((service, index) => (
+          <div className="h-[150px] w-full sm:w-full md:w-full lg:w-1/3 p-2">
+          <Link
+            key={index}
+            href={service.link}
+            data-aos="zoom-in"
+            data-aos-delay={index * 100}
+            className="w-full h-full"
+          >
+            <div className="w-full h-full px-2 py-4 rounded-lg shadow-[0_4px_10px_rgba(200,200,200,0.4)] 
+                       hover:shadow-[rgb(237,29,38)] hover:scale-110 transition-all 
+                       duration-300 ease-in-out service_animation ">
+            <h3 className="text-xl sm:text-xl md:text-2xl font-medium font-grotesk text-white">{service.title}</h3>
+            <p className="text-white mt-2 text-sm sm:text-md">{service.desc}</p>
+            </div>
+          </Link>
+          </div>
+        ))}
+      </div>
+        
+
+      {/* <div className="mt-8 flex justify-center items-center flex-wrap gap-6 ">
         {servicesData.map((service, index) => (
           <Link
             key={index}
@@ -83,7 +133,7 @@ const Services = () => {
             <p className="text-white mt-2">{service.desc}</p>
           </Link>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
