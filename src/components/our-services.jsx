@@ -20,7 +20,7 @@ const OurServices = () => {
     },
       {
       imgSrc: "/citypage/services/printmedia.jpg",
-      category: "PRINT MEDIA",
+      category: "PRINT SERVICES",
       title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
       link: "/products/printmedia",
     },

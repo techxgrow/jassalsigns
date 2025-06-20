@@ -130,8 +130,8 @@ export const data = {
       }
     },
     printmedia: {
-  heading: "Print Media",
-  para1: `Print Media is your key to powerful, tangible marketing. At Jassal Signs, we transform your vision into printed perfection — from business cards that leave lasting impressions to menus and flyers that command attention.`,
+  heading: "Printing Services",
+  para1: `Printing Services is your key to powerful, tangible marketing. At Jassal Signs, we transform your vision into printed perfection — from business cards that leave lasting impressions to menus and flyers that command attention.`,
 
   para2: `Our print offerings include a wide variety of materials and formats — vibrant flyers, classy acrylic prints, durable coroplast signs, eye-catching real estate signs, and elegant canvas wraps — all customizable to suit your brand’s voice.`,
 
@@ -139,10 +139,10 @@ export const data = {
 
   para4: `We provide end-to-end support, from design layout to final production, ensuring consistency, professionalism, and brand alignment across every print item. No matter the size or scope, your message will be clear and compelling.`,
 
-  para5: `Trust Jassal Signs to deliver print media that captivates and converts — helping you communicate effectively in the real world with visually striking and strategically crafted materials.`,
+  para5: `Trust Jassal Signs to deliver printing services that captivates and converts — helping you communicate effectively in the real world with visually striking and strategically crafted materials.`,
 
   consultationObj: {
-    heading: "Promote Your Brand with High-Impact Print Media Solutions",
+    heading: "Promote Your Brand with High-Impact Printing Services Solutions",
     subHeading: "Custom printed materials that bring your message to life — fast, vibrant, and professional.",
     bulletList: [
       "Design and print business cards, flyers, brochures, and menus that reflect your brand’s style and professionalism.",

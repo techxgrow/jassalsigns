@@ -166,7 +166,7 @@ const CityFooter = () => {
               <Link href="/products/pylonsigns"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Pylon Signs</Link>
             </li>
              <li>
-              <Link href="/products/printmedia"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Print Media</Link>
+              <Link href="/products/printmedia"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Printing Services</Link>
             </li>
           </ul>
         </div>

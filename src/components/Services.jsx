@@ -31,8 +31,8 @@ const servicesData = [
     link: "/products/vehiclewraps",
   },
   {
-    title: "Print Media",
-    desc: "Print Media Now at Jassal Signs – Bold, Bright, Persuasive!",
+    title: "Printing Services",
+    desc: "Printing Services Now at Jassal Signs – Bold, Bright, Persuasive!",
     link: "/products/printmedia",
   },
 ];
