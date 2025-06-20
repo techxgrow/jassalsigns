@@ -52,7 +52,7 @@ const HomepageFooter = () => {
 
         {/* Products */}
         <div>
-          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">PRODUCTS</h2>
+          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">SERVICES</h2>
           <ul className="space-y-2 text-white text-sm">
             <li><a href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
 

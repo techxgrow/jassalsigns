@@ -148,7 +148,7 @@ const CityFooter = () => {
 
         {/* Desktop Products */}
         <div className="hidden md:block">
-          <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
+          <h2 className="text-lg font-semibold mb-4">SERVICES</h2>
           <ul className="space-y-2 text-white text-sm">
             <li>
               <Link href="/products/indoorsigns"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Indoor Signs</Link>

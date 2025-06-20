@@ -128,7 +128,7 @@ const CityNavbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-[#ED1D26] transition-colors"
               >
-                Products
+                Services
               </ScrollLink>
             </li>
             <li>

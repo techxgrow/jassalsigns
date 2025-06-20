@@ -42,14 +42,14 @@ const ProductPage = () => {
       <div className="relative h-[320px] overflow-hidden">
         {/* Animated Background */}
         <div
-          className="absolute inset-0  bg-no-repeat bg-center  bg-cover animate-zoom-slow"
+          className="absolute inset-0   bg-center  bg-cover animate-zoom-slow"
           style={{
             backgroundImage: slug ? `url(/productsimages/${slug}.jpg)` : "none",
           }}
         ></div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-10 "></div>
+        <div className="absolute inset-0 bg-black/50 z-10 "></div>
 
         {/* Text Content */}
         <div className="relative z-20 flex flex-col gap-4 justify-center items-center text-center h-full px-4">
