@@ -1,5 +1,3 @@
-
-
 import { useRouter } from "next/router";
 import { data } from "../../../assets/data";
 import React, { useEffect } from "react";
@@ -32,19 +30,35 @@ const ProductPage = () => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 100 });
   }, []);
 
-  const aosAnimations = ["fade-up", "zoom-in", "fade-down", "fade-right", "fade-left"];
+  const aosAnimations = [
+    "fade-up",
+    "zoom-in",
+    "fade-down",
+    "fade-right",
+    "fade-left",
+  ];
 
   return (
     <div>
-     
-       <ProductNavbar />
+      <ProductNavbar />
       {/* Header Start */}
       <div className="relative h-[320px] overflow-hidden">
         {/* Animated Background */}
+        {/* Desktop Background */}
         <div
-          className="absolute inset-0   bg-center  bg-cover animate-zoom-slow"
+          className="absolute inset-0 hidden sm:block bg-center bg-cover animate-zoom-slow"
           style={{
             backgroundImage: slug ? `url(/productsimages/${slug}.jpg)` : "none",
+          }}
+        ></div>
+
+        {/* Mobile Background */}
+        <div
+          className="absolute inset-0 block sm:hidden bg-center bg-cover animate-zoom-slow"
+          style={{
+            backgroundImage: slug
+              ? `url(/productsimages/mb${slug}.jpg)`
+              : "none",
           }}
         ></div>
 
@@ -80,12 +94,15 @@ const ProductPage = () => {
               {data.productPage[slug]?.consultationObj?.subHeading}
             </h4>
             <ul className="list-disc list-inside space-y-2 ml-4 sm:ml-2 mb-4 text-sm sm:text-base text-gray-800">
-              {data.productPage[slug]?.consultationObj?.bulletList.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+              {data.productPage[slug]?.consultationObj?.bulletList.map(
+                (item, index) => (
+                  <li key={index}>{item}</li>
+                )
+              )}
             </ul>
             <p className="text-sm sm:text-base font-medium">
-              Ready to elevate your brand presence? Fill out the form and get a free signage consultation today.
+              Ready to elevate your brand presence? Fill out the form and get a
+              free signage consultation today.
             </p>
           </div>
 
@@ -100,32 +117,34 @@ const ProductPage = () => {
           {data.productPage[slug]?.para2}
         </p>
 
- 
-       
         {/* Gallery */}
-        <Element name='gallerySection'>
-        <PhotoProvider>
-          <div className="columns-1 sm:columns-2 md:columns-3 gap-4 px-0 sm:px-6 md:px-0 space-y-4">
-            {images.map((img, index) => (
-              <PhotoView key={index} src={img.src}>
-                <div
-                  className="mb-4 break-inside-avoid overflow-hidden shadow-md cursor-zoom-in rounded group relative"
-                  data-aos={aosAnimations[index % aosAnimations.length]}
-                  data-aos-delay={(index % 3) * 100}
-                >
-                  <img
-                    src={img.src}
-                    alt={`Gallery Image ${index + 1}`}
-                    loading="lazy"
-                    className={`w-full object-cover transition-transform duration-300 hover:scale-105 rounded ${
-                      index === 5 ? "h-[467px]" : index === 8 ? "h-[480px]" : ""
-                    }`}
-                  />
-                </div>
-              </PhotoView>
-            ))}
-          </div>
-        </PhotoProvider>
+        <Element name="gallerySection">
+          <PhotoProvider>
+            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 px-0 sm:px-6 md:px-0 space-y-4">
+              {images.map((img, index) => (
+                <PhotoView key={index} src={img.src}>
+                  <div
+                    className="mb-4 break-inside-avoid overflow-hidden shadow-md cursor-zoom-in rounded group relative"
+                    data-aos={aosAnimations[index % aosAnimations.length]}
+                    data-aos-delay={(index % 3) * 100}
+                  >
+                    <img
+                      src={img.src}
+                      alt={`Gallery Image ${index + 1}`}
+                      loading="lazy"
+                      className={`w-full object-cover transition-transform duration-300 hover:scale-105 rounded ${
+                        index === 5
+                          ? "h-[467px]"
+                          : index === 8
+                          ? "h-[480px]"
+                          : ""
+                      }`}
+                    />
+                  </div>
+                </PhotoView>
+              ))}
+            </div>
+          </PhotoProvider>
         </Element>
 
         {/* Remaining Paragraphs */}
@@ -136,7 +155,7 @@ const ProductPage = () => {
         ))}
       </div>
 
-     <ProductsFooter/>
+      <ProductsFooter />
     </div>
   );
 };
