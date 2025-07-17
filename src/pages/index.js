@@ -82,7 +82,7 @@ export default function Home() {
 
         {/* Main Layout */}
 
-        <div className="max-w-[1280px] mx-auto  mt-10 md:mt-6 ">
+        <div className="max-w-[1280px] mx-auto  mt-10 md:mt-2 ">
           <div className="flex flex-row flex-wrap">
             <div className="w-full  sm:w-full md:w-full lg:w-1/5 hidden sm:hidden md:hidden lg:flex flex-col justify-end pb-[10px] items-end pr-8">
               <h4 className="mb-[20px] font-grotesk font-semibold flex items-center gap-2 text-md">

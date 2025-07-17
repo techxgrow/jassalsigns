@@ -65,7 +65,7 @@ const Services = () => {
 
   return (
     <div className="mx-auto text-center  py-4 w-full border-x-0 md:border-l-2 mt-10 pl-4">
-      <div className="my-4 flex flex-col items-center">
+      <div className="my-4 flex flex-col items-center ">
         {/* <h2
           data-aos="fade-up"
           className="text-sm sm:text-md md:text-lg lg:text:xl font-medium text-gray-300 tracking-wide uppercase"
@@ -99,9 +99,9 @@ const Services = () => {
         <span>Your Sign</span>
       </h1>
 
-      <div className="flex flex-row flex-wrap  md:justify-end justify-center ">
+      <div className="flex flex-row flex-wrap  md:justify-end ">
          {servicesData.map((service, index) => (
-          <div className="h-[160px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
+          <div className="h-[180px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
           <Link
             key={index}
             href={service.link}
@@ -112,8 +112,8 @@ const Services = () => {
             <div className="w-full h-full px-2 py-4 rounded-lg shadow-[0_4px_10px_rgba(200,200,200,0.4)] 
                        hover:shadow-[rgb(237,29,38)] hover:scale-110 transition-all 
                        duration-300 ease-in-out service_animation ">
-            <h3 className="text-xl sm:text-xl md:text-2xl font-medium font-grotesk text-white">{service.title}</h3>
-            <p className="text-white mt-2 text-sm sm:text-md">{service.desc}</p>
+            <h3 className="text-xl sm:text-xl md:text-2xl font-medium font-grotesk underline text-white">{service.title}</h3>
+            <p className="text-white mt-2 md:text-[18px] text-sm sm:text-md">{service.desc}</p>
             </div>
           </Link>
           </div>
