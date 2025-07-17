@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from "typewriter-effect";
+import { FaMapLocationDot } from "react-icons/fa6";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -54,11 +55,8 @@ export default function Home() {
         />
 
         {/* Navbar */}
-        <div className="md:max-w-[1290px] max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
-          <Link href="/">
-            <img src="/logo.png" className="w-[140px]" alt="Logo" />
-          </Link>
 
+        <div className=" max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
           <button
             className="md:hidden focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -83,59 +81,59 @@ export default function Home() {
         )}
 
         {/* Main Layout */}
-       
-        <div className="max-w-[1290px] mx-auto sm:px-3 mt-10">
+
+        <div className="max-w-[1200px] mx-auto  mt-10 md:mt-6 ">
           <div className="flex flex-row flex-wrap">
-            <div className="w-full sm:w-full md:w-full lg:w-1/5 hidden sm:hidden md:hidden lg:flex flex-col justify-center pr-3">
-              <h4 className="font-bold underline text-[30px] service_animation mb-[50px]">
-                British Columbia
+            <div className="w-full  sm:w-full md:w-full lg:w-1/5 hidden sm:hidden md:hidden lg:flex flex-col justify-end pb-[10px] items-end pr-8">
+              <h4 className="mb-[20px] font-grotesk font-semibold flex items-center gap-2 text-md">
+                <FaMapLocationDot className="text-[30px]" /> Select Your
+                Location
               </h4>
-             
               <Link
                 href="/citypage/CLOVERDALE"
-                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[50px]"
+                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[40px]"
               >
                 CLOVERDALE
               </Link>
               <Link
                 href="/citypage/ABBOTSFORD"
-                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[50px]"
+                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[40px]"
               >
                 ABBOTSFORD
               </Link>
-               <Link
+              <Link
                 href="/citypage/SURREY"
-                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation "
+                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[40px] "
               >
                 SURREY
               </Link>
-            </div>
-
-            <div className="w-full sm:w-full md:w-full lg:w-3/5">
-              <Services />
-            </div>
-
-            <div className="w-full  sm:w-full md:w-full lg:w-1/5 hidden sm:hidden md:hidden lg:flex flex-col justify-center pl-10 pb-[85px]">
-
-
-              <h4 className="font-bold underline text-[30px] ml-[20px] service_animation mb-[50px]">
-                ALBERTA
-              </h4>
-                <Link
+              <Link
                 href="/citypage/EDMONTON"
-                className="font-semibold cursor-pointer ml-[20px] font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[50px]"
+                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[40px] "
               >
                 EDMONTON
               </Link>
               <Link
                 href="/citypage/CALGARY"
-                className="font-semibold cursor-pointer ml-[20px] font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation "
+                className="font-semibold cursor-pointer font-grotesk hover:text-[#ED1D26] hover:scale-125 text-[28px] service_animation mb-[40px]"
               >
                 CALGARY
               </Link>
-            
+              <div className="group transition-all flex flex-col items-end duration-300 ease-in-out">
+                <Link
+                  href="/citypage/CALGARY"
+                  className="font-semibold cursor-pointer font-grotesk text-[28px] text-white group-hover:text-[#ED1D26] group-hover:scale-125 service_animation "
+                >
+                  SACRAMENTO
+                </Link>
+                <h4 className="text-white group-hover:text-[#ED1D26] group-hover:scale-125  service_animation">
+                  (Coming Soon)
+                </h4>
+              </div>
+            </div>
 
-
+            <div className="w-full sm:w-full md:w-full lg:w-4/5">
+              <Services />
             </div>
           </div>
         </div>

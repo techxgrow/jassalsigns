@@ -9,7 +9,7 @@ import Link from "next/link";
 const HomepageFooter = () => {
   return (
     <footer className="bg-transparent text-white py-10 px-5 mt-10">
-      <div className="mx-auto md:max-w-[1228px] max-w-[95vw] grid grid-cols-1 md:grid-cols-5 gap-10 ">
+      <div className="mx-auto md:max-w-[1200px] max-w-[95vw] grid grid-cols-1 md:grid-cols-5 gap-10 ">
         
         {/* About / Logo */}
         <div>
@@ -20,7 +20,7 @@ const HomepageFooter = () => {
             className="h-12 mb-4"
           />
           {/* About Text */}
-          <p className="text-[16px] text-white leading-relaxed">
+          <p className="text-[16px] text-white leading-relaxed ">
             Jassal Signs is a full-service signage company. We specialize in high-quality custom signs for businesses
             across various industries.
           </p>
@@ -49,9 +49,9 @@ const HomepageFooter = () => {
         </div>
 
         {/* Products */}
-
+        
         {/* Products */}
-        <div>
+        <div className="md:block hidden">
           <h2 className="text-lg font-semibold mb-4 font-grotesk underline">SERVICES</h2>
           <ul className="space-y-2 text-white text-sm">
             <li><a href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
@@ -65,7 +65,7 @@ const HomepageFooter = () => {
         </div>
 
          {/* Locations */}
-        <div>
+        <div className="md:block hidden">
           <h2 className="text-lg font-semibold mb-4 font-grotesk underline">British Columbia</h2>
           <ul className="space-y-2 text-white text-sm">
             <li><Link href="/citypage/SURREY" className="hover:text-[#ED1D26] text-[16px]" >Surrey</Link></li>
@@ -79,6 +79,41 @@ const HomepageFooter = () => {
              <li><Link href="/citypage/CALGARY" className="hover:text-[#ED1D26] text-[16px]">Calgary</Link></li>
                <li><Link href="/citypage/EDMONTON" className="hover:text-[#ED1D26] text-[16px]">Edmonton</Link></li>
           </ul>
+        </div>
+
+        {/* for mobile devices */}
+        <div className=" md:hidden grid grid-cols-2 gap-10 ">
+           {/* Products */}
+        <div >
+          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">SERVICES</h2>
+          <ul className="space-y-2 text-white text-sm">
+            <li><a href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px]" >Indoor Signs</a></li>
+
+            <li><a href="/products/vehiclewraps" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</a></li>
+            <li><a href="/products/outdoorsigns" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</a></li>
+              <li><a href="/products/channelletters" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</a></li>
+               <li><a href="/products/pylonsigns" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</a></li>
+                <li><a href="/products/printmedia" className="hover:text-[#ED1D26] text-[16px]">Printing Services</a></li>
+          </ul>
+        </div>
+
+         {/* Locations */}
+        <div >
+          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">British Columbia</h2>
+          <ul className="space-y-2 text-white text-sm">
+            <li><Link href="/citypage/SURREY" className="hover:text-[#ED1D26] text-[16px]" >Surrey</Link></li>
+
+            <li><Link href="/citypage/CLOVERDALE" className="hover:text-[#ED1D26] text-[16px]">Cloverdale</Link></li>
+            <li><Link href="/citypage/ABBOTSFORD" className="hover:text-[#ED1D26] text-[16px]">Abbotsford</Link></li>
+             
+          </ul>
+           <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">Alberta</h2>
+          <ul>
+             <li><Link href="/citypage/CALGARY" className="hover:text-[#ED1D26] text-[16px]">Calgary</Link></li>
+               <li><Link href="/citypage/EDMONTON" className="hover:text-[#ED1D26] text-[16px]">Edmonton</Link></li>
+          </ul>
+        </div>
+
         </div>
       
 

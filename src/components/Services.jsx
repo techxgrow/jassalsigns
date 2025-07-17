@@ -64,14 +64,17 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="mx-auto text-center py-4 w-full border-x-0 md:border-x-2 mt-10 px-4">
-      <div className="my-4">
-        <h2
+    <div className="mx-auto text-center  py-4 w-full border-x-0 md:border-l-2 mt-10 pl-4">
+      <div className="my-4 flex flex-col items-center">
+        {/* <h2
           data-aos="fade-up"
           className="text-sm sm:text-md md:text-lg lg:text:xl font-medium text-gray-300 tracking-wide uppercase"
         >
           Discover the Difference a Well-Crafted Sign Can Make
-        </h2>
+        </h2> */}
+          <Link href="/" className="mx-auto">
+            <img src="/logo.png" className="w-[240px]" alt="Logo" />
+          </Link>
         <h2
           data-aos="fade-up"
           className="text-sm sm:text-md md:text-lg lg:text:xl mt-3 font-medium text-gray-300 tracking-wide uppercase"
@@ -96,9 +99,9 @@ const Services = () => {
         <span>Your Sign</span>
       </h1>
 
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap  md:justify-end justify-center ">
          {servicesData.map((service, index) => (
-          <div className="h-[150px] w-full sm:w-full md:w-full lg:w-1/3 p-2">
+          <div className="h-[160px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
           <Link
             key={index}
             href={service.link}
