@@ -73,14 +73,9 @@ const Services = () => {
           Discover the Difference a Well-Crafted Sign Can Make
         </h2> */}
           <Link href="/" className="mx-auto">
-            <img src="/logo.png" className="w-[240px]" alt="Logo" />
+            <img src="/logo.png" className="w-[280px]" alt="Logo" />
           </Link>
-        <h2
-          data-aos="fade-up"
-          className="text-sm sm:text-md md:text-lg lg:text:xl mt-3 font-medium text-gray-300 tracking-wide uppercase"
-        >
-          Choose Your Nearest Jassal Signs Location
-        </h2>
+       
       </div>
 
       <h1
@@ -96,7 +91,7 @@ const Services = () => {
             fontSize={fontSize}
           />
         </span>&nbsp;
-        <span>Your Sign</span>
+        <span>Your Business</span>
       </h1>
 
       <div className="flex flex-row flex-wrap  md:justify-end ">
