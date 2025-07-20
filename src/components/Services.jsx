@@ -75,7 +75,7 @@ const Services = () => {
           <Link href="/" className="mx-auto">
             <img src="/logo.png" className="w-[280px]" alt="Logo" />
           </Link>
-    
+       
       </div>
 
       <h1
