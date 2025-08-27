@@ -59,7 +59,7 @@ export default function TwoMaps() {
   return (
     <div className="flex flex-wrap gap-10 justify-center">
       {/* Canada Map */}
-      <div className="w-[350px] h-[450px] border rounded-lg bg-white shadow-md">
+      <div className="w-[350px] h-[250px] border rounded-lg bg-white shadow-md">
         <h3 className="text-center font-bold text-black py-2">Canada</h3>
         <ComposableMap
           projection="geoMercator"
@@ -68,7 +68,7 @@ export default function TwoMaps() {
             scale: 300,
           }}
           width={350}
-          height={400}
+          height={200}
         >
           <Geographies geography={worldUrl}>
             {({ geographies }) =>
@@ -104,16 +104,16 @@ export default function TwoMaps() {
       </div>
 
       {/* USA Map */}
-      <div className="w-[350px] h-[450px] border rounded-lg bg-white shadow-md">
+      <div className="w-[350px] h-[250px] border rounded-lg bg-white shadow-md">
         <h3 className="text-center font-bold text-black py-2">USA</h3>
         <ComposableMap
           projection="geoMercator"
           projectionConfig={{
             center: [-95, 55],
-            scale: 300,
+            scale: 200,
           }}
           width={350}
-          height={400}
+          height={200}
         >
           <Geographies geography={worldUrl}>
             {({ geographies }) =>
