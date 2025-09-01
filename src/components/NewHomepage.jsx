@@ -1,58 +1,109 @@
 import { useState, useEffect } from "react";
-// import { Geist, Geist_Mono } from "next/font/google"; // Removed unused import
 import Services from "@/components/Services";
 import LocationLinks from "@/components/LocationLinks";
 import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from "typewriter-effect";
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker,
-} from "react-simple-maps";
 import { useRouter } from "next/navigation";
-import TwoMaps from "./Twomaps";
-
-// Removed unused geistSans and geistMono variables
-
-// ✅ Updated links (working)
-const canadaUrl =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/canada/canada.json"; // Updated to valid Canada GeoJSON
-const usaUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
 const markers = [
   {
     name: "CLOVERDALE",
-    coordinates: [-122.7543, 49.1052],
+    coordinates: ["8%", "62%"], // adjust %
     link: "/citypage/CLOVERDALE",
   },
   {
     name: "ABBOTSFORD",
-    coordinates: [-122.252, 49.0504],
+    coordinates: ["12%", "67%"], // adjust %
     link: "/citypage/ABBOTSFORD",
   },
   {
     name: "SURREY",
-    coordinates: [-122.849, 49.1913],
+    coordinates: ["7%", "65%"], // adjust %
     link: "/citypage/SURREY",
   },
   {
     name: "EDMONTON",
-    coordinates: [-113.4909, 53.5461],
+    coordinates: ["20%", "61%"], // adjust %
     link: "/citypage/EDMONTON",
   },
   {
     name: "CALGARY",
-    coordinates: [-114.0719, 51.0447],
+    coordinates: ["19%", "68%"], // adjust %
     link: "/citypage/CALGARY",
   },
   {
     name: "SACRAMENTO",
-    coordinates: [-121.4944, 38.5816],
+    coordinates: ["8%", "43%"], // adjust %
     link: "/citypage/SACRAMENTO",
   },
 ];
+
+// Custom Map Component
+const ImageMap = ({ imageSrc, mapMarkers, mapName }) => {
+  const router = useRouter();
+
+  return (
+    <div className="relative w-full border rounded-lg overflow-hidden">
+      <div className="absolute top-2 left-2 z-10 bg-black bg-opacity-70 text-white px-3 py-1 rounded">
+        {mapName}
+      </div>
+      <div className="relative">
+        <img src={imageSrc} alt={mapName} className="w-full h-auto" />
+        {mapMarkers.map(({ name, coordinates, link }) => (
+          <button
+            key={name}
+            className="absolute group transition-all duration-200 hover:scale-110"
+            style={{
+              left: coordinates[0], // percentage
+              top: coordinates[1], // percentage
+              transform: "translate(-50%, -50%)",
+            }}
+            onClick={() => router.push(link)}
+          >
+            {/* Pin marker */}
+            <div className="relative">
+              <div className="w-4 h-4 group-hover:scale-125 transition-all duration-200"></div>
+
+              {/* City name tooltip */}
+              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                {name}
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// TwoMaps Component
+const TwoMaps = () => {
+  const canadaMarkers = markers.filter((marker) =>
+    ["CLOVERDALE", "ABBOTSFORD", "SURREY", "EDMONTON", "CALGARY"].includes(
+      marker.name
+    )
+  );
+
+  const usaMarkers = markers.filter((marker) =>
+    ["SACRAMENTO"].includes(marker.name)
+  );
+
+  return (
+    <div className="space-y-4">
+      <ImageMap
+        imageSrc="/gallery/Canada.png"
+        mapMarkers={canadaMarkers}
+        mapName="Canada"
+      />
+      <ImageMap
+        imageSrc="/gallery/USA.png"
+        mapMarkers={usaMarkers}
+        mapName="USA"
+      />
+    </div>
+  );
+};
 
 export default function Home_test() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -96,9 +147,9 @@ export default function Home_test() {
         />
 
         {/* Navbar */}
-        <div className=" max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
+        <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
           <button
-            className="md:hidden focus:outline-none"
+            className="md:hidden focus:outline-ne"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? (
@@ -124,57 +175,17 @@ export default function Home_test() {
         <div className="max-w-[1280px] mx-auto mt-10 md:mt-2">
           <div className="flex flex-row flex-wrap">
             {/* LEFT SIDE → MAP */}
-            <div className="w-full lg:w-1/5 flex flex-col justify-start pb-[10px] pr-4">
+            <div className="w-full lg:w-1/3 flex flex-col justify-start pb-[10px] pr-4">
               <h4 className="mb-[10px] font-grotesk font-semibold text-md">
                 Select Your Location
               </h4>
-              {/* <div className="w-full h-[500px] border rounded-lg bg-white text-black">
-                <ComposableMap projection="geoMercator" width={300} height={450}>
-                  <Geographies geography={canadaUrl}>
-                    {({ geographies }) =>
-                      geographies.map((geo) => (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          fill="#E0E0E0"
-                          stroke="#D6D6DA"
-                        />
-                      ))
-                    }
-                  </Geographies>
-                  <Geographies geography={usaUrl}>
-                    {({ geographies }) =>
-                      geographies.map((geo) => (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          fill="#E0E0E0"
-                          stroke="#D6D6DA"
-                        />
-                      ))
-                    }
-                  </Geographies>
-                  {markers.map(({ name, coordinates, link }) => (
-                    <Marker
-                      key={name}
-                      coordinates={coordinates}
-                      onClick={() => router.push(link)}
-                    >
-                      <circle r={6} fill="#ED1D25" stroke="#fff" strokeWidth={2} />
-                      <text textAnchor="middle" y={-10} style={{ fontSize: 9 }}>
-                        {name}
-                      </text>
-                    </Marker>
-                  ))}
-                </ComposableMap>
-              </div> */}
               <div>
                 <TwoMaps />
               </div>
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="w-full lg:w-4/5">
+            <div className="w-full lg:w-3/5">
               <Services />
             </div>
           </div>

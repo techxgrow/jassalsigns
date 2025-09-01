@@ -96,7 +96,7 @@ const Services = () => {
 
       <div className="flex flex-row flex-wrap  md:justify-end ">
          {servicesData.map((service, index) => (
-          <div className="h-[180px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
+          <div className="min-h-[230px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
           <Link
             key={index}
             href={service.link}
