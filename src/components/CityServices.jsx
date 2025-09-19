@@ -21,7 +21,6 @@ export function CityServices() {
 
   return (
     <section className="w-full h-full py-20 border-2 " data-aos="fade-up">
-     
       <Carousel items={cards} />
     </section>
   );
