@@ -434,7 +434,7 @@ export default function Home_test() {
         />
       
 
-        {/* Navbar */}
+        {/* Navbarr */}
         <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
           <button
             className="md:hidden focus:outline-none"
