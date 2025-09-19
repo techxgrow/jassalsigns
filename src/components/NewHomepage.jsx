@@ -360,7 +360,7 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
   );
 };
 
-// TwoMaps Component
+// TwoMapss  Component
 const TwoMaps = () => {
   const canadaMarkers = markers.filter((marker) =>
     ["CLOVERDALE", "ABBOTSFORD", "SURREY", "EDMONTON", "CALGARY"].includes(
@@ -430,6 +430,7 @@ export default function Home_test() {
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           src="/background.mov"
         />
+      
 
         {/* Navbar */}
         <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
