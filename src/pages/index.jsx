@@ -161,7 +161,7 @@ import SignageGallery from '@/components/SignageGallery';
 import { Element } from 'react-scroll';
 
 const Home = () => {
-  const cityName = "EDMONTON"; // Set Edmonton as the default city
+  const cityName = "edmonton"; // Set Edmonton as the default city
 
   const testimonialsData = [
     {
