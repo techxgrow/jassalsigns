@@ -57,7 +57,7 @@ export default function CitySlider({ cityName }) {
                <SmallTextAnimation
               text={`${cityName}`}
               textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-              fontSize="40px"
+              fontSize="71px"
             />
             </div>
            
