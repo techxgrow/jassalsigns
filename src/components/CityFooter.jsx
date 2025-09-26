@@ -16,7 +16,7 @@ const CityFooter = () => {
           </p>
           <div className="flex space-x-4 mt-4 text-lg">
             <a
-              href="https://www.facebook.com/jassalsignsltd/"
+              href="https://www.facebook.com/JASSALSIGNSEDMONTON/"
               aria-label="Facebook"
               className="hover:text-[#ED1D26] text-2xl"
             >
@@ -106,19 +106,59 @@ const CityFooter = () => {
             <h2 className="text-lg font-semibold mb-4">PRODUCTS</h2>
             <ul className="space-y-2 text-white text-sm">
               <li>
-                <ScrollLink to="indoor-sign" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Indoor Signs</ScrollLink>
+                <ScrollLink
+                  to="indoor-sign"
+                  smooth
+                  offset={-60}
+                  duration={500}
+                  className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+                >
+                  Indoor Signs
+                </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="vehicle-wrap" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Vehicle Wraps</ScrollLink>
+                <ScrollLink
+                  to="vehicle-wrap"
+                  smooth
+                  offset={-60}
+                  duration={500}
+                  className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+                >
+                  Vehicle Wraps
+                </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="outdoor-sign" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Outdoor Signs</ScrollLink>
+                <ScrollLink
+                  to="outdoor-sign"
+                  smooth
+                  offset={-60}
+                  duration={500}
+                  className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+                >
+                  Outdoor Signs
+                </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="channel-letters" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Channel Letters</ScrollLink>
+                <ScrollLink
+                  to="channel-letters"
+                  smooth
+                  offset={-60}
+                  duration={500}
+                  className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+                >
+                  Channel Letters
+                </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="pylon-signs" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Pylon Signs</ScrollLink>
+                <ScrollLink
+                  to="pylon-signs"
+                  smooth
+                  offset={-60}
+                  duration={500}
+                  className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+                >
+                  Pylon Signs
+                </ScrollLink>
               </li>
             </ul>
           </div>
@@ -129,19 +169,59 @@ const CityFooter = () => {
           <h2 className="text-lg font-semibold mb-4">QUICK LINKS</h2>
           <ul className="space-y-2 text-white">
             <li>
-              <ScrollLink to="home" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Home</ScrollLink>
+              <ScrollLink
+                to="home"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Home
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="productSection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Products</ScrollLink>
+              <ScrollLink
+                to="productSection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Products
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="blogsSection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Blogs</ScrollLink>
+              <ScrollLink
+                to="blogsSection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Blogs
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="gallerySection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Gallery</ScrollLink>
+              <ScrollLink
+                to="gallerySection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Gallery
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="contact" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Contact Us</ScrollLink>
+              <ScrollLink
+                to="contact"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Contact Us
+              </ScrollLink>
             </li>
           </ul>
         </div>
@@ -151,22 +231,52 @@ const CityFooter = () => {
           <h2 className="text-lg font-semibold mb-4">SERVICES</h2>
           <ul className="space-y-2 text-white text-sm">
             <li>
-              <Link href="/products/indoorsigns"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Indoor Signs</Link>
+              <Link
+                href="/products/indoorsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Indoor Signs
+              </Link>
             </li>
             <li>
-              <Link href="/products/vehiclewraps"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Vehicle Wraps</Link>
+              <Link
+                href="/products/vehiclewraps"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Vehicle Wraps
+              </Link>
             </li>
             <li>
-              <Link href="/products/outdoorsigns"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Outdoor Signs</Link>
+              <Link
+                href="/products/outdoorsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Outdoor Signs
+              </Link>
             </li>
             <li>
-              <Link href="/products/channelletters"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Channel Letters</Link>
+              <Link
+                href="/products/channelletters"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Channel Letters
+              </Link>
             </li>
             <li>
-              <Link href="/products/pylonsigns"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Pylon Signs</Link>
+              <Link
+                href="/products/pylonsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Pylon Signs
+              </Link>
             </li>
-             <li>
-              <Link href="/products/printmedia"  className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Printing Services</Link>
+            <li>
+              <Link
+                href="/products/printmedia"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Printing Services
+              </Link>
             </li>
           </ul>
         </div>
@@ -199,7 +309,16 @@ const CityFooter = () => {
 
       {/* Footer Bottom */}
       <div className="border-t border-white mt-10 pt-6 text-center text-white text-[14px]">
-        <p>2025 © Copyright, All Rights Reserved.</p>
+        <div className="flex items-center  justify-between px-16">
+          <p>2025 © Copyright, All Rights Reserved.</p>
+          <p>
+            Website Designed By{" "}
+            <a href="https://bookmyad.ca/" className="text-[#FD6702]">
+              {" "}
+              Bookmyad.ca
+            </a>{" "}
+          </p>
+        </div>
       </div>
     </footer>
   );

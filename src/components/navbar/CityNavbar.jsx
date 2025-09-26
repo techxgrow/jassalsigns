@@ -46,19 +46,19 @@ const CityNavbar = () => {
       >
         <div className="md:max-w-[85vw] max-w-[95vw] mx-auto flex items-center justify-between py-2 px-6 md:px-0">
           <div className="flex gap-6 items-center text-white">
-       <a href="tel:91 7706087842"  className="flex gap-2 items-center hover:underline">
+       <a href="tel:+1 (780) 437-7790"  className="flex gap-2 items-center hover:underline">
               <FaPhoneAlt />
-              <span>+1 (604) 599 4221</span>
+              <span>+1 (780) 437-7790</span>
             </a>
-            <a href="mailto:someone@example.com" className="flex gap-2 items-center hover:underline">
+            <a href="mailto:jassalsignsedm@gmail.com" className="flex gap-2 items-center hover:underline">
               <FaEnvelope />
-              <span>info@jassalsigns.com</span>
+              <span>jassalsignsedm@gmail.com</span>
             </a>
           </div>
 
           <div className="flex space-x-4 items-center text-lg text-white">
             <a
-              href="https://www.facebook.com/jassalsignsltd/"
+              href="https://www.facebook.com/JASSALSIGNSEDMONTON/"
               aria-label="Facebook"
               className="hover:text-[#ED1D26] text-2xl"
             >
