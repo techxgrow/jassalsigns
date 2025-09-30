@@ -26,13 +26,13 @@ const ContactUs = ({ city }) => {
           <div className="absolute inset-0 bg-[#00000047]/50 z-0 rounded-md"></div>
 
           {/* Content */}
-          <div className="relative z-10">
+          <div className="relative z-10 ">
             <h3 className="text-3xl font-bold mb-3  text-white">CONTACT US</h3>
 
-            <div className="flex flex-col gap-3 text-white justify-center absolute top-[50%]">
+            <div className="flex flex-col gap-3 text-white justify-center absolute">
               {/* Phone */}
               <p className="flex items-center gap-2">
-                <FaPhone className="text-lg" />
+                <FaPhone className="text-lg " />
                 <span>+1 (780) 437-7790</span>
               </p>
 

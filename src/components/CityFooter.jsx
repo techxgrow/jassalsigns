@@ -23,7 +23,7 @@ const CityFooter = () => {
               <FaFacebook />
             </a>
             <a
-              href="https://www.instagram.com/jassal_signs/?hl=en"
+              href="https://www.instagram.com/jassalsigns/?hl=en"
               aria-label="Instagram"
               className="hover:text-[#ED1D26] text-2xl"
             >
