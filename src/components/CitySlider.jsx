@@ -9,13 +9,12 @@ export default function CitySlider({ cityName }) {
      `/citypage/header/${cityName}/${cityName}1.jpg`,
     `/citypage/header/${cityName}/${cityName}2.jpg`,
     `/citypage/header/${cityName}/${cityName}3.jpg`,
-   
-  ];
-
+  ] ;
+  
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true });
   }, []);
-
+ 
   return (
     <section className="w-full h-[80vh] md:h-[120vh] overflow-hidden relative group" id="home">
       {/* Image Grid with scaling effect */}
@@ -60,7 +59,6 @@ export default function CitySlider({ cityName }) {
               fontSize="71px"
             />
             </div>
-           
           </h1>
         </div>
       </div>
