@@ -17,7 +17,7 @@ export default function CitySlider({ cityName }) {
  
   return (
     <section className="w-full h-[80vh] md:h-[120vh] overflow-hidden relative group" id="home">
-      {/* Image Grid with scaling effect */}
+      {/* Image Grid wiith scaling effect */}
       <div className="absolute inset-0 grid grid-cols-3 gap-1 h-full w-full">
         {slideImages.map((img, idx) => (
           <div key={idx} className="w-full h-full overflow-hidden">
