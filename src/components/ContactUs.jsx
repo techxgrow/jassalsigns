@@ -33,23 +33,24 @@ const ContactUs = ({ city }) => {
               {/* Phone */}
               <p className="flex items-center gap-2">
                 <FaPhone className="text-lg " />
-                <span>+1 (780) 437-7790</span>
+                {/* <span className="">+1 (780) 437-7790</span> */}
+                <span>{data && data?.contactPage[`${city}`]?.phone}</span>
               </p>
 
               {/* Email */}
               <p className="flex items-center gap-2">
                 <FaEnvelope className="text-lg" />
-                <span>jassalsignsedm@gmail.com</span>
+                <span>{data && data?.contactPage[`${city}`]?.email}</span>
               </p>
 
               {/* Address */}
               <p className="flex items-start gap-2">
                 <FaMapMarkerAlt className="text-lg mt-1" />
-                <span>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</span>
+                <span>{data && data?.contactPage[`${city}`]?.address}</span>
               </p>
             </div>
 
-            <div className="h-[250px] mt-6  overflow-hidden">
+            <div className="h-[250px] mt-50  overflow-hidden">
               <iframe
                 src={data && data?.contactPage[`${city}`]?.location}
                 style={{ border: 0, width: "100%", height: "100%" }}
