@@ -267,7 +267,7 @@ export const data = {
       phone:"+1 916 982 9297",
       email:"Jassalsignssac@gmail.com",
       address:"10535 E Stockton Blvd K, Elk Grove, CA 95624, United States",
-      location:"https://www.google.com/maps/place/10535+E+Stockton+Blvd+K,+Elk+Grove,+CA+95624,+USA/@38.3745293,-121.3591176,17z/data=!3m1!4b1!4m6!3m5!1s0x809ab8cbe821fbb9:0x48e3083eb8bf29f0!8m2!3d38.3745293!4d-121.3591176!16s%2Fg%2F11m_ldp79m?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D",
+      location:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.895731485956!2d-121.36169252521292!3d38.37453347738781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab8cbe821fbb9%3A0x48e3083eb8bf29f0!2s10535%20E%20Stockton%20Blvd%20K%2C%20Elk%20Grove%2C%20CA%2095624%2C%20USA!5e0!3m2!1sen!2sin!4v1763461849204!5m2!1sen!2sin",
     },
 
   }
