@@ -7,6 +7,10 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  images: {
+    remotePatterns: [],
+    unoptimized: false, // Set to true if you face optimization issues in production
+  },
   // Add webpack configuration for better font handling
   webpack: (config, { isServer }) => {
     if (!isServer) {

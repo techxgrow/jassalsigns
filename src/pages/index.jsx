@@ -192,7 +192,7 @@ const Home = () => {
   return (
     <>
       <CityNavbar />
-      <CitySlider cityName={cityName} />
+      <CitySlider cityName={cityName.toLowerCase()} />
       <Element name="productSection">
         <AboutSection />
       </Element>
