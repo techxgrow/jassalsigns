@@ -6,10 +6,9 @@ import Link from "next/link";
 
 export default function CitySlider({ cityName }) {
   const slideImages = [
-     `/citypage/header/${cityName}/${cityName}1.jpg`,
+    `/citypage/header/${cityName}/${cityName}1.jpg`,
     `/citypage/header/${cityName}/${cityName}2.jpg`,
     `/citypage/header/${cityName}/${cityName}3.jpg`,
-   
   ];
 
   useEffect(() => {
@@ -17,7 +16,10 @@ export default function CitySlider({ cityName }) {
   }, []);
 
   return (
-    <section className="w-full h-[80vh] md:h-[120vh] overflow-hidden relative group" id="home">
+    <section
+      className="w-full h-[80vh] md:h-[120vh] overflow-hidden relative group"
+      id="home"
+    >
       {/* Image Grid with scaling effect */}
       <div className="absolute inset-0 grid grid-cols-3 gap-1 h-full w-full">
         {slideImages.map((img, idx) => (
@@ -37,31 +39,35 @@ export default function CitySlider({ cityName }) {
 
       {/* Content */}
       <div className="relative z-10 max-w-[85vw] mx-auto flex items-center h-full">
-        <div className="text-white  md:justify-start " data-aos="fade-up" data-aos-delay="300">
+        <div
+          className="text-white  md:justify-start "
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <p className="text-md md:text-xl uppercase tracking-widest font-bold text-white text-center mb-2  md:text-left">
             We Bring Brands To Life
           </p>
           <h1 className="text-3xl  leading-[3rem] text-center max-w-[800px] uppercase md:text-left font-extrabold lg:text-7xl lg:leading-[5.5rem]">
-            JASSAL SIGNS SIGNAGE AND PRINTING SERVICES IN{" "}
-            {/* for desktop device*/}
-            <span className="hidden md:inline">
-               <SmallTextAnimation
+            JASSAL SIGNS {/* for desktop device*/}
+            {/* for mobile device */}
+          </h1>
+          <h2 className="text-[25px]">SIGNAGE AND PRINTING SERVICES IN</h2>
+          <span className="hidden md:inline">
+            <SmallTextAnimation
               text={`${cityName}`}
               textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
               fontSize="70px"
             />
-
-            </span>
-            {/* for mobile device */}
-            <div className="block md:hidden">
-               <SmallTextAnimation
-              text={`${cityName}`}
-              textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-              fontSize="71px"
-            />
-            </div>
-           
-          </h1>
+          </span>
+          <div className="block md:hidden ">
+            <h1 className="text-3xl uppercase">
+              <SmallTextAnimation
+                text={`${cityName}`}
+                textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+                fontSize="71px"
+              />
+            </h1>
+          </div>
         </div>
       </div>
     </section>

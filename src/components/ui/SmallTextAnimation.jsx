@@ -5,12 +5,13 @@ const SmallTextAnimation = (props) => {
 
   return (
     <div className="small-text-animation" style={{ display: 'inline-block' }}>
-      <h1 
+      <h1
         style={{
           position: 'relative',
           fontSize: fontSize || '70px',
           fontWeight: 'bold',
           color: 'white',
+          textTransform: 'uppercase',
         }}
         data-text={text}
       >
@@ -32,11 +33,14 @@ const SmallTextAnimation = (props) => {
             -webkit-background-clip: text;
             color: transparent;
             -webkit-text-fill-color: transparent;
-            animation: smallTextAnim 4s linear infinite;
+            animation: smallTextAnim 2s ease-out forwards;
           }
           
           @keyframes smallTextAnim {
-            50%, 80% {
+            0% {
+              width: 0;
+            }
+            100% {
               width: 100%;
             }
           }
