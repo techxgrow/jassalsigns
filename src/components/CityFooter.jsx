@@ -264,7 +264,6 @@ const CityFooter = () => {
           </form>
         </div>
 
-        {/* Mobile View for Services and Locations */}
         <div className="md:hidden grid grid-cols-2 gap-x-10 gap-y-8">
           <div>
             <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-4">
