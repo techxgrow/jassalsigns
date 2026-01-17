@@ -56,7 +56,7 @@ export default function CitySlider({ cityName }) {
           {/* for desktop device*/}
           <div className="hidden md:flex md:justify-start">
             <SmallTextAnimation
-              text={cityName.toUpperCase()}
+              text={cityName?.toUpperCase() || ""}
               textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
               fontSize="90px"
               fontWeight="800"
@@ -65,7 +65,7 @@ export default function CitySlider({ cityName }) {
           {/* for mobile device */}
           <div className="flex justify-center md:hidden">
             <SmallTextAnimation
-              text={cityName.toUpperCase()}
+              text={cityName?.toUpperCase() || ""}
               textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
               fontSize="60px"
               fontWeight="800"

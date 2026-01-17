@@ -83,26 +83,28 @@ const ContactUs = ({ city }) => {
               {/* Phone */}
               <p className="flex items-center gap-2">
                 <FaPhone className="text-lg " />
-                <span>+1 (780) 437-7790</span>
+                <span>+1 916 982 9297</span>
               </p>
 
               {/* Email */}
               <p className="flex items-center gap-2">
                 <FaEnvelope className="text-lg" />
-                <span>jassalsignsedm@gmail.com</span>
+                <span>Jassalsignssac@gmail.com</span>
               </p>
 
               {/* Address */}
               <p className="flex items-start gap-2">
                 <FaMapMarkerAlt className="text-lg mt-1" />
-                <span>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</span>
+                <span>
+                  10535 E Stockton Blvd K, Elk Grove, CA 95624, United States
+                </span>
               </p>
             </div>
 
             <div className="h-[250px] mt-40  overflow-hidden">
               <iframe
                 src={
-                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1768589544003!5m2!1sen!2sin"
+                  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12511.583700167499!2d-121.35911800000001!3d38.37452900000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab8cbe821fbb9%3A0x48e3083eb8bf29f0!2s10535%20E%20Stockton%20Blvd%20K%2C%20Elk%20Grove%2C%20CA%2095624%2C%20USA!5e0!3m2!1sen!2sin!4v1768667945931!5m2!1sen!2sin"
                 }
                 style={{ border: 0, width: "100%", height: "100%" }}
                 allowFullScreen=""
