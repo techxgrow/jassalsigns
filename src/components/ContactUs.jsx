@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { data } from "../../assets/data";
+import emailjs from "@emailjs/browser";
+import { ClipLoader } from "react-spinners";
 
 const ContactUs = ({ city }) => {
+  const [loading, setLoading] = useState(false);
   // console.log("city prop", data?.contactPage[`${city}`]?.location);`
 
   //  if(data){
@@ -27,16 +30,33 @@ const ContactUs = ({ city }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     console.log("Form Data Submitted:", formData);
-    // You can add further logic here (e.g., sending to an API)
-    alert("Form submitted! Check console for data.");
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formData,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        },
+      )
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+        setLoading(false);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setLoading(false);
+      });
   };
 
   return (
@@ -167,9 +187,19 @@ const ContactUs = ({ city }) => {
             <div className="flex  items-center">
               <button
                 type="submit"
-                className=" bg-[#ED1D26] text-white py-2 px-8 transition cursor-pointer "
+                disabled={loading}
+                className={`bg-[#ED1D26] text-white py-2 px-8 transition cursor-pointer flex items-center justify-center gap-2 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Submit
+                {loading ? (
+                  <>
+                    <ClipLoader size={20} color="#ffffff" />
+                    Sending...
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </form>
