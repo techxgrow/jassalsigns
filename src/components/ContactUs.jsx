@@ -1,13 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { data } from "../../assets/data";
+import emailjs from "@emailjs/browser";
+import { ClipLoader } from "react-spinners";
 
 const ContactUs = ({ city }) => {
+  const [loading, setLoading] = useState(false);
   // console.log("city prop", data?.contactPage[`${city}`]?.location);`
 
   //  if(data){
   //   console.log("data", data)
   //  }
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log("Form Data Submitted:", formData);
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formData,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        },
+      )
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+        setLoading(false);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setLoading(false);
+      });
+  };
 
   return (
     <div
@@ -33,26 +83,27 @@ const ContactUs = ({ city }) => {
               {/* Phone */}
               <p className="flex items-center gap-2">
                 <FaPhone className="text-lg " />
-                {/* <span className="">+1 (780) 437-7790</span> */}
-                <span>{data && data?.contactPage[`${city}`]?.phone}</span>
+                <span>+1 (780) 437-7790</span>
               </p>
 
               {/* Email */}
               <p className="flex items-center gap-2">
                 <FaEnvelope className="text-lg" />
-                <span>{data && data?.contactPage[`${city}`]?.email}</span>
+                <span>jassalsignsedm@gmail.com</span>
               </p>
 
               {/* Address */}
               <p className="flex items-start gap-2">
                 <FaMapMarkerAlt className="text-lg mt-1" />
-                <span>{data && data?.contactPage[`${city}`]?.address}</span>
+                <span>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</span>
               </p>
             </div>
 
-            <div className="h-[250px] mt-50  overflow-hidden">
+            <div className="h-[250px] mt-40  overflow-hidden">
               <iframe
-                src={data && data?.contactPage[`${city}`]?.location}
+                src={
+                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1768589544003!5m2!1sen!2sin"
+                }
                 style={{ border: 0, width: "100%", height: "100%" }}
                 allowFullScreen=""
                 loading="lazy"
@@ -68,12 +119,15 @@ const ContactUs = ({ city }) => {
             POST YOUR QUERY
           </h3>
 
-          <form className="space-y-4 text-gray-800">
+          <form onSubmit={handleSubmit} className="space-y-4 text-gray-800">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block font-medium ">First Name*</label>
                 <input
                   type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
                   placeholder="Enter Your First Name"
                   className="w-full border p-2  mt-1 "
                   required
@@ -83,6 +137,9 @@ const ContactUs = ({ city }) => {
                 <label className="block font-medium ">Last Name*</label>
                 <input
                   type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
                   placeholder="Enter Your Last Name"
                   className="w-full border p-2  mt-1 "
                   required
@@ -95,6 +152,9 @@ const ContactUs = ({ city }) => {
                 <label className="block font-medium">Email ID*</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter Your Email"
                   className="w-full border p-2  mt-1 d"
                   required
@@ -104,6 +164,9 @@ const ContactUs = ({ city }) => {
                 <label className="block font-medium">Phone Number*</label>
                 <input
                   type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Enter Your Phone Number"
                   className="w-full border p-2  mt-1 "
                   required
@@ -113,6 +176,9 @@ const ContactUs = ({ city }) => {
             <div>
               <label className="block font-medium">Message</label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Enter Your message"
                 className="w-full border p-2  mt-1 "
                 rows="3"
@@ -121,9 +187,19 @@ const ContactUs = ({ city }) => {
             <div className="flex  items-center">
               <button
                 type="submit"
-                className=" bg-[#ED1D26] text-white py-2 px-8 transition cursor-pointer "
+                disabled={loading}
+                className={`bg-[#ED1D26] text-white py-2 px-8 transition cursor-pointer flex items-center justify-center gap-2 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Submit
+                {loading ? (
+                  <>
+                    <ClipLoader size={20} color="#ffffff" />
+                    Sending...
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </form>
