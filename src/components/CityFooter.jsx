@@ -8,7 +8,11 @@ const CityFooter = () => {
   const router = useRouter();
 
   const handleCityClick = (e, path) => {
-    const normalizedCurrent = router.asPath.split('?')[0].split('#')[0].toLowerCase().replace(/\/$/, "");
+    const normalizedCurrent = router.asPath
+      .split("?")[0]
+      .split("#")[0]
+      .toLowerCase()
+      .replace(/\/$/, "");
     const normalizedTarget = path.toLowerCase().replace(/\/$/, "");
 
     if (normalizedCurrent === normalizedTarget) {
@@ -54,54 +58,130 @@ const CityFooter = () => {
 
         {/* Quick Links */}
         <div className="md:block">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">QUICK LINKS</h2>
+          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">
+            QUICK LINKS
+          </h2>
           <ul className="space-y-3 text-white">
             <li>
-              <ScrollLink to="home" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Home</ScrollLink>
+              <ScrollLink
+                to="home"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Home
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="productSection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Products</ScrollLink>
+              <ScrollLink
+                to="productSection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Products
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="blogsSection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Blogs</ScrollLink>
+              <ScrollLink
+                to="blogsSection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Blogs
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="gallerySection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Gallery</ScrollLink>
+              <ScrollLink
+                to="gallerySection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Gallery
+              </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="contact" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Contact Us</ScrollLink>
+              <ScrollLink
+                to="contact"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Contact Us
+              </ScrollLink>
             </li>
           </ul>
         </div>
 
         {/* Services */}
         <div className="hidden md:block">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">SERVICES</h2>
+          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">
+            SERVICES
+          </h2>
           <ul className="space-y-3 text-white text-sm">
             <li>
-              <Link href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Indoor Signs</Link>
+              <Link
+                href="/products/indoorsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Indoor Signs
+              </Link>
             </li>
             <li>
-              <Link href="/products/vehiclewraps" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Vehicle Wraps</Link>
+              <Link
+                href="/products/vehiclewraps"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Vehicle Wraps
+              </Link>
             </li>
             <li>
-              <Link href="/products/outdoorsigns" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Outdoor Signs</Link>
+              <Link
+                href="/products/outdoorsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Outdoor Signs
+              </Link>
             </li>
             <li>
-              <Link href="/products/channelletters" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Channel Letters</Link>
+              <Link
+                href="/products/channelletters"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Channel Letters
+              </Link>
             </li>
             <li>
-              <Link href="/products/pylonsigns" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Pylon Signs</Link>
+              <Link
+                href="/products/pylonsigns"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Pylon Signs
+              </Link>
             </li>
             <li>
-              <Link href="/products/printmedia" className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors">Printing Services</Link>
+              <Link
+                href="/products/printmedia"
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
+              >
+                Printing Services
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Locations Canada */}
         <div className="md:block hidden">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">British Columbia</h2>
+          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">
+            British Columbia
+          </h2>
           <ul className="space-y-3 text-white text-sm">
             {[
               { name: "Surrey", path: "/citypage/SURREY" },
@@ -110,7 +190,7 @@ const CityFooter = () => {
             ].map((city) => (
               <li key={city.name}>
                 <Link
-                  href={city.path}
+                  href={"#"}
                   className="hover:text-[#ED1D26] text-[16px] transition-colors"
                   onClick={(e) => handleCityClick(e, city.path)}
                 >
@@ -119,7 +199,9 @@ const CityFooter = () => {
               </li>
             ))}
           </ul>
-          <h2 className="text-lg font-semibold mb-3 mt-6 font-grotesk underline underline-offset-4">Alberta</h2>
+          <h2 className="text-lg font-semibold mb-3 mt-6 font-grotesk underline underline-offset-4">
+            Alberta
+          </h2>
           <ul className="space-y-3 text-white text-sm">
             {[
               { name: "Calgary", path: "/citypage/CALGARY" },
@@ -127,7 +209,7 @@ const CityFooter = () => {
             ].map((city) => (
               <li key={city.name}>
                 <Link
-                  href={city.path}
+                  href={"#"}
                   className="hover:text-[#ED1D26] text-[16px] transition-colors"
                   onClick={(e) => handleCityClick(e, city.path)}
                 >
@@ -140,7 +222,9 @@ const CityFooter = () => {
 
         {/* Locations USA */}
         <div className="md:block hidden">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">United States</h2>
+          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-4">
+            United States
+          </h2>
           <ul className="space-y-3 text-white text-sm">
             <li className="flex items-center text-[16px] group">
               <a
@@ -183,26 +267,95 @@ const CityFooter = () => {
         {/* Mobile View for Services and Locations */}
         <div className="md:hidden grid grid-cols-2 gap-x-10 gap-y-8">
           <div>
-            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-4">SERVICES</h2>
+            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-4">
+              SERVICES
+            </h2>
             <ul className="space-y-2 text-white">
-              <li><Link href="/products/indoorsigns" className="hover:text-[#ED1D26] text-[16px]">Indoor Signs</Link></li>
-              <li><Link href="/products/vehiclewraps" className="hover:text-[#ED1D26] text-[16px]">Vehicle Wraps</Link></li>
-              <li><Link href="/products/outdoorsigns" className="hover:text-[#ED1D26] text-[16px]">Outdoor Signs</Link></li>
-              <li><Link href="/products/channelletters" className="hover:text-[#ED1D26] text-[16px]">Channel Letters</Link></li>
-              <li><Link href="/products/pylonsigns" className="hover:text-[#ED1D26] text-[16px]">Pylon Signs</Link></li>
+              <li>
+                <Link
+                  href="/products/indoorsigns"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Indoor Signs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/vehiclewraps"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Vehicle Wraps
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/outdoorsigns"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Outdoor Signs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/channelletters"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Channel Letters
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/pylonsigns"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Pylon Signs
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
-            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-4">LOCATIONS</h2>
-            <h3 className="font-semibold text-sm mb-2 opacity-80">British Columbia</h3>
+            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-4">
+              LOCATIONS
+            </h2>
+            <h3 className="font-semibold text-sm mb-2 opacity-80">
+              British Columbia
+            </h3>
             <ul className="space-y-2 text-white mb-4">
-              <li><Link href="/citypage/SURREY" className="hover:text-[#ED1D26] text-[16px]">Surrey</Link></li>
-              <li><Link href="/citypage/CLOVERDALE" className="hover:text-[#ED1D26] text-[16px]">Cloverdale</Link></li>
+              <li>
+                <Link
+                  href="/citypage/SURREY"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Surrey
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/citypage/CLOVERDALE"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Cloverdale
+                </Link>
+              </li>
             </ul>
             <h3 className="font-semibold text-sm mb-2 opacity-80">Alberta</h3>
             <ul className="space-y-2 text-white">
-              <li><Link href="/citypage/CALGARY" className="hover:text-[#ED1D26] text-[16px]">Calgary</Link></li>
-              <li><Link href="/citypage/EDMONTON" className="hover:text-[#ED1D26] text-[16px]">Edmonton</Link></li>
+              <li>
+                <Link
+                  href="/citypage/CALGARY"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Calgary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/citypage/EDMONTON"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Edmonton
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
