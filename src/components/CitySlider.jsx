@@ -44,28 +44,33 @@ export default function CitySlider({ cityName }) {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <p className="text-md md:text-xl uppercase tracking-widest font-bold text-white text-center mb-2  md:text-left">
+          <p className="text-xl md:text-[30px] uppercase tracking-[0.15em] font-bold text-white text-center mb-2 md:text-left opacity-90">
             We Bring Brands To Life
           </p>
-          <h1 className="text-3xl  leading-[3rem] text-center max-w-[800px] uppercase md:text-left font-extrabold lg:text-7xl lg:leading-[5.5rem]">
-            JASSAL SIGNS SIGNAGE AND PRINTING SERVICES IN{" "}
-            {/* for desktop device*/}
-            <span className="hidden md:inline">
-              <SmallTextAnimation
-                text={`${cityName}`}
-                textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-                fontSize="70px"
-              />
-            </span>
-            {/* for mobile device */}
-            <div className="block md:hidden">
-              <SmallTextAnimation
-                text={`${cityName}`}
-                textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-                fontSize="71px"
-              />
-            </div>
+          <h1 className="text-[60px] lg:text-[90px] uppercase font-extrabold text-white text-center md:text-left leading-[1.1] mb-2 tracking-[-0.025em]">
+            JASSAL SIGNS
           </h1>
+          <p className="text-xl md:text-[30px] uppercase tracking-[0.15em] font-bold text-white text-center mb-6 md:text-left whitespace-nowrap opacity-90">
+            Signage and Printing Services In
+          </p>
+          {/* for desktop device*/}
+          <div className="hidden md:flex md:justify-start">
+            <SmallTextAnimation
+              text={cityName.toUpperCase()}
+              textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+              fontSize="90px"
+              fontWeight="800"
+            />
+          </div>
+          {/* for mobile device */}
+          <div className="flex justify-center md:hidden">
+            <SmallTextAnimation
+              text={cityName.toUpperCase()}
+              textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+              fontSize="60px"
+              fontWeight="800"
+            />
+          </div>
         </div>
       </div>
     </section>
