@@ -31,20 +31,33 @@ const ConsultationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("formdata", formData);
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_PRODUCT_TEMPLATE;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS environment variables are missing!", {
+        serviceId: !!serviceId,
+        templateId: !!templateId,
+        publicKey: !!publicKey,
+      });
+      alert(
+        "Configuration error: Please ensure EmailJS environment variables are set in production.",
+      );
+      return;
+    }
+
+    console.log("Submitting form data:", formData);
     setLoading(true);
 
     emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_PRODUCT_TEMPLATE,
-        formData,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        },
-      )
+      .send(serviceId, templateId, formData, {
+        publicKey: publicKey,
+      })
       .then((response) => {
         console.log("Email sent successfully!", response);
+        alert("Success! Your request has been sent.");
         setLoading(false);
         setFormData({
           firstName: "",
@@ -58,6 +71,7 @@ const ConsultationForm = () => {
       })
       .catch((error) => {
         console.error("Error sending email:", error);
+        alert(`Failed to send email: ${error?.text || "Unknown error"}`);
         setLoading(false);
       });
   };
@@ -193,7 +207,7 @@ const ConsultationForm = () => {
               : "bg-[#ED1D26] hover:bg-[#d01920]"
           }`}
           type="submit"
-          // disabled={loading}
+          disabled={loading}
         >
           {loading ? (
             <span className="flex items-center justify-center gap-2">

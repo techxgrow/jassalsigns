@@ -46,11 +46,17 @@ const CityNavbar = () => {
       >
         <div className="md:max-w-[85vw] max-w-[95vw] mx-auto flex items-center justify-between py-2 px-6 md:px-0">
           <div className="flex gap-6 items-center text-white">
-       <a href="tel:+1 916 982 9297"  className="flex gap-2 items-center hover:underline">
+            <a
+              href="tel:+1 916 982 9297"
+              className="flex gap-2 items-center hover:underline"
+            >
               <FaPhoneAlt />
               <span>+1 916 982 9297</span>
             </a>
-            <a href="mailto:Jassalsignssac@gmail.com" className="flex gap-2 items-center hover:underline">
+            <a
+              href="mailto:Jassalsignssac@gmail.com"
+              className="flex gap-2 items-center hover:underline"
+            >
               <FaEnvelope />
               <span>Jassalsignssac@gmail.com</span>
             </a>
@@ -145,11 +151,10 @@ const CityNavbar = () => {
             </li>
             <li>
               <ScrollLink
-               to="blogsSection"
+                to="blogsSection"
                 smooth={true}
                 duration={500}
                 offset={-50}
-
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-[#ED1D26] transition-colors hover:cursor-pointer"
               >
@@ -158,7 +163,7 @@ const CityNavbar = () => {
             </li>
             <li>
               <ScrollLink
-               smooth={true}
+                smooth={true}
                 duration={500}
                 offset={-50}
                 to="contactSection"

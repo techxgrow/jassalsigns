@@ -9,6 +9,8 @@ import "react-photo-view/dist/react-photo-view.css";
 import ConsultationForm from "@/components/ui/ConsultationForm";
 import ProductsFooter from "@/components/ProductsFooter";
 import { Element } from "react-scroll";
+import CityFooter from "@/components/CityFooter";
+import CityNavbar from "@/components/navbar/CityNavbar";
 
 const images = [
   { src: "/gallery/gl1.jpg" },
@@ -40,7 +42,8 @@ const ProductPage = () => {
 
   return (
     <div>
-      <ProductNavbar />
+      {/* <ProductNavbar /> */}
+      <CityNavbar />
       {/* Header Start */}
       <div className="relative h-[320px] overflow-hidden">
         {/* Animated Background */}
@@ -97,7 +100,7 @@ const ProductPage = () => {
               {data.productPage[slug]?.consultationObj?.bulletList.map(
                 (item, index) => (
                   <li key={index}>{item}</li>
-                )
+                ),
               )}
             </ul>
             <p className="text-sm sm:text-base font-medium">
@@ -136,8 +139,8 @@ const ProductPage = () => {
                         index === 5
                           ? "h-[467px]"
                           : index === 8
-                          ? "h-[480px]"
-                          : ""
+                            ? "h-[480px]"
+                            : ""
                       }`}
                     />
                   </div>
@@ -155,7 +158,8 @@ const ProductPage = () => {
         ))}
       </div>
 
-      <ProductsFooter />
+      {/* <ProductsFooter /> */}
+      <CityFooter />
     </div>
   );
 };

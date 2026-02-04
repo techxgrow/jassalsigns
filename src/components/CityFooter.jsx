@@ -32,27 +32,27 @@ const CityFooter = () => {
             high-quality custom signs for businesses across various industries.
           </p>
           <div className="flex space-x-4 mt-6 text-lg">
-            <a
+            {/* <a
               href="https://www.facebook.com/jassalsignsltd/"
               aria-label="Facebook"
               className="hover:text-[#ED1D26] text-2xl transition-colors"
             >
               <FaFacebook />
-            </a>
+            </a> */}
             <a
-              href="https://www.instagram.com/jassal_signs/?hl=en"
+              href="https://www.instagram.com/jassalsigns_sacramento?igsh=NXB5YXlvNHM0MmI0"
               aria-label="Instagram"
-              className="hover:text-[#ED1D26] text-2xl transition-colors"
+              className="hover:text-[#ED1D26] text-2xl transition-colors mt-2 "
             >
               <FaInstagram />
             </a>
-            <a
-              href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca"
-              aria-label="LinkedIn"
-              className="hover:text-[#ED1D26] text-2xl transition-colors"
+            {/* <a
+            href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca"
+            aria-label="LinkedIn"
+            className="hover:text-[#ED1D26] text-2xl transition-colors"
             >
-              <FaLinkedin />
-            </a>
+            <FaLinkedin />
+            </a> */}
           </div>
         </div>
 
