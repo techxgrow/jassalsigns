@@ -193,7 +193,7 @@ const ConsultationForm = () => {
               : "bg-[#ED1D26] hover:bg-[#d01920]"
           }`}
           type="submit"
-          disabled={loading}
+          // disabled={loading}
         >
           {loading ? (
             <span className="flex items-center justify-center gap-2">
