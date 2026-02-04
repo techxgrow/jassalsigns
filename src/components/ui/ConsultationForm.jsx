@@ -187,7 +187,7 @@ const ConsultationForm = () => {
       {/* Submit Button */}
       <div className="flex justify-center items-center mb-6 font-bold">
         <button
-          className={`h-10 w-full sm:w-60 text-white rounded-sm text-base transition-all duration-200 ${
+          className={`h-10 w-full sm:w-60 text-white rounded-sm text-base transition-all duration-200 cursor-pointer ${
             loading
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#ED1D26] hover:bg-[#d01920]"
