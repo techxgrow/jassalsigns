@@ -31,7 +31,6 @@ const ContactUs = ({ city }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log("Form Data Submitted:", formData);
 
     emailjs
       .send(
@@ -43,7 +42,6 @@ const ContactUs = ({ city }) => {
         },
       )
       .then((response) => {
-        console.log("Email sent successfully!", response);
         setLoading(false);
         setFormData({
           firstName: "",
