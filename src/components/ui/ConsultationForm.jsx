@@ -31,7 +31,7 @@ const ConsultationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("formdata", formData);
     setLoading(true);
 
     emailjs
