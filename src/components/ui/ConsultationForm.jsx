@@ -60,40 +60,6 @@ const ConsultationForm = () => {
         console.error("Error sending email:", error);
         setLoading(false);
       });
-
-    // const payload = new FormData();
-    // payload.append("First Name", formData.firstName);
-    // payload.append("Last Name", formData.lastName);
-    // payload.append("Email", formData.email);
-    // payload.append("Phone", formData.phone);
-    // payload.append("Signage Type", formData.signage.join(", "));
-    // payload.append("Service Location", formData.location.join(", "));
-    // payload.append("Message", formData.message);
-
-    console.log("formdata", formData);
-
-    // const res = await fetch("https://formspree.io/f/mzzrwken", {
-    //   method: "POST",
-    //   body: payload,
-    //   headers: { Accept: "application/json" },
-    // });
-
-    // if (res.ok) {
-    //   alert(
-    //     "Thank you! We've received your request and will contact you shortly.",
-    //   );
-    //   setFormData({
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     phone: "",
-    //     signage: [],
-    //     location: [],
-    //     message: "",
-    //   });
-    // } else {
-    //   alert("Oops! Something went wrong. Please try again.");
-    // }
   };
 
   return (
