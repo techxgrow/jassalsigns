@@ -3,6 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { data } from "../../assets/data";
 import emailjs from "@emailjs/browser";
 import { ClipLoader } from "react-spinners";
+import axios from "axios";
 
 const ContactUs = ({ city }) => {
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,7 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
+    website: "Edmonton",
   });
 
   const handleChange = (e) => {
@@ -31,19 +33,13 @@ const ContactUs = ({ city }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log("Form Data Submitted:", formData);
+    // console.log("Form Data Submitted:", formData);
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formData,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        },
-      )
-      .then((response) => {
-        console.log("Email sent successfully!", response);
+    axios
+      .post("/api/contact", formData)
+      .then((res) => {
+        console.log("res", res);
+        // alert("Email sent successfully!");
         setLoading(false);
         setFormData({
           firstName: "",
@@ -51,12 +47,39 @@ const ContactUs = ({ city }) => {
           email: "",
           phone: "",
           message: "",
+          website: "Edmonton",
         });
       })
-      .catch((error) => {
-        console.error("Error sending email:", error);
+      .catch((err) => {
+        console.log("err", err);
+        alert("Failed to send email. Please try again.");
         setLoading(false);
       });
+
+    // emailjs
+    //   .send(
+    //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+    //     formData,
+    //     {
+    //       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+    //     },
+    //   )
+    //   .then((response) => {
+    //     console.log("Email sent successfully!", response);
+    //     setLoading(false);
+    //     setFormData({
+    //       firstName: "",
+    //       lastName: "",
+    //       email: "",
+    //       phone: "",
+    //       message: "",
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error sending email:", error);
+    //     setLoading(false);
+    //   });
   };
 
   return (

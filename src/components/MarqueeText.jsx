@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const texts = [
   "ADDA SIGNS",
@@ -9,26 +9,25 @@ const texts = [
   "STORE FRONT SIGNS",
   "BUILDING SIGNS",
   "PYLON SIGNS",
-  "METAL SIGNS"
+  "METAL SIGNS",
 ];
 
 const MarqueeText = () => {
   return (
-    <div className="marquee-container bg-[#ED1D26] text-white  h-28 flex bg-cover bg-center bg-no-repeat  items-center overflow-hidden" style={{backgroundImage:"url('/citypage/clientsbg.jpg')"}} >
+    <div
+      className="marquee-container bg-[#ED1D26] text-white  h-28 flex bg-cover bg-center bg-no-repeat  items-center overflow-hidden"
+      style={{ backgroundImage: "url('/citypage/clientsbg.jpg')" }}
+    >
       <div className="marquee-track flex whitespace-nowrap animate-marquee items-center">
         {[...texts, ...texts].map((text, index, array) => (
-          <>
-          <span
-            key={index}
-            className="flex items-center text-white text-4xl font-bold px-6 "
-          >
-            {text}
-            
-          </span>
-          {index !== array.length - 1 && (
-              <span className="px-6 pt-[19px] text-white text-6xl font-bold ">*</span>
+          <span key={index} className="flex items-center">
+            <span className="text-white text-4xl font-bold px-6">{text}</span>
+            {index !== array.length - 1 && (
+              <span className="px-6 pt-[19px] text-white text-6xl font-bold">
+                *
+              </span>
             )}
-          </>
+          </span>
         ))}
       </div>
     </div>

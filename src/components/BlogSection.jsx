@@ -1,4 +1,5 @@
-'use client';
+// Forced recompilation to verify link fixes
+"use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -10,26 +11,30 @@ const blogs = [
   {
     image: "/citypage/blogs/blog1.jpg",
     category: "Boost Branding with Indoor Signs",
-    title: "Discover how indoor signage can enhance customer experience and reflect your brand’s personality inside your workspace.",
-    link: "/boost-branding-with-indoor-signs/",
+    title:
+      "Discover how indoor signage can enhance customer experience and reflect your brand’s personality inside your workspace.",
+    link: "boost-branding-with-indoor-signs/",
   },
   {
     image: "/citypage/blogs/blog2.jpg",
     category: "Turn Vehicles Into Billboards",
-    title: "Custom vehicle wraps help you advertise on the move—perfect for gaining local attention and showcasing your business.",
-    link: "/turn-vehicles-into-billboards/",
+    title:
+      "Custom vehicle wraps help you advertise on the move—perfect for gaining local attention and showcasing your business.",
+    link: "turn-vehicles-into-billboards/",
   },
   {
     image: "/citypage/blogs/blog3.jpg",
     category: "Print Still Makes Impact",
-    title: "Modern print media like flyers and brochures are powerful tools for tangible, lasting brand communication.",
-    link: "/print-still-makes-impact/",
+    title:
+      "Modern print media like flyers and brochures are powerful tools for tangible, lasting brand communication.",
+    link: "print-still-makes-impact/",
   },
   {
     image: "/citypage/blogs/blog4.jpg",
     category: "Stand Out with Outdoor Signs",
-    title: "From storefronts to billboards, outdoor signs are essential for grabbing attention and driving foot traffic.",
-    link: "/stand-out-with-outdoor-signs/",
+    title:
+      "From storefronts to billboards, outdoor signs are essential for grabbing attention and driving foot traffic.",
+    link: "stand-out-with-outdoor-signs/",
   },
 ];
 
@@ -37,8 +42,12 @@ export default function BlogsSection() {
   return (
     <section className="md:max-w-[85vw] max-w-[95vw] mx-auto md:py-16 py-12 px-6 md:px-0 bg-white">
       <div className="text-center mb-10" data-aos="fade-up">
-        <p className="text-[#ED1D26] text-xl md:text-2xl uppercase mb-2">Our Insights</p>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">Latest Blogs</h1>
+        <p className="text-[#ED1D26] text-xl md:text-2xl uppercase mb-2">
+          Our Insights
+        </p>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900">
+          Latest Blogs
+        </h1>
       </div>
 
       <Swiper
@@ -55,17 +64,26 @@ export default function BlogsSection() {
         {blogs.map((blog, idx) => (
           <SwiperSlide key={idx}>
             {/* <a href={blog.link} className="block shadow-md rounded-lg overflow-hidden group transition-all duration-300"> */}
-              <div className="relative w-full h-52  block shadow-md rounded-lg overflow-hidden group transition-all duration-30">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${blog.image})` }}
-                />
-              </div>
-              <div className="p-4 bg-white">
-                <h2 className="uppercase text-[#ED1D26] font-semibold text-lg mb-2">{blog.category}</h2>
-                <p className="text-gray-800 text-md leading-relaxed">{blog.title}</p>
-                <Link href={`/blogs/${blog.link}`} className="text-[#ED1D26] font-bold decoration-0">Read More</Link>
-              </div>
+            <div className="relative w-full h-52  block shadow-md rounded-lg overflow-hidden group transition-all duration-30">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${blog.image})` }}
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h2 className="uppercase text-[#ED1D26] font-semibold text-lg mb-2">
+                {blog.category}
+              </h2>
+              <p className="text-gray-800 text-md leading-relaxed">
+                {blog.title}
+              </p>
+              <Link
+                href={`/blogs/${blog.link.replace(/^\//, "")}`}
+                className="text-[#ED1D26] font-bold decoration-0"
+              >
+                Read More
+              </Link>
+            </div>
             {/* </a> */}
           </SwiperSlide>
         ))}
