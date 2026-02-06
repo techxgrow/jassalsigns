@@ -3,6 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { data } from "../../assets/data";
 import emailjs from "@emailjs/browser";
 import { ClipLoader } from "react-spinners";
+import axios from "axios";
 
 const ContactUs = ({ city }) => {
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,7 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
+    website: "sacramento",
   });
 
   const handleChange = (e) => {
@@ -32,16 +34,9 @@ const ContactUs = ({ city }) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formData,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        },
-      )
-      .then((response) => {
+    axios
+      .post("/api/contact", formData)
+      .then((res) => {
         setLoading(false);
         setFormData({
           firstName: "",
