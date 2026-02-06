@@ -38,7 +38,6 @@ const ContactUs = ({ city }) => {
     axios
       .post("/api/contact", formData)
       .then((res) => {
-        console.log("res", res);
         // alert("Email sent successfully!");
         setLoading(false);
         setFormData({
@@ -51,35 +50,9 @@ const ContactUs = ({ city }) => {
         });
       })
       .catch((err) => {
-        console.log("err", err);
         alert("Failed to send email. Please try again.");
         setLoading(false);
       });
-
-    // emailjs
-    //   .send(
-    //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-    //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-    //     formData,
-    //     {
-    //       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-    //     },
-    //   )
-    //   .then((response) => {
-    //     console.log("Email sent successfully!", response);
-    //     setLoading(false);
-    //     setFormData({
-    //       firstName: "",
-    //       lastName: "",
-    //       email: "",
-    //       phone: "",
-    //       message: "",
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error sending email:", error);
-    //     setLoading(false);
-    //   });
   };
 
   return (
