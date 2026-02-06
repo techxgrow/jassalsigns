@@ -45,10 +45,7 @@ export default function UserThankYouEmail({ name, website }) {
             </Text>
 
             <Section style={styles.buttonContainer}>
-              <Link
-                href={"https://www.jassalsignsedm.com/"}
-                style={styles.button}
-              >
+              <Link href={"https://jassalsignssac.com/"} style={styles.button}>
                 Visit Our Website
               </Link>
             </Section>
