@@ -10,9 +10,9 @@ const images = [
   { src: "/gallery/gl3.jpg" },
   { src: "/gallery/gl4.jpg" },
   { src: "/gallery/gl5.jpg" },
-  { src: "/gallery/gl6.jpg" },
+  // { src: "/gallery/gl6.jpg" },
   { src: "/gallery/gl7.jpg" },
-  { src: "/gallery/gl8.jpg" },
+  // { src: "/gallery/gl8.jpg" },
   { src: "/gallery/gl9.jpg" },
 ];
 
@@ -21,15 +21,28 @@ export default function SignageGallery() {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 100 });
   }, []);
 
-  const aosAnimations = ["fade-up", "zoom-in", "fade-down", "fade-right", "fade-left"];
+  const aosAnimations = [
+    "fade-up",
+    "zoom-in",
+    "fade-down",
+    "fade-right",
+    "fade-left",
+  ];
 
   return (
-    <section className="md:max-w-[85vw] max-w-[95vw] mx-auto py-16 overflow-hidden" id="gallery">
+    <section
+      className="md:max-w-[85vw] max-w-[95vw] mx-auto py-16 overflow-hidden"
+      id="gallery"
+    >
       <div>
         {/* Section heading */}
         <div className="mb-10 text-center" data-aos="zoom-in">
-          <p className="text-[#ED1D26] uppercase mb-2 text-xl">EXPLORE OUR WORK</p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#101828]">OUR GALLERY</h1>
+          <p className="text-[#ED1D26] uppercase mb-2 text-xl">
+            EXPLORE OUR WORK
+          </p>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#101828]">
+            OUR GALLERY
+          </h1>
         </div>
 
         {/* Gallery images */}
@@ -42,7 +55,7 @@ export default function SignageGallery() {
                   data-aos={aosAnimations[index % aosAnimations.length]}
                   data-aos-delay={(index % 3) * 100}
                 >
-                  {(index === 5 || index === 8) ? (
+                  {index === 5 || index === 8 ? (
                     index === 5 ? (
                       <img
                         src={img.src}
