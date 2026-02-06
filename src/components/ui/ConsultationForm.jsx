@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const ConsultationForm = () => {
   const [loading, setLoading] = useState(false);
@@ -11,6 +12,7 @@ const ConsultationForm = () => {
     signage: [],
     location: [],
     message: "",
+    website: "Edmonton",
   });
 
   const handleChange = (e) => {
@@ -34,17 +36,10 @@ const ConsultationForm = () => {
 
     setLoading(true);
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_PRODUCT_TEMPLATE,
-        formData,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        },
-      )
-      .then((response) => {
-        console.log("Email sent successfully!", response);
+    axios
+      .post("/api/product", formData)
+      .then((res) => {
+        // console.log(res);
         setLoading(false);
         setFormData({
           firstName: "",
@@ -54,10 +49,11 @@ const ConsultationForm = () => {
           signage: [],
           location: [],
           message: "",
+          website: "Edmonton",
         });
       })
-      .catch((error) => {
-        console.error("Error sending email:", error);
+      .catch((err) => {
+        // console.log(err);
         setLoading(false);
       });
   };
