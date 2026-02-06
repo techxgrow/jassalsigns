@@ -211,7 +211,7 @@ const Home = () => {
         <BlogsSection />
       </Element>
 
-      <OurClients />
+      {/* <OurClients /> */}
 
       <Element name="contactSection">
         <ContactUs city={cityName} />
