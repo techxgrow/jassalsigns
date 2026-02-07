@@ -18,9 +18,9 @@ const images = [
   { src: "/gallery/gl3.jpg" },
   { src: "/gallery/gl4.jpg" },
   { src: "/gallery/gl5.jpg" },
-  { src: "/gallery/gl6.jpg" },
+  // { src: "/gallery/gl6.jpg" },
   { src: "/gallery/gl7.jpg" },
-  { src: "/gallery/gl8.jpg" },
+  // { src: "/gallery/gl8.jpg" },
   { src: "/gallery/gl9.jpg" },
 ];
 
