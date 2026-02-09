@@ -3,6 +3,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
+import { MapPin, Mail, Phone, ExternalLink, ChevronRight } from "lucide-react";
 
 const CityFooter = () => {
   const router = useRouter();
@@ -22,323 +23,193 @@ const CityFooter = () => {
   };
 
   return (
-    <footer className="bg-[#111] text-white py-12 px-5 bg-[url('/footer-bg.png')] bg-cover bg-center">
-      <div className="mx-auto md:max-w-[1240px] max-w-[95vw] grid grid-cols-1 md:grid-cols-5 gap-10">
-        {/* About / Logo */}
-        <div>
-          <img src="/logo.png" alt="Mega Signs Logo" className="h-12 mb-4" />
-          <p className="text-[16px] text-white leading-relaxed">
-            Jassal Signs is a full-service signage company. We specialize in
-            high-quality custom signs for businesses across various industries.
-          </p>
-          <div className="flex space-x-4 mt-6 text-lg">
-            <a
-              href="https://www.facebook.com/jassalsignsltd/"
-              aria-label="Facebook"
-              className="hover:text-[#ED1D26] text-2xl transition-colors"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.instagram.com/jassal_signs/?hl=en"
-              aria-label="Instagram"
-              className="hover:text-[#ED1D26] text-2xl transition-colors"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca"
-              aria-label="LinkedIn"
-              className="hover:text-[#ED1D26] text-2xl transition-colors"
-            >
-              <FaLinkedin />
-            </a>
+    <footer className="relative bg-[#0a0a0a] text-white pt-24 pb-12 px-6 overflow-hidden">
+      {/* Texture Background Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('/footer-bg.png')] bg-repeat bg-center"></div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
+          {/* Brand Column */}
+          <div className="space-y-8">
+            <Link href="/" className="inline-block">
+              <img
+                src="/logo.png"
+                alt="Jassal Signs Logo"
+                className="h-16 w-auto brightness-110"
+              />
+            </Link>
+            <p className="text-gray-400 text-lg leading-relaxed max-w-xs font-medium">
+              Transforming businesses through elite signage, precision wraps,
+              and high-impact printing for over{" "}
+              <span className="text-white font-bold">30 years</span>.
+            </p>
+            <div className="flex gap-4">
+              {[
+                {
+                  icon: <FaFacebook />,
+                  url: "https://www.facebook.com/jassalsignsltd/",
+                  label: "Facebook",
+                },
+                {
+                  icon: <FaInstagram />,
+                  url: "https://www.instagram.com/jassal_signs/?hl=en",
+                  label: "Instagram",
+                },
+                {
+                  icon: <FaLinkedin />,
+                  url: "https://www.linkedin.com/company/jassalsigns/?originalSubdomain=ca",
+                  label: "LinkedIn",
+                },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.url}
+                  aria-label={social.label}
+                  className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-xl hover:bg-[#ED1D26] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Quick Links */}
-        <div className="md:block">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-8">
-            QUICK LINKS
-          </h2>
-          <ul className="space-y-3 text-white">
-            <li>
-              <ScrollLink
-                to="home"
-                smooth
-                offset={-60}
-                duration={500}
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Home
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to="productSection"
-                smooth
-                offset={-60}
-                duration={500}
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Products
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to="blogsSection"
-                smooth
-                offset={-60}
-                duration={500}
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Blogs
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to="gallerySection"
-                smooth
-                offset={-60}
-                duration={500}
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Gallery
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to="contact"
-                smooth
-                offset={-60}
-                duration={500}
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Contact Us
-              </ScrollLink>
-            </li>
-          </ul>
-        </div>
-
-        {/* Services - Hidden on small mobile, handled in the shared grid below or kept here */}
-        <div className="hidden md:block">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-8">
-            SERVICES
-          </h2>
-          <ul className="space-y-3 text-white text-sm">
-            <li>
-              <Link
-                href="/products/indoorsigns"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Indoor Signs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products/vehiclewraps"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Vehicle Wraps
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products/outdoorsigns"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Outdoor Signs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products/channelletters"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Channel Letters
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products/pylonsigns"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Pylon Signs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/products/printmedia"
-                className="hover:text-[#ED1D26] text-[16px] cursor-pointer transition-colors"
-              >
-                Printing Services
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Locations Canada - Hidden on small mobile */}
-        <div className="md:block hidden">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-8">
-            British Columbia
-          </h2>
-          <ul className="space-y-3 text-white text-sm">
-            {[
-              { name: "Surrey", path: "/citypage/SURREY" },
-              { name: "Cloverdale", path: "/citypage/CLOVERDALE" },
-              { name: "Abbotsford", path: "/citypage/ABBOTSFORD" },
-            ].map((city) => (
-              <li key={city.name}>
-                <Link
-                  href={"#"}
-                  className="hover:text-[#ED1D26] text-[16px] transition-colors"
-                  onClick={(e) => handleCityClick(e, city.path)}
-                >
-                  {city.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h2 className="text-lg font-semibold mb-2 mt-6 font-grotesk underline underline-offset-8">
-            Alberta
-          </h2>
-          <ul className="space-y-3 text-white text-sm">
-            {[
-              { name: "Calgary", path: "/citypage/CALGARY" },
-              { name: "Edmonton", path: "/citypage/EDMONTON" },
-            ].map((city) => (
-              <li key={city.name}>
-                <Link
-                  href={"#"}
-                  className="hover:text-[#ED1D26] text-[16px] transition-colors"
-                  onClick={(e) => handleCityClick(e, city.path)}
-                >
-                  {city.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Locations USA - Hidden on small mobile */}
-        <div className="md:block hidden">
-          <h2 className="text-lg font-semibold mb-6 font-grotesk underline underline-offset-8">
-            United States
-          </h2>
-          <ul className="space-y-3 text-white text-sm">
-            <li className="flex items-center text-[16px] group">
-              <a
-                href="https://www.jassalsignssac.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#ED1D26] transition-colors"
-              >
-                Sacramento
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Mobile View for Services and Locations */}
-        <div className="md:hidden grid grid-cols-2 gap-x-10 gap-y-8">
+          {/* Navigation Column */}
           <div>
-            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-8">
-              SERVICES
-            </h2>
-            <ul className="space-y-2 text-white">
-              <li>
-                <Link
-                  href="/products/indoorsigns"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Indoor Signs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products/vehiclewraps"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Vehicle Wraps
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products/outdoorsigns"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Outdoor Signs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products/channelletters"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Channel Letters
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products/pylonsigns"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Pylon Signs
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold mb-4 font-grotesk underline underline-offset-8">
-              LOCATIONS
-            </h2>
-            <h3 className="font-semibold text-sm mb-2 opacity-80">
-              British Columbia
+            <h3 className="text-xl font-black uppercase tracking-widest text-white mb-8 relative inline-block">
+              Sitemap
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#ED1D26] rounded-full"></span>
             </h3>
-            <ul className="space-y-2 text-white mb-4">
-              <li>
-                <Link
-                  href="/citypage/SURREY"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Surrey
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/citypage/CLOVERDALE"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Cloverdale
-                </Link>
-              </li>
-            </ul>
-            <h3 className="font-semibold text-sm mb-2 opacity-80">Alberta</h3>
-            <ul className="space-y-2 text-white">
-              <li>
-                <Link
-                  href="/citypage/CALGARY"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Calgary
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/citypage/EDMONTON"
-                  className="hover:text-[#ED1D26] text-[16px]"
-                >
-                  Edmonton
-                </Link>
-              </li>
+            <ul className="grid grid-cols-1 gap-4">
+              {[
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Franchise", path: "/franchise" },
+                { name: "Terms of Use", path: "/terms-of-use" },
+                { name: "Privacy Policy", path: "/privacy-policy" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.path}
+                    className="text-gray-400 hover:text-white font-bold text-md flex items-center gap-2 transition-all p-1"
+                  >
+                    <ChevronRight className="w-4 h-4 text-[#ED1D26]" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
-      </div>
 
-      {/* Footer Bottom */}
-      <div className="border-t mx-auto md:max-w-[1240px] border-white mt-10 pt-6 text-center text-white text-[14px]">
-        <p>2025 © Copyright, All Rights Reserved.</p>
+          {/* Services Column */}
+          <div>
+            <h3 className="text-xl font-black uppercase tracking-widest text-white mb-8 relative inline-block">
+              Expertise
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#ED1D26] rounded-full"></span>
+            </h3>
+            <ul className="space-y-4">
+              {[
+                { name: "Indoor Signs", path: "/products/indoorsigns" },
+                { name: "Vehicle Wraps", path: "/products/vehiclewraps" },
+                { name: "Outdoor Signs", path: "/products/outdoorsigns" },
+                { name: "Channel Letters", path: "/products/channelletters" },
+                { name: "Pylon Signs", path: "/products/pylonsigns" },
+                { name: "Printing Services", path: "/products/printmedia" },
+              ].map((service) => (
+                <li key={service.name}>
+                  <Link
+                    href={service.path}
+                    className="text-gray-400 hover:text-white font-bold text-md flex items-center gap-2 transition-all p-1"
+                  >
+                    <ChevronRight className="w-4 h-4 text-[#ED1D26]" />
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations Column */}
+          <div>
+            <h3 className="text-xl font-black uppercase tracking-widest text-white mb-8 relative inline-block">
+              Find Us
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#ED1D26] rounded-full"></span>
+            </h3>
+            <div className="space-y-6">
+              {[
+                {
+                  region: "British Columbia",
+                  cities: [
+                    { name: "Surrey", path: "/citypage/SURREY" },
+                    { name: "Cloverdale", path: "/citypage/CLOVERDALE" },
+                    { name: "Abbotsford", path: "/citypage/ABBOTSFORD" },
+                  ],
+                },
+                {
+                  region: "Alberta",
+                  cities: [
+                    { name: "Calgary", path: "/citypage/CALGARY" },
+                    { name: "Edmonton", path: "/citypage/EDMONTON" },
+                  ],
+                },
+              ].map((group) => (
+                <div key={group.region}>
+                  <h4 className="text-[#ED1D26] text-[15px] font-black uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <MapPin className="w-3 h-3" />
+                    {group.region}
+                  </h4>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    {group.cities.map((city) => (
+                      <button
+                        key={city.name}
+                        onClick={(e) => handleCityClick(e, city.path)}
+                        className="text-gray-400 hover:text-white font-bold text-sm transition-colors"
+                      >
+                        {city.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <div>
+                <h4 className="text-[#ED1D26] text-[15px] font-black uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <ExternalLink className="w-3 h-3" />
+                  United States
+                </h4>
+                <a
+                  href="https://www.jassalsignssac.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white font-bold text-sm"
+                >
+                  Sacramento, CA
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-gray-500 font-bold text-sm">
+            © {new Date().getFullYear()} JASSAL SIGNS. ALL RIGHTS RESERVED.
+          </p>
+          <div className="text-gray-500 font-bold text-sm flex gap-8">
+            <Link
+              href="/terms-of-use"
+              className="hover:text-white transition-colors"
+            >
+              TERMS
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-white transition-colors"
+            >
+              PRIVACY
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

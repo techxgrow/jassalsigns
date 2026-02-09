@@ -47,41 +47,26 @@ export default function SignageGallery() {
 
         {/* Gallery images */}
         <PhotoProvider>
-          <div className="columns-1 sm:columns-2 md:columns-3 gap-4 px-6 md:px-0 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 px-6 md:px-0">
             {images.map((img, index) => (
               <PhotoView key={index} src={img.src}>
                 <div
-                  className="mb-4 break-inside-avoid overflow-hidden shadow-md cursor-zoom-in  group relative"
+                  className="overflow-hidden shadow-lg rounded-xl cursor-zoom-in group relative aspect-square"
                   data-aos={aosAnimations[index % aosAnimations.length]}
-                  data-aos-delay={(index % 3) * 100}
+                  data-aos-delay={(index % 4) * 100}
                 >
-                  {index === 5 || index === 8 ? (
-                    index === 5 ? (
-                      <img
-                        src={img.src}
-                        alt={`Gallery Image ${index + 1}`}
-                        loading="lazy"
-                        className="w-full h-[467px] object-cover transition-transform duration-300 hover:scale-105 "
-                      />
-                    ) : (
-                      <img
-                        src={img.src}
-                        alt={`Gallery Image ${index + 1}`}
-                        loading="lazy"
-                        className="w-full h-[480px] object-cover transition-transform duration-300 hover:scale-105 "
-                      />
-                    )
-                  ) : (
-                    <img
-                      src={img.src}
-                      alt={`Gallery Image ${index + 1}`}
-                      loading="lazy"
-                      className="w-full object-cover transition-transform duration-300 hover:scale-105 "
-                    />
-                  )}
-
-                  {/* Hover black overlay */}
-                  {/* <div className="absolute inset-0 b  transition duration-300 rounded"></div> */}
+                  <img
+                    src={img.src}
+                    alt={`Gallery Image ${index + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Overlay effect on hover */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white bg-[#ED1D26]/80 px-4 py-2 rounded-full text-sm font-bold scale-50 group-hover:scale-100 transition-transform duration-300">
+                      View Signage
+                    </span>
+                  </div>
                 </div>
               </PhotoView>
             ))}

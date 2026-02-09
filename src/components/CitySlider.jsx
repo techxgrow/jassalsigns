@@ -3,17 +3,24 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SmallTextAnimation from "./ui/SmallTextAnimation";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function CitySlider({ cityName }) {
-  const slideImages = [
-    `/citypage/header/${cityName}/${cityName}1.jpg`,
-    `/citypage/header/${cityName}/${cityName}2.jpg`,
-    `/citypage/header/${cityName}/${cityName}3.jpg`,
-  ];
+  const [mounted, setMounted] = React.useState(false);
 
   useEffect(() => {
+    setMounted(true);
     AOS.init({ duration: 1000, mirror: true });
   }, []);
+
+  const slideImages =
+    mounted && cityName
+      ? [
+          `/citypage/header/${cityName}/${cityName}1.jpg`,
+          `/citypage/header/${cityName}/${cityName}2.jpg`,
+          `/citypage/header/${cityName}/${cityName}3.jpg`,
+        ]
+      : [];
 
   return (
     <section
@@ -21,7 +28,7 @@ export default function CitySlider({ cityName }) {
       id="home"
     >
       {/* Image Grid with scaling effect */}
-      <div className="absolute inset-0 grid grid-cols-3 gap-1 h-full w-full">
+      <div className="absolute inset-0 grid grid-cols-3 gap-1 h-full w-full bg-black">
         {slideImages.map((img, idx) => (
           <div key={idx} className="w-full h-full overflow-hidden">
             <div
@@ -48,25 +55,43 @@ export default function CitySlider({ cityName }) {
             We Bring Brands To Life
           </p>
           <h1 className="text-3xl  leading-[3rem] text-center max-w-[800px] uppercase md:text-left font-extrabold lg:text-7xl lg:leading-[5.5rem]">
-            JASSAL SIGNS {/* for desktop device*/}
-            {/* for mobile device */}
+            JASSAL SIGNS
           </h1>
           <h2 className="text-[25px]">SIGNAGE AND PRINTING SERVICES IN</h2>
-          <span className="hidden md:inline">
-            <SmallTextAnimation
-              text={`${cityName}`}
-              textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-              fontSize="70px"
-            />
-          </span>
-          <div className="block md:hidden ">
-            <h1 className="text-3xl uppercase">
-              <SmallTextAnimation
-                text={`${cityName}`}
-                textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
-                fontSize="71px"
-              />
-            </h1>
+
+          {mounted && cityName && (
+            <>
+              <span className="hidden md:inline">
+                <SmallTextAnimation
+                  text={`${cityName}`}
+                  textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+                  fontSize="70px"
+                />
+              </span>
+              <div className="block md:hidden ">
+                <h1 className="text-3xl uppercase">
+                  <SmallTextAnimation
+                    text={`${cityName}`}
+                    textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
+                    fontSize="71px"
+                  />
+                </h1>
+              </div>
+            </>
+          )}
+
+          <div className="mt-8 flex justify-center md:justify-start">
+            <ScrollLink
+              to="contactSection"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="bg-[#ED1D26] text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-white hover:text-black transition-all duration-300 cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-1 inline-block uppercase tracking-wider"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              Get Quote
+            </ScrollLink>
           </div>
         </div>
       </div>

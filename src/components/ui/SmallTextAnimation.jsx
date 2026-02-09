@@ -1,25 +1,31 @@
-import React from 'react';
+import React from "react";
 
 const SmallTextAnimation = (props) => {
   const { text, textColor, fontSize } = props;
 
   return (
-    <div className="small-text-animation" style={{ display: 'inline-block' }}>
-      <h1
+    <span
+      className="small-text-animation"
+      style={{ display: "inline-block", position: "relative" }}
+    >
+      <span
+        className="animation-text"
         style={{
-          position: 'relative',
-          fontSize: fontSize || '70px',
-          fontWeight: 'bold',
-          color: 'white',
-          textTransform: 'uppercase',
+          fontSize: fontSize || "70px",
+          fontWeight: "bold",
+          color: "white",
+          textTransform: "uppercase",
+          display: "block",
+          lineHeight: "1",
         }}
         data-text={text}
       >
         {text}
-      </h1>
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          .small-text-animation h1::before {
+      </span>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          .small-text-animation .animation-text::before {
             content: attr(data-text);
             position: absolute;
             top: 0;
@@ -27,13 +33,15 @@ const SmallTextAnimation = (props) => {
             width: 0;
             overflow: hidden;
             font-weight: bold;
-            font-size: ${fontSize || '70px'};
+            font-size: ${fontSize || "70px"};
             background: ${textColor};
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             -webkit-text-fill-color: transparent;
             animation: smallTextAnim 2s ease-out forwards;
+            line-height: 1;
+            white-space: nowrap;
           }
           
           @keyframes smallTextAnim {
@@ -44,9 +52,10 @@ const SmallTextAnimation = (props) => {
               width: 100%;
             }
           }
-        `
-      }} />
-    </div>
+        `,
+        }}
+      />
+    </span>
   );
 };
 

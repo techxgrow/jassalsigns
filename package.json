@@ -45,6 +45,8 @@
     "yup": "^1.6.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21"
+    "@types/node": "25.2.2",
+    "autoprefixer": "^10.4.21",
+    "typescript": "5.9.3"
   }
 }

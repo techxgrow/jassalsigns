@@ -18,7 +18,7 @@ const OurServices = () => {
       title: "We make sure your message meets the masses.",
       link: "/products/indoorsigns",
     },
-      {
+    {
       imgSrc: "/citypage/services/printmedia.jpg",
       category: "PRINT SERVICES",
       title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
@@ -36,7 +36,7 @@ const OurServices = () => {
       title: "Shine bright with custom Channel Letters by Jassal Signs",
       link: "/products/channelletters",
     },
-     
+
     {
       imgSrc: "/citypage/services/pylonsigns.jpg",
       category: "PYLON SIGNS",
@@ -49,8 +49,6 @@ const OurServices = () => {
       title: "We make sure your message meets the masses.",
       link: "/products/outdoorsigns",
     },
-  
-   
   ];
 
   return (

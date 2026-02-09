@@ -10,10 +10,22 @@ import { Link as ScrollLink } from "react-scroll";
 import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const CityNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+
+  // Use state for home page check to avoid hydration issues
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Initial check
+    setIsHomePage(router.pathname === "/");
+  }, [router.pathname]);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -29,6 +41,38 @@ const CityNavbar = () => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
+
+  // Don't render complex logic until mounted to prevent hydration mismatch
+  const NavLink = ({ to, href, children }) => {
+    if (!mounted) return <span className="cursor-pointer">{children}</span>;
+
+    // Fixed logic for scrolling: if we are on the home page, use ScrollLink.
+    // Ensure the check is robust.
+    if (isHomePage) {
+      return (
+        <ScrollLink
+          to={to}
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#ED1D26] transition-colors cursor-pointer"
+        >
+          {children}
+        </ScrollLink>
+      );
+    }
+    return (
+      <Link
+        href={href}
+        onClick={() => setMenuOpen(false)}
+        className="hover:text-[#ED1D26] transition-colors cursor-pointer"
+      >
+        {children}
+      </Link>
+    );
+  };
 
   return (
     <nav
@@ -46,11 +90,17 @@ const CityNavbar = () => {
       >
         <div className="md:max-w-[85vw] max-w-[95vw] mx-auto flex items-center justify-between py-2 px-6 md:px-0">
           <div className="flex gap-6 items-center text-white">
-       <a href="tel:+1 (780) 437-7790"  className="flex gap-2 items-center hover:underline">
+            <a
+              href="tel:+1 (780) 437-7790"
+              className="flex gap-2 items-center hover:underline"
+            >
               <FaPhoneAlt />
               <span>+1 (780) 437-7790</span>
             </a>
-            <a href="mailto:jassalsignsedm@gmail.com" className="flex gap-2 items-center hover:underline">
+            <a
+              href="mailto:jassalsignsedm@gmail.com"
+              className="flex gap-2 items-center hover:underline"
+            >
               <FaEnvelope />
               <span>jassalsignsedm@gmail.com</span>
             </a>
@@ -119,56 +169,76 @@ const CityNavbar = () => {
               </Link>
             </li>
             <li>
-              <ScrollLink
-                href="#service"
-                to="productSection"
-                smooth={true}
-                duration={500}
-                offset={-50}
+              <Link
+                href="/about"
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-[#ED1D26] transition-colors"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services"
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-[#ED1D26] transition-colors"
               >
                 Services
-              </ScrollLink>
+              </Link>
             </li>
             <li>
-              <ScrollLink
-                to="gallerySection"
-                smooth={true}
-                duration={500}
-                offset={-50}
+              <Link
+                href="/franchise"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-[#ED1D26] transition-colors cursor-pointer"
+                className="hover:text-[#ED1D26] transition-colors"
               >
+                Franchise
+              </Link>
+            </li>
+            <li>
+              <NavLink to="productSection" href="/#productSection">
+                Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="gallerySection" href="/#gallerySection">
                 Gallery
-              </ScrollLink>
+              </NavLink>
             </li>
             <li>
-              <ScrollLink
-               to="blogsSection"
-                smooth={true}
-                duration={500}
-                offset={-50}
-
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-[#ED1D26] transition-colors hover:cursor-pointer"
-              >
+              <NavLink to="blogsSection" href="/#blogsSection">
                 Blogs
-              </ScrollLink>
+              </NavLink>
             </li>
             <li>
-              <ScrollLink
-               smooth={true}
-                duration={500}
-                offset={-50}
-                to="contactSection"
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-[#ED1D26] transition-colors hover:cursor-pointer"
-              >
+              <NavLink to="contactSection" href="/#contactSection">
                 Contact
-              </ScrollLink>
+              </NavLink>
             </li>
           </ul>
+
+          <div className="mt-8 md:mt-0 md:ml-8">
+            {isHomePage ? (
+              <ScrollLink
+                to="contactSection"
+                smooth={true}
+                duration={500}
+                offset={-50}
+                onClick={() => setMenuOpen(false)}
+                className="bg-[#ED1D26] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
+              >
+                Get Free Quote
+              </ScrollLink>
+            ) : (
+              <Link
+                href="/#contactSection"
+                onClick={() => setMenuOpen(false)}
+                className="bg-[#ED1D26] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
+              >
+                Get Free Quote
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </nav>

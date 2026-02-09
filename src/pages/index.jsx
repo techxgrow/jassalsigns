@@ -193,7 +193,7 @@ const Home = () => {
     <>
       <CityNavbar />
       <CitySlider cityName={cityName} />
-      <Element name="productSection">
+      <Element name="productSection" id="productSection">
         <AboutSection />
       </Element>
 
@@ -201,19 +201,23 @@ const Home = () => {
 
       <MarqueeText />
       <Testimonials testimonials={testimonialsData} autoplay="true" />
-      <Element name="gallerySection">
+      <Element name="gallerySection" id="gallerySection">
         <SignageGallery />
       </Element>
 
       <ExpertMediaAgency />
 
-      <Element name="blogsSection" className="border border-black ">
+      <Element
+        name="blogsSection"
+        id="blogsSection"
+        className="border border-black "
+      >
         <BlogsSection />
       </Element>
 
       {/* <OurClients/> */}
 
-      <Element name="contactSection">
+      <Element name="contactSection" id="contactSection">
         <ContactUs city={cityName} />
       </Element>
       {/* <CityPlacesSection />  */}

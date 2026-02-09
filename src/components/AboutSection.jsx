@@ -4,7 +4,10 @@ import { useInView } from "react-intersection-observer";
 import AOS from "aos";
 
 const AboutSection = () => {
+  const [mounted, setMounted] = React.useState(false);
+
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1000,
       mirror: true,
@@ -45,7 +48,9 @@ const AboutSection = () => {
             <span className="text-red-600">attention</span>
           </h1>
           <p className="text-gray-600 md:text-left text-center text-xl">
-            We are a sign, wrap and Print company. With over 30 years of excellence, we're dedicated to bringing your vision to life with our variety of services.
+            We are a sign, wrap and Print company. With over 30 years of
+            excellence, we're dedicated to bringing your vision to life with our
+            variety of services.
           </p>
         </div>
 
@@ -55,23 +60,35 @@ const AboutSection = () => {
           <div className="flex flex-col gap-3 mx-auto" ref={ref}>
             <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-0">
               <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={250} duration={2} /> : "0"}+
+                {mounted && inView ? (
+                  <CountUp start={0} end={1000} duration={2} suffix="+" />
+                ) : (
+                  "0"
+                )}
               </h1>
-              <p className="text-gray-900">Screen Place</p>
+              <p className="text-gray-900">Clients</p>
             </div>
 
             <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-none">
               <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={78} duration={2} /> : "0"}K
+                {mounted && inView ? (
+                  <CountUp start={0} end={10000} duration={2} suffix="+" />
+                ) : (
+                  "0"
+                )}
               </h1>
-              <p className="text-gray-900">People Reached</p>
+              <p className="text-gray-900">Completed Projects</p>
             </div>
 
             <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-0">
               <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={49} duration={2} /> : "0"}+
+                {mounted && inView ? (
+                  <CountUp start={0} end={100000} duration={2} suffix="+" />
+                ) : (
+                  "0"
+                )}
               </h1>
-              <p className="text-gray-900">Country Cover</p>
+              <p className="text-gray-900">Designs</p>
             </div>
           </div>
         </div>
@@ -79,9 +96,11 @@ const AboutSection = () => {
 
       {/* Section Header */}
       <div className="mb-4 text-center" data-aos="fade-up" id="service">
-        <p className="md:text-2xl text-xl text-red-600 uppercase mb-2">what we Do</p>
-        <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold">
-          OUR SERVICES
+        <p className="md:text-2xl text-xl text-red-600 uppercase mb-2">
+          what we Do
+        </p>
+        <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold uppercase">
+          OUR PRODUCTS
         </h1>
       </div>
     </div>
