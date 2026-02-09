@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
+import { User, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 
 const ConsultationForm = () => {
   const [loading, setLoading] = useState(false);
@@ -59,142 +60,173 @@ const ConsultationForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="md:py-5 py-2 px-4 sm:px-6"
-      style={{
-        background: `linear-gradient(180deg, #ED1C26 0%, #0283CB 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28))`,
-      }}
-    >
-      <h3 className="text-center my-6 text-white text-xl sm:text-2xl font-semibold">
-        Request a Consultation
-      </h3>
+    <div className="relative group">
+      {/* Decorative background element */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-[#ED1D26] to-[#0283CB] rounded-[35px] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
 
-      {/* Name Fields */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <input
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-          placeholder="First Name(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          placeholder="Last Name(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-      </div>
-
-      {/* Email & Phone */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Phone(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-      </div>
-
-      {/* Signage Type */}
-      <div className="mb-6">
-        <h4 className="text-white text-lg mb-2">
-          What type of signage you are looking for:
-        </h4>
-        <div className="grid grid-cols-2  lg:grid-cols-3 gap-2">
-          {[
-            "Interior Signs",
-            "Exterior Signs",
-            "Vinyl Signs",
-            "Business Signs",
-            "Custom Signs",
-          ].map((label) => (
-            <label
-              key={label}
-              className="text-white text-base flex items-center gap-2"
-            >
-              <input
-                type="checkbox"
-                value={label}
-                checked={formData.signage.includes(label)}
-                onChange={handleChange}
-                data-group="signage"
-              />
-              {label}
-            </label>
-          ))}
+      <form
+        onSubmit={handleSubmit}
+        className="relative bg-white rounded-[32px] p-6 md:p-8 shadow-xl border border-gray-100"
+      >
+        <div className="mb-6 text-center">
+          <h3 className="text-2xl md:text-3xl font-black font-grotesk text-gray-900 uppercase tracking-tighter mb-2">
+            Request a <span className="text-[#ED1D26]">Consultation</span>
+          </h3>
+          <p className="text-gray-400 text-sm font-medium">
+            Expert advice within 24 hours.
+          </p>
         </div>
-      </div>
 
-      {/* Service Location */}
-      <div className="mb-6">
-        <h4 className="text-white text-lg mb-2">Service Location:</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
-          {["Surrey", "Edmonton", "Abbotsford", "Calgary", "Cloverdale"].map(
-            (city) => (
-              <label
-                key={city}
-                className="text-white text-base flex items-center gap-2"
-              >
-                <input
-                  type="checkbox"
-                  value={city}
-                  checked={formData.location.includes(city)}
-                  onChange={handleChange}
-                  data-group="location"
-                />
-                {city}
-              </label>
-            ),
-          )}
+        {/* Name Fields */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="relative group/input">
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="First Name(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+          <div className="relative group/input">
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Last Name(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Message */}
-      <div className="mb-6">
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="How can we help you?"
-          className="bg-white w-full rounded-sm p-2 text-base"
-          rows={4}
-        ></textarea>
-      </div>
+        {/* Email & Phone */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="relative group/input">
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+          <div className="relative group/input">
+            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+        </div>
 
-      {/* Submit Button */}
-      <div className="flex justify-center items-center mb-6 font-bold">
+        {/* Signage Type */}
+        <div className="mb-6">
+          <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
+            Signage Interest
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {["Interior", "Exterior", "Vinyl", "Business", "Custom"].map(
+              (label) => (
+                <label
+                  key={label}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-black uppercase tracking-tight cursor-pointer transition-all duration-300 ${
+                    formData.signage.includes(label)
+                      ? "bg-[#ED1D26] border-[#ED1D26] text-white shadow-md shadow-[#ED1D26]/20"
+                      : "bg-white border-gray-100 text-gray-500 hover:border-[#ED1D26] hover:text-[#ED1D26]"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    value={label}
+                    checked={formData.signage.includes(label)}
+                    onChange={handleChange}
+                    data-group="signage"
+                    className="hidden"
+                  />
+                  {formData.signage.includes(label) && (
+                    <CheckCircle2 className="w-3 h-3" />
+                  )}
+                  {label}
+                </label>
+              ),
+            )}
+          </div>
+        </div>
+
+        {/* Service Location */}
+        <div className="mb-6">
+          <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
+            Location
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {["Surrey", "Edmonton", "Abbotsford", "Calgary", "Cloverdale"].map(
+              (city) => (
+                <label
+                  key={city}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-black uppercase tracking-tight cursor-pointer transition-all duration-300 ${
+                    formData.location.includes(city)
+                      ? "bg-[#0283CB] border-[#0283CB] text-white shadow-md shadow-[#0283CB]/20"
+                      : "bg-white border-gray-100 text-gray-500 hover:border-[#0283CB] hover:text-[#0283CB]"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    value={city}
+                    checked={formData.location.includes(city)}
+                    onChange={handleChange}
+                    data-group="location"
+                    className="hidden"
+                  />
+                  {formData.location.includes(city) && (
+                    <CheckCircle2 className="w-3 h-3" />
+                  )}
+                  {city}
+                </label>
+              ),
+            )}
+          </div>
+        </div>
+
+        {/* Message */}
+        <div className="mb-6">
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your project requirements..."
+            className="w-full bg-gray-50 border border-gray-100 p-4 rounded-[20px] text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none resize-none"
+            rows={3}
+          ></textarea>
+        </div>
+
+        {/* Submit Button */}
         <button
-          className={`h-10 w-full sm:w-60 text-white rounded-sm text-base transition-all duration-200 ${
+          className={`w-full h-14 rounded-xl text-base font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg ${
             loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-[#ED1D26] hover:bg-[#d01920]"
+              ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+              : "bg-[#ED1D26] text-white hover:bg-[#d01920] active:scale-95 shadow-[#ED1D26]/20"
           }`}
           type="submit"
           disabled={loading}
         >
           {loading ? (
-            <span className="flex items-center justify-center gap-2">
+            <span className="flex items-center gap-2">
               <svg
-                className="animate-spin h-5 w-5 text-white"
+                className="animate-spin h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -216,11 +248,14 @@ const ConsultationForm = () => {
               Sending...
             </span>
           ) : (
-            "Submit Your Request"
+            <>
+              Submit Request
+              <Send className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+            </>
           )}
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
