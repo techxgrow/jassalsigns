@@ -15,9 +15,15 @@ import {
   MapPin,
   Mail,
   Phone,
+  ChevronDown,
+  Check,
+  Building2,
+  Wallet,
+  DollarSign,
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AnimatePresence } from "framer-motion";
 
 const FranchisePage = () => {
   const [mounted, setMounted] = useState(false);
@@ -62,6 +68,135 @@ const FranchisePage = () => {
       alert("Application submitted! Our team will contact you soon.");
     },
   });
+
+  // Custom Dropdown Component
+  const EliteDropdown = ({
+    label,
+    name,
+    options,
+    value,
+    onChange,
+    error,
+    touched,
+  }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <div className="space-y-2 relative">
+        <label className="text-sm font-bold uppercase text-gray-500 ml-1">
+          {label}
+        </label>
+        <div className="relative group/select">
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className={`w-full bg-gray-50 border rounded-2xl p-4 pr-12 text-left transition-all font-semibold flex items-center justify-between ${
+              touched && error
+                ? "border-[#ED1D26]"
+                : "border-gray-200 focus:border-[#ED1D26] hover:border-gray-300"
+            } ${value ? "text-gray-900" : "text-gray-400"}`}
+          >
+            <span>{value || `Select ${label}*`}</span>
+            <ChevronDown
+              className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {isOpen && (
+              <>
+                <div
+                  className="fixed inset-0 z-30"
+                  onClick={() => setIsOpen(false)}
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute top-full left-0 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 z-40 overflow-hidden"
+                >
+                  {options.map((opt) => (
+                    <button
+                      key={opt}
+                      type="button"
+                      onClick={() => {
+                        onChange(name, opt);
+                        setIsOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-3 rounded-xl transition-all font-bold text-sm flex items-center justify-between group/opt ${
+                        value === opt
+                          ? "bg-[#ED1D26] text-white"
+                          : "text-gray-700 hover:bg-red-50 hover:text-[#ED1D26]"
+                      }`}
+                    >
+                      {opt}
+                      {value === opt && <Check className="w-4 h-4" />}
+                    </button>
+                  ))}
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
+        {touched && error && (
+          <p className="text-[#ED1D26] text-xs font-bold ml-1">{error}</p>
+        )}
+      </div>
+    );
+  };
+
+  // Choice Cards Component
+  const ChoiceCards = ({
+    label,
+    name,
+    options,
+    value,
+    onChange,
+    error,
+    touched,
+  }) => {
+    return (
+      <div className="space-y-2">
+        <label className="text-sm font-bold uppercase text-gray-500 ml-1">
+          {label}
+        </label>
+        <div className="grid grid-cols-2 gap-4">
+          {options.map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => onChange(name, opt.value)}
+              className={`p-4 rounded-2xl border-2 transition-all duration-300 text-center flex flex-col items-center gap-2 group ${
+                value === opt.value
+                  ? "border-[#ED1D26] bg-[#ED1D26]/5"
+                  : "border-gray-100 bg-gray-50 hover:border-gray-200"
+              }`}
+            >
+              <div
+                className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                  value === opt.value
+                    ? "bg-[#ED1D26] text-white"
+                    : "bg-white text-gray-400 group-hover:text-gray-600"
+                }`}
+              >
+                {opt.icon}
+              </div>
+              <span
+                className={`text-xs font-black uppercase tracking-tight ${
+                  value === opt.value ? "text-[#ED1D26]" : "text-gray-500"
+                }`}
+              >
+                {opt.label}
+              </span>
+            </button>
+          ))}
+        </div>
+        {touched && error && (
+          <p className="text-[#ED1D26] text-xs font-bold ml-1">{error}</p>
+        )}
+      </div>
+    );
+  };
 
   if (!mounted) {
     return null;
@@ -348,85 +483,62 @@ const FranchisePage = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase text-gray-500 ml-1">
-                    Province / State
-                  </label>
-                  <select
-                    name="province"
-                    className={`w-full bg-gray-50 border rounded-2xl p-4 focus:bg-white outline-none transition-all font-semibold appearance-none ${
-                      formik.touched.province && formik.errors.province
-                        ? "border-[#ED1D26]"
-                        : "border-gray-200 focus:border-[#ED1D26]"
-                    }`}
-                    value={formik.values.province}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                  >
-                    <option value="">Select Province*</option>
-                    <option value="British Columbia">British Columbia</option>
-                    <option value="Alberta">Alberta</option>
-                    <option value="Ontario">Ontario</option>
-                    <option value="California">California</option>
-                  </select>
-                  {formik.touched.province && formik.errors.province && (
-                    <p className="text-[#ED1D26] text-xs font-bold ml-1">
-                      {formik.errors.province}
-                    </p>
-                  )}
-                </div>
+                <EliteDropdown
+                  label="Province / State"
+                  name="province"
+                  options={[
+                    "British Columbia",
+                    "Alberta",
+                    "Ontario",
+                    "California",
+                  ]}
+                  value={formik.values.province}
+                  onChange={formik.setFieldValue}
+                  error={formik.errors.province}
+                  touched={formik.touched.province}
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase text-gray-500 ml-1">
-                      Industry Experience
-                    </label>
-                    <select
-                      name="experience"
-                      className={`w-full bg-gray-50 border rounded-2xl p-4 focus:bg-white outline-none transition-all font-semibold ${
-                        formik.touched.experience && formik.errors.experience
-                          ? "border-[#ED1D26]"
-                          : "border-gray-200 focus:border-[#ED1D26]"
-                      }`}
-                      value={formik.values.experience}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                    >
-                      <option value="">Any signage experience?*</option>
-                      <option value="Yes">Yes, Expert</option>
-                      <option value="No">No, Beginner</option>
-                    </select>
-                    {formik.touched.experience && formik.errors.experience && (
-                      <p className="text-[#ED1D26] text-xs font-bold ml-1">
-                        {formik.errors.experience}
-                      </p>
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold uppercase text-gray-500 ml-1">
-                      Current Ownership
-                    </label>
-                    <select
-                      name="business"
-                      className={`w-full bg-gray-50 border rounded-2xl p-4 focus:bg-white outline-none transition-all font-semibold ${
-                        formik.touched.business && formik.errors.business
-                          ? "border-[#ED1D26]"
-                          : "border-gray-200 focus:border-[#ED1D26]"
-                      }`}
-                      value={formik.values.business}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                    >
-                      <option value="">Own a business currently?*</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                    {formik.touched.business && formik.errors.business && (
-                      <p className="text-[#ED1D26] text-xs font-bold ml-1">
-                        {formik.errors.business}
-                      </p>
-                    )}
-                  </div>
+                  <ChoiceCards
+                    label="Industry Experience"
+                    name="experience"
+                    options={[
+                      {
+                        label: "Yes, Expert",
+                        value: "Yes",
+                        icon: <Award className="w-5 h-5" />,
+                      },
+                      {
+                        label: "No, Beginner",
+                        value: "No",
+                        icon: <Briefcase className="w-5 h-5" />,
+                      },
+                    ]}
+                    value={formik.values.experience}
+                    onChange={formik.setFieldValue}
+                    error={formik.errors.experience}
+                    touched={formik.touched.experience}
+                  />
+                  <ChoiceCards
+                    label="Current Ownership"
+                    name="business"
+                    options={[
+                      {
+                        label: "Yes, Owner",
+                        value: "Yes",
+                        icon: <Building2 className="w-5 h-5" />,
+                      },
+                      {
+                        label: "No",
+                        value: "No",
+                        icon: <Smartphone className="w-5 h-5" />,
+                      },
+                    ]}
+                    value={formik.values.business}
+                    onChange={formik.setFieldValue}
+                    error={formik.errors.business}
+                    touched={formik.touched.business}
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -475,47 +587,26 @@ const FranchisePage = () => {
                       </p>
                     )}
                   </div>
-                  <div className="space-y-2">
-                    <div
-                      className={`p-4 bg-gray-50 rounded-2xl border flex justify-around ${
-                        formik.touched.funding && formik.errors.funding
-                          ? "border-[#ED1D26]"
-                          : "border-gray-200"
-                      }`}
-                    >
-                      <label className="flex items-center gap-2 cursor-pointer font-bold text-sm">
-                        <input
-                          type="radio"
-                          name="funding"
-                          value="Self-funded"
-                          className="w-4 h-4 accent-[#ED1D26]"
-                          checked={formik.values.funding === "Self-funded"}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                        />{" "}
-                        Self-funded
-                      </label>
-                      <label className="flex items-center gap-2 cursor-pointer font-bold text-sm">
-                        <input
-                          type="radio"
-                          name="funding"
-                          value="Seeking Financing"
-                          className="w-4 h-4 accent-[#ED1D26]"
-                          checked={
-                            formik.values.funding === "Seeking Financing"
-                          }
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                        />{" "}
-                        Financing
-                      </label>
-                    </div>
-                    {formik.touched.funding && formik.errors.funding && (
-                      <p className="text-[#ED1D26] text-xs font-bold ml-1">
-                        {formik.errors.funding}
-                      </p>
-                    )}
-                  </div>
+                  <ChoiceCards
+                    label="Funding Strategy"
+                    name="funding"
+                    options={[
+                      {
+                        label: "Self-funded",
+                        value: "Self-funded",
+                        icon: <Wallet className="w-5 h-5" />,
+                      },
+                      {
+                        label: "Seeking Financing",
+                        value: "Seeking Financing",
+                        icon: <DollarSign className="w-5 h-5" />,
+                      },
+                    ]}
+                    value={formik.values.funding}
+                    onChange={formik.setFieldValue}
+                    error={formik.errors.funding}
+                    touched={formik.touched.funding}
+                  />
                 </div>
 
                 <div className="space-y-2">
