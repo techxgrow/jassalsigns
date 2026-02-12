@@ -61,7 +61,6 @@ export default function Testimonials() {
       className="relative py-24 md:py-32 bg-[#0A0A0A] overflow-hidden"
       id="testimonials"
     >
-      {/* Cinematic Background Accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px] -z-10"></div>
 
