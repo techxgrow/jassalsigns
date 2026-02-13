@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Services from "@/components/Services";
 import LocationLinks from "@/components/LocationLinks";
@@ -15,27 +14,27 @@ const markers = [
   },
   {
     name: "ABBOTSFORD",
-    coordinates: ["75%", "28%"], 
+    coordinates: ["75%", "28%"],
     link: "/citypage/ABBOTSFORD",
   },
   {
     name: "SURREY",
-    coordinates: ["75%", "23%"], 
+    coordinates: ["75%", "23%"],
     link: "/citypage/SURREY",
   },
   {
     name: "EDMONTON",
-    coordinates: ["75%", "39%"], 
+    coordinates: ["75%", "39%"],
     link: "/citypage/EDMONTON",
   },
   {
     name: "CALGARY",
-    coordinates: ["75%", "34%"], 
+    coordinates: ["75%", "34%"],
     link: "/citypage/CALGARY",
   },
   {
     name: "SACRAMENTO",
-    coordinates: ["18%", "15%"], 
+    coordinates: ["18%", "15%"],
     link: "/citypage/SACRAMENTO",
   },
 ];
@@ -43,34 +42,37 @@ const markers = [
 // Flag components
 const CanadaFlag = () => (
   <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#FF0000"/>
-    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF"/>
-    <path d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z" fill="#FF0000"/>
+    <rect width="24" height="16" fill="#FF0000" />
+    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF" />
+    <path
+      d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z"
+      fill="#FF0000"
+    />
   </svg>
 );
 
 const USAFlag = () => (
   <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#B22234"/>
-    <rect y="1" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="3" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="5" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="7" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="9" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="11" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="13" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="15" width="24" height="1" fill="#FFFFFF"/>
-    <rect width="10" height="8" fill="#3C3B6E"/>
-    {[...Array(5)].map((_, row) => 
+    <rect width="24" height="16" fill="#B22234" />
+    <rect y="1" width="24" height="1" fill="#FFFFFF" />
+    <rect y="3" width="24" height="1" fill="#FFFFFF" />
+    <rect y="5" width="24" height="1" fill="#FFFFFF" />
+    <rect y="7" width="24" height="1" fill="#FFFFFF" />
+    <rect y="9" width="24" height="1" fill="#FFFFFF" />
+    <rect y="11" width="24" height="1" fill="#FFFFFF" />
+    <rect y="13" width="24" height="1" fill="#FFFFFF" />
+    <rect y="15" width="24" height="1" fill="#FFFFFF" />
+    <rect width="10" height="8" fill="#3C3B6E" />
+    {[...Array(5)].map((_, row) =>
       [...Array(6)].map((_, col) => (
-        <circle 
-          key={`${row}-${col}`} 
-          cx={1 + col * 1.5} 
-          cy={1 + row * 1.5} 
-          r="0.3" 
+        <circle
+          key={`${row}-${col}`}
+          cx={1 + col * 1.5}
+          cy={1 + row * 1.5}
+          r="0.3"
           fill="white"
         />
-      ))
+      )),
     )}
   </svg>
 );
@@ -118,32 +120,125 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
 
 // TwoMapss  Component
 const TwoMaps = () => {
-  const canadaMarkers = markers.filter((marker) =>
-    ["CLOVERDALE", "ABBOTSFORD", "SURREY", "EDMONTON", "CALGARY"].includes(
-      marker.name
-    )
-  );
+  const router = useRouter();
 
-  const usaMarkers = markers.filter((marker) =>
-    ["SACRAMENTO"].includes(marker.name)
-  );
+  const handleCityClick = (cityName) => {
+    router.push(`/citypage/${cityName}`);
+  };
 
   return (
-    <div className="space-y-4">
-      <ImageMap
-        imageSrc="/gallery/Canada04.png"
-        mapMarkers={canadaMarkers}
-        mapName="Canada"
-        flagComponent={<CanadaFlag />}
-      />
-      <ImageMap
-        imageSrc="/gallery/USA04.png"
-        mapMarkers={usaMarkers}
-        mapName="USA"
-        flagComponent={<USAFlag />}
-      />
-    </div>
+    <div className="flex flex-col gap-10 text-white w-full">
+      {/* British Columbia Section */}
+      <div className="location-section">
+        <div className="flex items-center justify-end gap-2 mb-4">
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#EF4444"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg> */}
+          <h3
+            className="text-red-500 tracking-widest uppercase"
+            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
+          >
+            BRITISH COLUMBIA
+          </h3>
+        </div>
+        <div className="flex flex-col gap-2 items-end">
+          {["Surrey", "Cloverdale", "Abbotsford"].map((city) => (
+            <button
+              key={city}
+              onClick={() => handleCityClick(city.toUpperCase())}
+              className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
+              style={{ fontSize: "18px", fontWeight: 500 }}
+            >
+              {city}
+            </button>
+          ))}
+        </div>
+      </div>
 
+      {/* Alberta Section */}
+      <div className="location-section">
+        <div className="flex items-center justify-end gap-2 mb-4">
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#EF4444"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg> */}
+          <h3
+            className="text-red-500 tracking-widest uppercase"
+            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
+          >
+            ALBERTA
+          </h3>
+        </div>
+        <div className="flex flex-col gap-2 items-end">
+          {["Calgary", "Edmonton"].map((city) => (
+            <button
+              key={city}
+              onClick={() => handleCityClick(city.toUpperCase())}
+              className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
+              style={{ fontSize: "18px", fontWeight: 500 }}
+            >
+              {city}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* United States Section */}
+      <div className="location-section">
+        <div className="flex items-center justify-end gap-2 mb-4">
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg> */}
+          <h3
+            className="text-red-500 tracking-widest uppercase"
+            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
+          >
+            UNITED STATES
+          </h3>
+        </div>
+        <div className="flex flex-col gap-2 items-end">
+          <button
+            onClick={() => handleCityClick("SACRAMENTO")}
+            className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
+            style={{ fontSize: "18px", fontWeight: 500 }}
+          >
+            Sacramento, CA
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -166,7 +261,7 @@ export default function Home_test() {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>'
+                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>',
               )
               .start();
           }}
@@ -188,7 +283,6 @@ export default function Home_test() {
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           src="/background.mov"
         />
-      
 
         {/* Navbarr*/}
         <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
@@ -219,17 +313,17 @@ export default function Home_test() {
         <div className="max-w-[1280px] mx-auto mt-10 md:mt-2 px-4">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* LEFT SIDE → MAP */}
-            <div className="w-full lg:w-1/3 flex flex-col justify-start">
-              <h4 className="mb-4 font-grotesk font-semibold text-lg text-white">
+            <div className="w-full lg:w-1/4 flex flex-col justify-start mt-16 items-end text-right">
+              <h4 className="mb-6 font-grotesk font-bold font-weight-700 text-base text-red-600">
                 Select Your Location
               </h4>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden w-full ">
                 <TwoMaps />
               </div>
             </div>
 
             {/* RIGHT SIDE CONTENT*/}
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-3/4">
               <Services />
             </div>
           </div>
