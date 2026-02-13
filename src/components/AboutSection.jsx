@@ -33,46 +33,50 @@ const AboutSection = () => {
                 <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs md:text-sm">
                   Who We Are
                 </h4>
-                <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase">
-                  We create mass <br />
-                  public's eye <span className="text-[#ED1D26]">attention</span>
+                <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
+                  Professional Signage & Printing Services in{" "}
+                  <span className="text-[#ED1D26]">Edmonton</span>
                 </h2>
               </div>
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600/20 rounded-full"></div>
-                <p className="pl-8 text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                  We are a sign, wrap and Print company. With over{" "}
-                  <span className="text-gray-900 font-black">
-                    30 years of excellence
-                  </span>
-                  , we're dedicated to bringing your vision to life with our
-                  variety of services.
-                </p>
-              </div>
-
-              {/* <div className="pt-6">
-                <div className="inline-flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 rounded-full border-2 border-red-600 flex items-center justify-center group-hover:bg-red-600 transition-all duration-500">
-                    <svg
-                      className="w-5 h-5 text-red-600 group-hover:text-white transition-colors"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="3"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-gray-900 font-black uppercase tracking-widest text-sm">
-                    Discover Our Legacy
-                  </span>
+                <div className="pl-8 space-y-6">
+                  <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                    Jassal Signs is a leading{" "}
+                    <span className="text-gray-900 font-black">
+                      signage company
+                    </span>
+                    ,{" "}
+                    <span className="text-gray-900 font-black">
+                      vehicle wrap specialist
+                    </span>
+                    , and{" "}
+                    <span className="text-gray-900 font-black">
+                      commercial printing provider
+                    </span>{" "}
+                    with over 30 years of excellence. We help businesses across
+                    Alberta increase visibility and attract customers with
+                    high-impact visual solutions.
+                  </p>
+                  <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
+                    From custom{" "}
+                    <span className="text-gray-800 font-bold">
+                      storefront signs
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-gray-800 font-bold">
+                      fleet vehicle wraps
+                    </span>{" "}
+                    to professional{" "}
+                    <span className="text-gray-800 font-bold">
+                      business printing
+                    </span>
+                    , we bring your brand to life with quality craftsmanship
+                    that demands attention and delivers results.
+                  </p>
                 </div>
-              </div> */}
+              </div>
             </div>
 
             {/* Right Stats - Elite Cards */}
@@ -83,9 +87,9 @@ const AboutSection = () => {
 
               <div className="grid grid-cols-1 gap-6">
                 {[
-                  { label: "Elite Clients", end: 1000, suffix: "+" },
-                  { label: "Completed Projects", end: 10000, suffix: "+" },
-                  { label: "Bespoke Designs", end: 100000, suffix: "+" },
+                  { label: "Happy Clients", end: 1200, suffix: "+" },
+                  { label: "Projects Completed", end: 15000, suffix: "+" },
+                  { label: "Designs", end: 750000, suffix: "+" },
                 ].map((stat, idx) => (
                   <div
                     key={idx}
