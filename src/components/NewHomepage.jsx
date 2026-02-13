@@ -5,329 +5,223 @@ import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaMapMarkerAlt, FaGlobeAmericas } from "react-icons/fa";
 
-const markers = [
-  {
-    name: "CLOVERDALE",
-    coordinates: ["75%", "18%"],
-    link: "/citypage/CLOVERDALE",
-  },
-  {
-    name: "ABBOTSFORD",
-    coordinates: ["75%", "28%"],
-    link: "/citypage/ABBOTSFORD",
-  },
-  {
-    name: "SURREY",
-    coordinates: ["75%", "23%"],
-    link: "/citypage/SURREY",
-  },
-  {
-    name: "EDMONTON",
-    coordinates: ["75%", "39%"],
-    link: "/citypage/EDMONTON",
-  },
-  {
-    name: "CALGARY",
-    coordinates: ["75%", "34%"],
-    link: "/citypage/CALGARY",
-  },
-  {
-    name: "SACRAMENTO",
-    coordinates: ["18%", "15%"],
-    link: "/citypage/SACRAMENTO",
-  },
-];
+// --- Sub-components ---
 
-// Flag components
-const CanadaFlag = () => (
-  <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#FF0000" />
-    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF" />
-    <path
-      d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z"
-      fill="#FF0000"
-    />
-  </svg>
+const BrandHeader = () => (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "circOut" }}
+    className="text-center mb-12 relative z-20 shrink-0"
+  >
+    <div className="inline-block relative">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-grotesk tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-2xl">
+        JASSAL SIGNS
+      </h1>
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="h-1 md:h-2 bg-[#ED1D26] absolute bottom-0 left-0"
+      />
+    </div>
+    <p className="mt-4 text-gray-300 text-lg md:text-xl tracking-widest font-light uppercase">
+      Elevate Your Brand Identity
+    </p>
+  </motion.div>
 );
 
-const USAFlag = () => (
-  <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#B22234" />
-    <rect y="1" width="24" height="1" fill="#FFFFFF" />
-    <rect y="3" width="24" height="1" fill="#FFFFFF" />
-    <rect y="5" width="24" height="1" fill="#FFFFFF" />
-    <rect y="7" width="24" height="1" fill="#FFFFFF" />
-    <rect y="9" width="24" height="1" fill="#FFFFFF" />
-    <rect y="11" width="24" height="1" fill="#FFFFFF" />
-    <rect y="13" width="24" height="1" fill="#FFFFFF" />
-    <rect y="15" width="24" height="1" fill="#FFFFFF" />
-    <rect width="10" height="8" fill="#3C3B6E" />
-    {[...Array(5)].map((_, row) =>
-      [...Array(6)].map((_, col) => (
-        <circle
-          key={`${row}-${col}`}
-          cx={1 + col * 1.5}
-          cy={1 + row * 1.5}
-          r="0.3"
-          fill="white"
-        />
-      )),
-    )}
-  </svg>
-);
-
-// Custom Map Ccomponent
-const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
+const LocationButton = ({ name, link }) => {
   const router = useRouter();
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+      whileTap={{ scale: 0.98 }}
+      onClick={() => router.push(link)}
+      className="w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-300 group bg-black/40 border-white/5 hover:border-white/20"
+    >
+      <div className="flex items-center gap-4">
+        <div className="p-2 rounded-full bg-white/5 text-gray-400 group-hover:text-white transition-colors">
+          <FaMapMarkerAlt size={16} />
+        </div>
+        <span className="text-lg font-medium tracking-wide text-gray-300 group-hover:text-white">
+          {name}
+        </span>
+      </div>
+    </motion.button>
+  );
+};
 
-  const handleMarkerClick = (e, link) => {
-    e.preventDefault();
-    e.stopPropagation();
-    router.push(link);
-  };
+const LocationHub = () => {
+  const locations = [
+    {
+      region: "British Columbia",
+      cities: [
+        { name: "Surrey", link: "/citypage/SURREY" },
+        { name: "Cloverdale", link: "/citypage/CLOVERDALE" },
+        { name: "Abbotsford", link: "/citypage/ABBOTSFORD" },
+      ],
+    },
+    {
+      region: "Alberta",
+      cities: [
+        { name: "Calgary", link: "/citypage/CALGARY" },
+        { name: "Edmonton", link: "/citypage/EDMONTON" },
+      ],
+    },
+    {
+      region: "USA",
+      cities: [{ name: "Sacramento", link: "/citypage/SACRAMENTO" }],
+    },
+  ];
 
   return (
-    <div className="relative w-full border rounded-lg overflow-hidden">
-      <div className="absolute top-2 left-2 z-10 bg-black bg-opacity-70 text-white px-3 py-1 rounded flex items-center">
-        {flagComponent}
-        {mapName}
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-2 text-[#0083CB] mb-2">
+        <FaGlobeAmericas size={20} />
+        <h3 className="font-bold tracking-widest uppercase text-sm">
+          Select Region
+        </h3>
       </div>
-      <div className="relative">
-        <img src={imageSrc} alt={mapName} className="w-full h-auto" />
-        {mapMarkers.map(({ name, coordinates, link }) => (
-          <button
-            key={name}
-            className="absolute group transition-all duration-200 hover:scale-110 focus:outline-none"
-            style={{
-              left: coordinates[0],
-              top: coordinates[1],
-              transform: "translate(-50%, -50%)",
-            }}
-            onClick={(e) => handleMarkerClick(e, link)}
-            aria-label={`Go to ${name}`}
-          >
-            {/* Pin marker - Rectangle */}
-            <div className="relative">
-              <div className="w-40 h-2  group-hover:scale-125  transition-all duration-200 cursor-pointer"></div>
+
+      <div className="space-y-8">
+        {locations.map((group) => (
+          <div key={group.region}>
+            <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 pl-1">
+              {group.region}
+            </h4>
+            <div className="space-y-3">
+              {group.cities.map((city) => (
+                <LocationButton
+                  key={city.name}
+                  name={city.name}
+                  link={city.link}
+                />
+              ))}
             </div>
-          </button>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-// TwoMapss  Component
-const TwoMaps = () => {
-  const router = useRouter();
+// --- Main Page Component ---
 
-  const handleCityClick = (cityName) => {
-    router.push(`/citypage/${cityName}`);
-  };
-
-  return (
-    <div className="flex flex-col gap-10 text-white w-full">
-      {/* British Columbia Section */}
-      <div className="location-section">
-        <div className="flex items-center justify-end gap-2 mb-4">
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#EF4444"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg> */}
-          <h3
-            className="text-red-500 tracking-widest uppercase"
-            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
-          >
-            BRITISH COLUMBIA
-          </h3>
-        </div>
-        <div className="flex flex-col gap-2 items-end">
-          {["Surrey", "Cloverdale", "Abbotsford"].map((city) => (
-            <button
-              key={city}
-              onClick={() => handleCityClick(city.toUpperCase())}
-              className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
-              style={{ fontSize: "18px", fontWeight: 500 }}
-            >
-              {city}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Alberta Section */}
-      <div className="location-section">
-        <div className="flex items-center justify-end gap-2 mb-4">
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#EF4444"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg> */}
-          <h3
-            className="text-red-500 tracking-widest uppercase"
-            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
-          >
-            ALBERTA
-          </h3>
-        </div>
-        <div className="flex flex-col gap-2 items-end">
-          {["Calgary", "Edmonton"].map((city) => (
-            <button
-              key={city}
-              onClick={() => handleCityClick(city.toUpperCase())}
-              className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
-              style={{ fontSize: "18px", fontWeight: 500 }}
-            >
-              {city}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* United States Section */}
-      <div className="location-section">
-        <div className="flex items-center justify-end gap-2 mb-4">
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg> */}
-          <h3
-            className="text-red-500 tracking-widest uppercase"
-            style={{ fontSize: "24px", fontWeight: 800, color: "#fff" }}
-          >
-            UNITED STATES
-          </h3>
-        </div>
-        <div className="flex flex-col gap-2 items-end">
-          <button
-            onClick={() => handleCityClick("SACRAMENTO")}
-            className="text-gray-300 hover:text-white transition-all duration-200 text-right hover:-translate-x-1"
-            style={{ fontSize: "18px", fontWeight: 500 }}
-          >
-            Sacramento, CA
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default function Home_test() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
+export default function NewHomepage() {
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadingTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3400);
-    return () => clearTimeout(loadingTimer);
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
+  if (loading) {
     return (
-      <div className="w-full h-screen flex justify-center text-3xl font-bold items-center text-white bg-black">
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(
-                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>',
-              )
-              .start();
-          }}
-        />
+      <div className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden">
+        <div className="relative z-10 text-center">
+          <Typewriter
+            options={{
+              strings: [
+                '<span style="color:#0083CB">Jassal.</span>',
+                '<span style="color:#fff">Signs.</span>',
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 30,
+              wrapperClassName:
+                "text-4xl md:text-6xl font-black font-grotesk tracking-tighter",
+              cursorClassName: "text-[#ED1D26]",
+            }}
+          />
+        </div>
       </div>
     );
   }
-  //
 
   return (
-    <div className="relative w-full min-h-screen text-white overflow-hidden">
-      <div className="relative">
-        {/* Background Video */}
+    <div className="relative min-h-screen bg-[#050505] text-white font-sans selection:bg-[#ED1D26] selection:text-white">
+      {/* Fixed Background Layer */}
+      <div className="fixed inset-0 z-0">
         <video
           autoPlay
           loop
           muted
-          poster="/fallback.png"
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          playsInline
+          className="w-full h-full object-cover opacity-60 scale-105"
           src="/background.mov"
         />
+        {/* Grain Overlay */}
+        <div
+          className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
+        />
+        {/* Vignette */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/90" />
+      </div>
 
-        {/* Navbarr*/}
-        <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">
-          <button
-            className="md:hidden focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
+      {/* Main Scrollable Container */}
+      <div className="relative z-30 w-full min-h-screen flex flex-col pt-8 md:pt-12">
+        {/* Header Bar */}
+        <div className="max-w-[1600px] mx-auto w-full px-4 md:px-8 mb-8 flex justify-between items-start">
+          <img src="/logo.png" className="h-8 md:h-10 opacity-90" alt="Logo" />
+        </div>
+
+        {/* Brand Title */}
+        <BrandHeader />
+
+        {/* Content Section */}
+        <div className="flex-1 max-w-[1600px] mx-auto w-full px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-20">
+          {/* LEFT: Location Hub (Sticky on large screens) */}
+          <div className="hidden lg:block lg:col-span-3 xl:col-span-3">
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="bg-black/30 backdrop-blur-md border border-white/5 rounded-3xl p-6 sticky top-8"
+            >
+              <LocationHub />
+            </motion.div>
+          </div>
+
+          {/* CENTER: Services Showcase */}
+          <motion.div
+            initial={{ scale: 0.98, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="col-span-1 lg:col-span-9 xl:col-span-9"
           >
-            {menuOpen ? (
-              <IoMdClose className="text-white text-[30px]" />
-            ) : (
-              <div>
-                <div className="w-6 h-1 bg-white mb-1" />
-                <div className="w-6 h-1 bg-white mb-1" />
-                <div className="w-6 h-1 bg-white" />
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+              {/* Decorative Glow */}
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#0083CB] rounded-full mix-blend-screen filter blur-[120px] opacity-10 pointer-events-none" />
+
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold font-grotesk flex items-center gap-4">
+                  <span className="w-2 h-8 bg-[#ED1D26] rounded-full inline-block" />
+                  Our Expertise
+                </h2>
               </div>
-            )}
-          </button>
-        </div>
 
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="absolute top-0 left-0 h-full w-full bg-black text-white z-20 md:hidden">
-            <LocationLinks />
-          </div>
-        )}
-
-        {/* Main Layout */}
-        <div className="max-w-[1280px] mx-auto mt-10 md:mt-2 px-4">
-          <div className="flex flex-col lg:flex-row gap-6">
-            {/* LEFT SIiDE → MAP */}
-            <div className="w-full lg:w-1/4 flex flex-col justify-start mt-16 items-end text-right">
-              <h4 className="mb-6 font-grotesk font-bold font-weight-700 text-base text-red-600">
-                Select Your Location
-              </h4>
-              <div className="overflow-hidden w-full ">
-                <TwoMaps />
+              {/* Services Component */}
+              <div className="min-h-[600px]">
+                <Services />
               </div>
             </div>
 
-            {/* RIGHT SIDE CONTENT*/}
-            <div className="w-full lg:w-3/4">
-              <Services />
+            {/* Mobile Only Location Hub (appears below services on mobile) */}
+            <div className="lg:hidden mt-8 bg-black/30 backdrop-blur-md border border-white/5 rounded-3xl p-6">
+              <LocationHub />
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Integrated Footer */}
         <HomepageFooter />
       </div>
     </div>
