@@ -312,7 +312,7 @@ export default function Home_test() {
         {/* Main Layout */}
         <div className="max-w-[1280px] mx-auto mt-10 md:mt-2 px-4">
           <div className="flex flex-col lg:flex-row gap-6">
-            {/* LEFT SIDE → MAP */}
+            {/* LEFT SIiDE → MAP */}
             <div className="w-full lg:w-1/4 flex flex-col justify-start mt-16 items-end text-right">
               <h4 className="mb-6 font-grotesk font-bold font-weight-700 text-base text-red-600">
                 Select Your Location
