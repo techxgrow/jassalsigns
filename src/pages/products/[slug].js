@@ -21,6 +21,7 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import Link from "next/link";
 
 const images = [
   { src: "/gallery/gl1.jpg" },
@@ -87,10 +88,10 @@ const ProductPage = () => {
       <div className="border-b border-gray-100 last:border-0">
         <button
           onClick={toggle}
-          className="w-full py-8 flex items-center justify-between text-left group transition-all"
+          className="w-full py-4 flex items-center justify-between text-left group transition-all"
         >
           <span
-            className={`text-xl md:text-2xl font-black uppercase tracking-tighter transition-colors duration-300 ${isOpen ? "text-[#ED1D26]" : "text-gray-900 group-hover:text-[#ED1D26]"}`}
+            className={`text-xl md:text-lg font-black uppercase tracking-tighter transition-colors duration-300 ${isOpen ? "text-[#ED1D26]" : "text-gray-900 group-hover:text-[#ED1D26]"}`}
           >
             {faq.question}
           </span>
@@ -240,7 +241,7 @@ const ProductPage = () => {
         {/* Elite Intro Card */}
         <div className="relative mb-20 group" data-aos="fade-up">
           <div className="absolute -inset-4 bg-gradient-to-r from-[#ED1D26]/5 to-transparent rounded-[40px] -z-10 group-hover:from-[#ED1D26]/10 transition-all duration-700"></div>
-          <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed max-w-5xl">
+          <p className="text-xl md:text-2xl font-semibold text-gray-800 text-justify leading-relaxed max-w-5xl">
             {data.productPage[slug]?.para1}
           </p>
         </div>
@@ -261,7 +262,7 @@ const ProductPage = () => {
                     <Sparkles className="w-3.5 h-3.5 md:w-4 h-4" />
                     Premium Consultation
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight uppercase tracking-tighter">
+                  <h3 className="text-3xl md:text-3xl font-black text-gray-900 leading-tight uppercase tracking-tighter">
                     {data.productPage[slug]?.consultationObj?.heading}
                   </h3>
                   <p className="text-lg md:text-xl font-bold text-gray-500">
@@ -284,7 +285,7 @@ const ProductPage = () => {
                             strokeWidth={2.5}
                           />
                         </div>
-                        <span className="text-lg text-gray-700 font-bold leading-tight group-hover/item:text-black transition-colors">
+                        <span className="text-base text-gray-700  leading-tight group-hover/item:text-black transition-colors">
                           {item}
                         </span>
                       </div>
@@ -292,14 +293,14 @@ const ProductPage = () => {
                   )}
                 </div>
 
-                <div className="bg-gray-900 p-6 md:p-8 rounded-3xl relative overflow-hidden group">
+                {/* <div className="bg-gray-900 p-6 md:p-8 rounded-3xl relative overflow-hidden group">
                   <Quote className="absolute -right-4 -bottom-4 w-20 h-20 md:w-24 md:h-24 text-white/5 group-hover:scale-110 transition-transform duration-700" />
                   <p className="text-white text-base md:text-lg font-bold leading-relaxed relative z-10">
                     "Elevate your brand with Canada's finest signage engineers.
                     We bring your vision to life with zero compromise on
                     quality."
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* Right Form Section */}
@@ -314,7 +315,7 @@ const ProductPage = () => {
         </Element>
 
         {/* Paragraph 2 - Floating Quote Style */}
-        <div className="py-24 max-w-4xl mx-auto text-center" data-aos="zoom-in">
+        <div className="py-2 max-w-4xl mx-auto text-center" data-aos="zoom-in">
           <Quote className="w-12 h-12 text-[#ED1D26]/20 mx-auto mb-8" />
           <p className="text-2xl md:text-3xl font-black text-gray-900 leading-tight tracking-tight italic">
             "{data.productPage[slug]?.para2}"
@@ -341,7 +342,7 @@ const ProductPage = () => {
           </div>
 
           <PhotoProvider>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {images.map((img, index) => (
                 <PhotoView key={index} src={img.src}>
                   <div
@@ -395,7 +396,7 @@ const ProductPage = () => {
               </h4>
               <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase mb-6">
                 Frequently <br />
-                <span className="text-gray-300">Answered</span>
+                <span className="text-gray-300">Ask Questions</span>
               </h2>
               <p className="text-gray-500 font-bold text-lg leading-relaxed">
                 Everything you need to know about our premium signage process
@@ -419,7 +420,7 @@ const ProductPage = () => {
         </section>
 
         {/* Remaining Paragraphs - Elite Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-4">
           {[3, 4].map((num) => (
             <div key={num} className="relative group" data-aos="fade-up">
               <div className="absolute top-0 left-0 w-8 h-1 bg-[#ED1D26] transition-all duration-500 group-hover:w-full"></div>
@@ -441,6 +442,11 @@ const ProductPage = () => {
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
               {data.productPage[slug]?.para5}
             </p>
+            <Link href="/#contact">
+              <button className="mt-8 px-8 py-4 bg-[#ED1D26] text-white rounded-full font-bold text-lg hover:bg-red-600 transition-all duration-300">
+                Get a Free Quote
+              </button>
+            </Link>
           </div>
         )}
       </div>

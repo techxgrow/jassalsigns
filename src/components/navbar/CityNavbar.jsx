@@ -178,6 +178,11 @@ const CityNavbar = () => {
               </Link>
             </li>
             <li>
+              <NavLink to="productSection" href="/#productSection">
+                Products
+              </NavLink>
+            </li>
+            <li>
               <Link
                 href="/services"
                 onClick={() => setMenuOpen(false)}
@@ -186,7 +191,7 @@ const CityNavbar = () => {
                 Services
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/franchise"
                 onClick={() => setMenuOpen(false)}
@@ -194,12 +199,8 @@ const CityNavbar = () => {
               >
                 Franchise
               </Link>
-            </li>
-            <li>
-              <NavLink to="productSection" href="/#productSection">
-                Products
-              </NavLink>
-            </li>
+            </li> */}
+
             <li>
               <NavLink to="gallerySection" href="/#gallerySection">
                 Gallery

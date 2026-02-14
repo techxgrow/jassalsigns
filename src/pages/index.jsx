@@ -193,11 +193,13 @@ const Home = () => {
     <>
       <CityNavbar />
       <CitySlider cityName={cityName} />
-      <Element name="productSection" id="productSection">
+      <Element name="aboutSection" id="aboutSection">
         <AboutSection />
       </Element>
 
-      <OurServices />
+      <Element name="productSection" id="productSection">
+        <OurServices />
+      </Element>
 
       <MarqueeText />
       <Testimonials testimonials={testimonialsData} autoplay="true" />

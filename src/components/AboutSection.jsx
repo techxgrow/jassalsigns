@@ -33,7 +33,7 @@ const AboutSection = () => {
                 <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs md:text-sm">
                   Who We Are
                 </h4>
-                <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
+                <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
                   Professional Signage & Printing Services in{" "}
                   <span className="text-[#ED1D26]">Edmonton</span>
                 </h2>
@@ -42,17 +42,17 @@ const AboutSection = () => {
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600/20 rounded-full"></div>
                 <div className="pl-8 space-y-6">
-                  <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                  <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
                     Jassal Signs is a leading{" "}
-                    <span className="text-gray-900 font-black">
+                    <span className="text-gray-900 font-black text-lg">
                       signage company
                     </span>
                     ,{" "}
-                    <span className="text-gray-900 font-black">
+                    <span className="text-gray-900 font-black text-lg">
                       vehicle wrap specialist
                     </span>
                     , and{" "}
-                    <span className="text-gray-900 font-black">
+                    <span className="text-gray-900 font-black text-lg">
                       commercial printing provider
                     </span>{" "}
                     with over 30 years of excellence. We help businesses across
@@ -132,8 +132,7 @@ const AboutSection = () => {
             What We Do
           </p>
           <h2 className="text-6xl md:text-8xl font-black text-gray-900 tracking-tighter uppercase leading-[0.85]">
-            Our Premium <br />
-            <span className="text-gray-300">Signage</span> Products
+            <span className="text-gray-300"> Our</span> Products
           </h2>
         </div>
       </div>

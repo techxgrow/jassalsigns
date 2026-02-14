@@ -77,7 +77,7 @@ export default function CitySlider({ cityName }) {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] mb-4 tracking-tighter drop-shadow-2xl">
-            JASSAL <br />
+            JASSAL{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
               SIGNS
             </span>

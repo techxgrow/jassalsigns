@@ -295,7 +295,7 @@ const FranchisePage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-24 bg-gray-50">
+      <section id="benefits" className="py-24 bg-white">
         <div className="max-w-[85vw] mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h4 className="text-[#ED1D26] font-bold uppercase tracking-widest mb-2">
@@ -332,9 +332,9 @@ const FranchisePage = () => {
       </section>
 
       {/* Split Application Form Section */}
-      <section id="application-form" className="py-24 bg-white">
+      <section id="application-form" className="py-24 bg-[#d7d7d7]">
         <div className="max-w-[85vw] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-5" data-aos="fade-right">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
@@ -348,17 +348,17 @@ const FranchisePage = () => {
                 touch with you.
               </p>
 
-              <div className="space-y-8">
+              {/* <div className="space-y-8">
                 {[
                   {
                     icon: <Phone />,
                     title: "Call Us",
-                    content: "+1 (604) 594-5555",
+                    content: "+1 (780) 437-7790",
                   },
                   {
                     icon: <Mail />,
                     title: "Email Us",
-                    content: "franchise@jassalsigns.com",
+                    content: "jassalsignsedm@gmail.com",
                   },
                   {
                     icon: <MapPin />,
@@ -378,7 +378,7 @@ const FranchisePage = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Form Card */}
@@ -483,7 +483,7 @@ const FranchisePage = () => {
                   </div>
                 </div>
 
-                <EliteDropdown
+                {/* <EliteDropdown
                   label="Province / State"
                   name="province"
                   options={[
@@ -496,6 +496,23 @@ const FranchisePage = () => {
                   onChange={formik.setFieldValue}
                   error={formik.errors.province}
                   touched={formik.touched.province}
+                /> */}
+                <label className="text-sm font-bold  text-gray-500 ml-1">
+                  City , Province
+                </label>
+
+                <input
+                  name="province"
+                  type="text"
+                  placeholder="e.g. Edmonton,AB"
+                  className={`w-full bg-gray-50 border rounded-2xl p-4 focus:bg-white outline-none transition-all font-semibold ${
+                    formik.touched.province && formik.errors.province
+                      ? "border-[#ED1D26]"
+                      : "border-gray-200 focus:border-[#ED1D26]"
+                  }`}
+                  value={formik.values.province}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -12,6 +12,11 @@ import {
   Monitor,
   CheckCircle2,
   ArrowRight,
+  PencilRuler,
+  ClipboardCheck,
+  Hammer,
+  Wrench,
+  Printer,
 } from "lucide-react";
 import Link from "next/link";
 import servicesBanner from "@/services-banner-bg.webp";
@@ -31,64 +36,58 @@ const ServicesPage = () => {
 
   const services = [
     {
-      id: "indoor",
-      title: "Indoor Signs",
-      icon: <Store className="w-8 h-8" />,
+      id: "design",
+      title: "Design & Branding",
+      icon: <PencilRuler className="w-8 h-8" />,
       description:
-        "Elegant and effective interior signage that enhances brand presence and navigation within your space.",
-      details: ["Lobby Signs", "Wayfinding", "Wall Murals", "Point of Sale"],
-      image: "/citypage/services/indoorsigns.jpg",
+        "Our creative team brings your vision to life with professional graphic design, logo creation, and visual mockups tailored to your brand identity.",
+      link: "/#contactSection",
       color: "bg-blue-600",
     },
     {
-      id: "outdoor",
-      title: "Outdoor Signs",
-      icon: <Monitor className="w-8 h-8" />,
+      id: "permits",
+      title: "Permits & Surveys",
+      icon: <ClipboardCheck className="w-8 h-8" />,
       description:
-        "High-impact exterior solutions designed to withstand the elements and capture attention from a distance.",
-      details: ["Building Signs", "LED Displays", "Banners", "Post & Panel"],
-      image: "/citypage/services/outdoorsigns.jpg",
-      color: "bg-red-600",
-    },
-    {
-      id: "wraps",
-      title: "Vehicle Wraps",
-      icon: <Truck className="w-8 h-8" />,
-      description:
-        "Turn your fleet into mobile billboards with our premium vinyl wraps and high-resolution graphics.",
-      details: ["Full Wraps", "Partial Wraps", "Decals", "Fleet Branding"],
-      image: "/citypage/services/vehiclewraps.jpg",
+        "We handle the complexities of city permits and conduct detailed site surveys to ensure your signage complies with all local bylaws.",
+      link: "/#contactSection",
       color: "bg-emerald-600",
     },
     {
-      id: "channel",
-      title: "Channel Letters",
-      icon: <Lightbulb className="w-8 h-8" />,
+      id: "manufacturing",
+      title: "Manufacturing",
+      icon: <Hammer className="w-8 h-8" />,
       description:
-        "3D illuminated lettering that provides a professional, high-end look for any storefront or corporate building.",
-      details: ["Front Lit", "Backlit (Halo)", "Reverse Channel", "Dual Lit"],
-      image: "/citypage/services/channelletters.jpg",
+        "Expert fabrication using premium materials. From channel letters to pylons, we build durable signage at our local facility.",
+      link: "/#contactSection",
       color: "bg-amber-600",
     },
     {
-      id: "pylon",
-      title: "Pylon Signs",
-      icon: <Tower className="w-8 h-8" />,
+      id: "printing",
+      title: "Large Format Printing",
+      icon: <Printer className="w-8 h-8" />,
       description:
-        "Freestanding structures that provide maximum visibility from major roads and highways for multi-tenant spaces.",
-      details: ["Monolith Signs", "Multi-Tenant", "Electronic Message Centers"],
-      image: "/citypage/services/pylonsigns.jpg",
-      color: "bg-indigo-600",
+        "High-resolution printing for banners, window graphics, wall murals, and vehicle wraps using state-of-the-art technology.",
+      link: "/products/printmedia",
+      color: "bg-purple-600",
     },
     {
-      id: "print",
-      title: "Print Services",
-      icon: <Paintbrush className="w-8 h-8" />,
+      id: "installation",
+      title: "Professional Installation",
+      icon: <Truck className="w-8 h-8" />,
       description:
-        "Superior quality print materials ranging from business cards to massive large-format banners.",
-      details: ["Large Format", "Business Stationery", "Posters", "Flyers"],
-      image: "/citypage/services/printmedia.jpg",
-      color: "bg-purple-600",
+        "Our safety-certified installation team ensures your signs are mounted securely and positioned for maximum visibility.",
+      link: "/#contactSection",
+      color: "bg-red-600",
+    },
+    {
+      id: "maintenance",
+      title: "Maintenance & Repair",
+      icon: <Wrench className="w-8 h-8" />,
+      description:
+        "Keep your brand shining bright. We offer LED retrofitting, cleaning, and repairs to extend the lifespan of your signage.",
+      link: "/#contactSection",
+      color: "bg-slate-600",
     },
   ];
 
@@ -120,72 +119,6 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-[85vw] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className="group relative bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                {/* Image Header */}
-                <div className="h-64 overflow-hidden relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  ></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-6 left-8 flex items-center gap-4">
-                    <div
-                      className={`p-3 rounded-2xl ${service.color} text-white shadow-lg`}
-                    >
-                      {service.icon}
-                    </div>
-                    <h3 className="text-2xl font-black text-white uppercase tracking-tight">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <p className="text-gray-600 mb-8 font-medium leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="space-y-3 mb-10">
-                    {service.details.map((detail, dIndex) => (
-                      <div
-                        key={dIndex}
-                        className="flex items-center gap-3 text-sm font-bold text-gray-800 uppercase tracking-tight"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#ED1D26]" />
-                        {detail}
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={`/products/${service.id === "wraps" ? "vehiclewraps" : service.id === "channel" ? "channelletters" : service.id === "pylon" ? "pylonsigns" : service.id === "print" ? "printmedia" : service.id === "indoor" ? "indoorsigns" : "outdoorsigns"}`}
-                    className="flex items-center justify-between w-full group/btn"
-                  >
-                    <span className="text-sm font-black uppercase tracking-widest text-gray-900 group-hover/btn:text-[#ED1D26] transition-colors">
-                      Learn More
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover/btn:bg-[#ED1D26] group-hover/btn:border-[#ED1D26] group-hover/btn:text-white transition-all duration-300">
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Value Proposition */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-[85vw] mx-auto">
@@ -194,7 +127,7 @@ const ServicesPage = () => {
               <h4 className="text-[#ED1D26] font-bold uppercase tracking-widest mb-4">
                 Quality Guaranteed
               </h4>
-              <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 uppercase leading-none mb-8 tracking-tighter">
+              <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 uppercase leading-none mb-8 tracking-tighter">
                 Why Industry Leaders <br />
                 <span className="text-[#ED1D26]">Trust Jassal Signs</span>
               </h2>
@@ -241,6 +174,41 @@ const ServicesPage = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-[85vw] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Link
+                key={service.id}
+                href={service.link}
+                className="group relative bg-white rounded-[32px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-red-100 flex flex-col items-center text-center h-full hover:-translate-y-2"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                {/* Icon */}
+                <div
+                  className={`w-20 h-20 rounded-2xl ${service.color} text-white shadow-lg mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {React.cloneElement(service.icon, { className: "w-10 h-10" })}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 group-hover:text-[#ED1D26] transition-colors">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 font-medium leading-relaxed">
+                  {service.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

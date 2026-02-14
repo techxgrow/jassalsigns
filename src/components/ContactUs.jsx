@@ -139,10 +139,10 @@ const ContactUs = ({ city }) => {
 
           <div className="relative bg-white rounded-[32px] p-6 md:p-10 shadow-xl border border-gray-100">
             <div className="mb-8">
-              <h3 className="text-xl md:text-2xl font-black font-grotesk text-gray-900 uppercase tracking-tighter mb-1">
+              <h3 className="text-xl md:text-2xl font-black font-grotesk text-gray-900 uppercase tracking-tighter mb-1 text-center">
                 Post Your <span className="text-[#ED1D26]">Query</span>
               </h3>
-              <p className="text-gray-400 font-medium text-xs">
+              <p className="text-gray-400 font-medium text-xs text-center">
                 We'll get back to you shortly.
               </p>
             </div>

@@ -78,7 +78,6 @@ export default function Testimonials() {
             <span className="w-8 h-[1px] bg-[#ED1D26]"></span>
           </div>
           <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.85] tracking-tighter uppercase px-4">
-            World Class <br />
             <span className="text-gray-800">Testimonials</span>
           </h2>
         </div>

@@ -10,8 +10,8 @@ const ConsultationForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    signage: [],
-    location: [],
+    signage: "",
+    location: "",
     message: "",
     website: "Edmonton",
   });
@@ -47,8 +47,8 @@ const ConsultationForm = () => {
           lastName: "",
           email: "",
           phone: "",
-          signage: [],
-          location: [],
+          signage: "",
+          location: "",
           message: "",
           website: "Edmonton",
         });
@@ -138,7 +138,7 @@ const ConsultationForm = () => {
           <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
             Signage Interest
           </h4>
-          <div className="flex flex-wrap gap-2">
+          {/* <div className="flex flex-wrap gap-2">
             {["Interior", "Exterior", "Vinyl", "Business", "Custom"].map(
               (label) => (
                 <label
@@ -164,7 +164,16 @@ const ConsultationForm = () => {
                 </label>
               ),
             )}
-          </div>
+          </div> */}
+          <input
+            type="text"
+            name="signage"
+            value={formData.signage}
+            onChange={handleChange}
+            placeholder="e.g. Business Signage"
+            className="w-full bg-gray-50 border border-gray-100 h-12 pl-4 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+            required
+          />
         </div>
 
         {/* Service Location */}
@@ -172,7 +181,7 @@ const ConsultationForm = () => {
           <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
             Location
           </h4>
-          <div className="flex flex-wrap gap-2">
+          {/* <div className="flex flex-wrap gap-2">
             {["Surrey", "Edmonton", "Abbotsford", "Calgary", "Cloverdale"].map(
               (city) => (
                 <label
@@ -198,7 +207,17 @@ const ConsultationForm = () => {
                 </label>
               ),
             )}
-          </div>
+          </div> */}
+
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            placeholder="e.g. Edmonton,AB"
+            className="w-full bg-gray-50 border border-gray-100 h-12 pl-4 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+            required
+          />
         </div>
 
         {/* Message */}

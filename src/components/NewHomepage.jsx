@@ -39,7 +39,6 @@ const markers = [
   },
 ];
 
-// Flag components
 const CanadaFlag = () => (
   <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
     <rect width="24" height="16" fill="#FF0000" />
