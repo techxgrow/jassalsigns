@@ -184,8 +184,7 @@ export const data = {
     "From initial concept and 3D renderings to fabrication and site installation, our team provides turnkey project management from start to finish."
   ]
 }
-
-    },
+,
     indoorsigns: {
       heading:"Indoor Signs",
       para1: `Indoor signs play a vital role in creating a cohesive and welcoming environment for your customers, employees, and visitors. From directional signage and branding walls to reception displays and room identifiers, indoor signage enhances both aesthetics and functionality.`,

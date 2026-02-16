@@ -58,22 +58,37 @@ const About = () => {
             <h4 className="text-[#ED1E26] font-bold uppercase tracking-widest mb-4">
               Our Legacy
             </h4>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-              Three Decades of <br />
-              <span className="text-[#ED1E26]">Artistic Excellence</span>
+            <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
+              Transforming Businesses Through{" "}
+              <span className="text-[#ED1E26]">Professional Signage</span> &
+              Printing for 30 Years
+              <br />
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Jassal Signs is not just a printing company; we are your partners
-              in visual storytelling. With over 30 years of excellence, we have
-              evolved from a small workshop into a leading signage, wrap, and
-              print authority in the industry.
+            <p className="text-md text-gray-600 leading-relaxed mb-3">
+              Jassal Signs is a premier signage and commercial printing company
+              serving businesses across Alberta for over 30 years. What started
+              as a small sign shop has grown into a full-service visual
+              solutions provider, helping hundreds of businesses enhance their
+              brand visibility and attract more customers.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Our journey is built on a foundation of quality craftsmanship and
-              an unwavering dedication to bringing our customers' visions to
-              life. From massive outdoor building signs to precision-cut indoor
-              banners, we treat every project with the same level of care and
-              professional expertise.
+            <p className="text-md text-gray-600 leading-relaxed mb-3">
+              We specialize in creating custom business signs, channel letter,
+              vehicle wraps, banners, trade show displays, and comprehensive
+              commercial printing services. Our team combines creative design
+              expertise with state-of-the-art printing technology to deliver
+              high-quality solutions that make lasting impressions.
+            </p>
+            <p className="text-md text-gray-600 leading-relaxed mb-3">
+              From storefront signage for local retailers to fleet graphics for
+              growing companies, we've completed over 78,000+ projects for 250+
+              satisfied clients. Our commitment to quality craftsmanship,
+              attention to detail, and exceptional customer service has made us
+              the go-to signage company in Alberta.
+            </p>
+            <p className="text-md text-gray-600 leading-relaxed mb-3">
+              Whether you're launching a new business, rebranding, or need
+              eye-catching marketing materials, Jassal Signs brings your vision
+              to life with precision, creativity, and professionalism.
             </p>
           </div>
         </div>
