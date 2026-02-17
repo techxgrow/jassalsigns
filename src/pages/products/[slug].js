@@ -182,7 +182,7 @@ const ProductPage = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-9xl font-black text-white leading-[0.9] md:leading-[0.85] uppercase tracking-tighter mb-4 drop-shadow-2xl px-4">
+            <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.9] md:leading-[1.1] uppercase tracking-tighter mb-4 drop-shadow-2xl px-4">
               {data.productPage[slug]?.heading
                 ?.split(" ")
                 .slice(0, -1)
