@@ -262,22 +262,145 @@ const About = () => {
           Comprehensive Visual Solutions For <br />
           <span className="text-[#ED1E26]">Modern Businesses</span>
         </h2>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {[
-            { name: "Vehicle Wraps", link: "/products/vehiclewraps" },
-            { name: "Building Signs", link: "/products/outdoorsigns" },
-            { name: "Indoor Signage", link: "/products/indoorsigns" },
-            { name: "Large Format Printing", link: "/products/printmedia" },
-            { name: "Banners & Flags", link: "/products/printmedia" },
-            { name: "3D Lettering", link: "/products/channelletters" },
+            {
+              name: "Outdoor Signs",
+              link: "/products/outdoorsigns",
+              subCategories: [
+                " Storefront & Fascia Signs",
+                "Monument Signs",
+                "Building Signs",
+                "Real Estate & Development Signs",
+                "Parking & Traffic Signs",
+                "A-Frame & Sidewalk Signs",
+                "Banner & Flag Signs",
+                "Yard & Coroplast Signs",
+              ],
+            },
+            {
+              name: "Indoor Signs",
+              link: "/products/indoorsigns",
+              subCategories: [
+                "Lobby & Reception Signs",
+                "Acrylic Signs",
+                "Directional & Wayfinding Signs",
+                "Door & Room Signs",
+                "Window Frosting & Privacy Film",
+                "Wall Murals & Graphics",
+                "Floor Graphics",
+                "Point of Purchase (POP) Displays",
+              ],
+            },
+            {
+              name: "Vehicle Wraps",
+              link: "/products/vehiclewraps",
+              subCategories: [
+                "Full Vehicle Wraps",
+                "Partial Wraps",
+                "Fleet Graphics",
+                "Truck & Trailer Graphics",
+                "Vinyl Lettering & Decals",
+                "Window Perforation",
+                "Magnetic Signs",
+              ],
+            },
+            {
+              name: "Channel Letter",
+              link: "/products/channelletters",
+              subCategories: [
+                "Front-Lit Channel Letters",
+                "Halo-Lit (Reverse) Letters",
+                "Dual-Lit Letters",
+                "Open-Face Channel Letters",
+                "Raceway vs. Flush Mount",
+                "Non-Illuminated 3D Letters",
+              ],
+            },
+            {
+              name: "Pylon Signs",
+              link: "/products/pylonsigns",
+              subCategories: [
+                "Single-Tenant Pylons",
+                "Multi-Tenant Pylons",
+                "LED Message Centers",
+                "Illuminated Sign Boxes",
+                "Custom Pole Signs",
+              ],
+            },
+            {
+              name: "Printing Services",
+              link: "/products/printmedia",
+              subCategories: [
+                "Large Format Banners",
+                "Marketing Materials",
+                "Business Cards",
+                "Trade Show Displays",
+                "Posters & Blueprints",
+                "Window & Wall Decals",
+                "Hoarding Graphics",
+              ],
+            },
+            {
+              name: "Other Products & Specialized Signage",
+              link: "/products/otherproducts",
+              subCategories: [
+                "Promotional Flags",
+                "Custom Decals & Stickers",
+                "Sandblasted & Carved Signs",
+                "Safety & ADA Signage",
+                "Trade Show Accessories",
+                "Construction Site Signage",
+                "Menu Boards",
+                "Custom Fabrication",
+              ],
+            },
           ].map((service, i) => (
-            <Link
+            <div
               key={i}
-              href={service.link}
-              className="px-6 py-3 bg-white border-2 border-gray-100 rounded-full font-bold text-gray-700 hover:border-[#ED1E26] hover:text-[#ED1E26] transition-colors cursor-pointer"
+              className="group bg-white p-8 rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#ED1E26] relative overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
             >
-              {service.name}
-            </Link>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-[4rem] -mr-4 -mt-4 transition-colors group-hover:bg-[#ED1E26]/5 z-0" />
+
+              <h3 className="text-2xl font-bold mb-4 relative z-10 group-hover:text-[#ED1E26] transition-colors">
+                <Link href={service.link} className="flex items-center gap-2">
+                  {service.name}
+                  <svg
+                    className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    ></path>
+                  </svg>
+                </Link>
+              </h3>
+
+              {service.subCategories ? (
+                <ul className="grid grid-cols-1 gap-2 relative z-10 pl-2">
+                  {service.subCategories.map((sub, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start text-gray-600 text-sm font-medium"
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#ED1E26] rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                      {sub}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-600 leading-relaxed relative z-10">
+                  {service.description}
+                </p>
+              )}
+            </div>
           ))}
         </div>
       </div>

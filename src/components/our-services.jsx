@@ -19,10 +19,10 @@ const OurServices = () => {
       link: "/products/indoorsigns",
     },
     {
-      imgSrc: "/citypage/services/printmedia.jpg",
-      category: "PRINT SERVICES",
-      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
-      link: "/products/printmedia",
+      imgSrc: "/citypage/services/outdoorsigns.jpg",
+      category: "OUTDOOR SIGNS",
+      title: "We make sure your message meets the masses.",
+      link: "/products/outdoorsigns",
     },
     {
       imgSrc: "/citypage/services/vehiclewraps.jpg",
@@ -44,10 +44,16 @@ const OurServices = () => {
       link: "/products/pylonsigns",
     },
     {
+      imgSrc: "/citypage/services/printmedia.jpg",
+      category: "PRINT SERVICES",
+      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
+      link: "/products/printmedia",
+    },
+    {
       imgSrc: "/citypage/services/outdoorsigns.jpg",
-      category: "OUTDOOR SIGNS",
-      title: "We make sure your message meets the masses.",
-      link: "/products/outdoorsigns",
+      category: "OTHER PRODUCTS & SPECIALIZED SIGNAGE",
+      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
+      link: "/products/otherproducts",
     },
   ];
 

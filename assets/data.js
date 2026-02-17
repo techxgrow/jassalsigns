@@ -199,27 +199,74 @@ export const data = {
 
       para4: `Beyond just signs, we help you create experiences — guiding foot traffic, sharing information, and highlighting your brand story throughout your space. Every detail is crafted with clarity, legibility, and style in mind.`,
 
-      para5: `Let us help you transform your interiors into branded environments that feel thoughtful, organized, and visually impressive.`,
+      para5: `With over 30 years of expertise, we help you transform your spaces into branded environments that feel thoughtful, organized, and visually impressive.`,
       consultationObj: {
-        heading:
-          "Transform Your Interiors with Custom Indoor Signage Solutions",
+        heading: "Make a Lasting Impression, Inside Out.",
         subHeading:
-          "Enhance your workspace, lobby, or retail environment with premium indoor signage designed to reflect your brand identity. From consultation to final installation — we handle it all.",
+          "The interior of your business is where your brand comes to life. Indoor signage isn’t just about decoration; it’s about professionalism, safety, and customer experience. At Jassal Signs, we use premium materials like brushed aluminum, high-grade acrylic, and durable vinyl to ensure your office, clinic, or retail store looks world-class.",
+
         bulletList: [
-          "Create a cohesive and polished look with interior signage tailored to your brand’s fonts, colors, and aesthetics — perfect for offices, reception areas, and retail spaces.",
-          "Choose from a variety of high-end materials like acrylic, PVC, brushed metal, or frosted glass to match your business environment.",
-          "Include illuminated options like LED backlit or edge-lit signs for a modern, eye-catching effect even indoors.",
-          "Highlight directional paths, room names, and brand messages with ADA-compliant signage that’s both functional and stylish.",
-          "Get seamless wall-mounted, suspended, or stand-alone signage installed by professionals with exact alignment and finish.",
-          "Enhance interior navigation and customer experience with clear wayfinding signs, directories, and information boards.",
-          "Rely on easy-to-clean and low-maintenance materials designed to stand the test of time in busy interior spaces.",
-          "Enjoy fast project turnaround and full project management — from design consultation and prototyping to final placement.",
+          {
+            label: "Lobby & Reception Signs",
+            value:
+              'The centerpiece of your office. We create stunning 3D dimensional logos that "pop" using acrylic, metal, or PVC.',
+          },
+          {
+            label: "Wayfinding & Directional Signs",
+            value:
+              "Guide your visitors with ease. We design clear room identifiers, directories, and floor graphics.",
+          },
+          {
+            label: "Acrylic Branding Panels",
+            value:
+              "Sophisticated and modern. Panels mounted with elegant stainless-steel standoffs for a high-end look.",
+          },
+          {
+            label: "Window Frosting & Privacy Film",
+            value:
+              "Perfect for boardrooms and glass partitions, providing a professional etched-glass aesthetic while maintaining privacy.",
+          },
+          {
+            label: "Wall Murals & Large Format Graphics",
+            value:
+              "Turn empty walls into storytelling opportunities with custom-printed vinyl wraps.",
+          },
+          {
+            label: "Safety & Compliance (ADA) Signs",
+            value:
+              "Tactile and Braille-integrated signage to ensure your building meets all Edmonton accessibility standards.",
+          },
+        ],
+        faqs: [
+          {
+            question:
+              "How long does the process take from design to installation?",
+            answer:
+              "Typically, indoor signs take 5–10 business days. This includes design approval, fabrication in our local facility, and professional installation at your site.",
+          },
+          {
+            question: "Can you match my specific brand colors exactly?",
+            answer:
+              "Yes. We use high-precision color-matching technology to ensure your signage perfectly aligns with your brand guidelines and existing marketing materials.",
+          },
+          {
+            question:
+              "What is the most durable material for high-traffic areas?",
+            answer:
+              "For areas like hallways or lobbies, we recommend Acrylic or Metal (Aluminum). These materials are scratch-resistant, easy to clean, and maintain their premium look for years.",
+          },
+          {
+            question:
+              "Do you handle the installation, or do I need to find a contractor?",
+            answer:
+              "We are a full-service shop. Our expert installation team handles everything, ensuring your signs are mounted securely, level, and according to building safety codes.",
+          },
         ],
       },
     },
     outdoorsigns: {
-      heading: "Outdoor Signs",
-      para1: `Outdoor signs are the face of your business — the first impression that greets your customers before they ever walk through the door. That’s why we design outdoor signage that’s not only visually striking but also durable enough to withstand all weather conditions.`,
+      heading: "High-Impact Outdoor Signs",
+      para1: `Command attention and drive foot traffic with durable, professional exterior signage designed to withstand the Alberta climate and make your brand stand out.`,
 
       para2: `From storefront signage and monument signs to building-mounted displays and directional signs, we create outdoor solutions that reflect your brand and attract foot traffic. Our designs are clean, legible, and built for visibility — whether viewed from across the street or from passing vehicles.`,
 
@@ -229,20 +276,108 @@ export const data = {
 
       para5: `Put your business on the map with outdoor signage that demands attention and delivers results — even before a customer steps inside.`,
       consultationObj: {
-        heading: "Maximize Curb Appeal with Durable Custom Outdoor Signage",
+        heading: "Built to Last. Designed to be Noticed.",
         subHeading:
-          "Make a bold first impression with high-impact outdoor signs engineered for visibility and built to last. From storefronts to monuments — we bring your vision to life.",
+          "Your exterior signage is your hardest-working salesperson—it works 24/7 to tell the world who you are. At Jassal Signs, we specialize in outdoor solutions that combine structural integrity with high-end aesthetics. Whether you need a massive building sign or a sleek monument at your entrance, we use weather-resistant metals, UV-stable inks, and reinforced mounting to ensure your investment looks great for decades.",
         bulletList: [
-          "Stand out with custom exterior signs that combine your brand identity with maximum visibility — ideal for retail stores, offices, commercial plazas, and industrial properties.",
-          "Choose from a wide range of signage types including channel letters, pylon signs, monument signs, post & panel, and illuminated LED boards.",
-          "Built using weather-resistant materials like aluminum, acrylic, Dibond, and powder-coated steel to withstand rain, snow, wind, and sun exposure year-round.",
-          "Enhance night-time visibility with energy-efficient lighting options including front-lit, halo-lit, and internally illuminated signs.",
-          "Ensure full compliance with local zoning laws and city signage bylaws — we handle permits, engineering, and approvals for you.",
-          "Achieve a clean, professional install with precision mounting, secure anchoring, and finishes aligned with your building’s architecture.",
-          "Reinforce your brand and draw foot traffic with bold colors, large-format graphics, and high-contrast designs that pop from a distance.",
-          "From design consultation and site surveys to fabrication and on-site installation — our team manages the entire process end to end.",
+          {
+            label: "Storefront & Fascia Signs",
+            value:
+              "The primary identity for your retail or commercial space. We offer custom-shaped panels and illuminated boxes that define your entrance.",
+          },
+          {
+            label: "Monument Signs",
+            value:
+              "Ground-level, architecturally integrated signs that provide a prestigious look for corporate offices, shopping centers, and residential communities.",
+          },
+          {
+            label: "Real Estate & Development Signs",
+            value:
+              "Large-scale V-shaped or flat signs perfect for promoting new construction, land for sale, or commercial leasing.",
+          },
+          {
+            label: "Building Signs",
+            value:
+              "Non-illuminated dimensional letters or metal logo plaques that add a professional touch to your exterior walls.",
+          },
+          {
+            label: "A-Frame & Sidewalk Signs",
+            value:
+              "Portable, high-visibility sandwich boards designed to grab the attention of pedestrians and slow-moving traffic.",
+          },
+          {
+            label: "Parking & Wayfinding",
+            value:
+              "Ensure safety and organization with custom parking stall markers, directional arrows, and regulatory traffic signs.",
+          },
+        ],
+        faqs: [
+          {
+            question:
+              "How do your signs handle Edmonton’s extreme winter weather?",
+            answer:
+              "We use industrial-grade aluminum, UV-protected coatings, and specialized adhesives specifically tested for the -40°C to +30°C temperature swings in Alberta. Our signs are built to resist fading, cracking, and rust.",
+          },
+          {
+            question: "Do I need a permit for my outdoor sign?",
+            answer:
+              "In most cases, yes. Signage bylaws in Edmonton and Calgary can be complex. We provide expert guidance on local regulations and can assist in the permit application process to ensure your sign is fully compliant.",
+          },
+          {
+            question:
+              "What is the difference between a Fascia sign and a Monument sign?",
+            answer:
+              'A Fascia sign is mounted directly to the "face" of your building. A Monument sign is a freestanding structure detached from the building, usually placed near the road or entrance for better visibility.',
+          },
+          {
+            question: "How long does an outdoor sign typically last?",
+            answer:
+              "With proper professional installation and high-quality materials, our outdoor signs are designed to last 10 to 15+ years. We also offer maintenance services to keep your signage looking new.",
+          },
         ],
       },
+      subCategories: [
+        {
+          id: "storefront-fascia",
+          title: "Storefront & Fascia Signs",
+          desc: "High-impact main building signs that define your brand presence.",
+        },
+        {
+          id: "monument-signs",
+          title: "Monument Signs",
+          desc: "Impressive, ground-level signs for entrances and property fronts.",
+        },
+        {
+          id: "building-signs",
+          title: "Building Signs",
+          desc: "Large-scale signage installed directly on building exteriors.",
+        },
+        {
+          id: "real-estate-development",
+          title: "Real Estate & Development Signs",
+          desc: "Durable site signs for construction, sales, and leasing.",
+        },
+        {
+          id: "parking-traffic",
+          title: "Parking & Traffic Signs",
+          desc: "Essential signage for lot safety, directions, and regulations.",
+        },
+        {
+          id: "a-frame-sidewalk",
+          title: "A-Frame & Sidewalk Signs",
+          desc: "Portable, double-sided signs to attract passing foot traffic.",
+        },
+        {
+          id: "banner-flag",
+          title: "Banner & Flag Signs",
+          desc: "Versatile, temporary or permanent fabric signs for promotions.",
+        },
+        {
+          id: "yard-coroplast",
+          title: "Yard & Coroplast Signs",
+          desc: "Lightweight, cost-effective signs for lawns and temporary displays.",
+        },
+      ],
     },
   },
   contactPage: {

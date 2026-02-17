@@ -251,8 +251,10 @@ const ProductPage = () => {
           name="consultationSection"
           className="py-12 md:py-24 scroll-mt-24"
         >
-          <div className="relative bg-white rounded-[40px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden">
-            <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-[#ED1D26]/5 -skew-x-12 translate-x-1/3"></div>
+          <div className="relative bg-white rounded-[40px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100">
+            <div className="absolute inset-0 overflow-hidden rounded-[40px]">
+              <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-[#ED1D26]/5 -skew-x-12 translate-x-1/3"></div>
+            </div>
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 md:gap-16 p-6 md:p-16 items-start">
               {/* Left Info Section */}
@@ -275,19 +277,28 @@ const ProductPage = () => {
                     (item, index) => (
                       <div
                         key={index}
-                        className="flex gap-5 group/item items-center"
+                        className="flex gap-5 group/item items-start"
                         data-aos="fade-right"
                         data-aos-delay={index * 100}
                       >
-                        <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-gray-50 flex items-center justify-center group-hover/item:bg-[#ED1D26] transition-all duration-500 group-hover/item:shadow-lg group-hover/item:shadow-[#ED1D26]/20">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-gray-50 flex items-center justify-center group-hover/item:bg-[#ED1D26] transition-all duration-500 group-hover/item:shadow-lg group-hover/item:shadow-[#ED1D26]/20 mt-1">
                           <CheckCircle2
                             className="w-5 h-5 text-[#ED1D26] group-hover/item:text-white transition-colors duration-300"
                             strokeWidth={2.5}
                           />
                         </div>
-                        <span className="text-base text-gray-700  leading-tight group-hover/item:text-black transition-colors">
-                          {item}
-                        </span>
+                        <div className="text-base text-gray-700 leading-tight group-hover/item:text-black transition-colors">
+                          {typeof item === "object" ? (
+                            <>
+                              <span className="block font-bold text-gray-900 mb-1">
+                                {item.label}
+                              </span>
+                              <span>{item.value}</span>
+                            </>
+                          ) : (
+                            item
+                          )}
+                        </div>
                       </div>
                     ),
                   )}
@@ -304,7 +315,7 @@ const ProductPage = () => {
               </div>
 
               {/* Right Form Section */}
-              <div className="relative w-full">
+              <div className="relative w-full lg:sticky lg:top-24 self-start">
                 <div className="absolute -inset-6 bg-gradient-to-r from-[#ED1D26] to-[#0283CB] blur-3xl opacity-10"></div>
                 <div className="relative bg-white rounded-3xl overflow-hidden">
                   <ConsultationForm />
@@ -387,6 +398,40 @@ const ProductPage = () => {
           </PhotoProvider>
         </Element>
 
+        {data.productPage[slug]?.subCategories && (
+          <div className="py-24">
+            <div className="text-center mb-16" data-aos="fade-up">
+              <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs mb-4">
+                Our Solutions
+              </h4>
+              <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase">
+                Explore <span className="text-gray-300">Options</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {data.productPage[slug].subCategories.map((cat, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-8 rounded-[30px] border border-gray-100 hover:shadow-xl transition-all duration-500 group"
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                >
+                  <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#ED1D26] transition-colors duration-500">
+                    <ChevronRight className="w-6 h-6 text-[#ED1D26] group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-black text-gray-900 mb-3 uppercase tracking-tight">
+                    {cat.title}
+                  </h3>
+                  <p className="text-gray-500 font-medium leading-relaxed">
+                    {cat.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Elite FAQ Section */}
         <section className="py-24 border-t border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16">
@@ -405,16 +450,18 @@ const ProductPage = () => {
             </div>
 
             <div className="space-y-2" data-aos="fade-left">
-              {faqs.map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  faq={faq}
-                  isOpen={openFaqIndex === index}
-                  toggle={() =>
-                    setOpenFaqIndex(openFaqIndex === index ? null : index)
-                  }
-                />
-              ))}
+              {(data.productPage[slug]?.consultationObj?.faqs || faqs).map(
+                (faq, index) => (
+                  <FAQItem
+                    key={index}
+                    faq={faq}
+                    isOpen={openFaqIndex === index}
+                    toggle={() =>
+                      setOpenFaqIndex(openFaqIndex === index ? null : index)
+                    }
+                  />
+                ),
+              )}
             </div>
           </div>
         </section>
