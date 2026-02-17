@@ -60,10 +60,10 @@ const About = () => {
               ABOUT US
             </h4>
             <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              Transforming Businesses Through Professional Signage & <br />
-              <span className="text-[#ED1E26] md:text-4xl">
-                Printing for 30 Years
-              </span>
+              Transforming Businesses Through{" "}
+              <span className="text-[#ED1E26]">Professional Signage</span> &
+              Printing for 30 Years
+              <br />
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               Jassal Signs is a premier signage and commercial printing company
@@ -79,21 +79,19 @@ const About = () => {
               expertise with state-of-the-art printing technology to deliver
               high-quality solutions that make lasting impressions.
             </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              From storefront signage for local retailers to fleet graphics for
+              growing companies, we've completed over 78,000+ projects for 250+
+              satisfied clients. Our commitment to quality craftsmanship,
+              attention to detail, and exceptional customer service has made us
+              the go-to signage company in Alberta.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Whether you're launching a new business, rebranding, or need
+              eye-catching marketing materials, Jassal Signs brings your vision
+              to life with precision, creativity, and professionalism.
+            </p>
           </div>
-        </div>
-        <div>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8 mt-10">
-            From storefront signage for local retailers to fleet graphics for
-            growing companies, we've completed over 78,000+ projects for 250+
-            satisfied clients. Our commitment to quality craftsmanship,
-            attention to detail, and exceptional customer service has made us
-            the go-to signage company in Edmonton.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8 mt-10">
-            Whether you're launching a new business, rebranding, or need
-            eye-catching marketing materials, Jassal Signs brings your vision to
-            life with precision, creativity, and professionalism.
-          </p>
         </div>
       </div>
 

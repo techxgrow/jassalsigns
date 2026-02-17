@@ -7,11 +7,7 @@ import axios from "axios";
 
 const ContactUs = ({ city }) => {
   const [loading, setLoading] = useState(false);
-  // console.log("city prop", data?.contactPage[`${city}`]?.location);`
 
-  //  if(data){
-  //   console.log("data", data)
-  //  }
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -33,12 +29,10 @@ const ContactUs = ({ city }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    // console.log("Form Data Submitted:", formData);
 
     axios
       .post("/api/contact", formData)
       .then((res) => {
-        // alert("Email sent successfully!");
         setLoading(false);
         setFormData({
           firstName: "",
