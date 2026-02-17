@@ -366,7 +366,7 @@ export const data = {
       },
     },
     indoorsigns: {
-      heading: "Indoor Signs",
+      heading: "High-Impact Indoor Signs in Edmonton",
       para1: `Indoor signs play a vital role in creating a cohesive and welcoming environment for your customers, employees, and visitors. From directional signage and branding walls to reception displays and room identifiers, indoor signage enhances both aesthetics and functionality.`,
 
       para2: `We offer a wide variety of indoor sign solutions tailored to suit your business space — including acrylic signs, wall decals, directory boards, 3D logo displays, and more. Each piece is designed to complement your interior design while reinforcing your brand identity.`,
@@ -441,7 +441,7 @@ export const data = {
       },
     },
     outdoorsigns: {
-      heading: "High-Impact Outdoor Signs",
+      heading: "High-Impact Outdoor Signs in Edmonton",
       para1: `Command attention and drive foot traffic with durable, professional exterior signage designed to withstand the Alberta climate and make your brand stand out.`,
 
       para2: `From storefront signage and monument signs to building-mounted displays and directional signs, we create outdoor solutions that reflect your brand and attract foot traffic. Our designs are clean, legible, and built for visibility — whether viewed from across the street or from passing vehicles.`,
