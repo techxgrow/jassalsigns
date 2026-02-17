@@ -35,6 +35,11 @@ const servicesData = [
     desc: "Printing Services Now at Jassal Signs – Bold, Bright, Persuasive!",
     link: "/products/printmedia",
   },
+  {
+    title: "Specialized Signage",
+    desc: "Beyond the standard custom-fabricated brand assets and regulatory tools.",
+    link: "/products/otherproducts",
+  },
 ];
 
 const Services = () => {

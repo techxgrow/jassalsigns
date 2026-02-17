@@ -52,7 +52,8 @@ const OurServices = () => {
     {
       imgSrc: "/citypage/services/outdoorsigns.jpg",
       category: "OTHER PRODUCTS & SPECIALIZED SIGNAGE",
-      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
+      title:
+        "Beyond the standard custom-fabricated brand assets and regulatory tools.",
       link: "/products/otherproducts",
     },
   ];

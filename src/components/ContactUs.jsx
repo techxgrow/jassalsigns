@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, User, MessageSquare, Send } from "lucide-react";
-import { data } from "../../assets/data";
-import emailjs from "@emailjs/browser";
 import { ClipLoader } from "react-spinners";
 import axios from "axios";
 
 const ContactUs = ({ city }) => {
   const [loading, setLoading] = useState(false);
-
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -15,8 +13,14 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
-    website: "Edmonton",
+    website: city || "Edmonton",
   });
+
+  useEffect(() => {
+    if (city) {
+      setFormData((prev) => ({ ...prev, website: city }));
+    }
+  }, [city]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +44,7 @@ const ContactUs = ({ city }) => {
           email: "",
           phone: "",
           message: "",
-          website: "Edmonton",
+          website: city || "Edmonton",
         });
       })
       .catch((err) => {

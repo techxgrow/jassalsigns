@@ -82,32 +82,77 @@ export const data = {
   ],
   productPage: {
     vehiclewraps: {
-      heading: "Vehicle Wraps",
-      para1: `Vehicle signs are one of the most powerful ways to turn your daily commutes into moving advertisements. At our signage studio, we specialize in creating high-quality vehicle graphics that help businesses gain visibility on the road. Whether you're driving through a busy city street or parked outside a client’s location, your vehicle becomes a constant, eye-catching reminder of your brand.`,
+      heading: "High-Performance Vehicle Wraps in Edmonton",
+      para1: `Turn your fleet into a 24/7 mobile billboard. From single cars to full commercial fleets, our precision-fit wraps drive brand awareness wherever you go.`,
       para2: `Our vehicle signage options are designed to suit every kind of need and budget. From full wraps that transform your entire vehicle into a branded canvas, to smaller, more targeted designs like door decals or window graphics, we ensure your message is seen clearly and professionally. We also offer magnetic signs for those who prefer a temporary or removable solution — perfect for shared or personal-use vehicles.`,
       para3: `What sets our vehicle signs apart is the quality of materials and attention to detail. Every design is printed using weatherproof and UV-resistant vinyl to ensure durability, even in harsh outdoor conditions. You can expect crisp graphics, vibrant colors, and a seamless finish that not only promotes your business but also enhances the look of your vehicle.`,
       para4: `Beyond just visual appeal, our team collaborates closely with you to understand your brand identity and turn it into a creative, impactful design. From small business owners to large fleet operators, we’ve helped countless clients transform their vehicles into marketing machines that generate leads, build awareness, and leave a lasting impression wherever they go.`,
+      para5: `Put your business on the move with custom vehicle wraps that demand attention and deliver results — wherever you drive.`,
       para6: `If you're ready to take your brand on the road, we're here to help. Reach out to us to learn more about our vehicle sign options, design process, or to request a quote. Let’s turn your vehicle into your most valuable advertising asset.
       `,
       consultationObj: {
-        heading: "Turn Your Vehicles into Mobile Billboards with Custom Wraps",
+        heading: "Drive Your Brand Further.",
         subHeading:
-          "Maximize brand exposure everywhere you go. Our vehicle wraps transform cars, vans, and trucks into high-impact advertising tools that work 24/7.",
+          "Mobile advertising is one of the most cost-effective ways to reach a local audience. At Jassal Signs, we combine high-performance vinyl technology with expert installation to protect your vehicle’s paint while promoting your business. With over 30 years in the industry, we know how to design graphics that remain legible at highway speeds and durable enough to survive Alberta's gravel and road salt.",
         bulletList: [
-          "Grab attention on the road with full or partial vehicle wraps designed to promote your business while you're on the move.",
-          "We wrap all vehicle types — from compact cars and delivery vans to large trucks, trailers, and fleets — with seamless, high-resolution graphics.",
-          "Choose from full wraps, half wraps, spot graphics, and window perforated films depending on your marketing goals and budget.",
-          "Printed on premium 3M or Avery Dennison vinyl for vibrant color, durability, and UV protection — ensuring long-lasting impact.",
-          "Vehicle wraps are removable and paint-safe, making them perfect for leased vehicles or temporary promotions.",
-          "Our in-house design team customizes every wrap to your brand identity, using bold layouts, logos, and messaging that stand out in traffic.",
-          "Installed by certified technicians in our climate-controlled facility to ensure bubble-free, smooth application and perfect alignment.",
-          "Ideal for contractors, service businesses, delivery companies, and any brand that wants to turn daily driving into non-stop advertising.",
+          {
+            label: "Full Vehicle Wraps",
+            value:
+              "Complete coverage that transforms the entire color and look of your vehicle for maximum impact.",
+          },
+          {
+            label: "Partial Wraps",
+            value:
+              "Strategic branding on high-visibility areas like the sides and rear, blending your graphics with the vehicle’s original paint.",
+          },
+          {
+            label: "Fleet Graphics",
+            value:
+              "Uniform, professional branding for multiple vehicles, ensuring your company looks consistent across the city.",
+          },
+          {
+            label: "Decals & Lettering",
+            value:
+              "High-quality vinyl logos, phone numbers, and websites for a clean, minimalist professional look.",
+          },
+          {
+            label: "Window Perforation (One-Way Vision)",
+            value:
+              "Custom-printed film that allows you to see out clearly while displaying full-color graphics to those outside.",
+          },
+          {
+            label: "Trailer & Cube Van Wraps",
+            value:
+              "Utilize the massive blank canvas of your transport vehicles for large-scale storytelling.",
+          },
+        ],
+        faqs: [
+          {
+            question: "How long does a vehicle wrap typically last?",
+            answer:
+              "We use premium 3M and Avery Dennison vinyls that are rated for 5 to 7 years. The lifespan depends on care and exposure to the elements, but our high-quality laminates provide excellent UV and scratch protection.",
+          },
+          {
+            question: "Will the wrap damage my vehicle's paint?",
+            answer:
+              "Quite the opposite! A professionally installed wrap acts as a protective layer against stone chips, sun fading, and minor abrasions. When it's time to sell the vehicle, the wrap can be removed to reveal the original paint in the same condition it was in on the day it was wrapped.",
+          },
+          {
+            question: "How do I wash a wrapped vehicle?",
+            answer:
+              "We recommend hand washing with a soft sponge and non-abrasive soap. While touchless car washes are generally safe, high-pressure sprayers and mechanical brushes can lift the edges of the vinyl over time.",
+          },
+          {
+            question: "How long does the installation take?",
+            answer:
+              "A full wrap typically takes 2 to 3 days in our climate-controlled facility. This allows the vinyl to properly 'set' and ensures every edge is tucked and sealed for a seamless finish.",
+          },
         ],
       },
     },
     channelletters: {
-      heading: "Channel Letters",
-      para1: `Channel letters are a bold and modern way to showcase your brand with dimension, lighting, and impact. These individually crafted letters are perfect for businesses that want to stand out, both day and night. Whether installed on building facades or signboards, channel letters bring your logo and name to life with unmatched visibility.`,
+      heading: "Custom Channel Letters in Edmonton",
+      para1: `Make your business shine 24/7 with premium 3D illuminated lettering. Precision-engineered for maximum visibility and a high-end architectural finish.`,
 
       para2: `Our channel letters are fully customizable — from the font style and color to illumination type and mounting style. Whether you prefer front-lit, reverse-lit (halo), or combination lighting, we tailor each sign to match your brand’s personality and location.`,
 
@@ -117,22 +162,69 @@ export const data = {
 
       para5: `Channel letters are an investment in your visibility. Whether you run a retail store, office, restaurant, or shopping plaza, we’ll help you create signage that speaks volumes, day or night.`,
       consultationObj: {
-        heading:
-          "Boost Your Brand Visibility with Expert Channel Letters Solutions",
+        heading: "Dignified. Dimensional. Diverse.",
         subHeading:
-          "Get custom-designed, high-impact signage tailored to your business needs. From design to installation — we’ve got you covered.",
+          "Channel letters are the gold standard for commercial signage. These individual 3D letters provide a depth and professional polish that flat signs simply cannot match. At Jassal Signs, we utilize high-efficiency LED technology and rust-proof aluminum to create signage that isn't just beautiful—it's built to withstand the harshest Alberta winters. Whether you want a bold, front-lit glow or a sophisticated halo effect, we bring 30 years of fabrication expertise to every letter we build.",
         bulletList: [
-          "Stand out from the competition with three-dimensional channel letters that project professionalism and brand strength — perfect for retail storefronts, corporate offices, and business entrances.",
-          "Choose from front-lit, back-lit, or halo-lit illumination options to enhance visibility day and night. Our energy-efficient LED solutions ensure your signage shines bright while keeping electricity costs low.",
-          "Engineered with high-quality aluminum and acrylic materials, our channel letters are resistant to rain, snow, wind, and UV rays — delivering long-term performance in any season.",
-          "Whether you're on a busy street or in a commercial plaza, channel letters add a professional, high-end look that instantly elevates your brand presence.",
-          "From design consultation to final mounting, our team handles everything — ensuring your letters are perfectly sized, securely installed, and aligned with your building’s architecture and bylaws.",
+          {
+            label: "Front-Lit Channel Letters",
+            value:
+              "The most popular choice for retail. Light shines through the acrylic face, making your brand colors vibrant and visible from long distances.",
+          },
+          {
+            label: "Halo-Lit (Reverse) Letters",
+            value:
+              "Light is directed toward the wall, creating a sophisticated 'glow' or halo around each letter. Ideal for high-end professional offices.",
+          },
+          {
+            label: "Dual-Lit Letters",
+            value:
+              "The ultimate premium option. These letters shine through the front and the back simultaneously for an unmistakable, multi-dimensional look.",
+          },
+          {
+            label: "Open-Face Channel Letters",
+            value:
+              "Provides a vintage or industrial aesthetic where the internal LED or neon lighting is visible through a clear face.",
+          },
+          {
+            label: "Non-Illuminated 3D Letters",
+            value:
+              "Perfect for interior branding or areas with existing floodlighting where you want the 3D depth without the internal light source.",
+          },
+          {
+            label: "Specialty Logo Boxes",
+            value:
+              "We can fabricate your specific brand icons or logos into custom-shaped illuminated lightboxes that integrate seamlessly with your lettering.",
+          },
+        ],
+        faqs: [
+          {
+            question: "Are LED channel letters energy efficient?",
+            answer:
+              "Yes! We use the latest low-voltage LED technology which consumes significantly less power than traditional neon or fluorescent lighting. This not only lowers your monthly utility bill but also reduces your environmental footprint.",
+          },
+          {
+            question:
+              "What is the difference between a Raceway and a Flush Mount?",
+            answer:
+              "A Raceway is a metal box that houses all the wiring and power supplies; the letters are attached to the box, and the box is attached to the building. Flush Mount letters are attached directly to the wall with the wiring hidden behind the facade. We can help you decide which is best based on your building's rules.",
+          },
+          {
+            question: "How do you ensure the colors match my logo?",
+            answer:
+              "We use specialized translucent vinyls and tinted acrylics that are color-matched to your specific brand guidelines, ensuring your sign looks identical to your digital and print branding.",
+          },
+          {
+            question: "Is maintenance difficult for illuminated signs?",
+            answer:
+              "Our LED systems are rated for over 50,000 hours of life. Because we use high-quality, weather-sealed aluminum, maintenance is minimal. We do offer cleaning and technical check-ups to ensure every letter stays bright.",
+          },
         ],
       },
     },
     printmedia: {
-      heading: "Printing Services",
-      para1: `Printing Services is your key to powerful, tangible marketing. At Jassal Signs, we transform your vision into printed perfection — from business cards that leave lasting impressions to menus and flyers that command attention.`,
+      heading: "High-Impact Commercial Printing in Edmonton",
+      para1: `From large-format banners to precision marketing materials, we deliver high-quality print solutions that make your business stand out and your message stick.`,
 
       para2: `Our print offerings include a wide variety of materials and formats — vibrant flyers, classy acrylic prints, durable coroplast signs, eye-catching real estate signs, and elegant canvas wraps — all customizable to suit your brand’s voice.`,
 
@@ -143,27 +235,68 @@ export const data = {
       para5: `Trust Jassal Signs to deliver printing services that captivates and converts — helping you communicate effectively in the real world with visually striking and strategically crafted materials.`,
 
       consultationObj: {
-        heading:
-          "Promote Your Brand with High-Impact Printing Services Solutions",
+        heading: "Precision Print. Professional Results.",
         subHeading:
-          "Custom printed materials that bring your message to life — fast, vibrant, and professional.",
+          "In a digital world, tangible marketing materials leave a lasting impression. At Jassal Signs, our printing department is equipped with state-of-the-art technology to handle projects of any scale. Whether you need thousands of business cards or a massive construction hoarding wrap, we ensure color accuracy, sharp resolution, and durable finishes. With over 30 years of experience, we don’t just print; we advise on the best materials and coatings to ensure your brand looks elite in every format.",
         bulletList: [
-          "Design and print business cards, flyers, brochures, and menus that reflect your brand’s style and professionalism.",
-          "Add visual appeal to your space with canvas and acrylic prints that elevate interiors or commercial environments.",
-          "Use Coroplast and Real Estate signs for durable, outdoor-ready advertising with bold visibility and messaging.",
-          "Enhance your event marketing and local promotions with posters, banners, and handouts made to grab attention.",
-          "From consultation to delivery, we provide consistent quality, fast turnaround, and personalized design assistance for every print job.",
-          "Showcase promotions or product info with high-quality table tents, shelf cards, and point-of-sale materials designed to influence purchase decisions.",
-          "Make a big impact with vehicle magnets and decals — perfect for mobile branding and fleet visibility.",
-          "Create eye-catching wall wraps and vinyl graphics that turn blank surfaces into branded experiences or visual statements.",
-          "Print durable window graphics and decals to promote services, display hours, or attract foot traffic without compromising natural light.",
-          "Give your presentations and corporate packages a professional edge with printed folders, notepads, and branded stationery.",
+          {
+            label: "Large Format Banners",
+            value:
+              "Heavy-duty vinyl banners for events, grand openings, and 'Now Hiring' notices. Weatherproof and built for Edmonton's climate.",
+          },
+          {
+            label: "Marketing Collateral",
+            value:
+              "High-quality brochures, flyers, and postcards designed to convert leads into customers.",
+          },
+          {
+            label: "Premium Business Cards",
+            value:
+              "Make your first handshake count with matte, gloss, or spot UV finishes on thick, durable cardstock.",
+          },
+          {
+            label: "Trade Show Displays",
+            value:
+              "Portable pull-up banners, branded table throws, and full-scale backdrops that make your booth the center of attention.",
+          },
+          {
+            label: "Posters & Presentation Boards",
+            value:
+              "High-resolution prints for retail displays, architectural renderings, or corporate presentations.",
+          },
+          {
+            label: "Construction Hoardings",
+            value:
+              "Large-scale mesh or solid vinyl wraps for site fences that turn construction zones into massive advertising opportunities.",
+          },
+        ],
+        faqs: [
+          {
+            question: "What is the standard turnaround time for print orders?",
+            answer:
+              "Most standard print jobs like business cards or flyers are completed within 3–5 business days. For large-format banners or complex trade show displays, we typically require 5–7 business days from design approval.",
+          },
+          {
+            question: "Can I provide my own artwork?",
+            answer:
+              "Absolutely. We accept high-resolution PDF, AI, and EPS files. If you aren't sure if your file is 'print-ready,' our in-house design team can review it for you to ensure it won't look blurry or pixelated when enlarged.",
+          },
+          {
+            question: "Do you offer different finishes like matte or gloss?",
+            answer:
+              "Yes. We offer a wide range of finishes including high-gloss UV, soft-touch matte, and even specialty finishes like foil stamping or spot UV to give your materials a premium, tactile feel.",
+          },
+          {
+            question: "Can you help with large-scale mail-out campaigns?",
+            answer:
+              "While we focus on the design and printing of the materials, we can certainly coordinate with local distribution partners or provide you with the exact specifications needed for Canada Post requirements.",
+          },
         ],
       },
     },
     pylonsigns: {
-      heading: "Pylon Signs",
-      para1: `Pylon signs are tall, freestanding structures that offer unmatched visibility from a distance — making them ideal for highways, shopping centers, and large commercial properties. With their elevated height and customizable panels, pylon signs guide customers right to your door.`,
+      heading: "High-Visibility Pylon Signs in Edmonton",
+      para1: `Stand tall and get noticed from a distance. Our custom-engineered pylon signs provide maximum roadside visibility and a landmark presence for your business.`,
 
       para2: `Designed to withstand the elements, our pylon signs are constructed using strong, weather-resistant materials like steel, aluminum, and durable acrylics. Whether you're branding a single business or showcasing multiple tenants in one structure, we design each sign for clarity, strength, and long-term performance.`,
 
@@ -173,19 +306,62 @@ export const data = {
 
       para5: `Make a powerful first impression from afar with a custom pylon sign that reflects the quality of your brand and invites customers in with confidence.`,
       consultationObj: {
-        heading:
-          "Drive Highway & Street-Side Visibility with Custom Pylon Signs",
+        heading: "Command the Roadside. Capture Every Lead.",
         subHeading:
-          "Make your business unmissable with towering pylon signs designed to capture attention from a distance. Built for maximum impact and 24/7 exposure.",
+          "In a busy city like Edmonton, visibility is everything. A pylon sign is more than just a sign; it’s a landmark. These freestanding structures are designed to be seen from hundreds of yards away, making them essential for businesses located near high-speed roads or tucked away in large shopping plazas. At Jassal Signs, we handle the entire process—from structural engineering and city permits to fabrication and heavy-duty installation. With 30 years of experience, we ensure your pylon is built to stay level and look pristine through Alberta’s toughest winds and winters.",
         bulletList: [
-          "Elevate your brand visibility with freestanding pylon signs that are perfect for shopping plazas, gas stations, restaurants, and commercial complexes.",
-          "Choose single-tenant or multi-tenant configurations to suit your property layout — ideal for showcasing one business or multiple listings in one sign.",
-          "Built with high-strength steel structures, aluminum panels, and weather-resistant finishes to withstand wind, rain, snow, and UV exposure.",
-          "Enhance nighttime readability with internal LED illumination or spotlighting — ensuring your brand is visible both day and night.",
-          "Customize every detail — from cabinet size and pole height to graphics, logo placements, and LED message boards.",
-          "We handle full permitting and municipal approvals, including engineering drawings and structural compliance with local bylaws.",
-          "Achieve a professional, anchored installation with concrete footings and reinforced mounting designed for long-term durability.",
-          "From initial concept and 3D renderings to fabrication and site installation, our team provides turnkey project management from start to finish.",
+          {
+            label: "Single-Tenant Pylons",
+            value:
+              "A dedicated, massive branding statement for standalone businesses like car dealerships, gas stations, or major retailers.",
+          },
+          {
+            label: "Multi-Tenant Plazas",
+            value:
+              "Organized, professional listings for shopping centers that give every tenant equal visibility and a clean, uniform look.",
+          },
+          {
+            label: "LED Digital Centers",
+            value:
+              "Integrate a dynamic LED screen into your pylon to display real-time promotions, weather, or community messages.",
+          },
+          {
+            label: "Illuminated Sign Boxes",
+            value:
+              "Classic backlit panels that ensure your name is bright and legible 24 hours a day.",
+          },
+          {
+            label: "Custom Pole Signs",
+            value:
+              "Slimmer, elevated signs perfect for tight urban spaces where you still need to clear the height of surrounding trees or buildings.",
+          },
+          {
+            label: "Architectural Pylons",
+            value:
+              "Custom-designed structures that match the masonry and aesthetic of your building for a premium, integrated look.",
+          },
+        ],
+        faqs: [
+          {
+            question: "How tall can a pylon sign be in Edmonton?",
+            answer:
+              "Height restrictions are governed by local municipal bylaws and vary depending on the zone (commercial, industrial, etc.). We are experts in Edmonton and Calgary signage bylaws and will help you determine the maximum allowable height for your specific location.",
+          },
+          {
+            question: "Do I need a building permit for a pylon sign?",
+            answer:
+              "Yes. Because pylon signs are significant structural installations, they require both a development permit and a building permit. Our team manages the technical drawings and engineering stamps required to get your permits approved quickly.",
+          },
+          {
+            question: "Can you update the faces of an existing pylon?",
+            answer:
+              "Absolutely. If you have an older pylon structure, we can manufacture new acrylic or Lexan faces, refresh the paint on the pole, and retro-fit the internal lighting with energy-saving LEDs to make it look brand new.",
+          },
+          {
+            question: "Are pylon signs wind-rated?",
+            answer:
+              "Yes. Every pylon we build is engineered to meet Alberta’s wind-load requirements. We use heavy-duty steel columns and deep concrete foundations to ensure the sign remains safe and stable even during high-wind events.",
+          },
         ],
       },
     },
@@ -378,6 +554,76 @@ export const data = {
           desc: "Lightweight, cost-effective signs for lawns and temporary displays.",
         },
       ],
+    },
+    otherproducts: {
+      heading: "Specialized Signage & Custom Solutions in Edmonton",
+      para1: `Beyond the standard. From regulatory safety signs to custom-fabricated brand assets, we provide the unique tools your business needs to be compliant and creative.`,
+      para2: `Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered.`,
+      para3: `With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.`,
+      para4: `Our specialized signage department is dedicated to solving unique problems with innovative designs and durable materials. We work closely with you to understand the specific requirements of your project, ensuring the final product is not only functional but also aligned with your brand's aesthetic.`,
+      para5: `With over 30 years of expertise, we help you transform your spaces into branded environments that feel thoughtful, organized, and visually impressive.`,
+      consultationObj: {
+        heading: "Custom Solutions for Unique Challenges.",
+        subHeading:
+          "Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered. With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.",
+        bulletList: [
+          {
+            label: "Promotional Flags",
+            value:
+              "Feather, teardrop, and rectangular flags that flutter in the wind to grab the attention of passing motorists.",
+          },
+          {
+            label: "Safety & ADA Signage",
+            value:
+              "Tactile, Braille, and high-contrast signs that ensure your facility is inclusive and compliant with building codes.",
+          },
+          {
+            label: "Construction Site Signs",
+            value:
+              "Durable site boards, 'PPE Required' notices, and project information signs built for rugged environments.",
+          },
+          {
+            label: "Sandblasted & Carved Signs",
+            value:
+              "Premium textured signs made from wood or HDU, offering an upscale, classic look for professional parks and residential gates.",
+          },
+          {
+            label: "Custom Decals & Labels",
+            value:
+              "Small-format, high-durability stickers for equipment branding, product packaging, or asset tracking.",
+          },
+          {
+            label: "Menu Boards & Displays",
+            value:
+              "Static or digital solutions tailored for the hospitality industry, designed for easy readability and brand alignment.",
+          },
+        ],
+        faqs: [
+          {
+            question:
+              "Can you create signs that meet specific safety regulations?",
+            answer:
+              "Yes. We are well-versed in Alberta's safety signage requirements, including OH&S standards and ADA (Accessibility) compliance. We ensure your Braille, tactile, and safety signs meet all legal mounting and contrast specifications.",
+          },
+          {
+            question:
+              "What materials do you use for 'Carved' or 'Sandblasted' signs?",
+            answer:
+              "We typically use High-Density Urethane (HDU) or Cedar. HDU is a popular modern choice because it won't rot, warp, or crack, yet it looks identical to wood when painted and finished.",
+          },
+          {
+            question: "Are your promotional flags weather-resistant?",
+            answer:
+              "Our flags are printed on high-quality polyester mesh that allows wind to pass through, reducing the 'sail effect' and preventing tearing. We use UV-resistant inks to ensure the colors stay vibrant under the sun.",
+          },
+          {
+            question:
+              "I have a completely unique idea—can you help me engineer it?",
+            answer:
+              "Absolutely. Specialized projects are our favorite! Our design and fabrication teams love a challenge. We can help you choose the right materials and mounting methods to bring your custom concept to life safely and beautifully.",
+          },
+        ],
+      },
     },
   },
   contactPage: {
