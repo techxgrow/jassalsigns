@@ -5,6 +5,54 @@ import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 import { MapPin, Mail, Phone, ExternalLink, ChevronRight } from "lucide-react";
 
+// Flag Components
+const CanadaFlag = () => (
+  <svg
+    width="20"
+    height="14"
+    viewBox="0 0 24 16"
+    className="inline-block mr-2 shadow-sm"
+  >
+    <rect width="24" height="16" fill="#FF0000" />
+    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF" />
+    <path
+      d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z"
+      fill="#FF0000"
+    />
+  </svg>
+);
+
+const USAFlag = () => (
+  <svg
+    width="20"
+    height="14"
+    viewBox="0 0 24 16"
+    className="inline-block mr-2 shadow-sm"
+  >
+    <rect width="24" height="16" fill="#B22234" />
+    <rect y="1" width="24" height="1" fill="#FFFFFF" />
+    <rect y="3" width="24" height="1" fill="#FFFFFF" />
+    <rect y="5" width="24" height="1" fill="#FFFFFF" />
+    <rect y="7" width="24" height="1" fill="#FFFFFF" />
+    <rect y="9" width="24" height="1" fill="#FFFFFF" />
+    <rect y="11" width="24" height="1" fill="#FFFFFF" />
+    <rect y="13" width="24" height="1" fill="#FFFFFF" />
+    <rect y="15" width="24" height="1" fill="#FFFFFF" />
+    <rect width="10" height="8" fill="#3C3B6E" />
+    {[...Array(5)].map((_, row) =>
+      [...Array(6)].map((_, col) => (
+        <circle
+          key={`${row}-${col}`}
+          cx={1 + col * 1.5}
+          cy={1 + row * 1.5}
+          r="0.3"
+          fill="white"
+        />
+      )),
+    )}
+  </svg>
+);
+
 const CityFooter = () => {
   const router = useRouter();
 
@@ -155,7 +203,8 @@ const CityFooter = () => {
               ].map((group) => (
                 <div key={group.region}>
                   <h4 className="text-[#ED1D26] text-[15px] font-black uppercase tracking-widest mb-3 flex items-center gap-2">
-                    <MapPin className="w-3 h-3" />
+                    {/* Replaced MapPin with CanadaFlag */}
+                    <CanadaFlag />
                     {group.region}
                   </h4>
                   <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -174,7 +223,8 @@ const CityFooter = () => {
 
               <div>
                 <h4 className="text-[#ED1D26] text-[15px] font-black uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <ExternalLink className="w-3 h-3" />
+                  {/* Replaced ExternalLink with USAFlag */}
+                  <USAFlag />
                   United States
                 </h4>
                 <a
