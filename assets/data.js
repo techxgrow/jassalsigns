@@ -83,7 +83,8 @@ export const data = {
   productPage: {
     vehiclewraps: {
       heading: "High-Performance Vehicle Wraps in Edmonton",
-      para1: `Turn your fleet into a 24/7 mobile billboard. From single cars to full commercial fleets, our precision-fit wraps drive brand awareness wherever you go.`,
+      introHeading: "Drive Your Brand Further.",
+      para1: `Mobile advertising is one of the most cost-effective ways to reach a local audience. At Jassal Signs, we combine high-performance vinyl technology with expert installation to protect your vehicle’s paint while promoting your business. With over 30 years in the industry, we know how to design graphics that remain legible at highway speeds and durable enough to survive Alberta's gravel and road salt.`,
       para2: `Our vehicle signage options are designed to suit every kind of need and budget. From full wraps that transform your entire vehicle into a branded canvas, to smaller, more targeted designs like door decals or window graphics, we ensure your message is seen clearly and professionally. We also offer magnetic signs for those who prefer a temporary or removable solution — perfect for shared or personal-use vehicles.`,
       para3: `What sets our vehicle signs apart is the quality of materials and attention to detail. Every design is printed using weatherproof and UV-resistant vinyl to ensure durability, even in harsh outdoor conditions. You can expect crisp graphics, vibrant colors, and a seamless finish that not only promotes your business but also enhances the look of your vehicle.`,
       para4: `Beyond just visual appeal, our team collaborates closely with you to understand your brand identity and turn it into a creative, impactful design. From small business owners to large fleet operators, we’ve helped countless clients transform their vehicles into marketing machines that generate leads, build awareness, and leave a lasting impression wherever they go.`,
@@ -91,9 +92,7 @@ export const data = {
       para6: `If you're ready to take your brand on the road, we're here to help. Reach out to us to learn more about our vehicle sign options, design process, or to request a quote. Let’s turn your vehicle into your most valuable advertising asset.
       `,
       consultationObj: {
-        heading: "Drive Your Brand Further.",
-        subHeading:
-          "Mobile advertising is one of the most cost-effective ways to reach a local audience. At Jassal Signs, we combine high-performance vinyl technology with expert installation to protect your vehicle’s paint while promoting your business. With over 30 years in the industry, we know how to design graphics that remain legible at highway speeds and durable enough to survive Alberta's gravel and road salt.",
+        heading: "Our Vehicle Wrap Solutions",
         bulletList: [
           {
             label: "Full Vehicle Wraps",
@@ -152,7 +151,8 @@ export const data = {
     },
     channelletters: {
       heading: "Custom Channel Letters in Edmonton",
-      para1: `Make your business shine 24/7 with premium 3D illuminated lettering. Precision-engineered for maximum visibility and a high-end architectural finish.`,
+      introHeading: "Dignified. Dimensional. Diverse.",
+      para1: `Channel letters are the gold standard for commercial signage. These individual 3D letters provide a depth and professional polish that flat signs simply cannot match. At Jassal Signs, we utilize high-efficiency LED technology and rust-proof aluminum to create signage that isn't just beautiful—it's built to withstand the harshest Alberta winters. Whether you want a bold, front-lit glow or a sophisticated halo effect, we bring 30 years of fabrication expertise to every letter we build.`,
 
       para2: `Our channel letters are fully customizable — from the font style and color to illumination type and mounting style. Whether you prefer front-lit, reverse-lit (halo), or combination lighting, we tailor each sign to match your brand’s personality and location.`,
 
@@ -162,9 +162,7 @@ export const data = {
 
       para5: `Channel letters are an investment in your visibility. Whether you run a retail store, office, restaurant, or shopping plaza, we’ll help you create signage that speaks volumes, day or night.`,
       consultationObj: {
-        heading: "Dignified. Dimensional. Diverse.",
-        subHeading:
-          "Channel letters are the gold standard for commercial signage. These individual 3D letters provide a depth and professional polish that flat signs simply cannot match. At Jassal Signs, we utilize high-efficiency LED technology and rust-proof aluminum to create signage that isn't just beautiful—it's built to withstand the harshest Alberta winters. Whether you want a bold, front-lit glow or a sophisticated halo effect, we bring 30 years of fabrication expertise to every letter we build.",
+        heading: "Our Channel Letter Solutions",
         bulletList: [
           {
             label: "Front-Lit Channel Letters",
@@ -224,7 +222,8 @@ export const data = {
     },
     printmedia: {
       heading: "High-Impact Commercial Printing in Edmonton",
-      para1: `From large-format banners to precision marketing materials, we deliver high-quality print solutions that make your business stand out and your message stick.`,
+      introHeading: "Precision Print. Professional Results.",
+      para1: `In a digital world, tangible marketing materials leave a lasting impression. At Jassal Signs, our printing department is equipped with state-of-the-art technology to handle projects of any scale. Whether you need thousands of business cards or a massive construction hoarding wrap, we ensure color accuracy, sharp resolution, and durable finishes. With over 30 years of experience, we don’t just print; we advise on the best materials and coatings to ensure your brand looks elite in every format.`,
 
       para2: `Our print offerings include a wide variety of materials and formats — vibrant flyers, classy acrylic prints, durable coroplast signs, eye-catching real estate signs, and elegant canvas wraps — all customizable to suit your brand’s voice.`,
 
@@ -235,9 +234,7 @@ export const data = {
       para5: `Trust Jassal Signs to deliver printing services that captivates and converts — helping you communicate effectively in the real world with visually striking and strategically crafted materials.`,
 
       consultationObj: {
-        heading: "Precision Print. Professional Results.",
-        subHeading:
-          "In a digital world, tangible marketing materials leave a lasting impression. At Jassal Signs, our printing department is equipped with state-of-the-art technology to handle projects of any scale. Whether you need thousands of business cards or a massive construction hoarding wrap, we ensure color accuracy, sharp resolution, and durable finishes. With over 30 years of experience, we don’t just print; we advise on the best materials and coatings to ensure your brand looks elite in every format.",
+        heading: "Our Printing Solutions",
         bulletList: [
           {
             label: "Large Format Banners",
@@ -296,7 +293,8 @@ export const data = {
     },
     pylonsigns: {
       heading: "High-Visibility Pylon Signs in Edmonton",
-      para1: `Stand tall and get noticed from a distance. Our custom-engineered pylon signs provide maximum roadside visibility and a landmark presence for your business.`,
+      introHeading: "Command the Roadside. Capture Every Lead.",
+      para1: `In a busy city like Edmonton, visibility is everything. A pylon sign is more than just a sign; it’s a landmark. These freestanding structures are designed to be seen from hundreds of yards away, making them essential for businesses located near high-speed roads or tucked away in large shopping plazas. At Jassal Signs, we handle the entire process—from structural engineering and city permits to fabrication and heavy-duty installation. With 30 years of experience, we ensure your pylon is built to stay level and look pristine through Alberta’s toughest winds and winters.`,
 
       para2: `Designed to withstand the elements, our pylon signs are constructed using strong, weather-resistant materials like steel, aluminum, and durable acrylics. Whether you're branding a single business or showcasing multiple tenants in one structure, we design each sign for clarity, strength, and long-term performance.`,
 
@@ -306,9 +304,7 @@ export const data = {
 
       para5: `Make a powerful first impression from afar with a custom pylon sign that reflects the quality of your brand and invites customers in with confidence.`,
       consultationObj: {
-        heading: "Command the Roadside. Capture Every Lead.",
-        subHeading:
-          "In a busy city like Edmonton, visibility is everything. A pylon sign is more than just a sign; it’s a landmark. These freestanding structures are designed to be seen from hundreds of yards away, making them essential for businesses located near high-speed roads or tucked away in large shopping plazas. At Jassal Signs, we handle the entire process—from structural engineering and city permits to fabrication and heavy-duty installation. With 30 years of experience, we ensure your pylon is built to stay level and look pristine through Alberta’s toughest winds and winters.",
+        heading: "Our Pylon Signage Solutions",
         bulletList: [
           {
             label: "Single-Tenant Pylons",
@@ -366,8 +362,10 @@ export const data = {
       },
     },
     indoorsigns: {
-      heading: "High-Impact Indoor Signs in Edmonton",
-      para1: `Indoor signs play a vital role in creating a cohesive and welcoming environment for your customers, employees, and visitors. From directional signage and branding walls to reception displays and room identifiers, indoor signage enhances both aesthetics and functionality.`,
+      heading: "Indoor Signs",
+
+      introHeading: "Make a Lasting Impression, Inside Out.",
+      para1: `The interior of your business is where your brand comes to life. Indoor signage isn’t just about decoration; it’s about professionalism, safety, and customer experience. At Jassal Signs, we use premium materials like brushed aluminum, high-grade acrylic, and durable vinyl to ensure your office, clinic, or retail store looks world-class.`,
 
       para2: `We offer a wide variety of indoor sign solutions tailored to suit your business space — including acrylic signs, wall decals, directory boards, 3D logo displays, and more. Each piece is designed to complement your interior design while reinforcing your brand identity.`,
 
@@ -377,9 +375,7 @@ export const data = {
 
       para5: `With over 30 years of expertise, we help you transform your spaces into branded environments that feel thoughtful, organized, and visually impressive.`,
       consultationObj: {
-        heading: "Make a Lasting Impression, Inside Out.",
-        subHeading:
-          "The interior of your business is where your brand comes to life. Indoor signage isn’t just about decoration; it’s about professionalism, safety, and customer experience. At Jassal Signs, we use premium materials like brushed aluminum, high-grade acrylic, and durable vinyl to ensure your office, clinic, or retail store looks world-class.",
+        heading: "Our Indoor Signage Solutions",
 
         bulletList: [
           {
@@ -441,8 +437,9 @@ export const data = {
       },
     },
     outdoorsigns: {
-      heading: "High-Impact Outdoor Signs in Edmonton",
-      para1: `Command attention and drive foot traffic with durable, professional exterior signage designed to withstand the Alberta climate and make your brand stand out.`,
+      heading: "High-Impact Outdoor Signs",
+      introHeading: "Built to Last. Designed to be Noticed.",
+      para1: `Your exterior signage is your hardest-working salesperson—it works 24/7 to tell the world who you are. At Jassal Signs, we specialize in outdoor solutions that combine structural integrity with high-end aesthetics. Whether you need a massive building sign or a sleek monument at your entrance, we use weather-resistant metals, UV-stable inks, and reinforced mounting to ensure your investment looks great for decades.`,
 
       para2: `From storefront signage and monument signs to building-mounted displays and directional signs, we create outdoor solutions that reflect your brand and attract foot traffic. Our designs are clean, legible, and built for visibility — whether viewed from across the street or from passing vehicles.`,
 
@@ -452,9 +449,8 @@ export const data = {
 
       para5: `Put your business on the map with outdoor signage that demands attention and delivers results — even before a customer steps inside.`,
       consultationObj: {
-        heading: "Built to Last. Designed to be Noticed.",
-        subHeading:
-          "Your exterior signage is your hardest-working salesperson—it works 24/7 to tell the world who you are. At Jassal Signs, we specialize in outdoor solutions that combine structural integrity with high-end aesthetics. Whether you need a massive building sign or a sleek monument at your entrance, we use weather-resistant metals, UV-stable inks, and reinforced mounting to ensure your investment looks great for decades.",
+        heading: "Our Outdoor Signage Solutions",
+
         bulletList: [
           {
             label: "Storefront & Fascia Signs",
@@ -557,15 +553,14 @@ export const data = {
     },
     otherproducts: {
       heading: "Specialized Signage & Custom Solutions in Edmonton",
-      para1: `Beyond the standard. From regulatory safety signs to custom-fabricated brand assets, we provide the unique tools your business needs to be compliant and creative.`,
-      para2: `Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered.`,
-      para3: `With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.`,
-      para4: `Our specialized signage department is dedicated to solving unique problems with innovative designs and durable materials. We work closely with you to understand the specific requirements of your project, ensuring the final product is not only functional but also aligned with your brand's aesthetic.`,
+      introHeading: "Custom Solutions for Unique Challenges.",
+      para1: `Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered. With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.`,
+      para2: `Beyond the standard. From regulatory safety signs to custom-fabricated brand assets, we provide the unique tools your business needs to be compliant and creative.`,
+      para3: `Our specialized signage department is dedicated to solving unique problems with innovative designs and durable materials. We work closely with you to understand the specific requirements of your project, ensuring the final product is not only functional but also aligned with your brand's aesthetic.`,
+      para4: `We use industrial-grade materials and advanced manufacturing techniques to create signs that aren't just one-of-a-kind, but also built for the long haul. Performance and precision are at the heart of everything we do.`,
       para5: `With over 30 years of expertise, we help you transform your spaces into branded environments that feel thoughtful, organized, and visually impressive.`,
       consultationObj: {
-        heading: "Custom Solutions for Unique Challenges.",
-        subHeading:
-          "Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered. With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.",
+        heading: "Our Specialty Signage Solutions",
         bulletList: [
           {
             label: "Promotional Flags",

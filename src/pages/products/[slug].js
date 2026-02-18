@@ -182,7 +182,7 @@ const ProductPage = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.9] md:leading-[1.1] uppercase tracking-tighter mb-4 drop-shadow-2xl px-4">
+            <h1 className="text-4xl md:text-8xl font-black text-white leading-[0.9] md:leading-[1.0] uppercase tracking-tighter mb-4 drop-shadow-2xl px-4">
               {data.productPage[slug]?.heading
                 ?.split(" ")
                 .slice(0, -1)
@@ -239,9 +239,17 @@ const ProductPage = () => {
 
       <div className="max-w-[85vw] mx-auto py-20 px-4 md:px-0">
         {/* Elite Intro Card */}
-        <div className="relative mb-20 group" data-aos="fade-up">
+        <div
+          className="relative mb-20 group max-w-7xl p-10 md:p-12"
+          data-aos="fade-up"
+        >
           <div className="absolute -inset-4 bg-gradient-to-r from-[#ED1D26]/5 to-transparent rounded-[40px] -z-10 group-hover:from-[#ED1D26]/10 transition-all duration-700"></div>
-          <p className="text-xl md:text-2xl font-semibold text-gray-800 text-justify leading-relaxed max-w-5xl">
+          {data.productPage[slug]?.introHeading && (
+            <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tighter">
+              {data.productPage[slug]?.introHeading}
+            </h2>
+          )}
+          <p className="text-lg md:text-xl font-semibold text-gray-800 text-justify leading-relaxed">
             {data.productPage[slug]?.para1}
           </p>
         </div>
