@@ -134,7 +134,7 @@ const CityFooter = () => {
                 { name: "Services", path: "/services" },
                 { name: "Franchise", path: "/franchise" },
                 { name: "Blogs", path: "/#blogsSection" },
-                { name: "Contact Us", path: "/#contactSection" },
+                { name: "Contact Us", path: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link

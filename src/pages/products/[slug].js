@@ -239,10 +239,7 @@ const ProductPage = () => {
 
       <div className="max-w-[85vw] mx-auto py-20 px-4 md:px-0">
         {/* Elite Intro Card */}
-        <div
-          className="relative mb-20 group max-w-7xl p-10 md:p-12"
-          data-aos="fade-up"
-        >
+        <div className="relative mb-20 group  p-10 md:p-12" data-aos="fade-up">
           <div className="absolute -inset-4 bg-gradient-to-r from-[#ED1D26]/5 to-transparent rounded-[40px] -z-10 group-hover:from-[#ED1D26]/10 transition-all duration-700"></div>
           {data.productPage[slug]?.introHeading && (
             <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tighter">
@@ -406,7 +403,7 @@ const ProductPage = () => {
           </PhotoProvider>
         </Element>
 
-        {data.productPage[slug]?.subCategories && (
+        {/* {data.productPage[slug]?.subCategories && (
           <div className="py-24">
             <div className="text-center mb-16" data-aos="fade-up">
               <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs mb-4">
@@ -438,7 +435,7 @@ const ProductPage = () => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Elite FAQ Section */}
         <section className="py-24 border-t border-gray-100">
@@ -497,7 +494,7 @@ const ProductPage = () => {
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
               {data.productPage[slug]?.para5}
             </p>
-            <Link href="/#contact">
+            <Link href="/contact">
               <button className="mt-8 px-8 py-4 bg-[#ED1D26] text-white rounded-full font-bold text-lg hover:bg-red-600 transition-all duration-300">
                 Get a Free Quote
               </button>

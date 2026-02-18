@@ -413,7 +413,7 @@ const About = () => {
             <span className="opacity-80">Your Brand Presence?</span>
           </h2>
           <Link
-            href="/#contactSection"
+            href="/contact"
             className="inline-block bg-white text-[#ED1D26] py-5 px-12 rounded-full text-xl font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl"
           >
             Get A Free Quote

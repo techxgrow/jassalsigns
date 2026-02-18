@@ -103,11 +103,8 @@ export default function CitySlider({ cityName }) {
           </div>
 
           <div className="mt-10" data-aos="fade-up" data-aos-delay="600">
-            <ScrollLink
-              to="contactSection"
-              smooth={true}
-              duration={500}
-              offset={-50}
+            <Link
+              href="/contact"
               className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-[#ED1D26] font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 rounded-lg overflow-hidden"
             >
               <span className="absolute inset-0 w-full h-full -mt-10 transition-all duration-700 ease-out -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:translate-x-full"></span>
@@ -128,7 +125,7 @@ export default function CitySlider({ cityName }) {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 ></path>
               </svg>
-            </ScrollLink>
+            </Link>
           </div>
         </div>
       </div>

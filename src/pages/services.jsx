@@ -41,7 +41,7 @@ const ServicesPage = () => {
       icon: <PencilRuler className="w-8 h-8" />,
       description:
         "Our creative team brings your vision to life with professional graphic design, logo creation, and visual mockups tailored to your brand identity.",
-      link: "/#contactSection",
+      link: "/contact",
       color: "bg-blue-600",
     },
     {
@@ -50,7 +50,7 @@ const ServicesPage = () => {
       icon: <ClipboardCheck className="w-8 h-8" />,
       description:
         "We handle the complexities of city permits and conduct detailed site surveys to ensure your signage complies with all local bylaws.",
-      link: "/#contactSection",
+      link: "/contact",
       color: "bg-emerald-600",
     },
     {
@@ -59,7 +59,7 @@ const ServicesPage = () => {
       icon: <Hammer className="w-8 h-8" />,
       description:
         "Expert fabrication using premium materials. From channel letters to pylons, we build durable signage at our local facility.",
-      link: "/#contactSection",
+      link: "/contact",
       color: "bg-amber-600",
     },
     {
@@ -77,7 +77,7 @@ const ServicesPage = () => {
       icon: <Truck className="w-8 h-8" />,
       description:
         "Our safety-certified installation team ensures your signs are mounted securely and positioned for maximum visibility.",
-      link: "/#contactSection",
+      link: "/contact",
       color: "bg-red-600",
     },
     {
@@ -86,7 +86,7 @@ const ServicesPage = () => {
       icon: <Wrench className="w-8 h-8" />,
       description:
         "Keep your brand shining bright. We offer LED retrofitting, cleaning, and repairs to extend the lifespan of your signage.",
-      link: "/#contactSection",
+      link: "/contact",
       color: "bg-slate-600",
     },
   ];
@@ -224,7 +224,7 @@ const ServicesPage = () => {
             <span className="opacity-80">Your Brand Presence?</span>
           </h2>
           <Link
-            href="/#contactSection"
+            href="/contact"
             className="inline-block bg-white text-[#ED1D26] py-5 px-12 rounded-full text-xl font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl"
           >
             Get A Free Quote
