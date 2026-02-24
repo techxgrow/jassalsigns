@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { FaExpand } from "react-icons/fa";
+import Link from "next/link";
 
 const images = [
   { src: "/gallery/gl1.jpg" },
@@ -14,10 +15,12 @@ const images = [
   { src: "/gallery/gl9.jpg" },
   { src: "/citypage/services/channelletters.jpg" },
   { src: "/citypage/services/pylonsigns.jpg" },
-  { src: "/products/product1.jpg" }, // Added one more to make it a nice 3x3 grid
+  { src: "/products/product1.jpg" },
 ];
 
-export default function SignageGallery() {
+export default function SignageGallery({ limit = 8 }) {
+  const displayImages = limit ? images.slice(0, limit) : images;
+
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
   }, []);
@@ -51,7 +54,7 @@ export default function SignageGallery() {
       {/* Uniform Grid */}
       <PhotoProvider>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {images.map((img, index) => (
+          {displayImages.map((img, index) => (
             <div
               key={index}
               className="relative group rounded-3xl overflow-hidden cursor-zoom-in shadow-lg hover:shadow-[0_20px_50px_rgba(237,29,38,0.3)] transition-all duration-500 aspect-[4/3]"
@@ -82,6 +85,18 @@ export default function SignageGallery() {
           ))}
         </div>
       </PhotoProvider>
+
+      {/* View More Button */}
+      {limit > 0 && images.length > limit && (
+        <div className="mt-12 flex justify-center" data-aos="fade-up">
+          <Link
+            href="/gallery"
+            className="px-10 py-4 bg-[#ED1D26] text-white font-bold tracking-[0.2em] rounded-full uppercase hover:bg-[#101828] transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View More
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

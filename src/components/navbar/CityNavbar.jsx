@@ -20,13 +20,15 @@ const CityNavbar = () => {
 
   // Use state for home page check to avoid hydration issues
   const [isHomePage, setIsHomePage] = useState(false);
-  const [isContactPage, setIsContactPage] = useState(false);
+  const [isLightPage, setIsLightPage] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     // Initial check
     setIsHomePage(router.pathname === "/");
-    setIsContactPage(router.pathname === "/contact");
+    setIsLightPage(
+      router.pathname === "/contact" || router.pathname === "/gallery",
+    );
   }, [router.pathname]);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -81,7 +83,7 @@ const CityNavbar = () => {
       className={`fixed w-full left-0 top-0 z-50 transition-all duration-300 ${
         isScrolling
           ? "bg-black/70 backdrop-blur-sm shadow-md"
-          : isContactPage
+          : isLightPage
             ? "bg-white shadow-sm py-2"
             : "bg-transparent"
       }`}
@@ -89,7 +91,7 @@ const CityNavbar = () => {
       {/* Top bar for desktop */}
       <div
         className={`bg-black hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${
-          isScrolling || isContactPage
+          isScrolling || isLightPage
             ? "max-h-0 opacity-0"
             : "max-h-20 opacity-100"
         }`}
@@ -148,7 +150,7 @@ const CityNavbar = () => {
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden z-50 ${
-            isContactPage && !isScrolling && !menuOpen
+            isLightPage && !isScrolling && !menuOpen
               ? "text-black"
               : "text-white"
           }`}
@@ -160,17 +162,17 @@ const CityNavbar = () => {
             <div>
               <div
                 className={`w-6 h-1 mb-1 ${
-                  isContactPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
               <div
                 className={`w-6 h-1 mb-1 ${
-                  isContactPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
               <div
                 className={`w-6 h-1 ${
-                  isContactPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
             </div>
@@ -182,7 +184,7 @@ const CityNavbar = () => {
           className={`absolute top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center transition-all duration-300 md:static md:flex md:flex-row md:justify-end md:items-center md:bg-transparent md:h-auto md:w-auto ${
             menuOpen ? "block" : "hidden md:flex"
           } ${
-            isContactPage && !isScrolling && !menuOpen
+            isLightPage && !isScrolling && !menuOpen
               ? "md:text-black"
               : "md:text-white"
           }`}
@@ -222,9 +224,13 @@ const CityNavbar = () => {
             </li>
 
             <li>
-              <NavLink to="gallerySection" href="/#gallerySection">
+              <Link
+                href="/gallery"
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-[#ED1D26] transition-colors"
+              >
                 Gallery
-              </NavLink>
+              </Link>
             </li>
             <li>
               <NavLink to="blogsSection" href="/#blogsSection">
@@ -243,15 +249,13 @@ const CityNavbar = () => {
           </ul>
 
           <div className="mt-8 md:mt-0 md:ml-8">
-            {!isContactPage && (
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="bg-[#ED1D26] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
-              >
-                Get Free Quote
-              </Link>
-            )}
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="bg-[#ED1D26] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block border border-[#ED1D26]"
+            >
+              Get Free Quote
+            </Link>
           </div>
         </div>
       </div>

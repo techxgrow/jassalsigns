@@ -23,30 +23,33 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const images = [
-  { src: "/gallery/gl1.jpg" },
-  { src: "/gallery/gl2.jpg" },
-  { src: "/gallery/gl3.jpg" },
-  { src: "/gallery/gl4.jpg" },
-  { src: "/gallery/gl5.jpg" },
-  // { src: "/gallery/gl6.jpg" },
-  { src: "/gallery/gl7.jpg" },
-  // { src: "/gallery/gl8.jpg" },
-  { src: "/gallery/gl9.jpg" },
-];
-
 const ProductPage = () => {
   const router = useRouter();
   const slug = router.query.slug;
 
   const [mounted, setMounted] = React.useState(false);
   const [openFaqIndex, setOpenFaqIndex] = React.useState(null);
+  const [galleryImages, setGalleryImages] = React.useState([]);
 
   useEffect(() => {
     setMounted(true);
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
     AOS.refresh();
   }, []);
+
+  useEffect(() => {
+    if (slug && data.productPage[slug]) {
+      // Fetch dynamic gallery images for the slug
+      fetch(`/api/gallery/${slug}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.length > 0) {
+            setGalleryImages(data);
+          }
+        })
+        .catch((err) => console.error("Error fetching gallery images", err));
+    }
+  }, [slug]);
 
   if (!mounted || !slug || !data.productPage[slug]) {
     return <div className="min-h-screen bg-white"></div>;
@@ -358,48 +361,54 @@ const ProductPage = () => {
           </div>
 
           <PhotoProvider>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {images.map((img, index) => (
-                <PhotoView key={index} src={img.src}>
-                  <div
-                    className="overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 cursor-zoom-in rounded-[40px] group relative bg-gray-100 aspect-square"
-                    data-aos={aosAnimations[index % aosAnimations.length]}
-                    data-aos-delay={(index % 4) * 100}
-                  >
-                    <img
-                      src={img.src}
-                      alt={`Gallery Image ${index + 1}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    {/* Premium Glass Hover Overlay */}
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex items-center justify-center">
-                      <div className="bg-white/20 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx="11" cy="11" r="8"></circle>
-                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                          <line x1="11" y1="8" x2="11" y2="14"></line>
-                          <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                        <span className="text-white font-black uppercase tracking-tighter text-sm">
-                          Expand
-                        </span>
+            {galleryImages.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {galleryImages.map((img, index) => (
+                  <PhotoView key={index} src={img.src}>
+                    <div
+                      className="overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 cursor-zoom-in rounded-[40px] group relative bg-gray-100 aspect-square"
+                      data-aos={aosAnimations[index % aosAnimations.length]}
+                      data-aos-delay={(index % 4) * 100}
+                    >
+                      <img
+                        src={img.src}
+                        alt={`Gallery Image ${index + 1}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      {/* Premium Glass Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex items-center justify-center">
+                        <div className="bg-white/20 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                          <span className="text-white font-black uppercase tracking-tighter text-sm">
+                            Expand
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </PhotoView>
-              ))}
-            </div>
+                  </PhotoView>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-10 text-gray-500">
+                <p>No gallery images available for this product.</p>
+              </div>
+            )}
           </PhotoProvider>
         </Element>
 
