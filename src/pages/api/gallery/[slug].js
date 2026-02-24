@@ -12,6 +12,7 @@ export default function handler(req, res) {
     pylonsigns: "pylon",
     indoorsigns: "indoor",
     outdoorsigns: "outdoor",
+    otherproducts: "other",
   };
 
   const folderName = slugToFolder[slug];

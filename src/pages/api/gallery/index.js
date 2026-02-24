@@ -10,6 +10,7 @@ export default function handler(req, res) {
     { id: "pylonsigns", folder: "pylon", name: "Pylon Signs" },
     { id: "indoorsigns", folder: "indoor", name: "Indoor Signs" },
     { id: "outdoorsigns", folder: "outdoor", name: "Outdoor Signs" },
+    { id: "otherproducts", folder: "other", name: "Other Products" },
   ];
 
   const images = [];
