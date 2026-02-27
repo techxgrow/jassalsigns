@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    /* ---------- Admin Email ---------- */
+    /* ---------- Render Emails ---------- */
     const adminHtml = await render(
       <AdminContactEmail
         name={`${firstName} ${lastName}`}
@@ -26,36 +26,30 @@ export default async function handler(req, res) {
       />,
     );
 
-    await resend.emails.send({
-      from: "Jassal Signs <noreply@jassalsignsedm.com>",
-      to: [process.env.ADMIN_EMAIL],
-      replyTo: email,
-      subject: `New Contact – ${website}`,
-      html: adminHtml,
-    });
-
-    // await resend.emails.send({
-    //   from: "Debug <onboarding@resend.dev>",
-    //   to: [process.env.ADMIN_EMAIL],
-    //   subject: "Resend Test",
-    //   html: "<p>If this arrives, Resend is working.</p>",
-    // });
-
-    /* ---------- User Thank You Email ---------- */
     const userHtml = await render(
       <UserThankYouEmail name={`${firstName} ${lastName}`} website={website} />,
     );
 
-    await resend.emails.send({
-      from: "Jassal Signs <noreply@jassalsignsedm.com>",
-      to: [email],
-      subject: "Thanks for contacting us",
-      html: userHtml,
-    });
+    /* ---------- Send Emails Concurrently ---------- */
+    await Promise.all([
+      resend.emails.send({
+        from: "Jassal Signs <noreply@jassalsignsedm.com>",
+        to: [process.env.ADMIN_EMAIL],
+        replyTo: email,
+        subject: `New Contact – ${website}`,
+        html: adminHtml,
+      }),
+      resend.emails.send({
+        from: "Jassal Signs <noreply@jassalsignsedm.com>",
+        to: [email],
+        subject: "Thanks for contacting us",
+        html: userHtml,
+      }),
+    ]);
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error(err);
+    console.error("Error sending emails:", err);
     return res.status(500).json({ success: false });
   }
 }

@@ -93,9 +93,7 @@ const TermsOfUse = () => {
           <p>
             If you have any questions regarding these terms, please contact us
             at: <br />
-            <span className="text-[#ED1D26] font-bold">
-              jassalsignsedm@gmail.com
-            </span>
+            <span className="text-[#ED1D26] font-bold">jrbsigns@gmail.com</span>
           </p>
         </section>
       </div>

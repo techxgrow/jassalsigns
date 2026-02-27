@@ -96,7 +96,7 @@ const ContactUs = ({ city }) => {
                   Email Us
                 </span>
                 <p className="text-base font-bold text-gray-900 tracking-tight">
-                  jassalsignsedm@gmail.com
+                  jrbsigns@gmail.com
                 </p>
               </div>
             </div>

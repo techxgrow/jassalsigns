@@ -106,11 +106,11 @@ const CityNavbar = () => {
               <span>+1 (780) 437-7790</span>
             </a>
             <a
-              href="mailto:jassalsignsedm@gmail.com"
+              href="mailto:jrbsigns@gmail.com"
               className="flex gap-2 items-center hover:underline"
             >
               <FaEnvelope />
-              <span>jassalsignsedm@gmail.com</span>
+              <span>jrbsigns@gmail.com</span>
             </a>
           </div>
 
