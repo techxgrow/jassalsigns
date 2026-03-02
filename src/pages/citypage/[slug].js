@@ -31,10 +31,7 @@ const CityPage = () => {
       designation: "Marketing Head, Creative Agency",
       comments:
         "I am super happy with the products and the customer services (especially Gagan, Vik and the receptionist were very professional and they know what they are doing. I would highly recommend everyone ti this shop for any kinds of banners, signs, printings, poster and etc.",
-      comments:
-        "I am super happy with the products and the customer services (especially Gagan, Vik and the receptionist were very professional and they know what they are doing. I would highly recommend everyone ti this shop for any kinds of banners, signs, printings, poster and etc.",
       src: "/products/product3.png",
-      rating: 4,
       rating: 4,
     },
     {
@@ -42,15 +39,10 @@ const CityPage = () => {
       designation: "Founder, Startup Hub",
       comments:
         "Throughout the whole buying experience from walking in with no vision to walking out with the most eye catching sign, Jassal Signs was like no other when it comes to customer service. I was treated like family, not a customer, which I was surprised about as most competitors don’t give this level of care. ",
-      comments:
-        "Throughout the whole buying experience from walking in with no vision to walking out with the most eye catching sign, Jassal Signs was like no other when it comes to customer service. I was treated like family, not a customer, which I was surprised about as most competitors don’t give this level of care. ",
       src: "/products/product1.jpg",
       rating: 5,
     },
-      rating: 5,
-    },
   ];
-
 
   return (
     <>
@@ -76,14 +68,6 @@ const CityPage = () => {
 
       {/* <OurClients/> */}
 
-      <Element name="contactSection">
-        <ContactUs city={router.query.slug} />
-      </Element>
-      {/* <CityPlacesSection />  */}
-      <CityFooter />
-    </>
-  );
-};
       <Element name="contactSection">
         <ContactUs city={router.query.slug} />
       </Element>
