@@ -35,6 +35,11 @@ const servicesData = [
     desc: "Printing Services Now at Jassal Signs – Bold, Bright, Persuasive!",
     link: "/products/printmedia",
   },
+  {
+    title: "Specialized Signage",
+    desc: "Beyond the standard custom-fabricated brand assets and regulatory tools.",
+    link: "/products/otherproducts",
+  },
 ];
 
 const Services = () => {
@@ -72,10 +77,9 @@ const Services = () => {
         >
           Discover the Difference a Well-Crafted Sign Can Make
         </h2> */}
-          <Link href="/" className="mx-auto">
-            <img src="/logo.png" className="w-[280px]" alt="Logo" />
-          </Link>
-       
+        <Link href="/" className="mx-auto">
+          <img src="/logo.png" className="w-[280px]" alt="Logo" />
+        </Link>
       </div>
 
       <h1
@@ -90,31 +94,37 @@ const Services = () => {
             textColor="linear-gradient(90deg, #ED1C26 0%, #0283CB 100%)"
             fontSize={fontSize}
           />
-        </span>&nbsp;
+        </span>
+        &nbsp;
         <span>Your Business</span>
       </h1>
 
       <div className="flex flex-row flex-wrap  md:justify-end ">
-         {servicesData.map((service, index) => (
+        {servicesData.map((service, index) => (
           <div className="min-h-[230px] w-full sm:w-full md:w-full lg:w-1/3 p-4 ">
-          <Link
-            key={index}
-            href={service.link}
-            data-aos="zoom-in"
-            data-aos-delay={index * 100}
-            className="w-full h-full"
-          >
-            <div className="w-full h-full px-2 py-4 rounded-lg shadow-[0_4px_10px_rgba(200,200,200,0.4)] 
+            <Link
+              key={index}
+              href={service.link}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+              className="w-full h-full"
+            >
+              <div
+                className="w-full h-full px-2 py-4 rounded-lg shadow-[0_4px_10px_rgba(200,200,200,0.4)] 
                        hover:shadow-[rgb(237,29,38)] hover:scale-110 transition-all 
-                       duration-300 ease-in-out service_animation ">
-            <h3 className="text-xl sm:text-xl md:text-2xl font-medium font-grotesk underline text-white">{service.title}</h3>
-            <p className="text-white mt-2 md:text-[18px] text-sm sm:text-md">{service.desc}</p>
-            </div>
-          </Link>
+                       duration-300 ease-in-out service_animation "
+              >
+                <h3 className="text-xl sm:text-xl md:text-2xl font-medium font-grotesk underline text-white">
+                  {service.title}
+                </h3>
+                <p className="text-white mt-2 md:text-[18px] text-sm sm:text-md">
+                  {service.desc}
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
-        
 
       {/* <div className="mt-8 flex justify-center items-center flex-wrap gap-6 ">
         {servicesData.map((service, index) => (

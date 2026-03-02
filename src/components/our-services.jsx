@@ -18,11 +18,11 @@ const OurServices = () => {
       title: "We make sure your message meets the masses.",
       link: "/products/indoorsigns",
     },
-      {
-      imgSrc: "/citypage/services/printmedia.jpg",
-      category: "PRINT SERVICES",
-      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
-      link: "/products/printmedia",
+    {
+      imgSrc: "/citypage/services/outdoorsigns.jpg",
+      category: "OUTDOOR SIGNS",
+      title: "We make sure your message meets the masses.",
+      link: "/products/outdoorsigns",
     },
     {
       imgSrc: "/citypage/services/vehiclewraps.jpg",
@@ -36,7 +36,7 @@ const OurServices = () => {
       title: "Shine bright with custom Channel Letters by Jassal Signs",
       link: "/products/channelletters",
     },
-     
+
     {
       imgSrc: "/citypage/services/pylonsigns.jpg",
       category: "PYLON SIGNS",
@@ -44,13 +44,18 @@ const OurServices = () => {
       link: "/products/pylonsigns",
     },
     {
-      imgSrc: "/citypage/services/outdoorsigns.jpg",
-      category: "OUTDOOR SIGNS",
-      title: "We make sure your message meets the masses.",
-      link: "/products/outdoorsigns",
+      imgSrc: "/citypage/services/printmedia.jpg",
+      category: "PRINT SERVICES",
+      title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
+      link: "/products/printmedia",
     },
-  
-   
+    {
+      imgSrc: "/citypage/services/outdoorsigns.jpg",
+      category: "OTHER PRODUCTS & SPECIALIZED SIGNAGE",
+      title:
+        "Beyond the standard custom-fabricated brand assets and regulatory tools.",
+      link: "/products/otherproducts",
+    },
   ];
 
   return (

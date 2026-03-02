@@ -8,7 +8,8 @@ const placesData = [
   {
     name: "SURREY",
     desc: "An iconic landmark of Paris offering panoramic city views.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
     icon: "icofont-building-alt",
   },
   {
@@ -24,9 +25,9 @@ const placesData = [
     icon: "icofont-church",
   },
   {
-    name: "EDMONTON",
+    name: "sacramento",
     desc: "A stunning Gothic cathedral with historical significance.",
-    image: "/citycard/edmonton.jpg",
+    image: "/citycard/sacramento.jpg",
     icon: "icofont-church",
   },
   {
@@ -47,7 +48,9 @@ const CityPlacesSection = () => {
       <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-10 items-start">
         {/* Left Side */}
         <div className="w-full lg:w-1/3 space-y-6 text-center lg:text-left">
-          <h2 className="text-lg font-semibold text-orange-500">Jassal Signs Services</h2>
+          <h2 className="text-lg font-semibold text-orange-500">
+            Jassal Signs Services
+          </h2>
           <h3 className="text-3xl sm:text-4xl font-bold text-white uppercase leading-tight">
             We Light Up Cities <br /> With Signs That Speak
           </h3>
@@ -57,7 +60,9 @@ const CityPlacesSection = () => {
             className="mx-auto lg:mx-0 w-20"
           />
           <p className="text-white">
-            From Surrey to Edmonton, Jassal Signs proudly serves businesses across Canada’s most vibrant cities. Eye-catching signage, bold branding, and expert installation — right where you are.
+            From Surrey to sacramento, Jassal Signs proudly serves businesses
+            across Canada’s most vibrant cities. Eye-catching signage, bold
+            branding, and expert installation — right where you are.
           </p>
           <a
             href="#"

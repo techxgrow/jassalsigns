@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { data } from "../../assets/data";
-import emailjs from "@emailjs/browser";
+"use client";
+import React, { useState, useEffect } from "react";
+import { Phone, Mail, MapPin, User, MessageSquare, Send } from "lucide-react";
 import { ClipLoader } from "react-spinners";
+import axios from "axios";
 
 const ContactUs = ({ city }) => {
   const [loading, setLoading] = useState(false);
-  // console.log("city prop", data?.contactPage[`${city}`]?.location);`
-
-  //  if(data){
-  //   console.log("data", data)
-  //  }
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,7 +13,14 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
+    website: city || "sacramento",
   });
+
+  useEffect(() => {
+    if (city) {
+      setFormData((prev) => ({ ...prev, website: city }));
+    }
+  }, [city]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,16 +34,9 @@ const ContactUs = ({ city }) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formData,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        },
-      )
-      .then((response) => {
+    axios
+      .post("/api/contact", formData)
+      .then((res) => {
         setLoading(false);
         setFormData({
           firstName: "",
@@ -49,23 +44,24 @@ const ContactUs = ({ city }) => {
           email: "",
           phone: "",
           message: "",
+          website: city || "sacramento",
         });
       })
-      .catch((error) => {
-        console.error("Error sending email:", error);
+      .catch((err) => {
+        alert("Failed to send email. Please try again.");
         setLoading(false);
       });
   };
 
   return (
     <div
-      className="md:max-w-[85vw] max-w-[95vw]  mx-auto px-6 md:px-0 text-gray-800 md:py-12 py-10  "
+      className="md:max-w-[85vw] max-w-[95vw] mx-auto px-6 md:px-0 py-10 md:py-16"
       id="contact"
     >
-      <div className="  grid md:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-8 items-stretch">
         {/* Contact Details */}
         <div
-          className="relative  text-white p-6"
+          className="relative text-white p-6 md:p-8 rounded-[32px] overflow-hidden flex flex-col"
           style={{
             background: `linear-gradient(180deg, #ED1C26 0%, #0283CB 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28))`,
           }}
@@ -74,135 +70,174 @@ const ContactUs = ({ city }) => {
           <div className="absolute inset-0 bg-[#00000047]/50 z-0 rounded-md"></div>
 
           {/* Content */}
-          <div className="relative z-10 ">
-            <h3 className="text-3xl font-bold mb-3  text-white">CONTACT US</h3>
+          <div className="relative z-10 flex flex-col">
+            <h3 className="text-3xl font-bold mb-6 text-white">CONTACT US</h3>
 
-            <div className="flex flex-col gap-3 text-white justify-center absolute">
+            <div className="flex flex-col gap-4 text-white">
               {/* Phone */}
-              <p className="flex items-center gap-2">
-                <FaPhone className="text-lg " />
-                <span>+1 916 982 9297</span>
-              </p>
+              <div className="flex gap-4 group items-center bg-white/10 p-4 rounded-2xl backdrop-blur-md shadow-lg border border-white/10">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 shadow-inner">
+                  <Phone className="w-5 h-5 text-white shadow-sm" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/70">
+                    Phone
+                  </span>
+                  <p className="text-md font-bold text-white tracking-tight leading-snug">
+                    +1 916 982 9297
+                  </p>
+                </div>
+              </div>
 
               {/* Email */}
-              <p className="flex items-center gap-2">
-                <FaEnvelope className="text-lg" />
-                <span>Jassalsignssac@gmail.com</span>
-              </p>
+              <div className="flex gap-4 group items-center bg-white/10 p-4 rounded-2xl backdrop-blur-md shadow-lg border border-white/10">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 shadow-inner">
+                  <Mail className="w-5 h-5 text-white shadow-sm" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/70">
+                    Email
+                  </span>
+                  <p className="text-md font-bold text-white tracking-tight leading-snug break-all">
+                    Jassalsignssac@gmail.com
+                  </p>
+                </div>
+              </div>
 
               {/* Address */}
-              <p className="flex items-start gap-2">
-                <FaMapMarkerAlt className="text-lg mt-1" />
-                <span>
-                  10535 E Stockton Blvd K, Elk Grove, CA 95624, United States
-                </span>
-              </p>
+              <div className="flex gap-4 group items-center bg-white/10 p-4 rounded-2xl backdrop-blur-md shadow-lg border border-white/10">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 shadow-inner">
+                  <MapPin className="w-5 h-5 text-white shadow-sm" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/70">
+                    Our HQ
+                  </span>
+                  <p className="text-md font-bold text-white tracking-tight leading-snug">
+                    10535 E Stockton Blvd K, Elk Grove, CA 95624
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div className="h-[250px] mt-40  overflow-hidden">
-              <iframe
-                src={
-                  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12511.583700167499!2d-121.35911800000001!3d38.37452900000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab8cbe821fbb9%3A0x48e3083eb8bf29f0!2s10535%20E%20Stockton%20Blvd%20K%2C%20Elk%20Grove%2C%20CA%2095624%2C%20USA!5e0!3m2!1sen!2sin!4v1768667945931!5m2!1sen!2sin"
-                }
-                style={{ border: 0, width: "100%", height: "100%" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+          <div className="relative z-10 mt-8 lg:mt-auto min-h-[250px] flex-1 w-full overflow-hidden rounded-xl border border-white/20">
+            <iframe
+              src={
+                "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12511.583700167499!2d-121.35911800000001!3d38.37452900000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ab8cbe821fbb9%3A0x48e3083eb8bf29f0!2s10535%20E%20Stockton%20Blvd%20K%2C%20Elk%20Grove%2C%20CA%2095624%2C%20USA!5e0!3m2!1sen!2sin!4v1768667945931!5m2!1sen!2sin"
+              }
+              style={{ border: 0, width: "100%", height: "100%" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="md:col-span-2 text-gray-800 py-6 ">
-          <h3 className="text-3xl font-bold mb-2 text-gray-800">
-            POST YOUR QUERY
-          </h3>
+        {/* Contact Form Card */}
+        <div className="relative group lg:col-span-2 self-center">
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#ED1D26] to-[#0283CB] rounded-[35px] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
 
-          <form onSubmit={handleSubmit} className="space-y-4 text-gray-800">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block font-medium ">First Name*</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="Enter Your First Name"
-                  className="w-full border p-2  mt-1 "
-                  required
-                />
-              </div>
-              <div>
-                <label className="block font-medium ">Last Name*</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Enter Your Last Name"
-                  className="w-full border p-2  mt-1 "
-                  required
-                />
-              </div>
+          <div className="relative bg-white rounded-[32px] p-6 md:p-10 shadow-xl border border-gray-100">
+            <div className="mb-8">
+              <h3 className="text-xl md:text-2xl font-black font-grotesk text-gray-900 uppercase tracking-tighter mb-1 text-center">
+                Post Your <span className="text-[#ED1D26]">Query</span>
+              </h3>
+              <p className="text-gray-400 font-medium text-xs text-center">
+                We'll get back to you shortly.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block font-medium">Email ID*</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter Your Email"
-                  className="w-full border p-2  mt-1 d"
-                  required
-                />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="relative group/input">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First Name*"
+                    className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+                    required
+                  />
+                </div>
+                <div className="relative group/input">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Last Name*"
+                    className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+                    required
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block font-medium">Phone Number*</label>
-                <input
-                  type="text"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Enter Your Phone Number"
-                  className="w-full border p-2  mt-1 "
-                  required
-                />
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="relative group/input">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email Address*"
+                    className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+                    required
+                  />
+                </div>
+                <div className="relative group/input">
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone Number*"
+                    className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+                    required
+                  />
+                </div>
               </div>
-            </div>
-            <div>
-              <label className="block font-medium">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Enter Your message"
-                className="w-full border p-2  mt-1 "
-                rows="3"
-              ></textarea>
-            </div>
-            <div className="flex  items-center">
+
+              <div className="relative group/input">
+                <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your requirements..."
+                  className="w-full bg-gray-50 border border-gray-100 p-4 pl-12 rounded-[20px] text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none resize-none"
+                  rows="3"
+                ></textarea>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
-                className={`bg-[#ED1D26] text-white py-2 px-8 transition cursor-pointer flex items-center justify-center gap-2 ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
+                className={`w-full h-14 rounded-xl text-base font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg ${
+                  loading
+                    ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+                    : "bg-[#ED1D26] text-white hover:bg-[#d01920] active:scale-95 shadow-[#ED1D26]/20"
                 }`}
               >
                 {loading ? (
                   <>
                     <ClipLoader size={20} color="#ffffff" />
-                    Sending...
+                    Processing...
                   </>
                 ) : (
-                  "Submit"
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </>
                 )}
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

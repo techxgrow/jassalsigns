@@ -1,11 +1,10 @@
-
 import { useState, useEffect } from "react";
 import Services from "@/components/Services";
 import LocationLinks from "@/components/LocationLinks";
 import { IoMdClose } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from "typewriter-effect";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 const markers = [
   {
@@ -15,62 +14,64 @@ const markers = [
   },
   {
     name: "ABBOTSFORD",
-    coordinates: ["75%", "28%"], 
+    coordinates: ["75%", "28%"],
     link: "/citypage/ABBOTSFORD",
   },
   {
     name: "SURREY",
-    coordinates: ["75%", "23%"], 
+    coordinates: ["75%", "23%"],
     link: "/citypage/SURREY",
   },
   {
-    name: "EDMONTON",
-    coordinates: ["75%", "39%"], 
-    link: "/citypage/EDMONTON",
+    name: "sacramento",
+    coordinates: ["75%", "39%"],
+    link: "/citypage/sacramento",
   },
   {
     name: "CALGARY",
-    coordinates: ["75%", "34%"], 
+    coordinates: ["75%", "34%"],
     link: "/citypage/CALGARY",
   },
   {
     name: "SACRAMENTO",
-    coordinates: ["18%", "15%"], 
+    coordinates: ["18%", "15%"],
     link: "/citypage/SACRAMENTO",
   },
 ];
 
-// Flag components
 const CanadaFlag = () => (
   <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#FF0000"/>
-    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF"/>
-    <path d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z" fill="#FF0000"/>
+    <rect width="24" height="16" fill="#FF0000" />
+    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF" />
+    <path
+      d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z"
+      fill="#FF0000"
+    />
   </svg>
 );
 
 const USAFlag = () => (
   <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
-    <rect width="24" height="16" fill="#B22234"/>
-    <rect y="1" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="3" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="5" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="7" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="9" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="11" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="13" width="24" height="1" fill="#FFFFFF"/>
-    <rect y="15" width="24" height="1" fill="#FFFFFF"/>
-    <rect width="10" height="8" fill="#3C3B6E"/>
-    {[...Array(5)].map((_, row) => 
+    <rect width="24" height="16" fill="#B22234" />
+    <rect y="1" width="24" height="1" fill="#FFFFFF" />
+    <rect y="3" width="24" height="1" fill="#FFFFFF" />
+    <rect y="5" width="24" height="1" fill="#FFFFFF" />
+    <rect y="7" width="24" height="1" fill="#FFFFFF" />
+    <rect y="9" width="24" height="1" fill="#FFFFFF" />
+    <rect y="11" width="24" height="1" fill="#FFFFFF" />
+    <rect y="13" width="24" height="1" fill="#FFFFFF" />
+    <rect y="15" width="24" height="1" fill="#FFFFFF" />
+    <rect width="10" height="8" fill="#3C3B6E" />
+    {[...Array(5)].map((_, row) =>
       [...Array(6)].map((_, col) => (
-        <circle 
-          key={`${row}-${col}`} 
-          cx={1 + col * 1.5} 
-          cy={1 + row * 1.5} 
-          r="0.3" 
+        <circle
+          key={`${row}-${col}`}
+          cx={1 + col * 1.5}
+          cy={1 + row * 1.5}
+          r="0.3"
           fill="white"
         />
-      ))
+      )),
     )}
   </svg>
 );
@@ -119,13 +120,13 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
 // TwoMapss  Component
 const TwoMaps = () => {
   const canadaMarkers = markers.filter((marker) =>
-    ["CLOVERDALE", "ABBOTSFORD", "SURREY", "EDMONTON", "CALGARY"].includes(
-      marker.name
-    )
+    ["CLOVERDALE", "ABBOTSFORD", "SURREY", "sacramento", "CALGARY"].includes(
+      marker.name,
+    ),
   );
 
   const usaMarkers = markers.filter((marker) =>
-    ["SACRAMENTO"].includes(marker.name)
+    ["SACRAMENTO"].includes(marker.name),
   );
 
   return (
@@ -143,7 +144,6 @@ const TwoMaps = () => {
         flagComponent={<USAFlag />}
       />
     </div>
-
   );
 };
 
@@ -166,7 +166,7 @@ export default function Home_test() {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>'
+                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>',
               )
               .start();
           }}
@@ -188,7 +188,6 @@ export default function Home_test() {
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           src="/background.mov"
         />
-      
 
         {/* Navbarr*/}
         <div className="max-w-[95vw] mx-auto px-3 pt-4 flex justify-between items-center relative z-30">

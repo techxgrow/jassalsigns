@@ -62,28 +62,30 @@ const DummyContent = () => {
 const data = [
   {
     category: "CHANNEL LETTERS",
-    title: "Attractive outdoor signs for all businesses - Outshine your competition with large 3D sign letters",
+    title:
+      "Attractive outdoor signs for all businesses - Outshine your competition with large 3D sign letters",
     src: "/cityservices/pic-1.jpg",
     content: <DummyContent />,
   },
   {
     category: "INDOOR SIGNS",
-    title: "Improve customer experience and make your premises safer with professional indoor signs. Mega Signs is the one stop show for all your indoor signage needs in Edmonton",
+    title:
+      "Improve customer experience and make your premises safer with professional indoor signs. Mega Signs is the one stop show for all your indoor signage needs in sacramento",
     src: "/cityservices/pic-2.jpg",
     content: <DummyContent />,
   },
   {
     category: "PYLON SIGNS",
-    title: "Grow brand awareness generate leads from afar and became a local landmark with signage that towers above the competition",
+    title:
+      "Grow brand awareness generate leads from afar and became a local landmark with signage that towers above the competition",
     src: "/cityservices/pic-3.jpg",
     content: <DummyContent />,
   },
   {
     category: "VERHICLES WRAPS",
-    title: "Branded vehicles are one of the most effective ways of growing your brand make an impact in your community with custom vehicles wraps for your commeercial vehicles",
+    title:
+      "Branded vehicles are one of the most effective ways of growing your brand make an impact in your community with custom vehicles wraps for your commeercial vehicles",
     src: "/cityservices/pic-4.jpg",
     content: <DummyContent />,
   },
-  
 ];
-

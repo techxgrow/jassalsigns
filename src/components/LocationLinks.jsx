@@ -5,7 +5,7 @@ const LocationLinks = () => (
     <Link href="/citypage/SURREY">SURREY</Link>
     <Link href="/citypage/CLOVERDALE">CLOVERDALE</Link>
     <Link href="/citypage/ABBOTSFORD">ABBOTSFORD</Link>
-    <Link href="/citypage/EDMONTON">EDMONTON</Link>
+    <Link href="/citypage/sacramento">sacramento</Link>
     <Link href="/citypage/CALGARY">CALGARY</Link>
   </div>
 );

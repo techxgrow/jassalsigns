@@ -31,9 +31,9 @@ const canadaMarkers = [
     offset: { x: 0, y: -15 },
   },
   {
-    name: "EDMONTON",
+    name: "sacramento",
     coordinates: [-113.4909, 53.5461],
-    link: "/citypage/EDMONTON",
+    link: "/citypage/sacramento",
     offset: { x: 0, y: -12 },
   },
   {
