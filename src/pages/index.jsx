@@ -16,7 +16,7 @@ import SignageGallery from "@/components/SignageGallery";
 import { Element } from "react-scroll";
 
 const Home = () => {
-  const cityName = "SURREY";
+  const cityName = "CALGARY";
 
   const testimonialsData = [
     {

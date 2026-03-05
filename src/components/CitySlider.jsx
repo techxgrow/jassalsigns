@@ -22,8 +22,8 @@ export default function CitySlider({ cityName }) {
       ? [
           `/citypage/header/${cityName}/${cityName}1.jpg`,
           `/citypage/header/${cityName}/${cityName}2.jpg`,
-          // `/citypage/header/${cityName}/${cityName}3.jpg`,
-          "/rogers_place.jpg",
+          `/citypage/header/${cityName}/${cityName}3.jpg`,
+          // "/rogers_place.jpg",
         ]
       : [];
 
