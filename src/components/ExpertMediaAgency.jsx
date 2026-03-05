@@ -23,7 +23,7 @@ const ExpertMediaAgency = () => {
               <p className="text-sm md:text-base lg:text-lg max-w-full md:max-w-xl break-words">
                 Jassal Signs is a leading signage company and commercial
                 printing provider with over 30 years of experience serving
-                businesses in California. We create custom business signs, vehicle
+                businesses in British Columbia. We create custom business signs, vehicle
                 wraps, and high-quality print materials that enhance brand
                 visibility and attract customers.
               </p>
@@ -76,7 +76,7 @@ const ExpertMediaAgency = () => {
               <p className="text-sm md:text-base lg:text-lg max-w-full md:max-w-xl break-words text-white mb-1">
                 Jassal Signs is a leading signage company and commercial
                 printing provider with over 30 years of experience serving
-                businesses in California. We create custom business signs,
+                businesses in British Columbia. We create custom business signs,
                 vehicle wraps, and high-quality print materials that enhance
                 brand visibility and attract customers.
               </p>

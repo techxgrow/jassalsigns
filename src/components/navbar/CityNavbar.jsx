@@ -116,14 +116,14 @@ const CityNavbar = () => {
 
           <div className="flex space-x-4 items-center text-lg text-white">
             {/* <a
-              href="https://www.facebook.com/JASSALSIGNSsacramento/"
+              href="https://www.facebook.com/JASSALSIGNSsurrey/"
               aria-label="Facebook"
               className="hover:text-[#ED1D26] text-2xl"
             >
               <FaFacebook />
             </a> */}
             <a
-              href="https://www.instagram.com/jassalsigns_sacramento?igsh=NXB5YXlvNHM0MmI0"
+              href="https://www.instagram.com/jassalsigns_surrey?igsh=NXB5YXlvNHM0MmI0"
               aria-label="Instagram"
               className="hover:text-[#ED1D26] text-2xl"
             >

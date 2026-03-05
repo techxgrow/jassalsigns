@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 
-const rightCities = ["sacramento", "CALGARY"];
+const rightCities = ["surrey", "CALGARY"];
 
 const RightNavbar = () => {
   useEffect(() => {

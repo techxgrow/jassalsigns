@@ -67,7 +67,7 @@ const About = () => {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               Jassal Signs is a premier signage and commercial printing company
-              serving businesses across California for over 30 years. What
+              serving businesses across British Columbia for over 30 years. What
               started as a small sign shop has grown into a full-service visual
               solutions provider, helping hundreds of businesses enhance their
               brand visibility and attract more customers.
@@ -84,7 +84,7 @@ const About = () => {
               growing companies, we've completed over 78,000+ projects for 250+
               satisfied clients. Our commitment to quality craftsmanship,
               attention to detail, and exceptional customer service has made us
-              the go-to signage company in California.
+              the go-to signage company in British Columbia.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Whether you're launching a new business, rebranding, or need

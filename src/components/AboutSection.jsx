@@ -35,7 +35,7 @@ const AboutSection = () => {
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
                   Professional Signage & Printing Services in{" "}
-                  <span className="text-[#ED1D26]">sacramento</span>
+                  <span className="text-[#ED1D26]">surrey</span>
                 </h2>
               </div>
 
@@ -56,8 +56,8 @@ const AboutSection = () => {
                       commercial printing provider
                     </span>{" "}
                     with over 30 years of excellence. We help businesses across
-                    California increase visibility and attract customers with
-                    high-impact visual solutions.
+                    British Columbia increase visibility and attract customers
+                    with high-impact visual solutions.
                   </p>
                   <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
                     From custom{" "}

@@ -100,7 +100,7 @@ const CityFooter = () => {
               {[
                 {
                   icon: <FaInstagram />,
-                  url: "https://www.instagram.com/jassalsigns_sacramento?igsh=NXB5YXlvNHM0MmI0",
+                  url: "https://www.instagram.com/jassalsigns_surrey?igsh=NXB5YXlvNHM0MmI0",
                   label: "Instagram",
                 },
               ].map((social, i) => (
@@ -189,7 +189,7 @@ const CityFooter = () => {
                   ],
                 },
                 {
-                  region: "California",
+                  region: "British Columbia",
                   cities: [
                     { name: "Calgary", path: "/citypage/CALGARY" },
                     {
@@ -231,7 +231,7 @@ const CityFooter = () => {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white font-bold text-sm"
                 >
-                  Sacramento, CA
+                  surrey, CA
                 </a>
               </div>
             </div>

@@ -161,7 +161,7 @@ const HomepageFooter = () => {
             </li>
           </ul>
           <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">
-            California
+            British Columbia
           </h2>
           <ul>
             <li>
@@ -174,10 +174,10 @@ const HomepageFooter = () => {
             </li>
             <li>
               <Link
-                href="/citypage/sacramento"
+                href="/citypage/surrey"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                sacramento
+                surrey
               </Link>
             </li>
           </ul>
@@ -276,7 +276,7 @@ const HomepageFooter = () => {
               </li>
             </ul>
             <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">
-              California
+              British Columbia
             </h2>
             <ul>
               <li>
@@ -289,10 +289,10 @@ const HomepageFooter = () => {
               </li>
               <li>
                 <Link
-                  href="/citypage/sacramento"
+                  href="/citypage/surrey"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  sacramento
+                  surrey
                 </Link>
               </li>
             </ul>

@@ -209,7 +209,7 @@ const FranchiseForm = () => {
                 name="province"
                 type="text"
                 disabled={isSubmitting}
-                placeholder="e.g. sacramento,AB"
+                placeholder="e.g. surrey,AB"
                 className={`w-full bg-gray-50 border rounded-2xl p-4 focus:bg-white outline-none transition-all font-semibold ${
                   formik.touched.province && formik.errors.province
                     ? "border-[#ED1D26]"

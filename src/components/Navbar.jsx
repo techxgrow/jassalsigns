@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const cityGroups = {
   left: ["SURREY", "CLOVERDALE", "ABBOTSFORD"],
-  right: ["sacramento", "CALGARY"],
+  right: ["surrey", "CALGARY"],
 };
 
 const Navbar = ({ type }) => {

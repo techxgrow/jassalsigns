@@ -25,9 +25,9 @@ const placesData = [
     icon: "icofont-church",
   },
   {
-    name: "sacramento",
+    name: "surrey",
     desc: "A stunning Gothic cathedral with historical significance.",
-    image: "/citycard/sacramento.jpg",
+    image: "/citycard/surrey.jpg",
     icon: "icofont-church",
   },
   {
@@ -60,9 +60,9 @@ const CityPlacesSection = () => {
             className="mx-auto lg:mx-0 w-20"
           />
           <p className="text-white">
-            From Surrey to sacramento, Jassal Signs proudly serves businesses
-            across Canada’s most vibrant cities. Eye-catching signage, bold
-            branding, and expert installation — right where you are.
+            From Surrey to surrey, Jassal Signs proudly serves businesses across
+            Canada’s most vibrant cities. Eye-catching signage, bold branding,
+            and expert installation — right where you are.
           </p>
           <a
             href="#"
