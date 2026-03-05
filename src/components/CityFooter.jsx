@@ -231,7 +231,7 @@ const CityFooter = () => {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white font-bold text-sm"
                 >
-                  surrey, CA
+                  Sacramento, CA
                 </a>
               </div>
             </div>
