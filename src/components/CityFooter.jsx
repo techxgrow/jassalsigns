@@ -189,7 +189,7 @@ const CityFooter = () => {
                   ],
                 },
                 {
-                  region: "British Columbia",
+                  region: "Alberta",
                   cities: [
                     { name: "Calgary", path: "/citypage/CALGARY" },
                     {
