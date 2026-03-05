@@ -11,7 +11,7 @@ const ContactPage = () => {
         <title>Contact Us | Jassal Signs</title>
         <meta
           name="description"
-          content="Get in touch with Jassal Signs for elite signage solutions in Calgary, Calgary, and beyond."
+          content="Get in touch with Jassal Signs for elite signage solutions in Cloverdale, Cloverdale, and beyond."
         />
       </Head>
       <CityNavbar />

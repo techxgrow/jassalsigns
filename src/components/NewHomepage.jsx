@@ -18,24 +18,24 @@ const markers = [
     link: "/citypage/ABBOTSFORD",
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: ["75%", "23%"],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: ["75%", "39%"],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
   },
   {
-    name: "CALGARY",
+    name: "Cloverdale",
     coordinates: ["75%", "34%"],
-    link: "/citypage/CALGARY",
+    link: "/citypage/Cloverdale",
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: ["18%", "15%"],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
   },
 ];
 
@@ -120,13 +120,17 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
 // TwoMapss  Component
 const TwoMaps = () => {
   const canadaMarkers = markers.filter((marker) =>
-    ["CLOVERDALE", "ABBOTSFORD", "Calgary", "Calgary", "CALGARY"].includes(
-      marker.name,
-    ),
+    [
+      "CLOVERDALE",
+      "ABBOTSFORD",
+      "Cloverdale",
+      "Cloverdale",
+      "Cloverdale",
+    ].includes(marker.name),
   );
 
   const usaMarkers = markers.filter((marker) =>
-    ["Calgary"].includes(marker.name),
+    ["Cloverdale"].includes(marker.name),
   );
 
   return (

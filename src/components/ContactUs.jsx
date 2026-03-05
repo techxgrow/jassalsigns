@@ -13,7 +13,7 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
-    website: city || "Calgary",
+    website: city || "Cloverdale",
   });
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const ContactUs = ({ city }) => {
           email: "",
           phone: "",
           message: "",
-          website: city || "Calgary",
+          website: city || "Cloverdale",
         });
       })
       .catch((err) => {

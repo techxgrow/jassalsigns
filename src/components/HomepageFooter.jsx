@@ -136,10 +136,10 @@ const HomepageFooter = () => {
           <ul className="space-y-2 text-white text-sm">
             <li>
               <Link
-                href="/citypage/Calgary"
+                href="/citypage/Cloverdale"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Calgary
+                Cloverdale
               </Link>
             </li>
 
@@ -166,18 +166,18 @@ const HomepageFooter = () => {
           <ul>
             <li>
               <Link
-                href="/citypage/CALGARY"
+                href="/citypage/Cloverdale"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Calgary
+                Cloverdale
               </Link>
             </li>
             <li>
               <Link
-                href="/citypage/Calgary"
+                href="/citypage/Cloverdale"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Calgary
+                Cloverdale
               </Link>
             </li>
           </ul>
@@ -251,10 +251,10 @@ const HomepageFooter = () => {
             <ul className="space-y-2 text-white text-sm">
               <li>
                 <Link
-                  href="/citypage/Calgary"
+                  href="/citypage/Cloverdale"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Calgary
+                  Cloverdale
                 </Link>
               </li>
 
@@ -281,18 +281,18 @@ const HomepageFooter = () => {
             <ul>
               <li>
                 <Link
-                  href="/citypage/CALGARY"
+                  href="/citypage/Cloverdale"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Calgary
+                  Cloverdale
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/citypage/Calgary"
+                  href="/citypage/Cloverdale"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Calgary
+                  Cloverdale
                 </Link>
               </li>
             </ul>

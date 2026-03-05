@@ -25,30 +25,30 @@ const canadaMarkers = [
     offset: { x: 25, y: 0 },
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: [-122.849, 49.1913],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
     offset: { x: 0, y: -15 },
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: [-113.4909, 53.5461],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
     offset: { x: 0, y: -12 },
   },
   {
-    name: "CALGARY",
+    name: "Cloverdale",
     coordinates: [-114.0719, 51.0447],
-    link: "/citypage/CALGARY",
+    link: "/citypage/Cloverdale",
     offset: { x: 0, y: -12 },
   },
 ];
 
 const usaMarkers = [
   {
-    name: "Calgary",
+    name: "Cloverdale",
     coordinates: [-121.4944, 38.5816],
-    link: "/citypage/Calgary",
+    link: "/citypage/Cloverdale",
     offset: { x: 0, y: -10 },
   },
 ];

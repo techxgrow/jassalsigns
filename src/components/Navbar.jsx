@@ -4,8 +4,8 @@ import "aos/dist/aos.css";
 import Link from "next/link";
 
 const cityGroups = {
-  left: ["Calgary", "CLOVERDALE", "ABBOTSFORD"],
-  right: ["Calgary", "CALGARY"],
+  left: ["Cloverdale", "CLOVERDALE", "ABBOTSFORD"],
+  right: ["Cloverdale", "Cloverdale"],
 };
 
 const Navbar = ({ type }) => {

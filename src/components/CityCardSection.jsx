@@ -6,7 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 const placesData = [
   {
-    name: "Calgary",
+    name: "Cloverdale",
     desc: "An iconic landmark of Paris offering panoramic city views.",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
@@ -25,15 +25,15 @@ const placesData = [
     icon: "icofont-church",
   },
   {
-    name: "Calgary",
+    name: "Cloverdale",
     desc: "A stunning Gothic cathedral with historical significance.",
-    image: "/citycard/Calgary.jpg",
+    image: "/citycard/Cloverdale.jpg",
     icon: "icofont-church",
   },
   {
-    name: "CALGARY",
+    name: "Cloverdale",
     desc: "A stunning Gothic cathedral with historical significance.",
-    image: "/citycard/calgary.jpg",
+    image: "/citycard/Cloverdale.jpg",
     icon: "icofont-church",
   },
 ];
@@ -60,9 +60,10 @@ const CityPlacesSection = () => {
             className="mx-auto lg:mx-0 w-20"
           />
           <p className="text-white">
-            From Calgary to Calgary, Jassal Signs proudly serves businesses
-            across Canada’s most vibrant cities. Eye-catching signage, bold
-            branding, and expert installation — right where you are.
+            From Cloverdale to Cloverdale, Jassal Signs proudly serves
+            businesses across Canada’s most vibrant cities. Eye-catching
+            signage, bold branding, and expert installation — right where you
+            are.
           </p>
           <a
             href="#"
