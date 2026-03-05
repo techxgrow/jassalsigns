@@ -82,7 +82,7 @@ export const data = {
   ],
   productPage: {
     vehiclewraps: {
-      heading: "High-Performance Vehicle Wraps in Cloverdale",
+      heading: "High-Performance Vehicle Wraps in Abbotsford",
       introHeading: "Drive Your Brand Further.",
       para1: `Mobile advertising is one of the most cost-effective ways to reach a local audience. At Jassal Signs, we combine high-performance vinyl technology with expert installation to protect your vehicle’s paint while promoting your business. With over 30 years in the industry, we know how to design graphics that remain legible at highway speeds and durable enough to survive British Columbia's gravel and road salt.`,
       para2: `Our vehicle signage options are designed to suit every kind of need and budget. From full wraps that transform your entire vehicle into a branded canvas, to smaller, more targeted designs like door decals or window graphics, we ensure your message is seen clearly and professionally. We also offer magnetic signs for those who prefer a temporary or removable solution — perfect for shared or personal-use vehicles.`,
@@ -150,7 +150,7 @@ export const data = {
       },
     },
     channelletters: {
-      heading: "Custom Channel Letters in Cloverdale",
+      heading: "Custom Channel Letters in Abbotsford",
       introHeading: "Dignified. Dimensional. Diverse.",
       para1: `Channel letters are the gold standard for commercial signage. These individual 3D letters provide a depth and professional polish that flat signs simply cannot match. At Jassal Signs, we utilize high-efficiency LED technology and rust-proof aluminum to create signage that isn't just beautiful—it's built to withstand the harshest British Columbia winters. Whether you want a bold, front-lit glow or a sophisticated halo effect, we bring 30 years of fabrication expertise to every letter we build.`,
 
@@ -221,7 +221,7 @@ export const data = {
       },
     },
     printmedia: {
-      heading: "High-Impact Commercial Printing in Cloverdale",
+      heading: "High-Impact Commercial Printing in Abbotsford",
       introHeading: "Precision Print. Professional Results.",
       para1: `In a digital world, tangible marketing materials leave a lasting impression. At Jassal Signs, our printing department is equipped with state-of-the-art technology to handle projects of any scale. Whether you need thousands of business cards or a massive construction hoarding wrap, we ensure color accuracy, sharp resolution, and durable finishes. With over 30 years of experience, we don’t just print; we advise on the best materials and coatings to ensure your brand looks elite in every format.`,
 
@@ -239,7 +239,7 @@ export const data = {
           {
             label: "Large Format Banners",
             value:
-              "Heavy-duty vinyl banners for events, grand openings, and 'Now Hiring' notices. Weatherproof and built for Cloverdale's climate.",
+              "Heavy-duty vinyl banners for events, grand openings, and 'Now Hiring' notices. Weatherproof and built for Abbotsford's climate.",
           },
           {
             label: "Marketing Collateral",
@@ -292,9 +292,9 @@ export const data = {
       },
     },
     pylonsigns: {
-      heading: "High-Visibility Pylon Signs in Cloverdale",
+      heading: "High-Visibility Pylon Signs in Abbotsford",
       introHeading: "Command the Roadside. Capture Every Lead.",
-      para1: `In a busy city like Cloverdale, visibility is everything. A pylon sign is more than just a sign; it’s a landmark. These freestanding structures are designed to be seen from hundreds of yards away, making them essential for businesses located near high-speed roads or tucked away in large shopping plazas. At Jassal Signs, we handle the entire process—from structural engineering and city permits to fabrication and heavy-duty installation. With 30 years of experience, we ensure your pylon is built to stay level and look pristine through British Columbia’s toughest winds and winters.`,
+      para1: `In a busy city like Abbotsford, visibility is everything. A pylon sign is more than just a sign; it’s a landmark. These freestanding structures are designed to be seen from hundreds of yards away, making them essential for businesses located near high-speed roads or tucked away in large shopping plazas. At Jassal Signs, we handle the entire process—from structural engineering and city permits to fabrication and heavy-duty installation. With 30 years of experience, we ensure your pylon is built to stay level and look pristine through British Columbia’s toughest winds and winters.`,
 
       para2: `Designed to withstand the elements, our pylon signs are constructed using strong, weather-resistant materials like steel, aluminum, and durable acrylics. Whether you're branding a single business or showcasing multiple tenants in one structure, we design each sign for clarity, strength, and long-term performance.`,
 
@@ -339,9 +339,9 @@ export const data = {
         ],
         faqs: [
           {
-            question: "How tall can a pylon sign be in Cloverdale?",
+            question: "How tall can a pylon sign be in Abbotsford?",
             answer:
-              "Height restrictions are governed by local municipal bylaws and vary depending on the zone (commercial, industrial, etc.). We are experts in Cloverdale and Cloverdale signage bylaws and will help you determine the maximum allowable height for your specific location.",
+              "Height restrictions are governed by local municipal bylaws and vary depending on the zone (commercial, industrial, etc.). We are experts in Abbotsford and Abbotsford signage bylaws and will help you determine the maximum allowable height for your specific location.",
           },
           {
             question: "Do I need a building permit for a pylon sign?",
@@ -406,7 +406,7 @@ export const data = {
           {
             label: "Safety & Compliance (ADA) Signs",
             value:
-              "Tactile and Braille-integrated signage to ensure your building meets all Cloverdale accessibility standards.",
+              "Tactile and Braille-integrated signage to ensure your building meets all Abbotsford accessibility standards.",
           },
         ],
         faqs: [
@@ -486,14 +486,14 @@ export const data = {
         faqs: [
           {
             question:
-              "How do your signs handle Cloverdale’s extreme winter weather?",
+              "How do your signs handle Abbotsford’s extreme winter weather?",
             answer:
               "We use industrial-grade aluminum, UV-protected coatings, and specialized adhesives specifically tested for the -40°C to +30°C temperature swings in British Columbia. Our signs are built to resist fading, cracking, and rust.",
           },
           {
             question: "Do I need a permit for my outdoor sign?",
             answer:
-              "In most cases, yes. Signage bylaws in Cloverdale and Cloverdale can be complex. We provide expert guidance on local regulations and can assist in the permit application process to ensure your sign is fully compliant.",
+              "In most cases, yes. Signage bylaws in Abbotsford and Abbotsford can be complex. We provide expert guidance on local regulations and can assist in the permit application process to ensure your sign is fully compliant.",
           },
           {
             question:
@@ -552,7 +552,7 @@ export const data = {
       ],
     },
     otherproducts: {
-      heading: "Specialized Signage & Custom Solutions in Cloverdale",
+      heading: "Specialized Signage & Custom Solutions in Abbotsford",
       introHeading: "Custom Solutions for Unique Challenges.",
       para1: `Every business has needs that don't fit into a standard category. Whether you are a developer needing site safety boards, a restaurant looking for elegant menu displays, or a brand wanting to make a splash at a local event with custom flags, Jassal Signs has you covered. With 30 years of experience, we have the technical knowledge to fabricate one-off pieces and the expertise to ensure your regulatory signage meets every local and provincial standard. If you can dream it, we can build it.`,
       para2: `Beyond the standard. From regulatory safety signs to custom-fabricated brand assets, we provide the unique tools your business needs to be compliant and creative.`,
@@ -622,15 +622,15 @@ export const data = {
     },
   },
   contactPage: {
-    Cloverdale: {
+    Abbotsford: {
       phone: "+1 604 282 1966",
-      address: "7728 128 St Unit 101, Cloverdale, BC V3W 0R6, Canada",
+      address: "7728 128 St Unit 101, Abbotsford, BC V3W 0R6, Canada",
       location:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49659.60751020113!2d-122.94814956026207!3d49.145302404056515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d99c456f0749%3A0xe2f199f2c5bca3b4!2sJassal%20Signs%20Newton!5e0!3m2!1sen!2sin!4v1747808663068!5m2!1sen!2sin",
     },
-    Cloverdale: {
+    Abbotsford: {
       phone: "+1 780 437 7790",
-      address: "3273 Parsons Rd NW, Cloverdale, AB T6N 1B4, Canada",
+      address: "3273 Parsons Rd NW, Abbotsford, AB T6N 1B4, Canada",
       location:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.1766615378488!2d-113.48790992340471!3d53.46530277232404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0xa7d7b4b4585b624c!2sJassal%20Signs!5e0!3m2!1sen!2sin!4v1747808243555!5m2!1sen!2sin",
     },
@@ -640,13 +640,13 @@ export const data = {
       location:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.250288520937!2d-122.36892592368302!3d49.04386447135795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485cbc45f87de2d%3A0x12e8fa2d12001c73!2sJassal%20Signs%20Abbotsford!5e0!3m2!1sen!2sin!4v1747808332571!5m2!1sen!2sin",
     },
-    Cloverdale: {
+    Abbotsford: {
       phone: "+1 403 475 0351",
-      address: "1935 27 Ave NE #5, Cloverdale, AB T2E 7E4, Canada",
+      address: "1935 27 Ave NE #5, Abbotsford, AB T2E 7E4, Canada",
       location:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.7417652900313!2d-114.0147728235572!3d51.0763168717184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537165032b93b9ef%3A0xbacea9eb54edc1b4!2sJassal%20Signs%20Cloverdale!5e0!3m2!1sen!2sin!4v1747808472842!5m2!1sen!2sin",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.7417652900313!2d-114.0147728235572!3d51.0763168717184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537165032b93b9ef%3A0xbacea9eb54edc1b4!2sJassal%20Signs%20Abbotsford!5e0!3m2!1sen!2sin!4v1747808472842!5m2!1sen!2sin",
     },
-    Cloverdale: {
+    Abbotsford: {
       phone: "+1 916 982 9297",
       email: "Jassalsignssac@gmail.com",
       address: "10535 E Stockton Blvd K, Elk Grove, CA 95624, United States",

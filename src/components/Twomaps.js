@@ -13,9 +13,9 @@ const worldUrl =
 // Markers with custom label offsets
 const canadaMarkers = [
   {
-    name: "CLOVERDALE",
+    name: "Abbotsford",
     coordinates: [-122.7543, 49.1052],
-    link: "/citypage/CLOVERDALE",
+    link: "/citypage/Abbotsford",
     offset: { x: -20, y: -10 },
   },
   {
@@ -25,30 +25,30 @@ const canadaMarkers = [
     offset: { x: 25, y: 0 },
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: [-122.849, 49.1913],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
     offset: { x: 0, y: -15 },
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: [-113.4909, 53.5461],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
     offset: { x: 0, y: -12 },
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: [-114.0719, 51.0447],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
     offset: { x: 0, y: -12 },
   },
 ];
 
 const usaMarkers = [
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: [-121.4944, 38.5816],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
     offset: { x: 0, y: -10 },
   },
 ];

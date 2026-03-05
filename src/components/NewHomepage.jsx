@@ -8,9 +8,9 @@ import { useRouter } from "next/router";
 
 const markers = [
   {
-    name: "CLOVERDALE",
+    name: "Abbotsford",
     coordinates: ["75%", "18%"],
-    link: "/citypage/CLOVERDALE",
+    link: "/citypage/Abbotsford",
   },
   {
     name: "ABBOTSFORD",
@@ -18,24 +18,24 @@ const markers = [
     link: "/citypage/ABBOTSFORD",
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: ["75%", "23%"],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: ["75%", "39%"],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: ["75%", "34%"],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
   },
   {
-    name: "Cloverdale",
+    name: "Abbotsford",
     coordinates: ["18%", "15%"],
-    link: "/citypage/Cloverdale",
+    link: "/citypage/Abbotsford",
   },
 ];
 
@@ -121,16 +121,16 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
 const TwoMaps = () => {
   const canadaMarkers = markers.filter((marker) =>
     [
-      "CLOVERDALE",
+      "Abbotsford",
       "ABBOTSFORD",
-      "Cloverdale",
-      "Cloverdale",
-      "Cloverdale",
+      "Abbotsford",
+      "Abbotsford",
+      "Abbotsford",
     ].includes(marker.name),
   );
 
   const usaMarkers = markers.filter((marker) =>
-    ["Cloverdale"].includes(marker.name),
+    ["Abbotsford"].includes(marker.name),
   );
 
   return (

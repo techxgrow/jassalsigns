@@ -70,7 +70,7 @@ const data = [
   {
     category: "INDOOR SIGNS",
     title:
-      "Improve customer experience and make your premises safer with professional indoor signs. Mega Signs is the one stop show for all your indoor signage needs in Cloverdale",
+      "Improve customer experience and make your premises safer with professional indoor signs. Mega Signs is the one stop show for all your indoor signage needs in Abbotsford",
     src: "/cityservices/pic-2.jpg",
     content: <DummyContent />,
   },

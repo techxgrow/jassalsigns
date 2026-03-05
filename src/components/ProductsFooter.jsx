@@ -87,19 +87,19 @@ const ProductsFooter = () => {
             <ul className="space-y-2 text-white text-sm">
               <li>
                 <Link
-                  href="/citypage/Cloverdale"
+                  href="/citypage/Abbotsford"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Cloverdale
+                  Abbotsford
                 </Link>
               </li>
 
               <li>
                 <Link
-                  href="/citypage/CLOVERDALE"
+                  href="/citypage/Abbotsford"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Cloverdale
+                  Abbotsford
                 </Link>
               </li>
               <li>
@@ -117,18 +117,18 @@ const ProductsFooter = () => {
             <ul>
               <li>
                 <Link
-                  href="/citypage/Cloverdale"
+                  href="/citypage/Abbotsford"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Cloverdale
+                  Abbotsford
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/citypage/Cloverdale"
+                  href="/citypage/Abbotsford"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Cloverdale
+                  Abbotsford
                 </Link>
               </li>
             </ul>
@@ -182,19 +182,19 @@ const ProductsFooter = () => {
           <ul className="space-y-2 text-white text-sm">
             <li>
               <Link
-                href="/citypage/Cloverdale"
+                href="/citypage/Abbotsford"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Cloverdale
+                Abbotsford
               </Link>
             </li>
 
             <li>
               <Link
-                href="/citypage/CLOVERDALE"
+                href="/citypage/Abbotsford"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Cloverdale
+                Abbotsford
               </Link>
             </li>
             <li>
@@ -212,18 +212,18 @@ const ProductsFooter = () => {
           <ul>
             <li>
               <Link
-                href="/citypage/Cloverdale"
+                href="/citypage/Abbotsford"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Cloverdale
+                Abbotsford
               </Link>
             </li>
             <li>
               <Link
-                href="/citypage/Cloverdale"
+                href="/citypage/Abbotsford"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Cloverdale
+                Abbotsford
               </Link>
             </li>
           </ul>

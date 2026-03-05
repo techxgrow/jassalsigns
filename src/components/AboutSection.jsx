@@ -35,7 +35,7 @@ const AboutSection = () => {
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
                   Professional Signage & Printing Services in{" "}
-                  <span className="text-[#ED1D26]">Cloverdale</span>
+                  <span className="text-[#ED1D26]">Abbotsford</span>
                 </h2>
               </div>
 
