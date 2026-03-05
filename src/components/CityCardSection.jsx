@@ -6,7 +6,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 const placesData = [
   {
-    name: "SURREY",
+    name: "Calgary",
     desc: "An iconic landmark of Paris offering panoramic city views.",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
@@ -25,9 +25,9 @@ const placesData = [
     icon: "icofont-church",
   },
   {
-    name: "surrey",
+    name: "Calgary",
     desc: "A stunning Gothic cathedral with historical significance.",
-    image: "/citycard/surrey.jpg",
+    image: "/citycard/Calgary.jpg",
     icon: "icofont-church",
   },
   {
@@ -60,9 +60,9 @@ const CityPlacesSection = () => {
             className="mx-auto lg:mx-0 w-20"
           />
           <p className="text-white">
-            From Surrey to surrey, Jassal Signs proudly serves businesses across
-            Canada’s most vibrant cities. Eye-catching signage, bold branding,
-            and expert installation — right where you are.
+            From Calgary to Calgary, Jassal Signs proudly serves businesses
+            across Canada’s most vibrant cities. Eye-catching signage, bold
+            branding, and expert installation — right where you are.
           </p>
           <a
             href="#"

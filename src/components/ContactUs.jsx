@@ -13,7 +13,7 @@ const ContactUs = ({ city }) => {
     email: "",
     phone: "",
     message: "",
-    website: city || "surrey",
+    website: city || "Calgary",
   });
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const ContactUs = ({ city }) => {
           email: "",
           phone: "",
           message: "",
-          website: city || "surrey",
+          website: city || "Calgary",
         });
       })
       .catch((err) => {

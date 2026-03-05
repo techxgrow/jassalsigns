@@ -136,10 +136,10 @@ const HomepageFooter = () => {
           <ul className="space-y-2 text-white text-sm">
             <li>
               <Link
-                href="/citypage/SURREY"
+                href="/citypage/Calgary"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                Surrey
+                Calgary
               </Link>
             </li>
 
@@ -174,10 +174,10 @@ const HomepageFooter = () => {
             </li>
             <li>
               <Link
-                href="/citypage/surrey"
+                href="/citypage/Calgary"
                 className="hover:text-[#ED1D26] text-[16px]"
               >
-                surrey
+                Calgary
               </Link>
             </li>
           </ul>
@@ -251,10 +251,10 @@ const HomepageFooter = () => {
             <ul className="space-y-2 text-white text-sm">
               <li>
                 <Link
-                  href="/citypage/SURREY"
+                  href="/citypage/Calgary"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  Surrey
+                  Calgary
                 </Link>
               </li>
 
@@ -289,10 +289,10 @@ const HomepageFooter = () => {
               </li>
               <li>
                 <Link
-                  href="/citypage/surrey"
+                  href="/citypage/Calgary"
                   className="hover:text-[#ED1D26] text-[16px]"
                 >
-                  surrey
+                  Calgary
                 </Link>
               </li>
             </ul>

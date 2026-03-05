@@ -13,7 +13,7 @@ const ConsultationForm = () => {
     signage: "",
     location: "",
     message: "",
-    website: "surrey",
+    website: "Calgary",
   });
 
   const handleChange = (e) => {
@@ -50,7 +50,7 @@ const ConsultationForm = () => {
           signage: "",
           location: "",
           message: "",
-          website: "surrey",
+          website: "Calgary",
         });
       })
       .catch((err) => {
@@ -182,7 +182,7 @@ const ConsultationForm = () => {
             Location
           </h4>
           {/* <div className="flex flex-wrap gap-2">
-            {["Surrey", "surrey", "Abbotsford", "Calgary", "Cloverdale"].map(
+            {["Calgary", "Calgary", "Abbotsford", "Calgary", "Cloverdale"].map(
               (city) => (
                 <label
                   key={city}
@@ -214,7 +214,7 @@ const ConsultationForm = () => {
             name="location"
             value={formData.location}
             onChange={handleChange}
-            placeholder="e.g. surrey,AB"
+            placeholder="e.g. Calgary,AB"
             className="w-full bg-gray-50 border border-gray-100 h-12 pl-4 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
             required
           />
