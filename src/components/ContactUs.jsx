@@ -59,75 +59,52 @@ const ContactUs = ({ city }) => {
       id="contact"
     >
       <div className="grid lg:grid-cols-[1fr_2.2fr] gap-8 md:gap-12 items-start">
-        {/* Contact Details & Info Card */}
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <h3 className="text-2xl md:text-3xl font-black font-grotesk text-gray-900 uppercase tracking-tighter">
-              Get in <span className="text-[#ED1D26]">Touch</span>
-            </h3>
-            <p className="text-gray-400 text-sm font-medium leading-relaxed">
-              Expert advice to elevate your brand.
-            </p>
-          </div>
+        {/* NEW Contact Details & Info Card from Image */}
+        <div className="w-full max-w-[420px] mx-auto rounded-[40px] shadow-2xl bg-gradient-to-b from-[#C91A23] via-[#653A5A] to-[#0171B6] flex flex-col pt-10 pb-6 px-5">
+          <h2 className="text-[32px] font-bold text-white mb-8 tracking-wide px-2 uppercase">
+            Contact Us
+          </h2>
 
-          <div className="space-y-4">
-            {/* Phone */}
-            <div className="flex gap-4 group items-start">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#ED1D26]/5 flex items-center justify-center group-hover:bg-[#ED1D26] transition-all duration-300">
-                <Phone className="w-4 h-4 text-[#ED1D26] group-hover:text-white transition-colors" />
+          <div className="flex flex-col gap-4 mb-6">
+            {/* Card 1 */}
+            <div className="bg-white/10 rounded-3xl p-4 flex items-center gap-5 backdrop-blur-sm shadow-sm border border-white/5">
+              <div className="w-14 h-14 bg-white/20 rounded-2xl flex justify-center items-center shrink-0">
+                <Phone className="text-white w-6 h-6" strokeWidth={2} />
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">
-                  Call Us
-                </span>
-                <p className="text-base font-bold text-gray-900 tracking-tight">
-                  +1 (780) 437-7790
-                </p>
+              <div className="flex flex-col">
+                <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">Phone</span>
+                <span className="text-white font-semibold text-lg">+1 (780) 437-7790</span>
               </div>
             </div>
 
-            {/* Email */}
-            <div className="flex gap-4 group items-start">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#0283CB]/5 flex items-center justify-center group-hover:bg-[#0283CB] transition-all duration-300">
-                <Mail className="w-4 h-4 text-[#0283CB] group-hover:text-white transition-colors" />
+            {/* Card 2 */}
+            <div className="bg-white/10 rounded-3xl p-4 flex items-center gap-5 backdrop-blur-sm shadow-sm border border-white/5">
+              <div className="w-14 h-14 bg-white/20 rounded-2xl flex justify-center items-center shrink-0">
+                <Mail className="text-white w-6 h-6" strokeWidth={2} />
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">
-                  Email Us
-                </span>
-                <p className="text-base font-bold text-gray-900 tracking-tight">
-                  jrbsigns@gmail.com
-                </p>
+              <div className="flex flex-col overflow-hidden">
+                <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">Email</span>
+                <span className="text-white font-semibold text-[15px] sm:text-base truncate">jrbsigns@gmail.com</span>
               </div>
             </div>
 
-            {/* Address */}
-            <div className="flex gap-4 group items-start">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-900 transition-all duration-300">
-                <MapPin className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
+            {/* Card 3 */}
+            <div className="bg-white/10 rounded-3xl p-4 flex items-center gap-5 backdrop-blur-sm shadow-sm border border-white/5">
+              <div className="w-14 h-14 bg-white/20 rounded-2xl flex justify-center items-center shrink-0">
+                <MapPin className="text-white w-6 h-6" strokeWidth={2} />
               </div>
-              <div className="space-y-0.5">
-                <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">
-                  Our HQ
+              <div className="flex flex-col">
+                <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">Our HQ</span>
+                <span className="text-white font-semibold text-[15px] sm:text-base leading-tight">
+                  3273 Parsons Rd NW, Edmonton, AB T6N 1B4,<br />Canada
                 </span>
-                <p className="text-base font-bold text-gray-900 tracking-tight leading-snug">
-                  3273 Parsons Rd NW, Edmonton, AB T6N 1B4
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Map Container */}
-          <div className="rounded-[24px] overflow-hidden shadow-xl border border-gray-100 h-[220px] relative group/map">
-            <div className="absolute inset-0 bg-black/5 group-hover/map:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1768589544003!5m2!1sen!2sin"
-              title="Edmonton HQ Map"
-              className="w-full h-full grayscale group-hover/map:grayscale-0 transition-all duration-1000"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+          {/* Map */}
+          <div className="w-full h-[280px] relative px-1">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1775803378612!5m2!1sen!2sin" className="w-full h-full rounded-[24px] border-0 shadow-inner bg-white" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
