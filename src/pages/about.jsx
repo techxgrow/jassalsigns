@@ -1,7 +1,7 @@
 import CityFooter from "@/components/CityFooter";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import React, { useEffect, useState } from "react";
-import aboutUsBanner from "@/about-us-signage.jpg";
+import aboutUsBanner from "@/about-us-banner.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import signage from "@/signage.jpg";

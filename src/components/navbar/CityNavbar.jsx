@@ -11,7 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import logo from "@/logo.jpeg";
+import logo from "@/logo.png";
 const CityNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
