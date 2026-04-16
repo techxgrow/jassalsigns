@@ -28,7 +28,6 @@ const About = () => {
     <div className="bg-white text-black font-grotesk">
       <CityNavbar />
 
-      {/* Hero Section */}
       <div
         style={{
           backgroundImage: `url(${aboutUsBanner.src})`,
