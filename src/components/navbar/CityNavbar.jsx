@@ -11,7 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import logo from "@/logo.png";
 const CityNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -82,7 +82,7 @@ const CityNavbar = () => {
     <nav
       className={`fixed w-full left-0 top-0 z-50 transition-all duration-300 ${
         isScrolling
-          ? "bg-black/70 backdrop-blur-sm shadow-md"
+          ? "bg-white backdrop-blur-sm shadow-md"
           : isLightPage
             ? "bg-white shadow-sm py-2"
             : "bg-transparent"
@@ -144,13 +144,13 @@ const CityNavbar = () => {
       <div className="md:max-w-[85vw] max-w-[90vw] mx-auto flex items-center justify-between py-4 px-6 md:px-0">
         {/* Logo */}
         <Link href="/">
-          <img src="/logo.png" className="w-[200px]" alt="Logo" />
+          <img src={logo.src} className="w-[200px]" alt="Logo" />
         </Link>
 
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden z-50 ${
-            isLightPage && !isScrolling && !menuOpen
+            (isLightPage || isScrolling) && !menuOpen
               ? "text-black"
               : "text-white"
           }`}
@@ -162,17 +162,17 @@ const CityNavbar = () => {
             <div>
               <div
                 className={`w-6 h-1 mb-1 ${
-                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage || isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
               <div
                 className={`w-6 h-1 mb-1 ${
-                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage || isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
               <div
                 className={`w-6 h-1 ${
-                  isLightPage && !isScrolling ? "bg-black" : "bg-white"
+                  isLightPage || isScrolling ? "bg-black" : "bg-white"
                 }`}
               />
             </div>
@@ -184,7 +184,7 @@ const CityNavbar = () => {
           className={`absolute top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center transition-all duration-300 md:static md:flex md:flex-row md:justify-end md:items-center md:bg-transparent md:h-auto md:w-auto ${
             menuOpen ? "block" : "hidden md:flex"
           } ${
-            isLightPage && !isScrolling && !menuOpen
+            (isLightPage || isScrolling) && !menuOpen
               ? "md:text-black"
               : "md:text-white"
           }`}
@@ -233,9 +233,13 @@ const CityNavbar = () => {
               </Link>
             </li>
             <li>
-              <NavLink to="blogsSection" href="/#blogsSection">
+              <Link
+                href="/blogs"
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-[#ED1D26] transition-colors"
+              >
                 Blogs
-              </NavLink>
+              </Link>
             </li>
             <li>
               <Link

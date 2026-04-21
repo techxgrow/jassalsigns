@@ -1,10 +1,10 @@
 import CityFooter from "@/components/CityFooter";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import React, { useEffect, useState } from "react";
-import aboutUsBanner from "@/about-us-signage.jpg";
+import aboutUsBanner from "@/about-us-banner.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-import signage from "@/signage.jpg";
+import signage from "@/about-us-side.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,7 +28,6 @@ const About = () => {
     <div className="bg-white text-black font-grotesk">
       <CityNavbar />
 
-      {/* Hero Section */}
       <div
         style={{
           backgroundImage: `url(${aboutUsBanner.src})`,
@@ -403,7 +402,7 @@ const About = () => {
         </div>
       </div>
 
-      <section className="py-10 bg-[#ED1D26]">
+      <section className="py-10 bg-gradient-to-b from-[#C91A23] via-[#653A5A] to-[#0171B6]">
         <div
           className="max-w-[85vw] mx-auto text-center px-4"
           data-aos="fade-up"

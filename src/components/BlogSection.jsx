@@ -56,11 +56,19 @@ export default function BlogsSection() {
           <h2 className="text-4xl md:text-6xl font-black font-grotesk text-gray-900 uppercase tracking-tighter leading-none">
             Latest <span className="text-[#ED1D26]">Blogs</span>
           </h2>
-        </div>
-        <p className="text-gray-500 font-medium max-w-sm md:text-right leading-relaxed">
+          <p className="text-gray-500 font-medium max-w-sm md:text-left leading-relaxed">
           Discover the latest trends and expert tips in the world of
           professional signage and branding.
         </p>
+        </div>
+         <div className="mt-12 flex justify-center" data-aos="fade-up">
+            <Link
+                href="/blogs"
+                className="px-10 py-4 bg-[#ED1D26] text-white font-bold tracking-[0.2em] rounded-full uppercase hover:bg-[#101828] transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                View More
+            </Link>
+         </div>
       </div>
 
       <Swiper

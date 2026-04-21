@@ -214,7 +214,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#ED1D26]">
+      <section className="py-20 bg-gradient-to-b from-[#C91A23] via-[#653A5A] to-[#0171B6]">
         <div
           className="max-w-[85vw] mx-auto text-center px-4"
           data-aos="fade-up"

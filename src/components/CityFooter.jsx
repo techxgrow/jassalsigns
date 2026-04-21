@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 import { MapPin, Mail, Phone, ExternalLink, ChevronRight } from "lucide-react";
-
+import logo from "@/logo.png";
 // Flag Components
 const CanadaFlag = () => (
   <svg
@@ -86,7 +86,7 @@ const CityFooter = () => {
           <div className="space-y-8">
             <Link href="/" className="inline-block">
               <img
-                src="/logo.png"
+                src={logo.src}
                 alt="Jassal Signs Logo"
                 className="h-16 w-auto brightness-110"
               />
@@ -128,7 +128,7 @@ const CityFooter = () => {
                 { name: "About Us", path: "/about" },
                 { name: "Services", path: "/services" },
                 { name: "Franchise", path: "/franchise" },
-                { name: "Blogs", path: "/#blogsSection" },
+                { name: "Blogs", path: "/blogs" },
                 { name: "Contact Us", path: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
