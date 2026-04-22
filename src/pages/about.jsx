@@ -1,10 +1,10 @@
 import CityFooter from "@/components/CityFooter";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import React, { useEffect, useState } from "react";
-import aboutUsBanner from "@/about-us-banner.jpeg";
+import aboutUsBanner from "@/about-us-banner-2.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-import signage from "@/about-us-side.jpeg";
+import signage from "@/about-us-side-2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
