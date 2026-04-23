@@ -86,7 +86,6 @@ export default function SignageGallery({ limit = 8 }) {
         </div>
       </PhotoProvider>
 
-      {/* View More Button */}
       {limit > 0 && images.length > limit && (
         <div className="mt-12 flex justify-center" data-aos="fade-up">
           <Link
