@@ -13,19 +13,19 @@ const OurServices = () => {
 
   const portfolioItems = [
     {
-      imgSrc: "/citypage/services/indoorsigns.jpg",
+      imgSrc: "/citypage/services/indoor-new.png",
       category: "INDOOR SIGNS",
       title: "We make sure your message meets the masses.",
       link: "/products/indoorsigns",
     },
     {
-      imgSrc: "/citypage/services/outdoorsigns.jpg",
+      imgSrc: "/citypage/services/outdoor-new.png",
       category: "OUTDOOR SIGNS",
       title: "We make sure your message meets the masses.",
       link: "/products/outdoorsigns",
     },
     {
-      imgSrc: "/citypage/services/vehiclewraps.jpg",
+      imgSrc: "/citypage/services/vehicle-new.png",
       category: "VEHICLE WRAPS",
       title: "Transform your vehicle with Jassal Signs!",
       link: "/products/vehiclewraps",
@@ -38,7 +38,7 @@ const OurServices = () => {
     },
 
     {
-      imgSrc: "/citypage/services/pylonsigns.jpg",
+      imgSrc: "/citypage/services/pylon-new.png",
       category: "PYLON SIGNS",
       title: "Stand tall with impactful Pylon Signs by Jassal Signs",
       link: "/products/pylonsigns",
@@ -50,7 +50,7 @@ const OurServices = () => {
       link: "/products/printmedia",
     },
     {
-      imgSrc: "/citypage/services/outdoorsigns.jpg",
+      imgSrc: "/citypage/services/other-products-new.png",
       category: "OTHER PRODUCTS & SPECIALIZED SIGNAGE",
       title:
         "Beyond the standard custom-fabricated brand assets and regulatory tools.",
