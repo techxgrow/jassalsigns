@@ -7,28 +7,217 @@ import { FaExpand } from "react-icons/fa";
 import Link from "next/link";
 
 const allImages = [
-  { src: "/gallery/gl1.jpg" },
-  { src: "/gallery/gl2.jpg" },
-  { src: "/gallery/gl3.jpg" },
-  { src: "/gallery/gl4.jpg" },
-  { src: "/gallery/gl5.jpg" },
-  { src: "/gallery/gl6.jpg" },
-  { src: "/gallery/gl7.jpg" },
-  { src: "/gallery/gl8.jpg" },
-  { src: "/gallery/gl9.jpg" },
-  { src: "/citypage/services/channelletters.jpg" },
-  { src: "/citypage/services/pylonsigns.jpg" },
-  { src: "/citypage/services/indoorsigns.jpg" },
-  { src: "/citypage/services/outdoorsigns.jpg" },
-  { src: "/citypage/services/printmedia.jpg" },
-  { src: "/citypage/services/vehiclewraps.jpg" },
-  { src: "/citypage/services/vehiclewraps1.jpg" },
-  { src: "/citypage/services/service1.jpg" },
-  { src: "/citypage/services/service4.jpg" },
-  { src: "/products/product1.jpg" },
-  { src: "/products/product2.jpg" },
-  { src: "/products/product3.png" },
-  { src: "/products/product4.jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (17).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (1).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (16).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (11).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (7).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (6).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (10).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (9).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (5).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (13).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (12).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (4).jpg" },
+  { src: "/gallery/services/pylon/pylon3.jpeg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (8).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (3).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (15).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (19).jpg" },
+  { src: "/gallery/services/pylon/pylon.jpeg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (18).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (14).jpg" },
+  { src: "/gallery/services/pylon/Jassal Signs-Pylon (2).jpg" },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (9).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (29).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (13).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (25).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (5).jpg" },
+  { src: "/gallery/services/channel-sales/channel-outdoor-jassalsigns.jpeg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (33).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (32).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (4).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (24).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (12).jpg",
+  },
+  { src: "/gallery/services/channel-sales/channel-outdoor.jpeg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (28).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (8).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (23).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (3).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (35).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (19).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (15).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (14).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (18).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (34).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (2).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (22).jpg",
+  },
+  { src: "/gallery/services/channel-sales/channel-jassal-signs.jpeg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (37).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (1).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (21).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (17).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/channel-outdoor-jassalsigns(1).jpeg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (16).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (20).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (36).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (11).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (31).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (7).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (27).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (26).jpg",
+  },
+  { src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (6).jpg" },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (30).jpg",
+  },
+  {
+    src: "/gallery/services/channel-sales/Jassal Signs-Outdoor Signs (10).jpg",
+  },
+  { src: "/gallery/services/other/pylon4.jpeg" },
+  { src: "/gallery/services/printing/printing1-jassalsigns.jpeg" },
+  { src: "/gallery/services/channelJassalsigns.jpeg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (11).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (46).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (6).jpg" },
+  { src: "/gallery/services/vehicle-wraps/20160812_113741.jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (27).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (31).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (30).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (26).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (7).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (47).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (10).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (21).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (37).jpg" },
+  { src: "/gallery/services/vehicle-wraps/vehicle-wraps2.jpeg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (17).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (40).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (1).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (41).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (16).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (36).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (20).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (19).jpg" },
+  { src: "/gallery/services/vehicle-wraps/vehicle-wraps.jpeg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (35).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (23).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (2).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (42).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (15).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (39).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (38).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (14).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (43).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (3).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (22).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (34).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (18).jpg" },
+  { src: "/gallery/services/vehicle-wraps/vehicle4.jpeg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (4).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (44).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (13).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (29).jpg" },
+  { src: "/gallery/services/vehicle-wraps/vehicle3.jpeg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (8).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (48).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (33).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (25).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (24).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (32).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (9).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (28).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (12).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (45).jpg" },
+  { src: "/gallery/services/vehicle-wraps/Jassal Signs-Vehicle Wrap (5).jpg" },
+  { src: "/gallery/services/printing1-jassalsigns.jpeg" },
+  { src: "/gallery/services/channel-jassalsigns.jpeg" },
+  { src: "/gallery/services/indoor/indoor2.jpeg" },
+  { src: "/gallery/services/indoor/indoor3.jpeg" },
+  { src: "/gallery/services/indoor/indoor(1).jpeg" },
+  { src: "/gallery/services/indoor/indoor-jassalsigns.jpeg" },
+  { src: "/gallery/services/indoor/indoor.jpeg" },
+  {
+    src: "/gallery/services/indoor/WhatsApp Image 2026-02-25 at 00.43.00.jpeg",
+  },
+  { src: "/gallery/services/indoor/channel-jassal sings.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor16.jpeg" },
+  {
+    src: "/gallery/services/outdoor/WhatsApp Image 2026-02-25 at 00.56.20.jpeg",
+  },
+  { src: "/gallery/services/outdoor/outdoor.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor2.jpeg" },
+  {
+    src: "/gallery/services/outdoor/WhatsApp Image 2026-02-25 at 00.43.02.jpeg",
+  },
+  { src: "/gallery/services/outdoor/outdoor10.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor9.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor8.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor11.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(3).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor12.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(1).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(5).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor13.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(7).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(2).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor14.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor15.jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(6).jpeg" },
+  { src: "/gallery/services/outdoor/outdoor(4).jpeg" },
 ];
 
 export default function SignageGallery({ limit = 8 }) {
@@ -36,7 +225,7 @@ export default function SignageGallery({ limit = 8 }) {
 
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
-    
+
     // Shuffle images on mount
     const shuffle = (array) => {
       const newArray = [...array];
@@ -46,7 +235,7 @@ export default function SignageGallery({ limit = 8 }) {
       }
       return newArray;
     };
-    
+
     setShuffledImages(shuffle(allImages));
   }, []);
 

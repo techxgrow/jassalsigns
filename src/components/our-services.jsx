@@ -19,7 +19,7 @@ const OurServices = () => {
       link: "/products/indoorsigns",
     },
     {
-      imgSrc: "/citypage/services/outdoor-new.png",
+      imgSrc: "/citypage/services/outdoor.png",
       category: "OUTDOOR SIGNS",
       title: "We make sure your message meets the masses.",
       link: "/products/outdoorsigns",
