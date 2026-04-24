@@ -137,7 +137,7 @@ const ProductPage = () => {
         <div
           className="absolute inset-0 bg-center bg-cover scale-110 animate-pulse-slow"
           style={{
-            backgroundImage: slug ? `url(/productsimages/${slug}.jpg)` : "none",
+            backgroundImage: slug ? `url(/productsimages/${slug}.png)` : "none",
           }}
         >
           {/* Fallback for image loading or mobile specific */}
@@ -146,7 +146,7 @@ const ProductPage = () => {
             className="absolute inset-0 bg-center bg-cover opacity-60"
             style={{
               backgroundImage: slug
-                ? `url(/productsimages/${slug}.jpg)`
+                ? `url(/productsimages/${slug}.png)`
                 : "none",
             }}
           ></div>
