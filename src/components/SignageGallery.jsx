@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
@@ -6,24 +6,51 @@ import "react-photo-view/dist/react-photo-view.css";
 import { FaExpand } from "react-icons/fa";
 import Link from "next/link";
 
-const images = [
+const allImages = [
   { src: "/gallery/gl1.jpg" },
+  { src: "/gallery/gl2.jpg" },
   { src: "/gallery/gl3.jpg" },
   { src: "/gallery/gl4.jpg" },
   { src: "/gallery/gl5.jpg" },
+  { src: "/gallery/gl6.jpg" },
   { src: "/gallery/gl7.jpg" },
+  { src: "/gallery/gl8.jpg" },
   { src: "/gallery/gl9.jpg" },
   { src: "/citypage/services/channelletters.jpg" },
   { src: "/citypage/services/pylonsigns.jpg" },
+  { src: "/citypage/services/indoorsigns.jpg" },
+  { src: "/citypage/services/outdoorsigns.jpg" },
+  { src: "/citypage/services/printmedia.jpg" },
+  { src: "/citypage/services/vehiclewraps.jpg" },
+  { src: "/citypage/services/vehiclewraps1.jpg" },
+  { src: "/citypage/services/service1.jpg" },
+  { src: "/citypage/services/service4.jpg" },
   { src: "/products/product1.jpg" },
+  { src: "/products/product2.jpg" },
+  { src: "/products/product3.png" },
+  { src: "/products/product4.jpg" },
 ];
 
 export default function SignageGallery({ limit = 8 }) {
-  const displayImages = limit ? images.slice(0, limit) : images;
+  const [shuffledImages, setShuffledImages] = useState([]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
+    
+    // Shuffle images on mount
+    const shuffle = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+    
+    setShuffledImages(shuffle(allImages));
   }, []);
+
+  const displayImages = limit ? shuffledImages.slice(0, limit) : shuffledImages;
 
   return (
     <section
@@ -56,7 +83,7 @@ export default function SignageGallery({ limit = 8 }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {displayImages.map((img, index) => (
             <div
-              key={index}
+              key={`${img.src}-${index}`}
               className="relative group rounded-3xl overflow-hidden cursor-zoom-in shadow-lg hover:shadow-[0_20px_50px_rgba(237,29,38,0.3)] transition-all duration-500 aspect-[4/3]"
               data-aos="fade-up"
               data-aos-delay={(index % 3) * 100}
@@ -77,8 +104,6 @@ export default function SignageGallery({ limit = 8 }) {
                       <FaExpand className="text-white text-2xl" />
                     </div>
                   </div>
-
-                  {/* Bottom Gradient for Text contrast (optional, keeping it clean for now per uniform request) */}
                 </div>
               </PhotoView>
             </div>
@@ -86,7 +111,7 @@ export default function SignageGallery({ limit = 8 }) {
         </div>
       </PhotoProvider>
 
-      {limit > 0 && images.length > limit && (
+      {limit > 0 && allImages.length > limit && (
         <div className="mt-12 flex justify-center" data-aos="fade-up">
           <Link
             href="/gallery"

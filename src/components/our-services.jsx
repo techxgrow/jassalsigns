@@ -31,7 +31,7 @@ const OurServices = () => {
       link: "/products/vehiclewraps",
     },
     {
-      imgSrc: "/citypage/services/channelletters.jpg",
+      imgSrc: "/citypage/services/Channel.png",
       category: "CHANNEL LETTERS",
       title: "Shine bright with custom Channel Letters by Jassal Signs",
       link: "/products/channelletters",
