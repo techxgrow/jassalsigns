@@ -15,6 +15,19 @@ export default function Document() {
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-747038078" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-747038078');
+            `,
+          }}
+        />
+        {/* End Google tag (gtag.js) */}
         <link rel="icon" href="/favicon.png" />
       </Head>
       <body className="antialiased">
