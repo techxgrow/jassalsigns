@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 import { User, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/router";
+
 
 const ConsultationForm = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,17 +46,9 @@ const ConsultationForm = () => {
       .then((res) => {
         // console.log(res);
         setLoading(false);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          signage: "",
-          location: "",
-          message: "",
-          website: "Edmonton",
-        });
+        router.push("/thank-you-consultation");
       })
+
       .catch((err) => {
         // console.log(err);
         setLoading(false);

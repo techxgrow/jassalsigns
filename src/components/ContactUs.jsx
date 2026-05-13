@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, User, MessageSquare, Send } from "lucide-react";
 import { ClipLoader } from "react-spinners";
 import axios from "axios";
+import { useRouter } from "next/router";
+
 
 const ContactUs = ({ city }) => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -38,15 +42,9 @@ const ContactUs = ({ city }) => {
       .post("/api/contact", formData)
       .then((res) => {
         setLoading(false);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-          website: city || "Edmonton",
-        });
+        router.push("/thank-you");
       })
+
       .catch((err) => {
         alert("Failed to send email. Please try again.");
         setLoading(false);
