@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import ExpertMediaAgency from "@/components/ExpertMediaAgency";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import OurServices from "@/components/our-services";
@@ -45,8 +46,47 @@ const Home = () => {
     },
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What signage services does Jassal Signs provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jassal Signs provides a comprehensive range of custom signage services including outdoor signs, indoor signs, channel letters, vehicle wraps, pylon signs, and large format printing across Alberta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Jassal Signs located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are headquartered at 3273 Parsons Rd NW, Edmonton, AB T6N 1B4, Canada, and serve businesses throughout Alberta including Calgary, Surrey, and Abbotsford."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you handle signage permits and installation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we are a full-service signage company. We handle everything from initial design and city permits to in-house manufacturing, professional installation, and ongoing maintenance."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <Head>
+        <title>Jassal Signs | Custom Signage & Printing Solutions in Alberta</title>
+        <meta name="description" content="Jassal Signs offers premium custom signs, channel letters, vehicle wraps, and commercial printing across Alberta. 30+ years of excellence." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
       <CityNavbar />
       <CitySlider cityName={cityName} />
       <Element name="aboutSection" id="aboutSection">

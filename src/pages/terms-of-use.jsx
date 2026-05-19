@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import CityFooter from "@/components/CityFooter";
 import AOS from "aos";
@@ -19,6 +20,10 @@ const TermsOfUse = () => {
 
   return (
     <div className="bg-white text-black font-grotesk">
+      <Head>
+        <title>Terms of Use | Jassal Signs</title>
+        <meta name="description" content="Read the Terms of Use for Jassal Signs. By accessing and using our website, you agree to comply with these terms." />
+      </Head>
       <CityNavbar />
 
       {/* Header */}

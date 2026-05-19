@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection";
+import Head from "next/head";
 import BlogsSection from "@/components/BlogSection";
 import CityFooter from "@/components/CityFooter";
 import CitySlider from "@/components/CitySlider";
@@ -45,6 +46,10 @@ const CityPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{`Custom Signage Solutions in ${router.query.slug || "Alberta"} | Jassal Signs`}</title>
+        <meta name="description" content={`Jassal Signs offers premium custom signs, channel letters, and commercial printing in ${router.query.slug || "Alberta"}. Get a free quote today!`} />
+      </Head>
       <CityNavbar />
       <CitySlider cityName={router.query.slug} />
       <Element name="productSection">

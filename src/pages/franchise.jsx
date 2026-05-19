@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import CityFooter from "@/components/CityFooter";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import AOS from "aos";
@@ -20,6 +21,10 @@ const FranchisePage = () => {
 
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
+      <Head>
+        <title>Franchise Opportunities | Jassal Signs</title>
+        <meta name="description" content="Join the Jassal Signs family. Explore franchise opportunities to start your own highly profitable signage and printing business." />
+      </Head>
       <CityNavbar />
 
       {/* Hero Section */}

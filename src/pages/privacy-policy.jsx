@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import CityFooter from "@/components/CityFooter";
 import AOS from "aos";
@@ -19,6 +20,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="bg-white text-black font-grotesk">
+      <Head>
+        <title>Privacy Policy | Jassal Signs</title>
+        <meta name="description" content="Read the Privacy Policy of Jassal Signs to understand how we collect, use, and protect your personal information." />
+      </Head>
       <CityNavbar />
 
       {/* Header */}

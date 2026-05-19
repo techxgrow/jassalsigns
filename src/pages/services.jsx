@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import CityFooter from "@/components/CityFooter";
 import AOS from "aos";
@@ -95,6 +96,10 @@ const ServicesPage = () => {
 
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
+      <Head>
+        <title>Our Services | Jassal Signs</title>
+        <meta name="description" content="Explore Jassal Signs' comprehensive visual solutions: Design, Permits, Manufacturing, Printing, Installation, and Maintenance." />
+      </Head>
       <CityNavbar />
 
       {/* Hero Section */}

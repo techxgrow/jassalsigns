@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { data } from "../../../assets/data.js";
 import CityNavbar from '@/components/navbar/CityNavbar.jsx';
 import CityFooter from '@/components/CityFooter.jsx';
@@ -7,6 +8,10 @@ import Link from 'next/link';
 const BlogsListing = () => {
   return (
     <div>
+      <Head>
+        <title>Our Blogs | Jassal Signs</title>
+        <meta name="description" content="Read the latest insights and news about branding, signage, and marketing from Jassal Signs." />
+      </Head>
       <CityNavbar />
       
       {/* Hero Section */}

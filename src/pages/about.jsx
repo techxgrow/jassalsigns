@@ -1,3 +1,4 @@
+import Head from "next/head";
 import CityFooter from "@/components/CityFooter";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import React, { useEffect, useState } from "react";
@@ -26,6 +27,10 @@ const About = () => {
 
   return (
     <div className="bg-white text-black font-grotesk">
+      <Head>
+        <title>About Us | Jassal Signs</title>
+        <meta name="description" content="Learn about Jassal Signs, a premier signage and commercial printing company serving businesses across Alberta for over 30 years." />
+      </Head>
       <CityNavbar />
 
       <div

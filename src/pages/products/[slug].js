@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { data } from "../../../assets/data";
 import React, { useEffect } from "react";
 import ProductNavbar from "@/components/navbar/ProductNavbar";
@@ -127,8 +128,62 @@ const ProductPage = () => {
     );
   };
 
+  const currentFaqs = data.productPage[slug]?.consultationObj?.faqs || faqs;
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": currentFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Service",
+    "serviceType": data.productPage[slug]?.heading || "Signage Services",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Jassal Signs"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Alberta"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Signage Products",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": data.productPage[slug]?.heading || "Signage Services"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
+      <Head>
+        <title>{data.productPage[slug]?.heading ? `${data.productPage[slug].heading} | Jassal Signs` : "Premium Signage | Jassal Signs"}</title>
+        <meta name="description" content={data.productPage[slug]?.para1?.substring(0, 160) || "Explore premium custom signage solutions by Jassal Signs."} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
       <CityNavbar />
 
       {/* Cinematic Hero Start */}
