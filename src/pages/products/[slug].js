@@ -24,9 +24,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const ProductPage = () => {
+const ProductPage = ({ slug: propSlug }) => {
   const router = useRouter();
-  const slug = router.query.slug;
+  const slug = propSlug || router.query.slug;
 
   const [mounted, setMounted] = React.useState(false);
   const [openFaqIndex, setOpenFaqIndex] = React.useState(null);
@@ -52,9 +52,7 @@ const ProductPage = () => {
     }
   }, [slug]);
 
-  if (!mounted || !slug || !data.productPage[slug]) {
-    return <div className="min-h-screen bg-white"></div>;
-  }
+
 
   const aosAnimations = [
     "fade-up",
@@ -170,8 +168,33 @@ const ProductPage = () => {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jassalsignsedm.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.jassalsignsedm.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": data.productPage[slug]?.heading || "Product Details",
+        "item": `https://www.jassalsignsedm.com/products/${slug}`
+      }
+    ]
+  };
+
   return (
-    <div className="bg-white text-black font-grotesk overflow-x-hidden">
+    <>
       <Head>
         <title>{data.productPage[slug]?.heading ? `${data.productPage[slug].heading} | Jassal Signs` : "Premium Signage | Jassal Signs"}</title>
         <meta name="description" content={data.productPage[slug]?.para1?.substring(0, 160) || "Explore premium custom signage solutions by Jassal Signs."} />
@@ -183,8 +206,16 @@ const ProductPage = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       </Head>
-      <CityNavbar />
+      {!mounted || !slug || !data.productPage[slug] ? (
+        <div className="min-h-screen bg-white"></div>
+      ) : (
+        <div className="bg-white text-black font-grotesk overflow-x-hidden">
+          <CityNavbar />
 
       {/* Cinematic Hero Start */}
       <section className="relative h-[60vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
@@ -570,8 +601,26 @@ const ProductPage = () => {
       {/* <ProductsFooter /> */}
 
       <CityFooter />
-    </div>
+        </div>
+      )}
+    </>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = Object.keys(data.productPage).map((slug) => ({
+    params: { slug },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  return {
+    props: {
+      slug,
+    },
+  };
+}
 
 export default ProductPage;

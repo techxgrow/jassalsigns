@@ -14,8 +14,11 @@ import Testimonials from "@/components/Testimonials";
 import { useRouter } from "next/router";
 import { Element } from "react-scroll";
 
-const CityPage = () => {
+import { data } from "../../../assets/data";
+
+const CityPage = ({ slug: propSlug }) => {
   const router = useRouter();
+  const slug = propSlug || router.query.slug;
 
   const testimonialsData = [
     {
@@ -44,14 +47,67 @@ const CityPage = () => {
     },
   ];
 
+  const cityKey = slug ? slug.toUpperCase() : null;
+  const cityData = cityKey ? data.contactPage[cityKey] : null;
+
+  const branchSchema = cityData ? {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Jassal Signs - ${cityKey.charAt(0) + cityKey.slice(1).toLowerCase()}`,
+    "image": "https://www.jassalsignsedm.com/logo.png",
+    "url": `https://www.jassalsignsedm.com/citypage/${slug}`,
+    "telephone": cityData.phone,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": cityData.address.split(",")[0],
+      "addressLocality": cityData.address.split(",")[1]?.trim() || "Newton",
+      "addressRegion": cityData.address.split(",")[2]?.trim().split(" ")[0] || "BC",
+      "postalCode": cityData.address.split(",")[2]?.trim().split(" ").slice(1).join(" ") || "",
+      "addressCountry": "CA"
+    }
+  } : null;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jassalsignsedm.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": slug ? slug.charAt(0).toUpperCase() + slug.slice(1).toLowerCase() : "Alberta",
+        "item": `https://www.jassalsignsedm.com/citypage/${slug}`
+      }
+    ]
+  };
+
+  const displayName = slug ? slug.charAt(0).toUpperCase() + slug.slice(1).toLowerCase() : "Alberta";
+
   return (
     <>
       <Head>
-        <title>{`Custom Signage Solutions in ${router.query.slug || "Alberta"} | Jassal Signs`}</title>
-        <meta name="description" content={`Jassal Signs offers premium custom signs, channel letters, and commercial printing in ${router.query.slug || "Alberta"}. Get a free quote today!`} />
+        <title>{`Custom Signage Solutions in ${displayName} | Jassal Signs`}</title>
+        <meta name="description" content={`Jassal Signs offers premium custom signs, channel letters, and commercial printing in ${displayName}. Get a free quote today!`} />
+        {branchSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(branchSchema) }}
+          />
+        )}
+        {breadcrumbSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
+        )}
       </Head>
       <CityNavbar />
-      <CitySlider cityName={router.query.slug} />
+      <CitySlider cityName={slug} />
       <Element name="productSection">
         <AboutSection />
       </Element>
@@ -73,12 +129,27 @@ const CityPage = () => {
       <OurClients />
 
       <Element name="contactSection">
-        <ContactUs city={router.query.slug} />
+        <ContactUs city={slug} />
       </Element>
       {/* <CityPlacesSection />  */}
       <CityFooter />
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const cities = Object.keys(data.contactPage);
+  const paths = cities.map((city) => ({ params: { slug: city } }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  return {
+    props: {
+      slug,
+    },
+  };
+}
 
 export default CityPage;

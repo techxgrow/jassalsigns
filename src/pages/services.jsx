@@ -92,15 +92,73 @@ const ServicesPage = () => {
     },
   ];
 
-  if (!mounted) return null;
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Commercial Signage and Print Services",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Jassal Signs",
+      "image": "https://www.jassalsignsedm.com/logo.png",
+      "telephone": "+1-780-437-7790",
+      "url": "https://www.jassalsignsedm.com"
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Alberta" },
+      { "@type": "State", "name": "British Columbia" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Signage and Print Offerings",
+      "itemListElement": services.map((service) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description
+        }
+      }))
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jassalsignsedm.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.jassalsignsedm.com/services"
+      }
+    ]
+  };
 
   return (
-    <div className="bg-white text-black font-grotesk overflow-x-hidden">
+    <>
       <Head>
         <title>Our Services | Jassal Signs</title>
         <meta name="description" content="Explore Jassal Signs' comprehensive visual solutions: Design, Permits, Manufacturing, Printing, Installation, and Maintenance." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       </Head>
-      <CityNavbar />
+      {!mounted ? (
+        <div className="bg-white text-black font-grotesk overflow-x-hidden min-h-screen"></div>
+      ) : (
+        <div className="bg-white text-black font-grotesk overflow-x-hidden">
+          <CityNavbar />
 
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -238,7 +296,9 @@ const ServicesPage = () => {
       </section>
 
       <CityFooter />
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 

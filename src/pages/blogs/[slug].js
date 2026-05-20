@@ -7,11 +7,11 @@ import CityFooter from '@/components/CityFooter.jsx';
 import CityNavbar from '@/components/navbar/CityNavbar.jsx';
 import { ClipLoader } from "react-spinners";
 
-const BlogPage = () => {
+const BlogPage = ({ slug: propSlug, initialBlogData, initialRecentBlogs, initialIndex }) => {
   const router = useRouter();
-  const [blogData, setBlogData] = useState(null);
-  const [recentBlogs, setRecentBlogs] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [blogData, setBlogData] = useState(initialBlogData);
+  const [recentBlogs, setRecentBlogs] = useState(initialRecentBlogs);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [loading, setLoading] = useState(false);
 
   const override= {
@@ -70,11 +70,69 @@ const BlogPage = () => {
     }
   };
 
+  const blogPostingSchema = blogData ? {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blogData.heading,
+    "image": `https://www.jassalsignsedm.com${blogData.image}`,
+    "author": {
+      "@type": "Person",
+      "name": "Jassal Signs Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jassal Signs",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.jassalsignsedm.com/logo.png"
+      }
+    },
+    "datePublished": "2025-05-12T11:00:00+00:00",
+    "description": blogData.desc ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."
+  } : null;
+
+  const breadcrumbSchema = blogData ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jassalsignsedm.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": "https://www.jassalsignsedm.com/blogs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blogData.heading,
+        "item": `https://www.jassalsignsedm.com/blogs/${blogData.id}`
+      }
+    ]
+  } : null;
+
   return (
     <div>
       <Head>
         <title>{blogData ? `${blogData.heading} | Jassal Signs` : "Blog | Jassal Signs"}</title>
         <meta name="description" content={blogData ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."} />
+        {blogPostingSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+          />
+        )}
+        {breadcrumbSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
+        )}
       </Head>
       {/* Loader Overlay */}
       {loading && (
@@ -205,5 +263,28 @@ const BlogPage = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = data.blogPage.map((blog) => ({
+    params: { slug: String(blog.id) },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const blogList = data.blogPage;
+  const index = blogList.findIndex((blog) => blog.id == slug);
+  const initialBlogData = index !== -1 ? blogList[index] : null;
+  const initialRecentBlogs = index !== -1 ? blogList.filter((_, i) => i !== index) : [];
+  return {
+    props: {
+      slug,
+      initialBlogData,
+      initialRecentBlogs,
+      initialIndex: index,
+    },
+  };
+}
 
 export default BlogPage;
