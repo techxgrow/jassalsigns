@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { data } from "../../../assets/data.js";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
@@ -71,6 +72,10 @@ const BlogPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>{blogData ? `${blogData.heading} | Jassal Signs` : "Blog | Jassal Signs"}</title>
+        <meta name="description" content={blogData ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."} />
+      </Head>
       {/* Loader Overlay */}
       {loading && (
       <div className="fixed inset-0 bg-gray-700/30 backdrop-blur-md z-50 flex items-center justify-center">
