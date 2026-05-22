@@ -22,15 +22,26 @@ const About = () => {
   }, []);
 
   if (!mounted) {
-    return null;
+    return <div />;
   }
 
   return (
     <div className="bg-white text-black font-grotesk">
+
       <Head>
-        <title>About Us | Jassal Signs</title>
-        <meta name="description" content="Learn about Jassal Signs, a premier signage and commercial printing company serving businesses across Alberta for over 30 years." />
+        <title>About Jassal Signs | Edmonton Signage Company</title>
+
+        <meta
+          name="description"
+          content="Learn about Jassal Signs, a trusted Edmonton signage and commercial printing company providing custom signs, vehicle wraps, storefront signs, and branding solutions for businesses across Alberta."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.jassalsignsedm.com/about"
+        />
       </Head>
+
       <CityNavbar />
 
       <div
@@ -426,7 +437,7 @@ const About = () => {
       </section>
       <CityFooter />
     </div>
-  );
+  )
 };
 
 export default About;
