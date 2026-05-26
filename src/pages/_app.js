@@ -74,6 +74,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
       <Toaster position="top-center" reverseOrder={false} />
+      {/* new branch */}
     </main>
   );
 }
