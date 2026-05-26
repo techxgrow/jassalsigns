@@ -110,6 +110,52 @@ const About = () => {
         </div>
       </div>
 
+      {/* Local Heritage & Operational History Section */}
+      <div className="bg-gray-50 py-16 md:py-24 border-t border-gray-100">
+        <div className="max-w-[85vw] mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
+          <div data-aos="fade-right">
+            <h4 className="text-[#ED1E26] font-bold uppercase tracking-widest mb-4">
+              Our Legacy & Infrastructure
+            </h4>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight uppercase tracking-tighter mb-8">
+              Decades of Manufacturing Leadership <br />
+              <span className="text-[#ED1E26]">In the Heart of Edmonton</span>
+            </h2>
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">
+              <p>
+                Founded over 30 years ago with a single mission to elevate Alberta's visual commercial landscape, Jassal Signs has matured into one of Western Canada's most technologically advanced architectural signage manufacturers. Operating from our state-of-the-art facility located at <strong>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</strong>, our local facility bridges seasoned artisanal craftsmanship with high-capacity industrial fabrication.
+              </p>
+              <p>
+                Our structural and production capacity is built upon heavy capital investments in premium precision machinery. We utilize multi-axis industrial CNC routers for metal and acrylic profiling, high-definition large format solvent printers for weather-resistant wrap graphics, and automated channel letter bending machinery that guarantees sub-millimeter tolerances on intricate dimensional logos. Our facility features climate-controlled indoor installation bays dedicated specifically to wrapping commercial fleet vehicles under immaculate dust-free conditions, ensuring absolute vinyl adhesion and premium longevity.
+              </p>
+              <p>
+                We do not outsource. Every structural storefront sign, illuminated pylon structure, and dimensional logo is engineered, welded, illuminated with energy-efficient LEDs, and certified right here under our Edmonton roof. This vertical integration allows Jassal Signs to enforce strict quality controls, secure fast municipal zoning permits, and serve our local business community with zero compromises.
+              </p>
+            </div>
+          </div>
+          <div className="relative" data-aos="fade-left">
+            <div className="absolute -inset-4 bg-gradient-to-r from-red-500/10 to-blue-500/10 rounded-[40px] blur-xl opacity-60"></div>
+            <div className="relative bg-white border border-gray-100 p-8 rounded-[40px] shadow-2xl">
+              <h3 className="text-2xl font-black text-gray-900 mb-6 uppercase tracking-tight">Our Operational Benchmarks</h3>
+              <div className="space-y-6">
+                {[
+                  { label: "Edmonton Headquarters", value: "3273 Parsons Rd NW, Edmonton, AB" },
+                  { label: "In-House Infrastructure", value: "CNC Metal Routing, Automatic Bending, Solvent Printing" },
+                  { label: "Fleet Customization Bays", value: "Climate-Controlled, Dust-Free Indoor Vinyl Application" },
+                  { label: "Regional Coverage", value: "Edmonton, Calgary, Surrey, Abbotsford, Cloverdale" },
+                  { label: "Operational Integrity", value: "Fully Certified Structural Welders & Safety-Accredited Crews" }
+                ].map((item, index) => (
+                  <div key={index} className="flex flex-col pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+                    <span className="text-xs text-[#ED1E26] font-bold uppercase tracking-widest mb-1">{item.label}</span>
+                    <span className="text-base text-gray-900 font-extrabold leading-tight">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Philosophy Section (Mission, Vision, Approach) */}
       <div className="bg-gray-900 py-20 text-white overflow-hidden">
         <div className="max-w-[85vw] mx-auto">

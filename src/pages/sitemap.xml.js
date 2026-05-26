@@ -47,7 +47,7 @@ function generateSiteMap() {
   const cities = ['EDMONTON', 'CALGARY', 'SURREY', 'CLOVERDALE', 'ABBOTSFORD'];
   const cityUrls = cities.map(city => `
   <url>
-    <loc>${URL}/citypage/${city}</loc>
+    <loc>${URL}/citypage/${city.toLowerCase()}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${city === 'EDMONTON' ? '0.9' : '0.8'}</priority>

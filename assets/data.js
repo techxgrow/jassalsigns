@@ -187,24 +187,24 @@ export const data = {
         ],
         faqs: [
           {
-            question: "How long does a vehicle wrap typically last?",
+            question: "How long does a vehicle wrap last in Edmonton?",
             answer:
-              "We use premium 3M and Avery Dennison vinyls that are rated for 5 to 7 years. The lifespan depends on care and exposure to the elements, but our high-quality laminates provide excellent UV and scratch protection.",
+              "We manufacture vehicle wraps using premium 3M and Avery Dennison cast vinyl films that are engineered to last 5 to 7 years. Jassal Signs applies specialized UV-protective overlays to prevent fading, cracking, and damage from Alberta road salt and gravel.",
           },
           {
-            question: "Will the wrap damage my vehicle's paint?",
+            question: "Will a commercial wrap damage my vehicle's paint?",
             answer:
-              "Quite the opposite! A professionally installed wrap acts as a protective layer against stone chips, sun fading, and minor abrasions. When it's time to sell the vehicle, the wrap can be removed to reveal the original paint in the same condition it was in on the day it was wrapped.",
+              "No, a professionally installed vinyl wrap does not damage your vehicle's factory paint. Jassal Signs uses safe, clean-release adhesives that act as a protective shield against minor scratches and UV fading, preserving the resale value of your fleet.",
           },
           {
-            question: "How do I wash a wrapped vehicle?",
+            question: "How should I wash my wrapped business vehicle?",
             answer:
-              "We recommend hand washing with a soft sponge and non-abrasive soap. While touchless car washes are generally safe, high-pressure sprayers and mechanical brushes can lift the edges of the vinyl over time.",
+              "We recommend hand washing your wrapped vehicle with a soft sponge and non-abrasive detergent. Jassal Signs advises avoiding high-pressure touchless automatic washes, which can lift the edges of the vinyl graphics over time.",
           },
           {
-            question: "How long does the installation take?",
+            question: "How long does vehicle wrap installation take at your Edmonton shop?",
             answer:
-              "A full wrap typically takes 2 to 3 days in our climate-controlled facility. This allows the vinyl to properly 'set' and ensures every edge is tucked and sealed for a seamless finish.",
+              "A professional commercial vehicle wrap installation typically takes 2 to 3 days in our climate-controlled Parsons Road facility. Jassal Signs ensures clean temperature regulation to guarantee immaculate, bubble-free vinyl adhesion.",
           },
         ],
       },
@@ -257,25 +257,24 @@ export const data = {
         ],
         faqs: [
           {
-            question: "Are LED channel letters energy efficient?",
+            question: "Are LED channel letters energy efficient for Edmonton businesses?",
             answer:
-              "Yes! We use the latest low-voltage LED technology which consumes significantly less power than traditional neon or fluorescent lighting. This not only lowers your monthly utility bill but also reduces your environmental footprint.",
+              "Yes, Jassal Signs fabricates low-voltage 12V LED channel letters that consume up to 80% less energy than traditional neon or fluorescent storefront signs. We utilize premium CSA-approved components to minimize monthly utility costs.",
           },
           {
-            question:
-              "What is the difference between a Raceway and a Flush Mount?",
+            question: "What is the difference between raceway and flush mounting storefront signs?",
             answer:
-              "A Raceway is a metal box that houses all the wiring and power supplies; the letters are attached to the box, and the box is attached to the building. Flush Mount letters are attached directly to the wall with the wiring hidden behind the facade. We can help you decide which is best based on your building's rules.",
+              "Raceway mounting attaches individual letters to an aluminum metal box housing all electrical wiring, which is then mounted to the building facade. Flush mounting attaches individual letters directly to the wall with all wiring run behind the wall. Jassal Signs handles both professional installation styles depending on local commercial landlord rules.",
           },
           {
-            question: "How do you ensure the colors match my logo?",
+            question: "How does Jassal Signs ensure exact brand color matching?",
             answer:
-              "We use specialized translucent vinyls and tinted acrylics that are color-matched to your specific brand guidelines, ensuring your sign looks identical to your digital and print branding.",
+              "Jassal Signs utilizes high-precision optical spectrophotometers and premium color-matched translucent vinyls from 3M and Avery Dennison. We ensure your illuminated signage colors align exactly with your vector digital logo profiles.",
           },
           {
-            question: "Is maintenance difficult for illuminated signs?",
+            question: "Do illuminated storefront signs require frequent technical maintenance?",
             answer:
-              "Our LED systems are rated for over 50,000 hours of life. Because we use high-quality, weather-sealed aluminum, maintenance is minimal. We do offer cleaning and technical check-ups to ensure every letter stays bright.",
+              "No, Jassal Signs engineers illuminated signage using premium LEDs rated for over 50,000 hours of continuous operation. We construct our channel letters from rust-proof, weather-sealed aluminum to minimize maintenance.",
           },
         ],
       },
@@ -545,26 +544,24 @@ export const data = {
         ],
         faqs: [
           {
-            question:
-              "How do your signs handle Edmonton’s extreme winter weather?",
+            question: "How do Jassal Signs outdoor signs withstand extreme Edmonton winters?",
             answer:
-              "We use industrial-grade aluminum, UV-protected coatings, and specialized adhesives specifically tested for the -40°C to +30°C temperature swings in Alberta. Our signs are built to resist fading, cracking, and rust.",
+              "We engineer outdoor signs using heavy-duty, marine-grade structural aluminum and UV-stable architectural coatings that resist fading and cracking. Jassal Signs structurally tests all outdoor displays to withstand Alberta's demanding -40°C to +35°C temperature swings.",
           },
           {
-            question: "Do I need a permit for my outdoor sign?",
+            question: "Does Jassal Signs manage the city sign permit process?",
             answer:
-              "In most cases, yes. Signage bylaws in Edmonton and Calgary can be complex. We provide expert guidance on local regulations and can assist in the permit application process to ensure your sign is fully compliant.",
+              "Yes, Jassal Signs provides comprehensive, full-service municipal permitting services in Edmonton and Calgary. We manage the entire process, including site survey, structural engineering drawings, and zoning application submissions.",
           },
           {
-            question:
-              "What is the difference between a Fascia sign and a Monument sign?",
+            question: "What is the primary difference between a fascia sign and a monument sign?",
             answer:
-              'A Fascia sign is mounted directly to the "face" of your building. A Monument sign is a freestanding structure detached from the building, usually placed near the road or entrance for better visibility.',
+              "A fascia sign is an exterior business sign mounted directly to the building's facade, whereas a monument sign is a freestanding double-sided ground-level structure detached from the building. Jassal Signs designs and installs both structures to maximize roadside visibility.",
           },
           {
-            question: "How long does an outdoor sign typically last?",
+            question: "How long does a custom business storefront sign last?",
             answer:
-              "With proper professional installation and high-quality materials, our outdoor signs are designed to last 10 to 15+ years. We also offer maintenance services to keep your signage looking new.",
+              "Jassal Signs manufactures premium outdoor signs designed to remain structurally sound and visually clean for 10 to 15+ years. We offer a comprehensive warranty on all structural aluminum fabrication and LED electronic components.",
           },
         ],
       },
