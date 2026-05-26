@@ -24,7 +24,7 @@ const BlogsListing = () => {
       >
         <div className="absolute inset-0 bg-black/30"></div>
         <div className='flex flex-col justify-center gap-4 items-center z-10'>
-          <h2 className="text-5xl font-bold uppercase">Our Blogs</h2>
+          <h1 className="text-5xl font-bold uppercase">Our Blogs</h1>
           <h4 className="text-md font-semibold">Home {'>'} Blogs</h4>
         </div>
       </div>

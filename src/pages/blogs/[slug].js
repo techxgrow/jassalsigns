@@ -105,7 +105,7 @@ const BlogPage = () => {
       >
         <div className="absolute inset-0 bg-black/30 "></div>
         <div className='flex flex-col justify-center gap-4 items-center'>
-        <h2 className="text-5xl relative font-bold z-10">BLOGS</h2>
+        <span className="text-5xl relative font-bold z-10">BLOGS</span>
        <h4 className="text-md font-semibold">{`blogs > ${router.query.slug}`}</h4>
        </div>
       </div>
@@ -127,7 +127,7 @@ const BlogPage = () => {
               </div>
             </div>
             <div className="flex-1 flex flex-col justify-start gap-4 py-5">
-              <h2 className="text-4xl font-bold text-black">{blogData?.heading}</h2>
+              <h1 className="text-4xl font-bold text-black">{blogData?.heading}</h1>
               <p className="text-xl text-red-700">Category: Branding</p>
               <div className="flex space-x-4 text-xl text-white">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-blue-600 p-2 rounded-full">

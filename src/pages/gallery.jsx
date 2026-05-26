@@ -81,6 +81,7 @@ const GalleryPage = () => {
                 Portfolio
               </span>
             </h1>
+            <h2 className="sr-only">Explore Custom Business Signs and Decals by Category</h2>
           </div>
 
           {/* Tabs */}

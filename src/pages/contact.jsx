@@ -15,6 +15,7 @@ const ContactPage = () => {
         />
       </Head>
       <CityNavbar />
+      <h1 className="sr-only">Contact Jassal Signs - Edmonton Storefront Signage & Printing</h1>
       <div className="pt-24 bg-white min-h-screen">
         <ContactUs />
       </div>
