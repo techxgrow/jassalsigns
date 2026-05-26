@@ -33,6 +33,9 @@ const BlogPage = () => {
 
       const filtered = blogList.filter((_, i) => i !== index);
       setRecentBlogs(filtered);
+    } else {
+      // Fallback: If not found, show all blogs in sidebar so the user is not stranded
+      setRecentBlogs(blogList);
     }
   }, [router.query.slug]);
 
@@ -137,15 +140,15 @@ const BlogPage = () => {
           </div>
 
           {/* Description */}
-          <div dangerouslySetInnerHTML={{ __html: `${blogData?.desc}` }} className='my-5 text-[20px]' />
+          <div dangerouslySetInnerHTML={{ __html: blogData?.desc || '' }} className='my-5 text-[20px]' />
 
           {/* Author Info */}
           <div className="flex items-center justify-between pt-5 mt-10 text-gray-600 text-sm">
             <div className="flex items-center gap-3">
-              <img src={`${blogData?.userImage}`} className="w-12 h-12 rounded-full object-cover" alt="Author" />
+              <img src={`${blogData?.userImage || '/images/blog/author-jassal.jpg'}`} className="w-12 h-12 rounded-full object-cover" alt="Author" />
               <div>
-                <p className="font-semibold text-xl text-black">John Doe</p>
-                <p className="text-[18px]">Posted on May 12, 2025 at 11:00 AM</p>
+                <p className="font-semibold text-xl text-black">{blogData?.author || "Jassal Signs"}</p>
+                <p className="text-[18px]">{blogData?.date ? `Posted on ${blogData.date}` : "Posted on May 26, 2026"}</p>
               </div>
             </div>
           </div>

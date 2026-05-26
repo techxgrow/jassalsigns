@@ -84,6 +84,8 @@ export const data = {
       heading: "The Ultimate Guide to Edmonton Commercial Business Signage",
       image: "/images/blog/commercial-signage-guide.jpg",
       userImage: "/images/blog/author-jassal.jpg",
+      author: "Jassal Signs",
+      date: "May 26, 2026",
       desc: `
         <article style="line-height: 1.8; color: #1a1a1a; font-size: 16px;">
           <p style="margin-bottom: 20px;">
@@ -117,6 +119,8 @@ export const data = {
       heading: "The Business Owner Guide to Vehicle Wraps & Fleet Graphics",
       image: "/images/blog/vehicle-wraps-guide.jpg",
       userImage: "/images/blog/author-jassal.jpg",
+      author: "Jassal Signs",
+      date: "May 26, 2026",
       desc: `
         <article style="line-height: 1.8; color: #1a1a1a; font-size: 16px;">
           <p style="margin-bottom: 20px;">
