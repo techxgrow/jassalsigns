@@ -40,6 +40,10 @@ const BlogsListing = () => {
                   <div className="absolute top-4 left-4 bg-[#ED1D26] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                     Branding
                   </div>
+                  {/* Elegant Branding Logo Watermark */}
+                  <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-md border border-gray-100/50 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                    <img src="/logo.png" alt="Jassal Signs" className="h-6 w-auto object-contain" />
+                  </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#ED1D26] transition-colors">{blog.heading}</h3>

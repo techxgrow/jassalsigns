@@ -115,12 +115,16 @@ const BlogPage = () => {
         {/* Left Content */}
         <div className='border-0 border-r-1 border-gray-400 pr-2'>
           <div className='flex gap-6'>
-            <div className="flex-1">
+            <div className="flex-1 relative overflow-hidden rounded-md max-w-[450px]">
               <img
                 src={`${blogData?.image}`}
                 alt="Blog"
-                className="w-[450px] object-cover rounded-md"
+                className="w-full object-cover transition-transform duration-500 hover:scale-105"
               />
+              {/* Elegant Branding Logo Watermark */}
+              <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-xl shadow-lg border border-gray-100/50 flex items-center justify-center">
+                <img src="/logo.png" alt="Jassal Signs" className="h-7 w-auto object-contain" />
+              </div>
             </div>
             <div className="flex-1 flex flex-col justify-start gap-4 py-5">
               <h2 className="text-4xl font-bold text-black">{blogData?.heading}</h2>

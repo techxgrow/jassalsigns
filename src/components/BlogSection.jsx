@@ -76,6 +76,10 @@ export default function BlogsSection() {
                       </span>
                     </div>
                   </div>
+                  {/* Elegant Branding Logo Watermark */}
+                  <div className="absolute bottom-5 right-5 z-20 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-md border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                    <img src="/logo.png" alt="Jassal Signs" className="h-6 w-auto object-contain" />
+                  </div>
                 </div>
 
                 {/* Content Section */}
