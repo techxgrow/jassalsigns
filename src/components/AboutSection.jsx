@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import AOS from "aos";
 
-const AboutSection = () => {
+const AboutSection = ({ cityName, localContext }) => {
   const [mounted, setMounted] = React.useState(false);
 
   useEffect(() => {
@@ -35,45 +35,36 @@ const AboutSection = () => {
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
                   Professional Signage & Printing Services in{" "}
-                  <span className="text-[#ED1D26]">Edmonton</span>
+                  <span className="text-[#ED1D26]">{cityName || "Edmonton"}</span>
                 </h2>
               </div>
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600/20 rounded-full"></div>
                 <div className="pl-8 space-y-6">
-                  <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                    Jassal Signs is a leading{" "}
-                    <span className="text-gray-900 font-black text-lg">
-                      signage company
-                    </span>
-                    ,{" "}
-                    <span className="text-gray-900 font-black text-lg">
-                      vehicle wrap specialist
-                    </span>
-                    , and{" "}
-                    <span className="text-gray-900 font-black text-lg">
-                      commercial printing provider
-                    </span>{" "}
-                    with over 30 years of excellence. We help businesses across
-                    Alberta increase visibility and attract customers with
-                    high-impact visual solutions.
-                  </p>
+                  {localContext ? (
+                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                      {localContext}
+                    </p>
+                  ) : (
+                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                      Jassal Signs stands out among premier{" "}
+                      <span className="text-gray-900 font-black text-lg">
+                        Edmonton sign companies
+                      </span>{" "}
+                      as a leading signage company, vehicle wrap specialist, and commercial printing provider with over 30 years of excellence. We specialize in high-impact{" "}
+                      <span className="text-gray-900 font-black text-lg">
+                        custom signs Edmonton
+                      </span>{" "}
+                      businesses trust to increase visibility and attract more customers.
+                    </p>
+                  )}
                   <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
-                    From custom{" "}
+                    From custom storefront signs and fleet vehicle wraps to professional{" "}
                     <span className="text-gray-800 font-bold">
-                      storefront signs
+                      custom business signs
                     </span>{" "}
-                    and{" "}
-                    <span className="text-gray-800 font-bold">
-                      fleet vehicle wraps
-                    </span>{" "}
-                    to professional{" "}
-                    <span className="text-gray-800 font-bold">
-                      business printing
-                    </span>
-                    , we bring your brand to life with quality craftsmanship
-                    that demands attention and delivers results.
+                    and commercial printing, we bring your brand to life with quality craftsmanship that demands attention and delivers results.
                   </p>
                 </div>
               </div>

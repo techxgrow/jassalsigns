@@ -76,13 +76,12 @@ const ExpertMediaAgency = () => {
               <p className="text-sm md:text-base lg:text-lg max-w-full md:max-w-xl break-words text-white mb-1">
                 Jassal Signs is a leading signage company and commercial
                 printing provider with over 30 years of experience serving
-                businesses in Alberta. We create custom business signs, vehicle
-                wraps, and high-quality print materials that enhance brand
+                businesses in Alberta. We create high-quality **commercial signs**, custom business signs, vehicle wraps, and print materials that enhance brand
                 visibility and attract customers.
               </p>
               <p className="text-xs md:text-sm lg:text-base max-w-full md:max-w-xl break-words text-white">
                 Our comprehensive services include storefront signage, indoor
-                and outdoor signs, vehicle graphics, banners, trade show
+                and **outdoor business signs**, vehicle graphics, banners, trade show
                 displays, and commercial printing. From design to installation,
                 Jassal Signs delivers professional solutions that make your
                 business stand out.

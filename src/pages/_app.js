@@ -41,6 +41,13 @@ export default function App({ Component, pageProps }) {
           "postalCode": "T6N 1B4",
           "addressCountry": "CA"
         },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Edmonton, AB" },
+          { "@type": "AdministrativeArea", "name": "Calgary, AB" },
+          { "@type": "AdministrativeArea", "name": "Surrey, BC" },
+          { "@type": "AdministrativeArea", "name": "Cloverdale, BC" },
+          { "@type": "AdministrativeArea", "name": "Abbotsford, BC" }
+        ],
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 53.46549,

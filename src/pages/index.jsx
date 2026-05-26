@@ -80,8 +80,9 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Jassal Signs | Custom Signage & Printing Solutions in Alberta</title>
-        <meta name="description" content="Jassal Signs offers premium custom signs, channel letters, vehicle wraps, and commercial printing across Alberta. 30+ years of excellence." />
+        <title>Edmonton Signage Company | Custom Signs & Commercial Printing | Jassal Signs</title>
+        <meta name="description" content="Jassal Signs is Edmonton's premier custom signage company. We design, manufacture, and install storefront signs, vehicle wraps, channel letters, and pylon signs across Calgary, Surrey, Abbotsford, and Alberta." />
+        <link rel="canonical" href="https://www.jassalsignsedm.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

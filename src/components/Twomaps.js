@@ -48,7 +48,7 @@ const usaMarkers = [
   {
     name: "SACRAMENTO",
     coordinates: [-121.4944, 38.5816],
-    link: "/citypage/SACRAMENTO",
+    link: "https://www.jassalsignssac.com/",
     offset: { x: 0, y: -10 },
   },
 ];
@@ -133,7 +133,7 @@ export default function TwoMaps() {
             <Marker
               key={name}
               coordinates={coordinates}
-              onClick={() => router.push(link)}
+              onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
             >
               <circle r={6} fill="#ED1D25" stroke="#fff" strokeWidth={2} />
               <text

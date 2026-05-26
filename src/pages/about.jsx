@@ -29,7 +29,7 @@ const About = () => {
     <div className="bg-white text-black font-grotesk">
 
       <Head>
-        <title>About Jassal Signs | Edmonton Signage Company</title>
+        <title>Edmonton Signage Company | About Jassal Signs</title>
 
         <meta
           name="description"

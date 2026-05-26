@@ -6,7 +6,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 
 
-const ContactUs = ({ city }) => {
+const ContactUs = ({ city, address, phone, mapEmbed }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -71,7 +71,7 @@ const ContactUs = ({ city }) => {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">Phone</span>
-                <span className="text-white font-semibold text-lg">+1 (780) 437-7790</span>
+                <span className="text-white font-semibold text-lg">{phone || "+1 (780) 437-7790"}</span>
               </div>
             </div>
 
@@ -92,9 +92,11 @@ const ContactUs = ({ city }) => {
                 <MapPin className="text-white w-6 h-6" strokeWidth={2} />
               </div>
               <div className="flex flex-col">
-                <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">Our HQ</span>
-                <span className="text-white font-semibold text-[15px] sm:text-base leading-tight">
-                  3273 Parsons Rd NW, Edmonton, AB T6N 1B4,<br />Canada
+                <span className="text-white/80 text-[11px] font-bold tracking-widest uppercase mb-1">
+                  {city && city !== "Edmonton" ? `${city} Service Area` : "Our HQ"}
+                </span>
+                <span className="text-white font-semibold text-[15px] sm:text-base leading-tight whitespace-pre-line">
+                  {address || "3273 Parsons Rd NW, Edmonton, AB T6N 1B4,\nCanada"}
                 </span>
               </div>
             </div>
@@ -102,7 +104,7 @@ const ContactUs = ({ city }) => {
 
           {/* Map */}
           <div className="w-full h-[280px] relative px-1">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1775803378612!5m2!1sen!2sin" className="w-full h-full rounded-[24px] border-0 shadow-inner bg-white" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+           <iframe src={mapEmbed || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1775803378612!5m2!1sen!2sin"} className="w-full h-full rounded-[24px] border-0 shadow-inner bg-white" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 

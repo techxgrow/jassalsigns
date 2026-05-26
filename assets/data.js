@@ -394,9 +394,9 @@ export const data = {
               "Sophisticated and modern. Panels mounted with elegant stainless-steel standoffs for a high-end look.",
           },
           {
-            label: "Window Frosting & Privacy Film",
+            label: "Window Graphics & Privacy Film",
             value:
-              "Perfect for boardrooms and glass partitions, providing a professional etched-glass aesthetic while maintaining privacy.",
+              "From custom decals Edmonton businesses trust for storefront branding, to regulatory signs and decals Edmonton compliance mandates, we design window graphics and frosted films perfect for boardrooms and glass partitions.",
           },
           {
             label: "Wall Murals & Large Format Graphics",
@@ -439,11 +439,11 @@ export const data = {
     outdoorsigns: {
       heading: "High-Impact Outdoor Signs",
       introHeading: "Built to Last. Designed to be Noticed.",
-      para1: `Your exterior signage is your hardest-working salesperson—it works 24/7 to tell the world who you are. At Jassal Signs, we specialize in outdoor solutions that combine structural integrity with high-end aesthetics. Whether you need a massive building sign or a sleek monument at your entrance, we use weather-resistant metals, UV-stable inks, and reinforced mounting to ensure your investment looks great for decades.`,
+      para1: `Your exterior signage is your hardest-working salesperson—it works 24/7 to tell the world who you are. At Jassal Signs, we specialize in professional exterior signs and outdoor solutions that combine structural integrity with high-end aesthetics. Whether you need a massive building sign or a sleek monument at your entrance, we use weather-resistant metals, UV-stable inks, and reinforced mounting to ensure your investment looks great for decades.`,
 
-      para2: `From storefront signage and monument signs to building-mounted displays and directional signs, we create outdoor solutions that reflect your brand and attract foot traffic. Our designs are clean, legible, and built for visibility — whether viewed from across the street or from passing vehicles.`,
+      para2: `From custom storefront signage and premium monument signs Edmonton businesses trust, to building-mounted displays and directional signs, we create outdoor solutions that reflect your brand and attract foot traffic. Our designs are clean, legible, and built for visibility — whether viewed from across the street or from passing vehicles.`,
 
-      para3: `We use weather-resistant materials like aluminum, acrylic, PVC, and steel, ensuring each sign holds up beautifully in the face of sun, rain, and wind. For businesses needing nighttime visibility, we offer high-quality illuminated options with energy-efficient LED technology.`,
+      para3: `We use weather-resistant materials to manufacture everything from a heavy-duty pylon sign to custom blade signs, ensuring each sign holds up beautifully in the face of sun, rain, and wind. For businesses needing nighttime visibility, we offer high-quality illuminated options with energy-efficient LED technology.`,
 
       para4: `Our design and fabrication teams work hand-in-hand to ensure your outdoor signage not only fits your branding, but also meets all zoning and installation requirements. We handle everything from site survey and permits to secure installation.`,
 
@@ -547,7 +547,7 @@ export const data = {
         {
           id: "yard-coroplast",
           title: "Yard & Coroplast Signs",
-          desc: "Lightweight, cost-effective signs for lawns and temporary displays.",
+          desc: "Lightweight, cost-effective lawn signs and temporary displays. From a single promotional yard sign to bulk lawn signs Edmonton campaigns, we deliver durable, weatherproof solutions.",
         },
       ],
     },

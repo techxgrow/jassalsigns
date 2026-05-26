@@ -35,7 +35,7 @@ const markers = [
   {
     name: "SACRAMENTO",
     coordinates: ["18%", "15%"],
-    link: "/citypage/SACRAMENTO",
+    link: "https://www.jassalsignssac.com/",
   },
 ];
 
@@ -83,7 +83,11 @@ const ImageMap = ({ imageSrc, mapMarkers, mapName, flagComponent }) => {
   const handleMarkerClick = (e, link) => {
     e.preventDefault();
     e.stopPropagation();
-    router.push(link);
+    if (link.startsWith("http")) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
+      router.push(link);
+    }
   };
 
   return (
