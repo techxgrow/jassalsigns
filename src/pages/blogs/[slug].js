@@ -145,7 +145,7 @@ const BlogPage = () => {
           {/* Author Info */}
           <div className="flex items-center justify-between pt-5 mt-10 text-gray-600 text-sm">
             <div className="flex items-center gap-3">
-              <img src={`${blogData?.userImage || '/images/blog/author-jassal.jpg'}`} className="w-12 h-12 rounded-full object-cover" alt="Author" />
+              <img src={`${blogData?.userImage || '/favicon.png'}`} className="w-12 h-12 rounded-full object-cover" alt="Author" />
               <div>
                 <p className="font-semibold text-xl text-black">{blogData?.author || "Jassal Signs"}</p>
                 <p className="text-[18px]">{blogData?.date ? `Posted on ${blogData.date}` : "Posted on May 26, 2026"}</p>

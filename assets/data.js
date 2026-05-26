@@ -4,7 +4,7 @@ export const data = {
       id: "boost-branding-with-indoor-signs",
       heading: "Boost Branding with Indoor Signs",
       image: "/citypage/blogs/blog1.jpg",
-      userImage: "/testimonials/user-1.jpg",
+      userImage: "/favicon.png",
       desc: `
         <article style="font-family: sans-serif; line-height: 1.6; color: #333;">
           <p style="margin-bottom: 16px;">
@@ -23,7 +23,7 @@ export const data = {
       id: "turn-vehicles-into-billboards",
       heading: "Turn Vehicles Into Billboards",
       image: "/citypage/blogs/blog2.jpg",
-      userImage: "/testimonials/user-2.jpg",
+      userImage: "/favicon.png",
       desc: `
         <article style="font-family: sans-serif; line-height: 1.6; color: #333;">
          
@@ -43,7 +43,7 @@ export const data = {
       id: "print-still-makes-impact",
       heading: "Print Still Makes Impact",
       image: "/citypage/blogs/blog3.jpg",
-      userImage: "/testimonials/user-3.jpg",
+      userImage: "/favicon.png",
       desc: `
         <article style="font-family: sans-serif; line-height: 1.6; color: #333;">
          
@@ -63,7 +63,7 @@ export const data = {
       id: "stand-out-with-outdoor-signs",
       heading: "Stand Out with Outdoor Signs",
       image: "/citypage/blogs/blog4.jpg",
-      userImage: "/testimonials/user-4.jpg",
+      userImage: "/favicon.png",
       desc: `
         <article style="font-family: sans-serif; line-height: 1.6; color: #333;">
          
@@ -83,7 +83,7 @@ export const data = {
       id: "edmonton-commercial-business-signage-guide",
       heading: "The Ultimate Guide to Edmonton Commercial Business Signage",
       image: "/images/blog/commercial-signage-guide.jpg",
-      userImage: "/images/blog/author-jassal.jpg",
+      userImage: "/favicon.png",
       author: "Jassal Signs",
       date: "May 26, 2026",
       desc: `
@@ -118,7 +118,7 @@ export const data = {
       id: "edmonton-vehicle-wraps-fleet-advertising-guide",
       heading: "The Business Owner Guide to Vehicle Wraps & Fleet Graphics",
       image: "/images/blog/vehicle-wraps-guide.jpg",
-      userImage: "/images/blog/author-jassal.jpg",
+      userImage: "/favicon.png",
       author: "Jassal Signs",
       date: "May 26, 2026",
       desc: `
