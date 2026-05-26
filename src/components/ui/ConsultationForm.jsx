@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import axios from "axios";
+import { User, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/router";
+
 
 const ConsultationForm = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    signage: [],
-    location: [],
+    signage: "",
+    location: "",
     message: "",
+    website: "Edmonton",
   });
 
   const handleChange = (e) => {
@@ -30,150 +39,238 @@ const ConsultationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = new FormData();
-    payload.append("First Name", formData.firstName);
-    payload.append("Last Name", formData.lastName);
-    payload.append("Email", formData.email);
-    payload.append("Phone", formData.phone);
-    payload.append("Signage Type", formData.signage.join(", "));
-    payload.append("Service Location", formData.location.join(", "));
-    payload.append("Message", formData.message);
+    setLoading(true);
 
-    const res = await fetch("https://formspree.io/f/mzzrwken", {
-      method: "POST",
-      body: payload,
-      headers: { Accept: "application/json" },
-    });
+    axios
+      .post("/api/product", formData)
+      .then((res) => {
+        // console.log(res);
+        setLoading(false);
+        router.push("/thank-you-consultation");
+      })
 
-    if (res.ok) {
-      alert("Thank you! We've received your request and will contact you shortly.");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        signage: [],
-        location: [],
-        message: "",
+      .catch((err) => {
+        // console.log(err);
+        setLoading(false);
       });
-    } else {
-      alert("Oops! Something went wrong. Please try again.");
-    }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="md:py-5 py-2 px-4 sm:px-6"
-      style={{
-        background: `linear-gradient(180deg, #ED1C26 0%, #0283CB 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28))`,
-      }}
-    >
-      <h3 className="text-center my-6 text-white text-xl sm:text-2xl font-semibold">
-        Request a Consultation
-      </h3>
+    <div className="relative group">
+      {/* Decorative background element */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-[#ED1D26] to-[#0283CB] rounded-[35px] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
 
-      {/* Name Fields */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <input
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-          placeholder="First Name(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          placeholder="Last Name(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-      </div>
-
-      {/* Email & Phone */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Phone(*)"
-          className="bg-white h-10 p-2 rounded-sm text-base"
-          required
-        />
-      </div>
-
-      {/* Signage Type */}
-      <div className="mb-6">
-        <h4 className="text-white text-lg mb-2">What type of signage you are looking for:</h4>
-        <div className="grid grid-cols-2  lg:grid-cols-3 gap-2">
-          {["Interior Signs", "Exterior Signs", "Vinyl Signs", "Business Signs", "Custom Signs"].map((label) => (
-            <label key={label} className="text-white text-base flex items-center gap-2">
-              <input
-                type="checkbox"
-                value={label}
-                checked={formData.signage.includes(label)}
-                onChange={handleChange}
-                data-group="signage"
-              />
-              {label}
-            </label>
-          ))}
+      <form
+        onSubmit={handleSubmit}
+        className="relative bg-white rounded-[32px] p-6 md:p-8 shadow-xl border border-gray-100"
+      >
+        <div className="mb-6 text-center">
+          <h3 className="text-2xl md:text-3xl font-black font-grotesk text-gray-900 uppercase tracking-tighter mb-2">
+            Request a <span className="text-[#ED1D26]">Consultation</span>
+          </h3>
+          <p className="text-gray-400 text-sm font-medium">
+            Expert advice within 24 hours.
+          </p>
         </div>
-      </div>
 
-      {/* Service Location */}
-      <div className="mb-6">
-        <h4 className="text-white text-lg mb-2">Service Location:</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
-          {["Surrey", "Edmonton", "Abbotsford", "Calgary", "Cloverdale"].map((city) => (
-            <label key={city} className="text-white text-base flex items-center gap-2">
-              <input
-                type="checkbox"
-                value={city}
-                checked={formData.location.includes(city)}
-                onChange={handleChange}
-                data-group="location"
-              />
-              {city}
-            </label>
-          ))}
+        {/* Name Fields */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="relative group/input">
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="First Name(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+          <div className="relative group/input">
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Last Name(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Message */}
-      <div className="mb-6">
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="How can we help you?"
-          className="bg-white w-full rounded-sm p-2 text-base"
-          rows={4}
-        ></textarea>
-      </div>
+        {/* Email & Phone */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="relative group/input">
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+          <div className="relative group/input">
+            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within/input:text-[#ED1D26] transition-colors" />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone(*)"
+              className="w-full bg-gray-50 border border-gray-100 h-12 pl-12 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+              required
+            />
+          </div>
+        </div>
 
-      {/* Submit Button */}
-      <div className="flex justify-center items-center mb-6 font-bold">
-        <button className="h-10 w-full sm:w-60 bg-[#ED1D26] text-white rounded-sm text-base" type="submit">
-          Submit Your Request
+        {/* Signage Type */}
+        <div className="mb-6">
+          <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
+            Signage Interest
+          </h4>
+          {/* <div className="flex flex-wrap gap-2">
+            {["Interior", "Exterior", "Vinyl", "Business", "Custom"].map(
+              (label) => (
+                <label
+                  key={label}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-black uppercase tracking-tight cursor-pointer transition-all duration-300 ${
+                    formData.signage.includes(label)
+                      ? "bg-[#ED1D26] border-[#ED1D26] text-white shadow-md shadow-[#ED1D26]/20"
+                      : "bg-white border-gray-100 text-gray-500 hover:border-[#ED1D26] hover:text-[#ED1D26]"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    value={label}
+                    checked={formData.signage.includes(label)}
+                    onChange={handleChange}
+                    data-group="signage"
+                    className="hidden"
+                  />
+                  {formData.signage.includes(label) && (
+                    <CheckCircle2 className="w-3 h-3" />
+                  )}
+                  {label}
+                </label>
+              ),
+            )}
+          </div> */}
+          <input
+            type="text"
+            name="signage"
+            value={formData.signage}
+            onChange={handleChange}
+            placeholder="e.g. Business Signage"
+            className="w-full bg-gray-50 border border-gray-100 h-12 pl-4 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+            required
+          />
+        </div>
+
+        {/* Service Location */}
+        <div className="mb-6">
+          <h4 className="text-gray-900 font-black uppercase text-[10px] tracking-widest mb-3 opacity-50">
+            Location
+          </h4>
+          {/* <div className="flex flex-wrap gap-2">
+            {["Surrey", "Edmonton", "Abbotsford", "Calgary", "Cloverdale"].map(
+              (city) => (
+                <label
+                  key={city}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-[11px] font-black uppercase tracking-tight cursor-pointer transition-all duration-300 ${
+                    formData.location.includes(city)
+                      ? "bg-[#0283CB] border-[#0283CB] text-white shadow-md shadow-[#0283CB]/20"
+                      : "bg-white border-gray-100 text-gray-500 hover:border-[#0283CB] hover:text-[#0283CB]"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    value={city}
+                    checked={formData.location.includes(city)}
+                    onChange={handleChange}
+                    data-group="location"
+                    className="hidden"
+                  />
+                  {formData.location.includes(city) && (
+                    <CheckCircle2 className="w-3 h-3" />
+                  )}
+                  {city}
+                </label>
+              ),
+            )}
+          </div> */}
+
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            placeholder="e.g. Edmonton,AB"
+            className="w-full bg-gray-50 border border-gray-100 h-12 pl-4 pr-4 rounded-xl text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none"
+            required
+          />
+        </div>
+
+        {/* Message */}
+        <div className="mb-6">
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your project requirements..."
+            className="w-full bg-gray-50 border border-gray-100 p-4 rounded-[20px] text-sm font-bold focus:bg-white focus:border-[#ED1D26] transition-all outline-none resize-none"
+            rows={3}
+          ></textarea>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          className={`w-full h-14 rounded-xl text-base font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg ${
+            loading
+              ? "bg-gray-100 text-gray-300 cursor-not-allowed"
+              : "bg-[#ED1D26] text-white hover:bg-[#d01920] active:scale-95 shadow-[#ED1D26]/20"
+          }`}
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <svg
+                className="animate-spin h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Sending...
+            </span>
+          ) : (
+            <>
+              Submit Request
+              <Send className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+            </>
+          )}
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

@@ -3,12 +3,16 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import AOS from "aos";
 
-const AboutSection = () => {
+const AboutSection = ({ cityName, localContext }) => {
+  const [mounted, setMounted] = React.useState(false);
+
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1000,
       mirror: true,
-      anchorPlacement: "top-bottom",
+      once: true,
+      offset: 100,
     });
   }, []);
 
@@ -18,71 +22,110 @@ const AboutSection = () => {
   });
 
   return (
-    <div className="bg-white">
-      {/* About Card Section */}
-      <div
-        id="about"
-        data-aos="fade-up"
-        className="md:max-w-[85vw] max-w-[95vw] mx-auto py-6 -translate-y-[40px] p-6 z-10 relative grid grid-cols-1 md:grid-cols-[70%_20%] md:px-20 md:gap-[10%] gap-0"
-        style={{
-          backgroundImage: "url('/aboutsectionbg.png')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Left Side */}
-        <div
-          className="flex mb-8 md:mb-0 flex-col items-center md:items-start gap-4 md:gap-8"
-          data-aos="fade-bottom"
-          data-aos-duration="2000"
-        >
-          <h4 className="text-gray-900 uppercase underline md:text-left text-center underline-offset-4 decoration-red-700">
-            Who We Are
-          </h4>
-          <h1 className="text-gray-900 md:text-left text-center text-3xl font-extrabold uppercase w-[280px]">
-            We create mass public's eye{" "}
-            <span className="text-red-600">attention</span>
-          </h1>
-          <p className="text-gray-600 md:text-left text-center text-xl">
-            We are a sign, wrap and Print company. With over 30 years of excellence, we're dedicated to bringing your vision to life with our variety of services.
-          </p>
-        </div>
+    <div className="bg-white overflow-hidden">
+      {/* Elite About Section */}
+      <section id="about" className="relative py-20 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-24 items-center">
+            {/* Left Content */}
+            <div data-aos="fade-right" className="space-y-8">
+              <div className="space-y-4">
+                <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs md:text-sm">
+                  Who We Are
+                </h4>
+                <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
+                  Professional Signage & Printing Services in{" "}
+                  <span className="text-[#ED1D26]">{cityName || "Edmonton"}</span>
+                </h2>
+              </div>
 
-        {/* Right Side */}
-        <div>
-          {/* Counter Section */}
-          <div className="flex flex-col gap-3 mx-auto" ref={ref}>
-            <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-0">
-              <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={250} duration={2} /> : "0"}+
-              </h1>
-              <p className="text-gray-900">Screen Place</p>
+              <div className="relative">
+                <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600/20 rounded-full"></div>
+                <div className="pl-8 space-y-6">
+                  {localContext ? (
+                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                      {localContext}
+                    </p>
+                  ) : (
+                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
+                      Jassal Signs stands out among premier{" "}
+                      <span className="text-gray-900 font-black text-lg">
+                        Edmonton sign companies
+                      </span>{" "}
+                      as a leading signage company, vehicle wrap specialist, and commercial printing provider with over 30 years of excellence. We specialize in high-impact{" "}
+                      <span className="text-gray-900 font-black text-lg">
+                        custom signs Edmonton
+                      </span>{" "}
+                      businesses trust to increase visibility and attract more customers.
+                    </p>
+                  )}
+                  <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
+                    From custom storefront signs and fleet vehicle wraps to professional{" "}
+                    <span className="text-gray-800 font-bold">
+                      custom business signs
+                    </span>{" "}
+                    and commercial printing, we bring your brand to life with quality craftsmanship that demands attention and delivers results.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-none">
-              <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={78} duration={2} /> : "0"}K
-              </h1>
-              <p className="text-gray-900">People Reached</p>
-            </div>
+            {/* Right Stats - Elite Cards */}
+            <div className="relative" data-aos="fade-left" ref={ref}>
+              {/* Background Accent */}
+              <div className="absolute -right-20 -top-20 w-80 h-80 bg-red-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+              <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-red-50 rounded-full blur-3xl -z-10 opacity-60"></div>
 
-            <div className="flex flex-col justify-center items-center py-2 rounded-md md:text-left bg-white border border-red-600 md:border-0">
-              <h1 className="text-2xl md:text-3xl text-red-600 font-extrabold">
-                {inView ? <CountUp start={0} end={49} duration={2} /> : "0"}+
-              </h1>
-              <p className="text-gray-900">Country Cover</p>
+              <div className="grid grid-cols-1 gap-6">
+                {[
+                  { label: "Happy Clients", end: 1200, suffix: "+" },
+                  { label: "Projects Completed", end: 15000, suffix: "+" },
+                  { label: "Designs", end: 750000, suffix: "+" },
+                ].map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative bg-white border border-gray-100 p-8 rounded-[32px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(237,29,38,0.15)] hover:border-red-100 transition-all duration-700 overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000"></div>
+                    <div className="relative z-10 flex flex-col items-center md:items-start">
+                      <h3 className="text-5xl md:text-6xl font-black text-[#ED1D26] tracking-tighter mb-2">
+                        {mounted && inView ? (
+                          <CountUp
+                            start={0}
+                            end={stat.end}
+                            duration={2.5}
+                            suffix={stat.suffix}
+                          />
+                        ) : (
+                          "0"
+                        )}
+                      </h3>
+                      <p className="text-gray-500 font-black uppercase tracking-widest text-xs md:text-sm">
+                        {stat.label}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Section Header */}
-      <div className="mb-4 text-center" data-aos="fade-up" id="service">
-        <p className="md:text-2xl text-xl text-red-600 uppercase mb-2">what we Do</p>
-        <h1 className="md:text-6xl text-4xl text-gray-900 font-extrabold">
-          OUR SERVICES
-        </h1>
+      {/* Modern Section Header */}
+      <div
+        className="py-24 border-t border-gray-50"
+        data-aos="fade-up"
+        id="service"
+      >
+        <div className="max-w-[1400px] mx-auto px-6 text-center space-y-4">
+          <p className="text-[#ED1D26] font-black uppercase tracking-[0.5em] text-xs md:text-sm">
+            What We Do
+          </p>
+          <h2 className="text-6xl md:text-8xl font-black text-gray-900 tracking-tighter uppercase leading-[0.85]">
+            <span className="text-gray-300"> Our</span> Products
+          </h2>
+        </div>
       </div>
     </div>
   );

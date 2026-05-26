@@ -13,44 +13,49 @@ const OurServices = () => {
 
   const portfolioItems = [
     {
-      imgSrc: "/citypage/services/indoorsigns.jpg",
+      imgSrc: "/citypage/services/indoor-new.png",
       category: "INDOOR SIGNS",
       title: "We make sure your message meets the masses.",
       link: "/products/indoorsigns",
     },
-      {
+    {
+      imgSrc: "/citypage/services/outdoor.png",
+      category: "OUTDOOR SIGNS",
+      title: "We make sure your message meets the masses.",
+      link: "/products/outdoorsigns",
+    },
+    {
+      imgSrc: "/citypage/services/vehicle-new.png",
+      category: "VEHICLE WRAPS",
+      title: "Transform your vehicle with Jassal Signs!",
+      link: "/products/vehiclewraps",
+    },
+    {
+      imgSrc: "/citypage/services/Channel.png",
+      category: "CHANNEL LETTERS",
+      title: "Shine bright with custom Channel Letters by Jassal Signs",
+      link: "/products/channelletters",
+    },
+
+    {
+      imgSrc: "/citypage/services/pylon-new.png",
+      category: "PYLON SIGNS",
+      title: "Stand tall with impactful Pylon Signs by Jassal Signs",
+      link: "/products/pylonsigns",
+    },
+    {
       imgSrc: "/citypage/services/printmedia.jpg",
       category: "PRINT SERVICES",
       title: "Bold, Bright & Persuasive Print Materials That Stand Out.",
       link: "/products/printmedia",
     },
     {
-      imgSrc: "/citypage/services/vehiclewraps.jpg",
-      category: "VEHICLE WRAPS",
-      title: "Transform your vehicle with Jassal Signs!",
-      link: "/products/vehiclewraps",
+      imgSrc: "/citypage/services/other-products-new.png",
+      category: "OTHER PRODUCTS & SPECIALIZED SIGNAGE",
+      title:
+        "Beyond the standard custom-fabricated brand assets and regulatory tools.",
+      link: "/products/otherproducts",
     },
-    {
-      imgSrc: "/citypage/services/channelletters.jpg",
-      category: "CHANNEL LETTERS",
-      title: "Shine bright with custom Channel Letters by Jassal Signs",
-      link: "/products/channelletters",
-    },
-     
-    {
-      imgSrc: "/citypage/services/pylonsigns.jpg",
-      category: "PYLON SIGNS",
-      title: "Stand tall with impactful Pylon Signs by Jassal Signs",
-      link: "/products/pylonsigns",
-    },
-    {
-      imgSrc: "/citypage/services/outdoorsigns.jpg",
-      category: "OUTDOOR SIGNS",
-      title: "We make sure your message meets the masses.",
-      link: "/products/outdoorsigns",
-    },
-  
-   
   ];
 
   return (

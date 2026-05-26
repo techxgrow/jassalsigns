@@ -4,8 +4,7 @@ import LocationLinks from "@/components/LocationLinks";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import HomepageFooter from "@/components/HomepageFooter";
 import Typewriter from "typewriter-effect";
-import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 // --- Animations ---
 const fadeInUp = {
@@ -15,60 +14,67 @@ const fadeInUp = {
     y: 0,
     transition: { duration: 0.8, ease: "easeOut" },
   },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.5,
-    },
+  {
+    name: "ABBOTSFORD",
+    coordinates: ["75%", "28%"],
+    link: "/citypage/ABBOTSFORD",
   },
-};
+  {
+    name: "SURREY",
+    coordinates: ["75%", "23%"],
+    link: "/citypage/SURREY",
+  },
+  {
+    name: "EDMONTON",
+    coordinates: ["75%", "39%"],
+    link: "/citypage/EDMONTON",
+  },
+  {
+    name: "CALGARY",
+    coordinates: ["75%", "34%"],
+    link: "/citypage/CALGARY",
+  },
+  {
+    name: "SACRAMENTO",
+    coordinates: ["18%", "15%"],
+    link: "https://www.jassalsignssac.com/",
+  },
+];
 
-// --- Sub-components ---
-
-// Flag Components
 const CanadaFlag = () => (
-  <svg
-    width="28"
-    height="20"
-    viewBox="0 0 28 20"
-    className="rounded-sm shadow-sm inline-block"
-  >
-    <rect width="28" height="20" fill="#FF0000" />
-    <rect x="8" y="0" width="12" height="20" fill="#FFFFFF" />
+  <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
+    <rect width="24" height="16" fill="#FF0000" />
+    <rect x="8" y="0" width="8" height="16" fill="#FFFFFF" />
     <path
-      d="M14 4 L14.7 7.5 L17.5 7.5 L15.4 9.5 L16.1 13 L14 11 L11.9 13 L12.6 9.5 L10.5 7.5 L13.3 7.5 Z"
+      d="M12 3 L13 6 L16 6 L13.5 8 L14.5 11 L12 9 L9.5 11 L10.5 8 L8 6 L11 6 Z"
       fill="#FF0000"
     />
   </svg>
 );
 
 const USAFlag = () => (
-  <svg
-    width="28"
-    height="20"
-    viewBox="0 0 28 20"
-    className="rounded-sm shadow-sm inline-block"
-  >
-    <rect width="28" height="20" fill="#B22234" />
-    <rect y="2.2" width="28" height="2.2" fill="#FFFFFF" />
-    <rect y="6.6" width="28" height="2.2" fill="#FFFFFF" />
-    <rect y="11" width="28" height="2.2" fill="#FFFFFF" />
-    <rect y="15.4" width="28" height="2.2" fill="#FFFFFF" />
-    <rect width="11.2" height="10.8" fill="#3C3B6E" />
-    {/* Simplified stars for small scale */}
-    <circle cx="2" cy="2" r="0.5" fill="white" />
-    <circle cx="5.6" cy="2" r="0.5" fill="white" />
-    <circle cx="9.2" cy="2" r="0.5" fill="white" />
-    <circle cx="3.8" cy="5.4" r="0.5" fill="white" />
-    <circle cx="7.4" cy="5.4" r="0.5" fill="white" />
-    <circle cx="2" cy="8.8" r="0.5" fill="white" />
-    <circle cx="5.6" cy="8.8" r="0.5" fill="white" />
-    <circle cx="9.2" cy="8.8" r="0.5" fill="white" />
+  <svg width="24" height="16" viewBox="0 0 24 16" className="inline-block mr-2">
+    <rect width="24" height="16" fill="#B22234" />
+    <rect y="1" width="24" height="1" fill="#FFFFFF" />
+    <rect y="3" width="24" height="1" fill="#FFFFFF" />
+    <rect y="5" width="24" height="1" fill="#FFFFFF" />
+    <rect y="7" width="24" height="1" fill="#FFFFFF" />
+    <rect y="9" width="24" height="1" fill="#FFFFFF" />
+    <rect y="11" width="24" height="1" fill="#FFFFFF" />
+    <rect y="13" width="24" height="1" fill="#FFFFFF" />
+    <rect y="15" width="24" height="1" fill="#FFFFFF" />
+    <rect width="10" height="8" fill="#3C3B6E" />
+    {[...Array(5)].map((_, row) =>
+      [...Array(6)].map((_, col) => (
+        <circle
+          key={`${row}-${col}`}
+          cx={1 + col * 1.5}
+          cy={1 + row * 1.5}
+          r="0.3"
+          fill="white"
+        />
+      )),
+    )}
   </svg>
 );
 
@@ -76,8 +82,14 @@ const USAFlag = () => (
 const TwoMaps = () => {
   const router = useRouter();
 
-  const handleCityClick = (cityName) => {
-    router.push(`/citypage/${cityName}`);
+  const handleMarkerClick = (e, link) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (link.startsWith("http")) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
+      router.push(link);
+    }
   };
 
   const RegionSection = ({ title, cities, delay, Flag }) => (
@@ -113,7 +125,20 @@ const TwoMaps = () => {
           </button>
         ))}
       </div>
-    </motion.div>
+    </div>
+  );
+};
+
+// TwoMapss  Component
+const TwoMaps = () => {
+  const canadaMarkers = markers.filter((marker) =>
+    ["CLOVERDALE", "ABBOTSFORD", "SURREY", "EDMONTON", "CALGARY"].includes(
+      marker.name,
+    ),
+  );
+
+  const usaMarkers = markers.filter((marker) =>
+    ["SACRAMENTO"].includes(marker.name),
   );
 
   return (
@@ -162,20 +187,16 @@ export default function NewHomepage() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-[#050505] z-50 flex items-center justify-center">
-        <div className="relative z-10">
-          <Typewriter
-            options={{
-              strings: [
-                '<span style="color: #0083CB; font-size: 3rem; font-weight: 900; font-family: sans-serif;">JASSAL</span> <span style="color: #ED1D26; font-size: 3rem; font-weight: 900; font-family: sans-serif;">SIGNS</span>',
-              ],
-              autoStart: true,
-              loop: false,
-              cursor: "",
-              delay: 50,
-            }}
-          />
-        </div>
+      <div className="w-full h-screen flex justify-center text-3xl font-bold items-center text-white bg-black">
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(
+                '<span style="color: #0083CB;font-size:40px;">Jassal</span> <span style="color: #ED1D25;font-size:40px;">Signs</span>',
+              )
+              .start();
+          }}
+        />
       </div>
     );
   }
@@ -193,9 +214,6 @@ export default function NewHomepage() {
           className="absolute top-0 left-0 w-full h-full object-cover opacity-50 scale-105"
           src="/background.mov"
         />
-        {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
 
         {/* Grain Texture */}
         <div

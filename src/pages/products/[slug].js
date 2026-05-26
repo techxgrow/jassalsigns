@@ -170,11 +170,26 @@ const ProductPage = () => {
     }
   };
 
+  const productSeoTitles = {
+    vehiclewraps: "Edmonton Vehicle Wraps & Fleet Graphics | Jassal Signs",
+    channelletters: "Illuminated LED Channel Letters Edmonton | Jassal Signs",
+    printmedia: "Commercial Printing, Large Format Banners & Decals Edmonton | Jassal Signs",
+    pylonsigns: "Custom Commercial Pylon Signs Edmonton | Jassal Signs",
+    indoorsigns: "Corporate Indoor Signs & Window Graphics Edmonton | Jassal Signs",
+    outdoorsigns: "Custom Outdoor Business Signs & Storefront Signage Edmonton | Jassal Signs",
+    otherproducts: "Specialized Business Signage & Safety Boards Edmonton | Jassal Signs"
+  };
+
+  const pageTitle = productSeoTitles[slug] || "Premium Custom Signage Solutions | Jassal Signs";
+  const rawDesc = data.productPage[slug]?.para1 || "Explore premium custom signage solutions by Jassal Signs.";
+  const pageDesc = rawDesc.length > 155 ? `${rawDesc.substring(0, 152)}...` : rawDesc;
+
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
       <Head>
-        <title>{data.productPage[slug]?.heading ? `${data.productPage[slug].heading} | Jassal Signs` : "Premium Signage | Jassal Signs"}</title>
-        <meta name="description" content={data.productPage[slug]?.para1?.substring(0, 160) || "Explore premium custom signage solutions by Jassal Signs."} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <link rel="canonical" href={`https://www.jassalsignsedm.com/products/${slug}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

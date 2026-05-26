@@ -14,10 +14,9 @@ const ProductsFooter = () => {
           {/* About Text */}
           <p className="text-[16px] text-white leading-relaxed">
             Jassal Signs is a full-service signage company. We specialize in
-            high-quality cushrefm signs for businesses across various
-            industries.
+            high-quality signs for businesses across various industries.
           </p>
-          {/* Social Icons */}
+
           <div className="flex space-x-4 mt-4 text-lg">
             <a
               href="https://www.facebook.com/jassalsignsltd/"
@@ -65,7 +64,10 @@ const ProductsFooter = () => {
                 </a>
               </li>
               <li>
-                <a href="/gallerySection" className="hover:text-[#ED1D26] text-[16px]">
+                <a
+                  href="/gallerySection"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
                   Gallery
                 </a>
               </li>
@@ -77,23 +79,60 @@ const ProductsFooter = () => {
             </ul>
           </div>
 
-        
           {/* Locations */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">British Columbia</h2>
-          <ul className="space-y-2 text-white text-sm">
-            <li><Link href="/citypage/SURREY" className="hover:text-[#ED1D26] text-[16px]" >Surrey</Link></li>
+          <div>
+            <h2 className="text-lg font-semibold mb-4 font-grotesk underline">
+              British Columbia
+            </h2>
+            <ul className="space-y-2 text-white text-sm">
+              <li>
+                <Link
+                  href="/citypage/SURREY"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Surrey
+                </Link>
+              </li>
 
-            <li><Link href="/citypage/CLOVERDALE" className="hover:text-[#ED1D26] text-[16px]">Cloverdale</Link></li>
-            <li><Link href="/citypage/ABBOTSFORD" className="hover:text-[#ED1D26] text-[16px]">Abbotsford</Link></li>
-             
-          </ul>
-           <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">Alberta</h2>
-          <ul>
-             <li><Link href="/citypage/CALGARY" className="hover:text-[#ED1D26] text-[16px]">Calgary</Link></li>
-               <li><Link href="/citypage/EDMONTON" className="hover:text-[#ED1D26] text-[16px]">Edmonton</Link></li>
-          </ul>
-        </div>
+              <li>
+                <Link
+                  href="/citypage/CLOVERDALE"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Cloverdale
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/citypage/ABBOTSFORD"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Abbotsford
+                </Link>
+              </li>
+            </ul>
+            <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">
+              Alberta
+            </h2>
+            <ul>
+              <li>
+                <Link
+                  href="/citypage/CALGARY"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Calgary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/citypage/EDMONTON"
+                  className="hover:text-[#ED1D26] text-[16px]"
+                >
+                  Edmonton
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Quick as */}
@@ -105,36 +144,88 @@ const ProductsFooter = () => {
                 Home
               </a>
             </li>
-           
+
             <li>
               <a href="#" className="hover:text-[#ED1D26] text-[16px]">
                 Services
               </a>
             </li>
-            
+
             <li>
-              <ScrollLink to="gallerySection" smooth offset={-60} duration={500} className="hover:text-[#ED1D26] text-[16px] cursor-pointer">Gallery</ScrollLink>
+              <ScrollLink
+                to="gallerySection"
+                smooth
+                offset={-60}
+                duration={500}
+                className="hover:text-[#ED1D26] text-[16px] cursor-pointer"
+              >
+                Gallery
+              </ScrollLink>
             </li>
-             <li><Link href="/franchise" className="text-[16px] hover:text-[#ED1D26]">Franchise With Us</Link></li>
-           
+            <li>
+              <Link
+                href="/franchise"
+                className="text-[16px] hover:text-[#ED1D26]"
+              >
+                Franchise With Us
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* Products */}
         {/* Locations */}
         <div>
-          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">British Columbia</h2>
+          <h2 className="text-lg font-semibold mb-4 font-grotesk underline">
+            British Columbia
+          </h2>
           <ul className="space-y-2 text-white text-sm">
-            <li><Link href="/citypage/SURREY" className="hover:text-[#ED1D26] text-[16px]" >Surrey</Link></li>
+            <li>
+              <Link
+                href="/citypage/SURREY"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Surrey
+              </Link>
+            </li>
 
-            <li><Link href="/citypage/CLOVERDALE" className="hover:text-[#ED1D26] text-[16px]">Cloverdale</Link></li>
-            <li><Link href="/citypage/ABBOTSFORD" className="hover:text-[#ED1D26] text-[16px]">Abbotsford</Link></li>
-             
+            <li>
+              <Link
+                href="/citypage/CLOVERDALE"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Cloverdale
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/citypage/ABBOTSFORD"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Abbotsford
+              </Link>
+            </li>
           </ul>
-           <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">Alberta</h2>
+          <h2 className="text-lg font-semibold mb-2 mt-3 font-grotesk underline">
+            Alberta
+          </h2>
           <ul>
-             <li><Link href="/citypage/CALGARY" className="hover:text-[#ED1D26] text-[16px]">Calgary</Link></li>
-               <li><Link href="/citypage/EDMONTON" className="hover:text-[#ED1D26] text-[16px]">Edmonton</Link></li>
+            <li>
+              <Link
+                href="/citypage/CALGARY"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Calgary
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/citypage/EDMONTON"
+                className="hover:text-[#ED1D26] text-[16px]"
+              >
+                Edmonton
+              </Link>
+            </li>
           </ul>
         </div>
 
