@@ -650,16 +650,19 @@ const ProductPage = () => {
           ))}
         </div>
 
-        {data.productPage[slug]?.para5 && (
+        {(data.productPage[slug]?.closingParagraph || data.productPage[slug]?.para5) && (
           <div
-            className="bg-gray-50 p-12 md:p-20 rounded-[60px] text-center mb-12"
+            className="bg-gray-50 p-12 md:p-20 rounded-[50px] text-center mb-12"
             data-aos="zoom-in"
           >
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 uppercase tracking-tighter">
-              Legacy of <span className="text-[#ED1D26]">Excellence</span>
-            </h3>
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-              {data.productPage[slug]?.para5}
+            <h3 
+              className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tighter"
+              dangerouslySetInnerHTML={{ 
+                __html: data.productPage[slug]?.closingH2Heading || `Legacy of <span class="text-[#ED1D26]">Excellence</span>` 
+              }}
+            />
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-5xl mx-auto font-medium">
+              {data.productPage[slug]?.closingParagraph || data.productPage[slug]?.para5}
             </p>
             <Link href="/contact">
               <button className="mt-8 px-8 py-4 bg-[#ED1D26] text-white rounded-full font-bold text-lg hover:bg-red-600 transition-all duration-300">
