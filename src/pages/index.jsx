@@ -15,6 +15,7 @@ import Testimonials from "@/components/Testimonials";
 import OurClients from "@/components/OurClients";
 import SignageGallery from "@/components/SignageGallery";
 import { Element } from "react-scroll";
+import WorkStepsSection from "@/components/WorkStepsSection";
 
 const Home = () => {
   const cityName = "edmonton";
@@ -99,6 +100,7 @@ const Home = () => {
       </Element>
 
       <MarqueeText />
+      <WorkStepsSection />
       <Testimonials testimonials={testimonialsData} autoplay="true" />
       <Element name="gallerySection" id="gallerySection">
         <SignageGallery />

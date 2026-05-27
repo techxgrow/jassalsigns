@@ -58,7 +58,7 @@ export default function Testimonials() {
 
   return (
     <section
-      className="relative py-24 md:py-32 bg-[#0A0A0A] overflow-hidden"
+      className="relative py-16 md:py-20 bg-[#0A0A0A] overflow-hidden"
       id="testimonials"
     >
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[120px] -z-10"></div>
@@ -67,7 +67,7 @@ export default function Testimonials() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div
-          className="text-center mb-16 md:mb-24 space-y-4"
+          className="text-center mb-10 md:mb-12 space-y-3"
           data-aos="fade-up"
         >
           <div className="flex items-center justify-center gap-3">
@@ -77,7 +77,7 @@ export default function Testimonials() {
             </p>
             <span className="w-8 h-[1px] bg-[#ED1D26]"></span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.85] tracking-tighter uppercase px-4">
+          <h2 className="text-4xl md:text-6xl font-black text-white leading-[0.85] tracking-tighter uppercase px-4">
             <span className="text-gray-800">Testimonials</span>
           </h2>
         </div>
@@ -99,49 +99,49 @@ export default function Testimonials() {
               768: { slidesPerView: 2 },
               1280: { slidesPerView: 3 },
             }}
-            className="!pb-20 testimonials-swiper"
+            className="!pb-12 testimonials-swiper"
           >
             {testimonials.map((testimonial, idx) => (
               <SwiperSlide key={idx} className="h-full">
                 <div className="group relative h-full">
                   {/* Glassmorphism Card */}
-                  <div className="relative h-full bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[40px] hover:border-red-600/30 transition-all duration-700 flex flex-col justify-between">
+                  <div className="relative h-full bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-[30px] hover:border-red-600/30 transition-all duration-700 flex flex-col justify-between">
                     {/* Quote Icon */}
-                    <div className="absolute top-10 right-10 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
-                      <Quote className="w-16 h-16 text-[#ED1D26]" />
+                    <div className="absolute top-8 right-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                      <Quote className="w-12 h-12 text-[#ED1D26]" />
                     </div>
 
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       {/* Brand Logo/Image Placeholder - Optional, using Client Logo if provided */}
                       {/* Stars */}
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className="w-4 h-4 text-[#ED1D26] fill-[#ED1D26]"
+                            className="w-3.5 h-3.5 text-[#ED1D26] fill-[#ED1D26]"
                           />
                         ))}
                       </div>
 
-                      <p className="text-lg md:text-xl text-gray-400 font-medium leading-relaxed italic relative z-10 transition-colors duration-500 group-hover:text-white">
+                      <p className="text-base md:text-lg text-gray-400 font-medium leading-relaxed italic relative z-10 transition-colors duration-500 group-hover:text-white">
                         "{testimonial.title}"
                       </p>
                     </div>
 
-                    <div className="pt-10 flex items-center gap-5 border-t border-white/5 mt-8">
+                    <div className="pt-6 flex items-center gap-4 border-t border-white/5 mt-6">
                       <div className="relative">
                         <div className="absolute inset-0 bg-red-600 rounded-full blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
                         <img
                           src={testimonial.clientImg}
                           alt={testimonial.clientName}
-                          className="relative w-14 h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-red-600 transition-colors duration-500 shadow-xl"
+                          className="relative w-12 h-12 rounded-full object-cover border-2 border-white/10 group-hover:border-red-600 transition-colors duration-500 shadow-xl"
                         />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-tighter text-lg leading-tight group-hover:text-[#ED1D26] transition-colors duration-300">
+                        <h4 className="text-white font-black uppercase tracking-tighter text-base leading-tight group-hover:text-[#ED1D26] transition-colors duration-300">
                           {testimonial.clientName}
                         </h4>
-                        <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+                        <p className="text-gray-500 font-bold uppercase tracking-widest text-[9px] md:text-[10px]">
                           {testimonial.category || "Client"}
                         </p>
                       </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import AOS from "aos";
+import Link from "next/link";
 
 const AboutSection = ({ cityName, localContext }) => {
   const [mounted, setMounted] = React.useState(false);
@@ -33,39 +34,29 @@ const AboutSection = ({ cityName, localContext }) => {
                 <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-xs md:text-sm">
                   Who We Are
                 </h4>
-                <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
-                  Professional Signage & Printing Services in{" "}
-                  <span className="text-[#ED1D26]">{cityName || "Edmonton"}</span>
+                <h2 className="text-3xl md:text-5xl font-black text-gray-900 leading-[1.1] tracking-tighter uppercase">
+                  Edmonton's Best Sign Company. <br className="hidden md:inline" />
+                  <span className="text-[#ED1D26]">20+ Years in the Making.</span>
                 </h2>
+                <h3 className="text-lg md:text-xl font-bold text-gray-700 leading-tight">
+                  Custom Signage, Vehicle Wraps & Commercial Printing - Designed, Built & Installed in Alberta.
+                </h3>
               </div>
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1.5 h-full bg-red-600/20 rounded-full"></div>
                 <div className="pl-8 space-y-6">
-                  {localContext ? (
-                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                      {localContext}
-                    </p>
-                  ) : (
-                    <p className="text-lg md:text-xl text-gray-600 font-medium leading-relaxed max-w-2xl">
-                      Jassal Signs stands out among premier{" "}
-                      <span className="text-gray-900 font-black text-lg">
-                        Edmonton sign companies
-                      </span>{" "}
-                      as a leading signage company, vehicle wrap specialist, and commercial printing provider with over 30 years of excellence. We specialize in high-impact{" "}
-                      <span className="text-gray-900 font-black text-lg">
-                        custom signs Edmonton
-                      </span>{" "}
-                      businesses trust to increase visibility and attract more customers.
-                    </p>
-                  )}
-                  <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
-                    From custom storefront signs and fleet vehicle wraps to professional{" "}
-                    <span className="text-gray-800 font-bold">
-                      custom business signs
-                    </span>{" "}
-                    and commercial printing, we bring your brand to life with quality craftsmanship that demands attention and delivers results.
+                  <p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-justify">
+                    Jassal Signs started with a simple belief - that the right sign can change the trajectory of a business. For over three decades, we've turned that belief into reality for businesses across Edmonton and Alberta. We handle everything in-house: design, fabrication, and installation - so your project stays on time, on brand, and exactly as you envisioned.
                   </p>
+                  <p className="text-lg text-gray-600 leading-relaxed max-w-2xl text-justify">
+                    From channel letters and illuminated signs to vehicle wraps, pylon signs, business signs, printing and lobby signage - every piece we produce is built to represent your brand the way it deserves to be represented. No middlemen, no guesswork. Just a skilled team that takes your vision seriously from the first conversation to the final install.
+                  </p>
+                  <div className="pt-4">
+                    <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#ED1D26] text-white font-extrabold rounded-full hover:bg-black hover:text-white transition-all shadow-xl hover:shadow-red-500/20 uppercase tracking-widest text-xs cursor-pointer">
+                      Request A Quote <span className="text-sm">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
