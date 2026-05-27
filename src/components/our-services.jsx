@@ -59,12 +59,12 @@ const OurServices = () => {
   ];
 
   return (
-    <section>
-      <div>
+    <section className="bg-white">
+      <div className="space-y-2 md:space-y-3 px-4 md:px-8 pb-2 md:pb-3">
         {portfolioItems.map((item, index) => (
           <Link
             href={item.link}
-            className="overflow-hidden group"
+            className="overflow-hidden group block rounded-2xl md:rounded-[32px] shadow-sm hover:shadow-lg transition-all duration-500"
             id={item.link}
             key={index}
           >

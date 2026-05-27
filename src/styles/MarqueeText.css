@@ -7,7 +7,7 @@
 .marquee-track {
   display: flex;
   width: fit-content;
-  animation: scroll-left 50s linear infinite;
+  animation: scroll-right 50s linear infinite;
   will-change: transform;
 }
 
@@ -25,11 +25,11 @@
 }
 
 /* ✅ Smooth continuous scroll */
-@keyframes scroll-left {
+@keyframes scroll-right {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
 }
