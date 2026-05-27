@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import BmaBadge from "./BmaBadge";
 
 const HomepageFooter = () => {
   return (
@@ -237,10 +238,13 @@ const HomepageFooter = () => {
       </div>
 
       {/* Copyright Strip */}
-      <div className="max-w-[1600px] mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-[1600px] mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-gray-400 text-sm">
           © 2025 Jassal Signs Ltd. All Rights Reserved.
         </p>
+
+        <BmaBadge />
+
         <div className="flex gap-6 text-sm text-gray-400">
           <Link href="/privacy" className="hover:text-white transition-colors">
             Privacy Policy

@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import BmaBadge from "./BmaBadge";
 
 const ProductsFooter = () => {
   return (
@@ -256,8 +257,9 @@ const ProductsFooter = () => {
       </div>
 
       {/* Bothrefm Section */}
-      <div className="border-t border-white mt-10 pt-6 text-center text-white text-[14px]">
+      <div className="border-t border-white mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[85vw] mx-auto text-white text-[14px]">
         <p>2025 © Copyright, All Rights Reserved.</p>
+        <BmaBadge />
       </div>
     </footer>
   );

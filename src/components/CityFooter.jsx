@@ -5,6 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 import { MapPin, Mail, Phone, ExternalLink, ChevronRight } from "lucide-react";
 import logo from "@/logo.png";
+import BmaBadge from "./BmaBadge";
 // Flag Components
 const CanadaFlag = () => (
   <svg
@@ -245,6 +246,9 @@ const CityFooter = () => {
           <p className="text-gray-500 font-bold text-sm">
             © {new Date().getFullYear()} JASSAL SIGNS. ALL RIGHTS RESERVED.
           </p>
+
+          <BmaBadge />
+
           <div className="text-gray-500 font-bold text-sm flex gap-8">
             <Link
               href="/terms-of-use"
