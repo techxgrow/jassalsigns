@@ -31,6 +31,12 @@ const ProductPage = () => {
   const [mounted, setMounted] = React.useState(false);
   const [openFaqIndex, setOpenFaqIndex] = React.useState(null);
   const [galleryImages, setGalleryImages] = React.useState([]);
+  const [galleryPage, setGalleryPage] = React.useState(1);
+  const imagesPerPage = 12; // 3 rows * 4 columns = 12 images
+
+  useEffect(() => {
+    setGalleryPage(1);
+  }, [slug]);
 
   useEffect(() => {
     setMounted(true);
@@ -42,7 +48,16 @@ const ProductPage = () => {
     if (slug && data.productPage[slug]) {
       // Fetch dynamic gallery images for the slug
       fetch(`/api/gallery/${slug}`)
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          const contentType = res.headers.get("content-type");
+          if (!contentType || !contentType.includes("application/json")) {
+            throw new TypeError("Expected JSON response from server");
+          }
+          return res.json();
+        })
         .then((data) => {
           if (data && data.length > 0) {
             setGalleryImages(data);
@@ -55,6 +70,11 @@ const ProductPage = () => {
   if (!mounted || !slug || !data.productPage[slug]) {
     return <div className="min-h-screen bg-white"></div>;
   }
+
+  const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
+  const indexOfLastImage = galleryPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = galleryImages.slice(indexOfFirstImage, indexOfLastImage);
 
   const aosAnimations = [
     "fade-up",
@@ -403,12 +423,36 @@ const ProductPage = () => {
           </div>
         </Element>
 
-        {/* Paragraph 2 - Floating Quote Style */}
-        <div className="py-2 max-w-4xl mx-auto text-center" data-aos="zoom-in">
-          <Quote className="w-12 h-12 text-[#ED1D26]/20 mx-auto mb-8" />
-          <p className="text-2xl md:text-3xl font-black text-gray-900 leading-tight tracking-tight italic">
-            "{data.productPage[slug]?.para2}"
-          </p>
+        {/* Paragraph 2 - Premium Dynamic Block Design */}
+        <div className="py-12 max-w-5xl mx-auto" data-aos="zoom-in">
+          <div className="relative bg-gradient-to-br from-white to-gray-50/50 border border-gray-200/40 p-8 md:p-14 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.02)] overflow-hidden">
+            {/* Glowing Accent Blurs */}
+            <div className="absolute -left-16 -top-16 w-32 h-32 bg-[#ED1D26]/10 rounded-full blur-2xl"></div>
+            <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-[#0283CB]/10 rounded-full blur-2xl"></div>
+            
+            {/* Watermark Quote Icon in bottom right */}
+            <Quote className="absolute -right-6 -bottom-6 w-32 h-32 text-gray-200/20 pointer-events-none transform rotate-180" />
+
+            <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+              {/* Premium Quote Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-[#ED1D26]/5 flex items-center justify-center border border-[#ED1D26]/10 shadow-inner">
+                <Quote className="w-6 h-6 text-[#ED1D26]" />
+              </div>
+              
+              <blockquote className="text-base md:text-xl font-black text-gray-800 leading-relaxed max-w-4xl mx-auto select-none">
+                "{data.productPage[slug]?.para2}"
+              </blockquote>
+              
+              {/* Elegant Subtitle Brand Anchor */}
+              <div className="flex items-center gap-3 pt-2">
+                <div className="h-[1px] w-8 bg-gray-200/60"></div>
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-gray-400">
+                  Our Quality Guarantee
+                </span>
+                <div className="h-[1px] w-8 bg-gray-200/60"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <Element name="gallerySection" className="py-24 scroll-mt-24">
@@ -432,48 +476,92 @@ const ProductPage = () => {
 
           <PhotoProvider>
             {galleryImages.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {galleryImages.map((img, index) => (
-                  <PhotoView key={index} src={img.src}>
-                    <div
-                      className="overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 cursor-zoom-in rounded-[40px] group relative bg-gray-100 aspect-square"
-                      data-aos={aosAnimations[index % aosAnimations.length]}
-                      data-aos-delay={(index % 4) * 100}
-                    >
-                      <img
-                        src={img.src}
-                        alt={`Gallery Image ${index + 1}`}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                      />
-                      {/* Premium Glass Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex items-center justify-center">
-                        <div className="bg-white/20 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="white"
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                          </svg>
-                          <span className="text-white font-black uppercase tracking-tighter text-sm">
-                            Expand
-                          </span>
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {currentImages.map((img, index) => (
+                    <PhotoView key={index} src={img.src}>
+                      <div
+                        className="overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 cursor-zoom-in rounded-[40px] group relative bg-gray-100 aspect-square"
+                        data-aos={aosAnimations[index % aosAnimations.length]}
+                        data-aos-delay={(index % 4) * 100}
+                      >
+                        <img
+                          src={img.src}
+                          alt={`Gallery Image ${indexOfFirstImage + index + 1}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        />
+                        {/* Premium Glass Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex items-center justify-center">
+                          <div className="bg-white/20 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              strokeWidth="3"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <circle cx="11" cy="11" r="8"></circle>
+                              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                              <line x1="11" y1="8" x2="11" y2="14"></line>
+                              <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                            <span className="text-white font-black uppercase tracking-tighter text-sm">
+                              Expand
+                            </span>
+                          </div>
                         </div>
                       </div>
+                    </PhotoView>
+                  ))}
+                </div>
+
+                {/* Premium Product Gallery Pagination */}
+                {totalPages > 1 && (
+                  <div
+                    className="mt-16 flex justify-center items-center gap-4"
+                    data-aos="fade-up"
+                  >
+                    <button
+                      onClick={() => setGalleryPage((prev) => Math.max(prev - 1, 1))}
+                      disabled={galleryPage === 1}
+                      className="px-5 py-2.5 rounded-full flex items-center justify-center border border-gray-200 text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 active:scale-95 transition-all font-black uppercase tracking-widest text-xs select-none shadow-sm cursor-pointer"
+                    >
+                      Previous
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                        (number) => (
+                          <button
+                            key={number}
+                            onClick={() => setGalleryPage(number)}
+                            className={`w-10 h-10 rounded-full flex items-center justify-center font-black transition-all cursor-pointer ${
+                              galleryPage === number
+                                ? "bg-[#ED1D26] text-white shadow-md shadow-red-500/30"
+                                : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-100"
+                            }`}
+                          >
+                            {number}
+                          </button>
+                        ),
+                      )}
                     </div>
-                  </PhotoView>
-                ))}
-              </div>
+
+                    <button
+                      onClick={() => setGalleryPage((prev) => Math.min(prev + 1, totalPages))}
+                      disabled={galleryPage === totalPages}
+                      className="px-5 py-2.5 rounded-full flex items-center justify-center border border-gray-200 text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 active:scale-95 transition-all font-black uppercase tracking-widest text-xs select-none shadow-sm cursor-pointer"
+                    >
+                      Next
+                    </button>
+                  </div>
+                )}
+              </>
             ) : (
               <div className="text-center py-10 text-gray-500">
                 <p>No gallery images available for this product.</p>

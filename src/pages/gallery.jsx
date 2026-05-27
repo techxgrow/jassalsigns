@@ -20,7 +20,16 @@ const GalleryPage = () => {
 
     // Fetch all images and categories
     fetch("/api/gallery")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new TypeError("Expected JSON response from server");
+        }
+        return res.json();
+      })
       .then((data) => {
         if (data.categories) setCategories(data.categories);
         if (data.images) setImages(data.images);
