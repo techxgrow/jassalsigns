@@ -33,6 +33,7 @@ export default function App({ Component, pageProps }) {
         "url": "https://www.jassalsignsedm.com",
         "telephone": "+1-780-437-7790",
         "email": "jrbsigns@gmail.com",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "3273 Parsons Rd NW",

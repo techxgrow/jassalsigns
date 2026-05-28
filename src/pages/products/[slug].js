@@ -169,7 +169,8 @@ const ProductPage = () => {
     "serviceType": data.productPage[slug]?.heading || "Signage Services",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Jassal Signs"
+      "name": "Jassal Signs",
+      "priceRange": "$$"
     },
     "areaServed": {
       "@type": "State",

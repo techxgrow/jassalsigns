@@ -85,6 +85,7 @@ const CityPage = ({ cityInfo }) => {
       "@type": "LocalBusiness",
       "name": "Jassal Signs (Headquarters)",
       "url": "https://www.jassalsignsedm.com",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "3273 Parsons Rd NW",
