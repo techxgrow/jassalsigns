@@ -4,7 +4,7 @@ export const data = {
       id: "boost-branding-with-indoor-signs",
       heading: "Boost Branding with Indoor Signs",
       category: "Indoor Signs",
-      image: "/citypage/blogs/blog1.jpg",
+      image: "/citypage/blogs/indoor-sign-combined.png",
       userImage: "/favicon.png",
       desc: `
         <article style="font-family: sans-serif; line-height: 1.6; color: #333;">
@@ -87,7 +87,7 @@ export const data = {
       id: "edmonton-commercial-business-signage-guide",
       heading: "The Ultimate Guide to Edmonton Commercial Business Signage",
       category: "Outdoor Signs",
-      image: "/images/blog/commercial-signage-guide.jpg",
+      image: "/images/blog/commercial-signage-combined.png",
       userImage: "/favicon.png",
       author: "Jassal Signs",
       date: "May 26, 2026",
@@ -123,7 +123,7 @@ export const data = {
       id: "edmonton-vehicle-wraps-fleet-advertising-guide",
       heading: "The Business Owner Guide to Vehicle Wraps & Fleet Graphics",
       category: "Vehicle Wraps",
-      image: "/images/blog/vehicle-wraps-guide.jpg",
+      image: "/images/blog/vehicle-wraps-combined.png",
       userImage: "/favicon.png",
       author: "Jassal Signs",
       date: "May 26, 2026",

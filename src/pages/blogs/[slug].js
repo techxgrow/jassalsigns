@@ -7,6 +7,17 @@ import CityFooter from '@/components/CityFooter.jsx';
 import CityNavbar from '@/components/navbar/CityNavbar.jsx';
 import { ClipLoader } from "react-spinners";
 
+const getFormattedDate = (dateStr) => {
+  try {
+    if (!dateStr) return "2026-05-26";
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return "2026-05-26";
+    return d.toISOString().split('T')[0];
+  } catch (e) {
+    return "2026-05-26";
+  }
+};
+
 const BlogPage = () => {
   const router = useRouter();
   const [blogData, setBlogData] = useState(null);
@@ -78,6 +89,7 @@ const BlogPage = () => {
       <Head>
         <title>{blogData ? `${blogData.heading} | Jassal Signs` : "Blog | Jassal Signs"}</title>
         <meta name="description" content={blogData ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."} />
+        {/* FAQPage Schema */}
         {blogData?.faqs && blogData.faqs.length > 0 && (
           <script
             type="application/ld+json"
@@ -93,6 +105,72 @@ const BlogPage = () => {
                     "text": faq.answer.replace(/<[^>]*>?/gm, '')
                   }
                 }))
+              })
+            }}
+          />
+        )}
+        {/* Article (BlogPosting) Schema */}
+        {blogData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": `https://www.jassalsignsedm.com/blogs/${blogData.id}`
+                },
+                "headline": blogData.heading,
+                "description": blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160).trim(),
+                "image": blogData.image.startsWith('http') ? blogData.image : `https://www.jassalsignsedm.com${blogData.image}`,
+                "author": {
+                  "@type": "Organization",
+                  "name": blogData.author || "Jassal Signs",
+                  "url": "https://www.jassalsignsedm.com"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Jassal Signs",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.jassalsignsedm.com/logo.png"
+                  }
+                },
+                "datePublished": getFormattedDate(blogData.date),
+                "dateModified": getFormattedDate(blogData.date)
+              })
+            }}
+          />
+        )}
+        {/* BreadcrumbList Schema */}
+        {blogData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.jassalsignsedm.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blogs",
+                    "item": "https://www.jassalsignsedm.com/blogs"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": blogData.heading,
+                    "item": `https://www.jassalsignsedm.com/blogs/${blogData.id}`
+                  }
+                ]
               })
             }}
           />
