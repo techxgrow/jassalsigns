@@ -38,7 +38,7 @@ const BlogsListing = () => {
                 <div className="overflow-hidden h-60 relative">
                   <img src={blog.image} alt={blog.heading} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-4 left-4 bg-[#ED1D26] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                    Branding
+                    {blog.category || "Branding"}
                   </div>
                   {/* Elegant Branding Logo Watermark */}
                   <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-md border border-gray-100/50 flex items-center justify-center transition-all duration-300 group-hover:scale-105">

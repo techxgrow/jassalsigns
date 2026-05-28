@@ -72,7 +72,7 @@ export default function BlogsSection() {
                   <div className="absolute top-5 left-5 z-20">
                     <div className="backdrop-blur-md bg-white/20 border border-white/30 px-4 py-1.5 rounded-full shadow-lg">
                       <span className="text-white text-[10px] font-black uppercase tracking-widest">
-                        Branding
+                        {blog.category || "Branding"}
                       </span>
                     </div>
                   </div>
@@ -86,7 +86,7 @@ export default function BlogsSection() {
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="mb-4">
                     <span className="text-[#ED1D26] text-[10px] font-black uppercase tracking-[0.2em] block mb-2 font-bold">
-                      {blog.heading}
+                      {blog.category || "Branding"}
                     </span>
                     <h3 className="text-xl font-black font-grotesk text-gray-900 leading-tight group-hover:text-[#ED1D26] transition-colors duration-300">
                       {blog.heading}

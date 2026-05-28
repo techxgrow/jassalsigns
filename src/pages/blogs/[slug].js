@@ -78,6 +78,25 @@ const BlogPage = () => {
       <Head>
         <title>{blogData ? `${blogData.heading} | Jassal Signs` : "Blog | Jassal Signs"}</title>
         <meta name="description" content={blogData ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."} />
+        {blogData?.faqs && blogData.faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": blogData.faqs.map((faq) => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer.replace(/<[^>]*>?/gm, '')
+                  }
+                }))
+              })
+            }}
+          />
+        )}
       </Head>
       {/* Loader Overlay */}
       {loading && (
@@ -128,7 +147,7 @@ const BlogPage = () => {
             </div>
             <div className="flex-1 flex flex-col justify-start gap-4 py-5">
               <h1 className="text-4xl font-bold text-black">{blogData?.heading}</h1>
-              <p className="text-xl text-red-700">Category: Branding</p>
+              <p className="text-xl text-red-700">Category: {blogData?.category || "Branding"}</p>
               <div className="flex space-x-4 text-xl text-white">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-blue-600 p-2 rounded-full">
                   <FaFacebookF />
