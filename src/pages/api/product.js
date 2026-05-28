@@ -24,7 +24,6 @@ export default async function handler(req, res) {
     !lastName ||
     !email ||
     !phone ||
-    !message ||
     !website ||
     !location ||
     !signage
@@ -39,7 +38,7 @@ export default async function handler(req, res) {
         name={`${firstName} ${lastName}`}
         email={email}
         phone={phone}
-        message={message}
+        message={message || ""}
         website={website}
         location={location}
         signage={signage}

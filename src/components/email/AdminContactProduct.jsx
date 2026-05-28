@@ -22,6 +22,9 @@ export default function AdminContactEmail({
   location,
   signage,
 }) {
+  const locationText = Array.isArray(location) ? location.join(", ") : location;
+  const signageText = Array.isArray(signage) ? signage.join(", ") : signage;
+
   return (
     <Html>
       <Head />
@@ -91,7 +94,7 @@ export default function AdminContactEmail({
                     <Text style={styles.label}>Location:</Text>
                   </Column>
                   <Column>
-                    <Text style={styles.value}>{location.join(", ")}</Text>
+                    <Text style={styles.value}>{locationText}</Text>
                   </Column>
                 </Row>
               )}
@@ -101,7 +104,7 @@ export default function AdminContactEmail({
                     <Text style={styles.label}>Signage:</Text>
                   </Column>
                   <Column>
-                    <Text style={styles.value}>{signage.join(", ")}</Text>
+                    <Text style={styles.value}>{signageText}</Text>
                   </Column>
                 </Row>
               )}
