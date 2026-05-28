@@ -40,7 +40,7 @@ const FranchiseHero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed mx-auto md:mx-0 font-medium">
-            Partner with Canada's leading signage experts. Access 30+ years of
+            Partner with Canada's leading signage experts. Access 20+ years of
             legacy, proven systems, and world-class support to build your own
             profitable business.
           </p>

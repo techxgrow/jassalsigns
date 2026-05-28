@@ -32,7 +32,7 @@ const CityPage = ({ cityInfo }) => {
     phone: "+1 (780) 437-7790",
     address: "Alberta, Canada",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.166164957417!2d-113.48815462322574!3d53.465490372324076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01f283232a145%3A0x2e958a5b5c76c8f4!2s3273%20Parsons%20Rd%20NW%2C%20Edmonton%2C%20AB%20T6N%201B4%2C%20Canada!5e0!3m2!1sen!2sin!4v1775803378612!5m2!1sen!2sin",
-    localContext: "Jassal Signs offers custom signage, pylon signs, and vehicle wraps for businesses across Alberta, backed by over 30 years of visual craftsmanship."
+    localContext: "Jassal Signs offers custom signage, pylon signs, and vehicle wraps for businesses across Alberta, backed by over 20+ years of visual craftsmanship."
   };
 
   const testimonialsData = [

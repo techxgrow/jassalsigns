@@ -5,7 +5,7 @@ const FranchiseBenefits = () => {
   const benefits = [
     {
       icon: <Award className="w-8 h-8 text-[#ED1D26]" />,
-      title: "30+ Years Legacy",
+      title: "20+ Years Legacy",
       description:
         "Join a brand with decades of proven excellence and market authority.",
     },

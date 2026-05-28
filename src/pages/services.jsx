@@ -230,7 +230,7 @@ const ServicesPage = () => {
               <div className="space-y-8">
                 {[
                   {
-                    title: "30+ Years Experience",
+                    title: "20+ Years Experience",
                     text: "Decades of refined craftsmanship and industry knowledge in every project.",
                   },
                   {

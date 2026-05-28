@@ -77,12 +77,12 @@ const About = () => {
             <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
               Transforming Businesses Through{" "}
               <span className="text-[#ED1E26]">Professional Signage</span> &
-              Printing for 30 Years
+              Printing for 20+ Years
               <br />
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               Jassal Signs is a premier signage and commercial printing company
-              serving businesses across Alberta for over 30 years. What started
+              serving businesses across Alberta for over 20+ years. What started
               as a small sign shop has grown into a full-service visual
               solutions provider, helping hundreds of businesses enhance their
               brand visibility and attract more customers.
@@ -123,7 +123,7 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">
               <p>
-                Founded over 30 years ago with a single mission to elevate Alberta's visual commercial landscape, Jassal Signs has matured into one of Western Canada's most technologically advanced architectural signage manufacturers. Operating from our state-of-the-art facility located at <strong>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</strong>, our local facility bridges seasoned artisanal craftsmanship with high-capacity industrial fabrication.
+                Founded over 20+ years ago with a single mission to elevate Alberta's visual commercial landscape, Jassal Signs has matured into one of Western Canada's most technologically advanced architectural signage manufacturers. Operating from our state-of-the-art facility located at <strong>3273 Parsons Rd NW, Edmonton, AB T6N 1B4</strong>, our local facility bridges seasoned artisanal craftsmanship with high-capacity industrial fabrication.
               </p>
               <p>
                 Our structural and production capacity is built upon heavy capital investments in premium precision machinery. We utilize multi-axis industrial CNC routers for metal and acrylic profiling, high-definition large format solvent printers for weather-resistant wrap graphics, and automated channel letter bending machinery that guarantees sub-millimeter tolerances on intricate dimensional logos. Our facility features climate-controlled indoor installation bays dedicated specifically to wrapping commercial fleet vehicles under immaculate dust-free conditions, ensuring absolute vinyl adhesion and premium longevity.

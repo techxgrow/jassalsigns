@@ -90,7 +90,7 @@ const CityFooter = () => {
             <p className="text-gray-400 text-lg leading-relaxed max-w-xs font-medium">
               Transforming businesses through elite signage, precision wraps,
               and high-impact printing for over{" "}
-              <span className="text-white font-bold">30 years</span>.
+              <span className="text-white font-bold">20+ years</span>.
             </p>
             <div className="flex gap-4">
               {[
