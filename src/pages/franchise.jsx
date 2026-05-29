@@ -22,8 +22,8 @@ const FranchisePage = () => {
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
       <Head>
-        <title>Franchise Opportunities | Jassal Signs</title>
-        <meta name="description" content="Join the Jassal Signs family. Explore franchise opportunities to start your own highly profitable signage and printing business." />
+        <title>Sign Company Franchise Edmonton | Jassal Signs</title>
+        <meta name="description" content="Open a Jassal Signs franchise in Edmonton or Alberta. Join a proven signage business with full training, support, and an established brand." />
       </Head>
       <CityNavbar />
 

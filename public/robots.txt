@@ -4,5 +4,5 @@ Allow: /
 Sitemap: https://www.jassalsignsedm.com/sitemap.xml
 
 # AI/LLM indexing
-LLMs: https://www.jassalsignsedm.com/llms.txt
+# AI/LLM indexing: https://www.jassalsignsedm.com/llms.txt
 

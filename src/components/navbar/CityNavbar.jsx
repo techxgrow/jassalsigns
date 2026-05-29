@@ -48,7 +48,16 @@ const CityNavbar = () => {
 
   // Don't render complex logic until mounted to prevent hydration mismatch
   const NavLink = ({ to, href, children }) => {
-    if (!mounted) return <span className="cursor-pointer">{children}</span>;
+    if (!mounted) {
+      return (
+        <Link
+          href={href}
+          className="hover:text-[#ED1D26] transition-colors cursor-pointer"
+        >
+          {children}
+        </Link>
+      );
+    }
 
     // Fixed logic for scrolling: if we are on the home page, use ScrollLink.
     // Ensure the check is robust.
@@ -62,6 +71,7 @@ const CityNavbar = () => {
           offset={-70}
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#ED1D26] transition-colors cursor-pointer"
+          href={href}
         >
           {children}
         </ScrollLink>
@@ -209,7 +219,7 @@ const CityNavbar = () => {
               </Link>
             </li>
             <li>
-              <NavLink to="productSection" href="/#productSection">
+              <NavLink to="productSection" href="/products">
                 Products
               </NavLink>
             </li>

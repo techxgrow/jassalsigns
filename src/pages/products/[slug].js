@@ -192,18 +192,27 @@ const ProductPage = () => {
   };
 
   const productSeoTitles = {
-    vehiclewraps: "Edmonton Vehicle Wraps & Fleet Graphics | Jassal Signs",
-    channelletters: "Illuminated LED Channel Letters Edmonton | Jassal Signs",
-    printmedia: "Commercial Printing, Large Format Banners & Decals Edmonton | Jassal Signs",
-    pylonsigns: "Custom Commercial Pylon Signs Edmonton | Jassal Signs",
-    indoorsigns: "Corporate Indoor Signs & Window Graphics Edmonton | Jassal Signs",
-    outdoorsigns: "Custom Outdoor Business Signs & Storefront Signage Edmonton | Jassal Signs",
-    otherproducts: "Specialized Business Signage & Safety Boards Edmonton | Jassal Signs"
+    indoorsigns: "Indoor Signs in Edmonton, AB | Lobby, Acrylic & Business Signs | Jassal Signs",
+    outdoorsigns: "Outdoor Signs in Edmonton, AB | Storefront & Building Signs | Jassal Signs",
+    vehiclewraps: "Vehicle Wraps in Edmonton, AB | Car & Fleet Graphics | Jassal Signs",
+    channelletters: "LED Channel Letters in Edmonton, AB | Illuminated Signage | Jassal Signs",
+    pylonsigns: "Pylon Signs in Edmonton, AB | Freestanding & Monument Signs | Jassal Signs",
+    printmedia: "Commercial Printing in Edmonton, AB | Banners & Decals | Jassal Signs",
+    otherproducts: "Specialty Signs in Edmonton, AB | Safety & Custom Signage | Jassal Signs"
   };
 
-  const pageTitle = productSeoTitles[slug] || "Premium Custom Signage Solutions | Jassal Signs";
-  const rawDesc = data.productPage[slug]?.para1 || "Explore premium custom signage solutions by Jassal Signs.";
-  const pageDesc = rawDesc.length > 155 ? `${rawDesc.substring(0, 152)}...` : rawDesc;
+  const productSeoDescriptions = {
+    indoorsigns: "Custom indoor signs for Edmonton businesses. Lobby signs, acrylic signs, window graphics, and door signs. Designed and built in-house by Jassal Signs.",
+    outdoorsigns: "Outdoor business signs in Edmonton. Storefront signs, building signs, and exterior signage designed, fabricated, and installed by Jassal Signs.",
+    vehiclewraps: "Professional vehicle wraps in Edmonton. Full wraps, partial wraps, and fleet graphics designed and installed by Jassal Signs. Call (780) 437-7790.",
+    channelletters: "Custom LED channel letters in Edmonton. Illuminated and non-illuminated options for storefronts and building exteriors by Jassal Signs.",
+    pylonsigns: "Custom pylon and monument signs in Edmonton. High-visibility freestanding signs designed, fabricated, and installed by Jassal Signs.",
+    printmedia: "Professional commercial printing in Edmonton. Large format banners, decals, brochures, and business cards. Fast turnaround. Call (780) 437-7790.",
+    otherproducts: "Specialty and safety signage for Edmonton businesses. Custom-fabricated regulatory signs and branded assets by Jassal Signs."
+  };
+
+  const pageTitle = productSeoTitles[slug] || "Custom Signs in Edmonton, AB | Jassal Signs";
+  const pageDesc = productSeoDescriptions[slug] || "Explore premium custom signage solutions by Jassal Signs in Edmonton, AB. Call (780) 437-7790 for a free quote.";
 
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">

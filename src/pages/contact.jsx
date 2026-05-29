@@ -8,10 +8,10 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact Us | Jassal Signs</title>
+        <title>Contact Jassal Signs | Sign Company Edmonton</title>
         <meta
           name="description"
-          content="Get in touch with Jassal Signs for elite signage solutions in Edmonton, Calgary, and beyond."
+          content="Contact Jassal Signs in Edmonton for custom signs, vehicle wraps, and commercial printing. Call (780) 437-7790 or visit us at 3273 Parsons Rd NW."
         />
       </Head>
       <CityNavbar />

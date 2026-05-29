@@ -183,7 +183,7 @@ const ServicesPage = () => {
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
       <Head>
         <title>Edmonton Signage & Commercial Printing Services | Jassal Signs</title>
-        <meta name="description" content="Explore Jassal Signs' full-service visual solutions in Edmonton and Alberta: storefront signage, permits, custom design, fleet wraps, professional installation, and maintenance." />
+        <meta name="description" content="Edmonton signage and commercial printing services. Storefront signs, vehicle wraps, channel letters, pylon signs, installation, and permits across Alberta." />
         <link rel="canonical" href="https://www.jassalsignsedm.com/services" />
         <script
           type="application/ld+json"

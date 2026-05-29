@@ -61,10 +61,10 @@ const GalleryPage = () => {
   return (
     <>
       <Head>
-        <title>Our Gallery | Jassal Signs</title>
+        <title>Signage Portfolio Edmonton | Jassal Signs Work</title>
         <meta
           name="description"
-          content="Explore our complete line of masterpieces and signage works."
+          content="View Jassal Signs' portfolio of custom signage projects across Edmonton and Alberta. Channel letters, vehicle wraps, pylon signs, and more."
         />
       </Head>
       <CityNavbar />
