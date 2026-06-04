@@ -5,10 +5,10 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaChevronDown,
 } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
 import { IoMdClose } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import logo from "@/logo.png";
@@ -16,20 +16,42 @@ const CityNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const router = useRouter();
 
-  // Use state for home page check to avoid hydration issues
-  const [isHomePage, setIsHomePage] = useState(false);
+  const dropdownItems = [
+    { name: "Indoor Signs", link: "/products/indoorsigns" },
+    { name: "Outdoor Signs", link: "/products/outdoorsigns" },
+    { name: "Vehicle Wraps", link: "/products/vehiclewraps" },
+    { name: "Channel Letters", link: "/products/channelletters" },
+    { name: "Pylon Signs", link: "/products/pylonsigns" },
+    { name: "Print Media", link: "/products/printmedia" },
+    { name: "Other Products", link: "/products/otherproducts" },
+  ];
+
   const [isLightPage, setIsLightPage] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Initial check
-    setIsHomePage(router.pathname === "/");
     setIsLightPage(
       router.pathname === "/contact" || router.pathname === "/gallery",
     );
   }, [router.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -46,47 +68,7 @@ const CityNavbar = () => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
-  // Don't render complex logic until mounted to prevent hydration mismatch
-  const NavLink = ({ to, href, children }) => {
-    if (!mounted) {
-      return (
-        <Link
-          href={href}
-          className="hover:text-[#ED1D26] transition-colors cursor-pointer"
-        >
-          {children}
-        </Link>
-      );
-    }
 
-    // Fixed logic for scrolling: if we are on the home page, use ScrollLink.
-    // Ensure the check is robust.
-    if (isHomePage) {
-      return (
-        <ScrollLink
-          to={to}
-          spy={true}
-          smooth={true}
-          duration={500}
-          offset={-70}
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#ED1D26] transition-colors cursor-pointer"
-          href={href}
-        >
-          {children}
-        </ScrollLink>
-      );
-    }
-    return (
-      <Link
-        href={href}
-        onClick={() => setMenuOpen(false)}
-        className="hover:text-[#ED1D26] transition-colors cursor-pointer"
-      >
-        {children}
-      </Link>
-    );
-  };
 
   return (
     <nav
@@ -218,10 +200,84 @@ const CityNavbar = () => {
                 About Us
               </Link>
             </li>
-            <li>
-              <NavLink to="productSection" href="/products">
-                Products
-              </NavLink>
+            <li
+              ref={dropdownRef}
+              className="relative group cursor-pointer"
+              onMouseEnter={() => {
+                if (window.innerWidth >= 768) {
+                  setDropdownOpen(true);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth >= 768) {
+                  setDropdownOpen(false);
+                }
+              }}
+            >
+              <div className="flex items-center gap-1 hover:text-[#ED1D26] transition-colors">
+                <Link
+                  href="/products"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setDropdownOpen(false);
+                  }}
+                  className="transition-colors"
+                >
+                  Products
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setDropdownOpen(!dropdownOpen);
+                  }}
+                  className="p-1 focus:outline-none flex items-center justify-center"
+                  aria-expanded={dropdownOpen}
+                  aria-label="Toggle products menu"
+                >
+                  <FaChevronDown
+                    className={`w-3 h-3 transition-transform duration-300 ${
+                      dropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </div>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`
+                  transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible
+                  ${dropdownOpen 
+                    ? "opacity-100 max-h-[400px] mt-3 md:mt-0 md:translate-y-0 md:visible pointer-events-auto" 
+                    : "opacity-0 max-h-0 pointer-events-none md:max-h-none md:-translate-y-2 md:invisible"
+                  }
+                  md:absolute md:left-0 md:top-full md:mt-2 md:rounded-xl md:py-3 md:px-4 md:w-56 md:z-50
+                  md:shadow-xl md:border md:text-left
+                  ${(isLightPage || isScrolling) 
+                    ? "md:bg-white md:text-black md:border-gray-100" 
+                    : "md:bg-[#0a0a0a] md:text-white md:border-white/10"
+                  }
+                  /* Mobile defaults */
+                  w-full bg-transparent border-0 shadow-none text-center flex flex-col items-center gap-3
+                `}
+              >
+                <ul className="flex flex-col gap-3 md:gap-2.5 text-base md:text-sm font-medium w-full text-center md:text-left">
+                  {dropdownItems.map((item, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={item.link}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setDropdownOpen(false);
+                        }}
+                        className="block py-1 md:py-0.5 hover:text-[#ED1D26] transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
             <li>
               <Link
