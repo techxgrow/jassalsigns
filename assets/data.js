@@ -1422,53 +1422,49 @@ export const data = {
       },
     },
     indoorsigns: {
-      heading: "Indoor Signs",
-
-      introHeading: "Make a Lasting Impression, Inside Out.",
-      para1: `The interior of your business is where your brand comes to life. Indoor signage isn’t just about decoration; it’s about professionalism, safety, and customer experience. At Jassal Signs, we use premium materials like brushed aluminum, high-grade acrylic, and durable vinyl to ensure your office, clinic, or retail store looks world-class.`,
-
-      para2: `We offer a wide variety of indoor sign solutions tailored to suit your business space — including acrylic signs, wall decals, directory boards, 3D logo displays, and more. Each piece is designed to complement your interior design while reinforcing your brand identity.`,
-
-      para3: `Our materials are selected for their professional appearance and long-lasting quality. Whether you’re aiming for a sleek corporate look or a creative retail vibe, we ensure your signage blends seamlessly with your surroundings.`,
-
-      para4: `Beyond just signs, we help you create experiences — guiding foot traffic, sharing information, and highlighting your brand story throughout your space. Every detail is crafted with clarity, legibility, and style in mind.`,
-
-      para5: `With over 20+ years of expertise, we help you transform your spaces into branded environments that feel thoughtful, organized, and visually impressive.`,
-      closingH2Heading: `Your Trusted Indoor Sign Maker in <span class="text-[#ED1D26]">Edmonton</span>`,
-      closingParagraph: `When it comes to indoor signage in Edmonton, Jassal Signs is the name businesses rely on. From lobby signs and reception displays to wall graphics and wayfinding systems, we design, fabricate, and install everything in-house — so there's no delay and no compromise on quality. If you've been searching for a trusted indoor sign company near you in Edmonton, the answer is right here.`,
+      heading: "CUSTOM INDOOR SIGNS IN EDMONTON",
+      eyebrow: "EDMONTON INDOOR SIGN SPECIALISTS",
+      subHeading: "From lobby signs and acrylic panels to wayfinding and wall graphics — Jassal Signs designs, fabricates, and installs custom indoor signage for Edmonton businesses.",
+      introHeading: "Custom Indoor Signs in Edmonton",
+      introSubheading: "Make a Lasting Impression, Inside Out.",
+      para1: `The interior of your business is where your brand comes to life. Custom indoor signs aren't just decoration — they signal professionalism, build trust, and shape the customer experience from the moment someone walks through your door. At Jassal Signs, Edmonton's trusted interior sign company, we use premium materials including brushed aluminum, high-grade acrylic, and durable vinyl to ensure your office, clinic, or retail store makes a world-class first impression.`,
+      para2: `We offer a wide variety of indoor sign solutions tailored to your Edmonton business space — including acrylic signs, wall decals, directory boards, 3D logo displays, and more. Every piece is designed to complement your interior while reinforcing your brand identity. That’s our quality guarantee.`,
+      closingH2Heading: `Your Trusted Indoor Sign Company in <span class="text-[#ED1D26]">Edmonton</span>`,
+      closingParagraph: `When it comes to indoor signage in Edmonton, Jassal Signs is the name businesses rely on. From lobby signs and reception displays to wall graphics and wayfinding systems, we design, fabricate, and install everything in-house — so there’s no delay and no compromise on quality. With over 20+ years of signage experience serving Alberta businesses, we bring the same level of craftsmanship to a single office sign as we do to a full interior signage package for a new location. If you’ve been searching for a trusted indoor sign maker near you in Edmonton, the answer is right here.`,
       consultationObj: {
-        heading: "Our Indoor Signage Solutions",
-
+        heading: "Indoor Signage Solutions for Edmonton Businesses",
+        subHeading: "",
+        bodyIntro: "From lobby signs that anchor your reception area to wayfinding systems that guide visitors with ease, we design, fabricate, and install every sign in-house at our Edmonton facility. No outsourcing. No delays. Just sharp, durable signage built to reflect your brand.",
         bulletList: [
           {
             label: "Lobby & Reception Signs",
             value:
-              'The centerpiece of your office. We create stunning 3D dimensional logos that "pop" using acrylic, metal, or PVC.',
+              "The centrepiece of your Edmonton office. We create stunning 3D dimensional logos in acrylic, metal, or PVC — mounted to impress the moment visitors step inside.",
           },
           {
             label: "Wayfinding & Directional Signs",
             value:
-              "Guide your visitors with ease. We design clear room identifiers, directories, and floor graphics.",
+              "Help visitors navigate your space with confidence. We design clear room identifiers, directory boards, and floor graphics tailored to your building layout.",
           },
           {
             label: "Acrylic Branding Panels",
             value:
-              "Sophisticated and modern. Panels mounted with elegant stainless-steel standoffs for a high-end look.",
+              "Sleek, modern, and unmistakably professional. Our acrylic interior signs are panel-mounted with elegant stainless-steel standoffs for a high-end corporate finish.",
           },
           {
             label: "Window Graphics & Privacy Film",
             value:
-              "From custom decals Edmonton businesses trust for storefront branding, to regulatory signs and decals Edmonton compliance mandates, we design window graphics and frosted films perfect for boardrooms and glass partitions.",
+              "Custom window decals Edmonton businesses rely on for storefront branding, boardroom privacy film, and glass partition graphics — compliant with all local requirements.",
           },
           {
             label: "Wall Murals & Large Format Graphics",
             value:
-              "Turn empty walls into storytelling opportunities with custom-printed vinyl wraps.",
+              "Transform blank walls into powerful brand storytelling. We produce and install custom-printed vinyl wraps for any size space — retail, corporate, or hospitality.",
           },
           {
             label: "Safety & Compliance (ADA) Signs",
             value:
-              "Tactile and Braille-integrated signage to ensure your building meets all Edmonton accessibility standards.",
+              "Tactile and Braille-integrated interior signs that ensure your Edmonton building meets all accessibility standards — designed to code, every time.",
           },
         ],
         faqs: [
@@ -1501,6 +1497,41 @@ export const data = {
             question: "Can Jassal Signs create a complete interior signage package for a new business opening?",
             answer:
               "Yes — and this is one of the most common requests they handle. A complete interior package typically includes a lobby or reception sign, wayfinding and directional signs, room ID signs, window graphics, and branded wall displays. Jassal Signs coordinates the full package as a single project for businesses opening across Edmonton and Alberta, so everything matches and installs on the same schedule.",
+          },
+        ],
+      },
+      industriesObj: {
+        heading: "Indoor Signage for Every Edmonton Business",
+        desc: "We work with businesses of all sizes across Edmonton and the surrounding area. Whether you're outfitting a new corporate office, refreshing a medical or dental clinic, branding a retail storefront, or signing a restaurant or hospitality space, our team has the experience and equipment to deliver. We also serve schools, fitness studios, real estate offices, and industrial facilities — any space that needs to communicate clearly and look its best.",
+        industries: [
+          { name: "Corporate Offices", icon: "Building2" },
+          { name: "Medical & Dental", icon: "Stethoscope" },
+          { name: "Retail Storefronts", icon: "ShoppingBag" },
+          { name: "Restaurants", icon: "Utensils" },
+          { name: "Schools & Education", icon: "GraduationCap" },
+          { name: "Fitness Studios", icon: "Dumbbell" },
+          { name: "Real Estate", icon: "Home" },
+          { name: "Industrial", icon: "Factory" },
+          { name: "Salons & Spas", icon: "Sparkles" },
+        ],
+      },
+      processObj: {
+        heading: "Our Simple 3-Step Sign Process",
+        steps: [
+          {
+            number: "01",
+            title: "Design Consultation",
+            desc: "Share your vision, logo, and space details. Our Edmonton-based design team creates a mockup for your approval — no generic templates.",
+          },
+          {
+            number: "02",
+            title: "In-House Fabrication",
+            desc: "Every sign is produced at our Edmonton facility using premium materials. No outsourcing means tighter quality control and faster turnaround.",
+          },
+          {
+            number: "03",
+            title: "Professional Installation",
+            desc: "Our team handles delivery and installation at your Edmonton location. We leave your space looking exactly as planned — clean, precise, and on time.",
           },
         ],
       },

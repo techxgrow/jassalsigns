@@ -21,7 +21,26 @@ import {
   Sparkles,
   Plus,
   Minus,
+  Building2,
+  Stethoscope,
+  ShoppingBag,
+  Utensils,
+  GraduationCap,
+  Dumbbell,
+  Home,
+  Factory,
 } from "lucide-react";
+
+const iconMap = {
+  Building2,
+  Stethoscope,
+  ShoppingBag,
+  Utensils,
+  GraduationCap,
+  Dumbbell,
+  Home,
+  Factory,
+};
 import Link from "next/link";
 
 const ProductPage = () => {
@@ -279,33 +298,60 @@ const ProductPage = () => {
             >
               <span className="w-8 h-[1px] bg-[#ED1D26]"></span>
               <span className="text-[#ED1D26] font-bold uppercase tracking-[0.4em] text-xs md:text-sm">
-                Elite Signage Solutions
+                {data.productPage[slug]?.eyebrow || "Elite Signage Solutions"}
               </span>
               <span className="w-8 h-[1px] bg-[#ED1D26]"></span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl font-black text-white leading-[0.9] md:leading-[1.0] uppercase tracking-tighter mb-4 drop-shadow-2xl px-4">
-              {data.productPage[slug]?.heading
-                ?.split(" ")
-                .slice(0, -1)
-                .join(" ")}{" "}
-              <br />
-              <span className="text-[#ED1D26]">
-                {data.productPage[slug]?.heading?.split(" ").slice(-1)}
-              </span>
+              {data.productPage[slug]?.heroTitle ? (
+                <>
+                  {data.productPage[slug].heroTitle.line1} <br />
+                  <span className="text-[#ED1D26]">
+                    {data.productPage[slug].heroTitle.line2}
+                  </span>
+                </>
+              ) : (
+                <>
+                  {data.productPage[slug]?.heading
+                    ?.split(" ")
+                    .slice(0, -1)
+                    .join(" ")}{" "}
+                  <br />
+                  <span className="text-[#ED1D26]">
+                    {data.productPage[slug]?.heading?.split(" ").slice(-1)}
+                  </span>
+                </>
+              )}
             </h1>
 
             {/* Subtext */}
-            <p
-              className="text-gray-300 text-base md:text-xl font-medium max-w-2xl mx-auto leading-relaxed px-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Transforming spaces with precision-engineered{" "}
-              {data.productPage[slug]?.heading?.toLowerCase()} tailored for
-              brand excellence.
-            </p>
+            {data.productPage[slug]?.subHeading ? (
+              <div
+                className="text-gray-300 text-base md:text-xl font-medium max-w-3xl mx-auto leading-relaxed px-6 space-y-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                {Array.isArray(data.productPage[slug].subHeading) ? (
+                  data.productPage[slug].subHeading.map((sub, i) => (
+                    <p key={i}>{sub}</p>
+                  ))
+                ) : (
+                  <p>{data.productPage[slug].subHeading}</p>
+                )}
+              </div>
+            ) : (
+              <p
+                className="text-gray-300 text-base md:text-xl font-medium max-w-2xl mx-auto leading-relaxed px-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                Transforming spaces with precision-engineered{" "}
+                {data.productPage[slug]?.heading?.toLowerCase()} tailored for
+                brand excellence.
+              </p>
+            )}
 
             {/* Action Buttons */}
             <div
@@ -345,9 +391,14 @@ const ProductPage = () => {
         <div className="relative mb-20 group  p-10 md:p-12" data-aos="fade-up">
           <div className="absolute -inset-4 bg-gradient-to-r from-[#ED1D26]/5 to-transparent rounded-[40px] -z-10 group-hover:from-[#ED1D26]/10 transition-all duration-700"></div>
           {data.productPage[slug]?.introHeading && (
-            <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-6 uppercase tracking-tighter">
+            <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-2 uppercase tracking-tighter">
               {data.productPage[slug]?.introHeading}
             </h2>
+          )}
+          {data.productPage[slug]?.introSubheading && (
+            <p className="text-xl md:text-2xl font-bold text-[#ED1D26] mb-6 uppercase tracking-tight">
+              {data.productPage[slug]?.introSubheading}
+            </p>
           )}
           <p className="text-lg md:text-xl font-semibold text-gray-800 text-justify leading-relaxed">
             {data.productPage[slug]?.para1}
@@ -368,16 +419,20 @@ const ProductPage = () => {
               {/* Left Info Section */}
               <div className="space-y-10">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-[#ED1D26] rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
-                    <Sparkles className="w-3.5 h-3.5 md:w-4 h-4" />
-                    Premium Consultation
-                  </div>
+
                   <h3 className="text-3xl md:text-3xl font-black text-gray-900 leading-tight uppercase tracking-tighter">
                     {data.productPage[slug]?.consultationObj?.heading}
                   </h3>
-                  <p className="text-lg md:text-xl font-bold text-gray-500">
-                    {data.productPage[slug]?.consultationObj?.subHeading}
-                  </p>
+                  {data.productPage[slug]?.consultationObj?.subHeading && (
+                    <p className="text-lg md:text-xl font-bold text-gray-500">
+                      {data.productPage[slug]?.consultationObj?.subHeading}
+                    </p>
+                  )}
+                  {data.productPage[slug]?.consultationObj?.bodyIntro && (
+                    <p className="text-base text-gray-600 font-semibold leading-relaxed">
+                      {data.productPage[slug]?.consultationObj?.bodyIntro}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-6">
@@ -457,13 +512,101 @@ const ProductPage = () => {
               <div className="flex items-center gap-3 pt-2">
                 <div className="h-[1px] w-8 bg-gray-200/60"></div>
                 <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-gray-400">
-                  Our Quality Guarantee
+                  {data.productPage[slug]?.quoteCaption || "Our Quality Guarantee"}
                 </span>
                 <div className="h-[1px] w-8 bg-gray-200/60"></div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Section 4 - Industries Served */}
+        {data.productPage[slug]?.industriesObj && (
+          <section className="py-20 border-t border-gray-100" data-aos="fade-up">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-12 items-start">
+              <div>
+                <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs mb-3">
+                  Tailored Solutions
+                </h4>
+                <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase mb-6 leading-[0.95]">
+                  {data.productPage[slug].industriesObj.heading.split(" ").slice(0, -1).join(" ")}{" "}
+                  <span className="text-[#ED1D26]">{data.productPage[slug].industriesObj.heading.split(" ").slice(-1)}</span>
+                </h2>
+                <p className="text-gray-600 font-medium text-lg leading-relaxed">
+                  {data.productPage[slug].industriesObj.desc}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {data.productPage[slug].industriesObj.industries.map((ind, idx) => {
+                  const IconComp = iconMap[ind.icon] || Building2;
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-white p-6 rounded-3xl border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.05)] hover:border-red-100 transition-all duration-500 group flex flex-col items-center text-center justify-between min-h-[160px]"
+                    >
+                      <div className="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#ED1D26] group-hover:scale-110 transition-all duration-500">
+                        <IconComp className="w-6 h-6 text-[#ED1D26] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <h3 className="text-sm font-black text-gray-900 uppercase tracking-tight leading-tight">
+                        {ind.name}
+                      </h3>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 5 - How It Works */}
+        {data.productPage[slug]?.processObj && (
+          <section className="py-20 border-t border-gray-100" data-aos="fade-up">
+            <div className="text-center mb-16">
+              <h4 className="text-[#ED1D26] font-black uppercase tracking-[0.4em] text-[10px] md:text-xs mb-3">
+                Seamless Execution
+              </h4>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter uppercase">
+                {data.productPage[slug].processObj.heading.split(" ").slice(0, -2).join(" ")}{" "}
+                <span className="text-gray-400">
+                  {data.productPage[slug].processObj.heading.split(" ").slice(-2, -1)}
+                </span>{" "}
+                <span className="text-[#ED1D26]">
+                  {data.productPage[slug].processObj.heading.split(" ").slice(-1)}
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              {data.productPage[slug].processObj.steps.map((step, idx) => (
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-[40px] border border-gray-200/40 shadow-[0_15px_40px_rgba(0,0,0,0.01)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-500 relative group overflow-hidden"
+                >
+                  {/* Step Number Background Watermark */}
+                  <div className="absolute -right-4 -bottom-6 text-9xl font-black text-gray-100 select-none group-hover:text-red-50/70 transition-colors duration-500 font-grotesk pointer-events-none">
+                    {step.number}
+                  </div>
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      {/* Step Badge */}
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-red-50 text-[#ED1D26] font-black text-sm mb-6 group-hover:bg-[#ED1D26] group-hover:text-white transition-colors duration-500">
+                        {step.number}
+                      </span>
+                      <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 font-semibold leading-relaxed text-base">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <Element name="gallerySection" className="py-24 scroll-mt-24">
           <div
@@ -649,16 +792,18 @@ const ProductPage = () => {
         </section>
 
         {/* Remaining Paragraphs - Elite Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-4">
-          {[3, 4].map((num) => (
-            <div key={num} className="relative group" data-aos="fade-up">
-              <div className="absolute top-0 left-0 w-8 h-1 bg-[#ED1D26] transition-all duration-500 group-hover:w-full"></div>
-              <p className="pt-8 text-xl text-gray-700 leading-relaxed font-medium">
-                {data.productPage[slug]?.[`para${num}`]}
-              </p>
-            </div>
-          ))}
-        </div>
+        {data.productPage[slug]?.para3 && data.productPage[slug]?.para4 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-4">
+            {[3, 4].map((num) => (
+              <div key={num} className="relative group" data-aos="fade-up">
+                <div className="absolute top-0 left-0 w-8 h-1 bg-[#ED1D26] transition-all duration-500 group-hover:w-full"></div>
+                <p className="pt-8 text-xl text-gray-700 leading-relaxed font-medium">
+                  {data.productPage[slug]?.[`para${num}`]}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {(data.productPage[slug]?.closingParagraph || data.productPage[slug]?.para5) && (
           <div
@@ -671,7 +816,7 @@ const ProductPage = () => {
                 __html: data.productPage[slug]?.closingH2Heading || `Legacy of <span class="text-[#ED1D26]">Excellence</span>` 
               }}
             />
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-5xl mx-auto font-medium">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-5xl mx-auto font-medium whitespace-pre-line text-center">
               {data.productPage[slug]?.closingParagraph || data.productPage[slug]?.para5}
             </p>
             <Link href="/contact">
