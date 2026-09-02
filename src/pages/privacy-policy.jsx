@@ -6,17 +6,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const PrivacyPolicy = () => {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
     AOS.init({
       duration: 1000,
       once: true,
     });
   }, []);
-
-  if (!mounted) return null;
 
   return (
     <div className="bg-white text-black font-grotesk">

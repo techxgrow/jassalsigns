@@ -144,8 +144,21 @@ const CityPage = ({ cityInfo }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const slug = (context.params.slug || "").toUpperCase();
+export async function getStaticPaths() {
+  const cityKeys = Object.keys(cityData);
+  const paths = cityKeys.map((key) => ({
+    params: { slug: key.toLowerCase() },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const rawSlug = params?.slug || "";
+  const slug = rawSlug.toUpperCase();
   const data = cityData[slug] || null;
 
   if (!data) {
@@ -158,7 +171,9 @@ export async function getServerSideProps(context) {
     props: {
       cityInfo: data,
     },
+    revalidate: 3600,
   };
 }
 
 export default CityPage;
+

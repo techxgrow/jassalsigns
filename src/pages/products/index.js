@@ -8,10 +8,7 @@ import "aos/dist/aos.css";
 import { ArrowRight } from "lucide-react";
 
 const ProductsListingPage = () => {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
     AOS.init({
       duration: 1000,
       once: true,
@@ -64,7 +61,6 @@ const ProductsListingPage = () => {
     },
   ];
 
-  if (!mounted) return null;
 
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">

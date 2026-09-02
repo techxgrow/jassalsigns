@@ -27,7 +27,6 @@ import choose from "@/choose.png";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 const ServicesPage = () => {
-  const [mounted, setMounted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const faqs = [
@@ -112,7 +111,6 @@ const ServicesPage = () => {
   };
 
   useEffect(() => {
-    setMounted(true);
     AOS.init({
       duration: 1000,
       once: true,
@@ -176,8 +174,6 @@ const ServicesPage = () => {
       color: "bg-slate-600",
     },
   ];
-
-  if (!mounted) return null;
 
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">

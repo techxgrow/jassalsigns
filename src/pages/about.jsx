@@ -10,20 +10,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
     AOS.init({
       duration: 1000,
       once: true,
       mirror: true,
     });
   }, []);
-
-  if (!mounted) {
-    return <div />;
-  }
 
   return (
     <div className="bg-white text-black font-grotesk">

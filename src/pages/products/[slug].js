@@ -41,15 +41,16 @@ const iconMap = {
   Home,
   Factory,
 };
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 
-const ProductPage = () => {
+const ProductPage = ({ slug: propSlug, productData, initialGalleryImages = [] }) => {
   const router = useRouter();
-  const slug = router.query.slug;
+  const slug = propSlug || router.query.slug;
 
-  const [mounted, setMounted] = React.useState(false);
   const [openFaqIndex, setOpenFaqIndex] = React.useState(null);
-  const [galleryImages, setGalleryImages] = React.useState([]);
+  const [galleryImages, setGalleryImages] = React.useState(initialGalleryImages);
   const [galleryPage, setGalleryPage] = React.useState(1);
   const imagesPerPage = 12; // 3 rows * 4 columns = 12 images
 
@@ -58,14 +59,15 @@ const ProductPage = () => {
   }, [slug]);
 
   useEffect(() => {
-    setMounted(true);
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
     AOS.refresh();
   }, []);
 
   useEffect(() => {
-    if (slug && data.productPage[slug]) {
-      // Fetch dynamic gallery images for the slug
+    if (initialGalleryImages && initialGalleryImages.length > 0) {
+      setGalleryImages(initialGalleryImages);
+    } else if (slug && data.productPage[slug]) {
+      // Fallback dynamic gallery images fetch if not provided statically
       fetch(`/api/gallery/${slug}`)
         .then((res) => {
           if (!res.ok) {
@@ -84,9 +86,13 @@ const ProductPage = () => {
         })
         .catch((err) => console.error("Error fetching gallery images", err));
     }
-  }, [slug]);
+  }, [slug, initialGalleryImages]);
 
-  if (!mounted || !slug || !data.productPage[slug]) {
+  if (router.isFallback) {
+    return <div className="min-h-screen bg-white flex items-center justify-center">Loading...</div>;
+  }
+
+  if (!slug || !data.productPage[slug]) {
     return <div className="min-h-screen bg-white"></div>;
   }
 
@@ -233,6 +239,28 @@ const ProductPage = () => {
   const pageTitle = productSeoTitles[slug] || "Custom Signs in Edmonton, AB | Jassal Signs";
   const pageDesc = productSeoDescriptions[slug] || "Explore premium custom signage solutions by Jassal Signs in Edmonton, AB. Call (780) 437-7790 for a free quote.";
 
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": data.productPage[slug]?.heading || pageTitle,
+    "description": pageDesc,
+    "brand": {
+      "@type": "Brand",
+      "name": "Jassal Signs"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "CAD",
+      "price": "0",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Jassal Signs"
+      }
+    }
+  };
+
   return (
     <div className="bg-white text-black font-grotesk overflow-x-hidden">
       <Head>
@@ -241,11 +269,44 @@ const ProductPage = () => {
         <link rel="canonical" href={`https://www.jassalsignsedm.com/products/${slug}`} />
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.jassalsignsedm.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Products",
+                  "item": "https://www.jassalsignsedm.com/products"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": data.productPage[slug]?.heading || pageTitle,
+                  "item": `https://www.jassalsignsedm.com/products/${slug}`
+                }
+              ]
+            })
+          }}
         />
       </Head>
       <CityNavbar />
@@ -834,5 +895,72 @@ const ProductPage = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = Object.keys(data.productPage).map((slug) => ({
+    params: { slug },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const slug = params?.slug;
+  const productData = data.productPage[slug] || null;
+
+  if (!productData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const slugToFolder = {
+    vehiclewraps: "vehicle-wraps",
+    channelletters: "channel-sales",
+    printmedia: "printing",
+    pylonsigns: "pylon",
+    indoorsigns: "indoor",
+    outdoorsigns: "outdoor",
+    otherproducts: "other",
+  };
+
+  const folderName = slugToFolder[slug];
+  let galleryImages = [];
+
+  if (folderName) {
+    const directoryPath = path.join(
+      process.cwd(),
+      "public",
+      "gallery",
+      "services",
+      folderName
+    );
+    try {
+      if (fs.existsSync(directoryPath)) {
+        const files = fs.readdirSync(directoryPath);
+        const imageFiles = files.filter((file) =>
+          /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
+        );
+        galleryImages = imageFiles.map((file) => ({
+          src: `/gallery/services/${folderName}/${file}`,
+        }));
+      }
+    } catch (err) {
+      console.error(`Error reading gallery directory for ${folderName}:`, err);
+    }
+  }
+
+  return {
+    props: {
+      slug,
+      productData,
+      initialGalleryImages: galleryImages,
+    },
+    revalidate: 3600,
+  };
+}
 
 export default ProductPage;

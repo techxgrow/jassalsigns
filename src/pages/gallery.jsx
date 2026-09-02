@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import fs from "fs";
+import path from "path";
 import CityNavbar from "@/components/navbar/CityNavbar";
 import CityFooter from "@/components/CityFooter";
 import Head from "next/head";
@@ -8,9 +10,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-const GalleryPage = () => {
-  const [categories, setCategories] = useState([]);
-  const [images, setImages] = useState([]);
+const GalleryPage = ({ initialCategories = [], initialImages = [] }) => {
+  const [categories, setCategories] = useState(initialCategories);
+  const [images, setImages] = useState(initialImages);
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 12;
@@ -18,24 +20,26 @@ const GalleryPage = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, mirror: true, once: true, offset: 50 });
 
-    // Fetch all images and categories
-    fetch("/api/gallery")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const contentType = res.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new TypeError("Expected JSON response from server");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if (data.categories) setCategories(data.categories);
-        if (data.images) setImages(data.images);
-      })
-      .catch((err) => console.error("Error fetching gallery data", err));
-  }, []);
+    if (!initialImages || initialImages.length === 0) {
+      // Fallback fetch if not provided statically
+      fetch("/api/gallery")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          const contentType = res.headers.get("content-type");
+          if (!contentType || !contentType.includes("application/json")) {
+            throw new TypeError("Expected JSON response from server");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          if (data.categories) setCategories(data.categories);
+          if (data.images) setImages(data.images);
+        })
+        .catch((err) => console.error("Error fetching gallery data", err));
+    }
+  }, [initialImages]);
 
   // Reset to first page when changing tabs
   useEffect(() => {
@@ -65,6 +69,30 @@ const GalleryPage = () => {
         <meta
           name="description"
           content="View Jassal Signs' portfolio of custom signage projects across Edmonton and Alberta. Channel letters, vehicle wraps, pylon signs, and more."
+        />
+        <link rel="canonical" href="https://www.jassalsignsedm.com/gallery" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.jassalsignsedm.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Portfolio Gallery",
+                  "item": "https://www.jassalsignsedm.com/gallery"
+                }
+              ]
+            })
+          }}
         />
       </Head>
       <CityNavbar />
@@ -233,5 +261,57 @@ const GalleryPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const categories = [
+    { id: "all", name: "All Projects" },
+    { id: "vehiclewraps", folder: "vehicle-wraps", name: "Vehicle Wraps" },
+    { id: "channelletters", folder: "channel-sales", name: "Channel Letters" },
+    { id: "printmedia", folder: "printing", name: "Print Media" },
+    { id: "pylonsigns", folder: "pylon", name: "Pylon Signs" },
+    { id: "indoorsigns", folder: "indoor", name: "Indoor Signs" },
+    { id: "outdoorsigns", folder: "outdoor", name: "Outdoor Signs" },
+    { id: "otherproducts", folder: "other", name: "Other Products" },
+  ];
+
+  const images = [];
+
+  categories.forEach((category) => {
+    if (category.id === "all") return;
+
+    const directoryPath = path.join(
+      process.cwd(),
+      "public",
+      "gallery",
+      "services",
+      category.folder,
+    );
+    try {
+      if (fs.existsSync(directoryPath)) {
+        const files = fs.readdirSync(directoryPath);
+        const imageFiles = files.filter((file) =>
+          /\.(jpg|jpeg|png|gif|webp)$/i.test(file),
+        );
+
+        imageFiles.forEach((file) => {
+          images.push({
+            src: `/gallery/services/${category.folder}/${file}`,
+            category: category.id,
+            categoryName: category.name,
+          });
+        });
+      }
+    } catch (error) {
+      console.error(`Error reading directory ${category.folder}`, error);
+    }
+  });
+
+  return {
+    props: {
+      initialCategories: categories,
+      initialImages: images,
+    },
+  };
+}
 
 export default GalleryPage;

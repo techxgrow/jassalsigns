@@ -13,7 +13,8 @@ function generateSiteMap() {
     { path: 'services', changefreq: 'weekly', priority: '0.8' },
     { path: 'franchise', changefreq: 'monthly', priority: '0.8' },
     { path: 'gallery', changefreq: 'weekly', priority: '0.8' },
-    { path: 'blogs', changefreq: 'weekly', priority: '0.8' }
+    { path: 'blogs', changefreq: 'weekly', priority: '0.8' },
+    { path: 'products', changefreq: 'weekly', priority: '0.9' }
   ];
 
   const staticUrls = staticPages.map(page => `

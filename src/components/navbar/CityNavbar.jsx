@@ -18,7 +18,29 @@ const CityNavbar = () => {
   const [mounted, setMounted] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const router = useRouter();
+
+  const handleMouseEnter = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
+      }
+      setDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+      closeTimeoutRef.current = setTimeout(() => {
+        setDropdownOpen(false);
+      }, 150);
+    }
+  };
 
   const dropdownItems = [
     { name: "Indoor Signs", link: "/products/indoorsigns" },
@@ -31,6 +53,14 @@ const CityNavbar = () => {
   ];
 
   const [isLightPage, setIsLightPage] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setMounted(true);
@@ -203,16 +233,8 @@ const CityNavbar = () => {
             <li
               ref={dropdownRef}
               className="relative group cursor-pointer"
-              onMouseEnter={() => {
-                if (window.innerWidth >= 768) {
-                  setDropdownOpen(true);
-                }
-              }}
-              onMouseLeave={() => {
-                if (window.innerWidth >= 768) {
-                  setDropdownOpen(false);
-                }
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="flex items-center gap-1 hover:text-[#ED1D26] transition-colors">
                 <Link
@@ -251,32 +273,37 @@ const CityNavbar = () => {
                     ? "opacity-100 max-h-[400px] mt-3 md:mt-0 md:translate-y-0 md:visible pointer-events-auto" 
                     : "opacity-0 max-h-0 pointer-events-none md:max-h-none md:-translate-y-2 md:invisible"
                   }
-                  md:absolute md:left-0 md:top-full md:mt-2 md:rounded-xl md:py-3 md:px-4 md:w-56 md:z-50
-                  md:shadow-xl md:border md:text-left
-                  ${(isLightPage || isScrolling) 
-                    ? "md:bg-white md:text-black md:border-gray-100" 
-                    : "md:bg-[#0a0a0a] md:text-white md:border-white/10"
-                  }
+                  md:absolute md:left-0 md:top-full md:pt-2 md:w-56 md:z-50
                   /* Mobile defaults */
                   w-full bg-transparent border-0 shadow-none text-center flex flex-col items-center gap-3
                 `}
               >
-                <ul className="flex flex-col gap-3 md:gap-2.5 text-base md:text-sm font-medium w-full text-center md:text-left">
-                  {dropdownItems.map((item, idx) => (
-                    <li key={idx}>
-                      <Link
-                        href={item.link}
-                        onClick={() => {
-                          setMenuOpen(false);
-                          setDropdownOpen(false);
-                        }}
-                        className="block py-1 md:py-0.5 hover:text-[#ED1D26] transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <div
+                  className={`
+                    w-full md:rounded-xl md:py-3 md:px-4 md:shadow-xl md:border md:text-left
+                    ${(isLightPage || isScrolling) 
+                      ? "md:bg-white md:text-black md:border-gray-100" 
+                      : "md:bg-[#0a0a0a] md:text-white md:border-white/10"
+                    }
+                  `}
+                >
+                  <ul className="flex flex-col gap-3 md:gap-2.5 text-base md:text-sm font-medium w-full text-center md:text-left">
+                    {dropdownItems.map((item, idx) => (
+                      <li key={idx}>
+                        <Link
+                          href={item.link}
+                          onClick={() => {
+                            setMenuOpen(false);
+                            setDropdownOpen(false);
+                          }}
+                          className="block py-1 md:py-0.5 hover:text-[#ED1D26] transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </li>
             <li>

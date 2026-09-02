@@ -5,12 +5,36 @@ import CityNavbar from '@/components/navbar/CityNavbar.jsx';
 import CityFooter from '@/components/CityFooter.jsx';
 import Link from 'next/link';
 
-const BlogsListing = () => {
+const BlogsListing = ({ blogs = data.blogPage }) => {
   return (
     <div>
       <Head>
         <title>Our Blogs | Jassal Signs</title>
         <meta name="description" content="Read the latest insights and news about branding, signage, and marketing from Jassal Signs." />
+        <link rel="canonical" href="https://www.jassalsignsedm.com/blogs" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.jassalsignsedm.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blogs",
+                  "item": "https://www.jassalsignsedm.com/blogs"
+                }
+              ]
+            })
+          }}
+        />
       </Head>
       <CityNavbar />
       
@@ -32,7 +56,7 @@ const BlogsListing = () => {
       {/* Blogs Grid */}
       <div className="max-w-[1280px] mx-auto py-16 px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.blogPage.map((blog) => (
+          {blogs.map((blog) => (
             <Link href={`/blogs/${blog.id}`} key={blog.id} className="group">
               <div className="bg-white rounded-[24px] overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
                 <div className="overflow-hidden h-60 relative">
@@ -67,4 +91,14 @@ const BlogsListing = () => {
   );
 };
 
+export async function getStaticProps() {
+  return {
+    props: {
+      blogs: data.blogPage,
+    },
+    revalidate: 3600,
+  };
+}
+
 export default BlogsListing;
+

@@ -18,37 +18,45 @@ const getFormattedDate = (dateStr) => {
   }
 };
 
-const BlogPage = () => {
+const BlogPage = ({
+  blogData: initialBlogData,
+  recentBlogs: initialRecentBlogs = [],
+  currentIndex: initialCurrentIndex = -1,
+  slug: propSlug,
+}) => {
   const router = useRouter();
-  const [blogData, setBlogData] = useState(null);
-  const [recentBlogs, setRecentBlogs] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(-1);
+  const slug = propSlug || router.query.slug;
+  const [blogData, setBlogData] = useState(initialBlogData || null);
+  const [recentBlogs, setRecentBlogs] = useState(initialRecentBlogs);
+  const [currentIndex, setCurrentIndex] = useState(initialCurrentIndex);
   const [loading, setLoading] = useState(false);
 
-  const override= {
-  display: "block",
-  margin: "0 auto",
-  border: "4px solid red",
-
-};
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    border: "4px solid red",
+  };
 
   useEffect(() => {
-    if (!router.query.slug) return;
+    if (initialBlogData) {
+      setBlogData(initialBlogData);
+      setRecentBlogs(initialRecentBlogs);
+      setCurrentIndex(initialCurrentIndex);
+    } else if (router.query.slug) {
+      const blogList = data.blogPage;
+      const index = blogList.findIndex((blog) => String(blog.id) === String(router.query.slug));
 
-    const blogList = data.blogPage;
-    const index = blogList.findIndex((blog) => blog.id == router.query.slug);
+      if (index !== -1) {
+        setBlogData(blogList[index]);
+        setCurrentIndex(index);
 
-    if (index !== -1) {
-      setBlogData(blogList[index]);
-      setCurrentIndex(index);
-
-      const filtered = blogList.filter((_, i) => i !== index);
-      setRecentBlogs(filtered);
-    } else {
-      // Fallback: If not found, show all blogs in sidebar so the user is not stranded
-      setRecentBlogs(blogList);
+        const filtered = blogList.filter((_, i) => i !== index);
+        setRecentBlogs(filtered);
+      } else {
+        setRecentBlogs(blogList);
+      }
     }
-  }, [router.query.slug]);
+  }, [initialBlogData, initialRecentBlogs, initialCurrentIndex, router.query.slug]);
 
   // Handle loader with minimum display time
   useEffect(() => {
@@ -84,11 +92,16 @@ const BlogPage = () => {
     }
   };
 
+  if (router.isFallback) {
+    return <div className="min-h-screen bg-white flex items-center justify-center">Loading...</div>;
+  }
+
   return (
     <div>
       <Head>
         <title>{blogData ? `${blogData.heading} | Jassal Signs` : "Blog | Jassal Signs"}</title>
         <meta name="description" content={blogData ? blogData.desc.replace(/<[^>]*>?/gm, '').substring(0, 160) : "Read our latest blog at Jassal Signs."} />
+        <link rel="canonical" href={`https://www.jassalsignsedm.com/blogs/${blogData?.id || slug}`} />
         {/* FAQPage Schema */}
         {blogData?.faqs && blogData.faqs.length > 0 && (
           <script
@@ -309,5 +322,41 @@ const BlogPage = () => {
     </div>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = data.blogPage.map((blog) => ({
+    params: { slug: String(blog.id) },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const slug = params?.slug;
+  const blogList = data.blogPage;
+  const index = blogList.findIndex((blog) => String(blog.id) === String(slug));
+
+  if (index === -1) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const blogData = blogList[index];
+  const recentBlogs = blogList.filter((_, i) => i !== index);
+
+  return {
+    props: {
+      blogData,
+      recentBlogs,
+      currentIndex: index,
+      slug,
+    },
+    revalidate: 3600,
+  };
+}
 
 export default BlogPage;
